@@ -5,6 +5,45 @@
 [ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="3_mous7"]
 [ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_sg3ht"]
 [ext_resource type="Texture2D" uid="uid://p5nosxpnbhqs" path="res://art/dev_room/dev_door_frame.png" id="5_crnqe"]
+[ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="6_sg3ht"]
+[ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="7_crnqe"]
+[ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="8_crnqe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jumof"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xsufa"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0w5i"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kobp4"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w86v4"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3qxk"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bnm5"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcauo"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fqsy6"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ixbf"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltkbo"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjeai"]
+size = Vector3(1, 1, 0.05)
 
 [node name="Node3D" type="Node3D" unique_id=2035165107]
 
@@ -14,4 +53,419 @@ Wall = ExtResource("1_8uh7m")
 Floor = ExtResource("3_mous7")
 Ceiling = ExtResource("4_sg3ht")
 Door = ExtResource("5_crnqe")
-Size = 4
+Width_X = 3
+Width_Z = 3
+
+[node name="Floor" type="Node3D" parent="Room" unique_id=1468474287 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 0.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20752")
+
+[node name="@Sprite3D@20752" type="Sprite3D" parent="Room/Floor" unique_id=710306057]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor5" type="Node3D" parent="Room" unique_id=117503619 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20754")
+
+[node name="@Sprite3D@20754" type="Sprite3D" parent="Room/Floor5" unique_id=1136759040]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor8" type="Node3D" parent="Room" unique_id=641422367 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20756")
+
+[node name="@Sprite3D@20756" type="Sprite3D" parent="Room/Floor8" unique_id=38574352]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor9" type="Node3D" parent="Room" unique_id=204164776 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 0.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20758")
+
+[node name="@Sprite3D@20758" type="Sprite3D" parent="Room/Floor9" unique_id=765417460]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor10" type="Node3D" parent="Room" unique_id=1891935133 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20760")
+
+[node name="@Sprite3D@20760" type="Sprite3D" parent="Room/Floor10" unique_id=930161053]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor11" type="Node3D" parent="Room" unique_id=1593343892 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20762")
+
+[node name="@Sprite3D@20762" type="Sprite3D" parent="Room/Floor11" unique_id=404260927]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor12" type="Node3D" parent="Room" unique_id=770988592 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 0.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20764")
+
+[node name="@Sprite3D@20764" type="Sprite3D" parent="Room/Floor12" unique_id=1684754367]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor15" type="Node3D" parent="Room" unique_id=1558807733 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20766")
+
+[node name="@Sprite3D@20766" type="Sprite3D" parent="Room/Floor15" unique_id=1645826109]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor16" type="Node3D" parent="Room" unique_id=148218438 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@20768")
+
+[node name="@Sprite3D@20768" type="Sprite3D" parent="Room/Floor16" unique_id=1238143115]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling" type="Node3D" parent="Room" unique_id=1722408631 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 0.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21312")
+
+[node name="@Sprite3D@21312" type="Sprite3D" parent="Room/Ceiling" unique_id=1186414780]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="SWall" type="Node3D" parent="Room" unique_id=781789230 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21314")
+CollisionShape = NodePath("@StaticBody3D@21314/@CollisionShape3D@21315")
+Sprite = NodePath("@Sprite3D@21316")
+
+[node name="@StaticBody3D@21314" type="StaticBody3D" parent="Room/SWall" unique_id=1043641686]
+
+[node name="@CollisionShape3D@21315" type="CollisionShape3D" parent="Room/SWall/@StaticBody3D@21314" unique_id=1000699149]
+shape = SubResource("BoxShape3D_jumof")
+
+[node name="@Sprite3D@21316" type="Sprite3D" parent="Room/SWall" unique_id=1196184088]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="EWall" type="Node3D" parent="Room" unique_id=1800392586 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21318")
+CollisionShape = NodePath("@StaticBody3D@21318/@CollisionShape3D@21319")
+Sprite = NodePath("@Sprite3D@21320")
+
+[node name="@StaticBody3D@21318" type="StaticBody3D" parent="Room/EWall" unique_id=651848441]
+
+[node name="@CollisionShape3D@21319" type="CollisionShape3D" parent="Room/EWall/@StaticBody3D@21318" unique_id=1687532477]
+shape = SubResource("BoxShape3D_xsufa")
+
+[node name="@Sprite3D@21320" type="Sprite3D" parent="Room/EWall" unique_id=95372913]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling2" type="Node3D" parent="Room" unique_id=154985677 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21322")
+
+[node name="@Sprite3D@21322" type="Sprite3D" parent="Room/Ceiling2" unique_id=1381902208]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="EWall2" type="Node3D" parent="Room" unique_id=1221357544 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 1.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21324")
+CollisionShape = NodePath("@StaticBody3D@21324/@CollisionShape3D@21325")
+Sprite = NodePath("@Sprite3D@21326")
+
+[node name="@StaticBody3D@21324" type="StaticBody3D" parent="Room/EWall2" unique_id=1438649487]
+
+[node name="@CollisionShape3D@21325" type="CollisionShape3D" parent="Room/EWall2/@StaticBody3D@21324" unique_id=957729856]
+shape = SubResource("BoxShape3D_p0w5i")
+
+[node name="@Sprite3D@21326" type="Sprite3D" parent="Room/EWall2" unique_id=1025139813]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling3" type="Node3D" parent="Room" unique_id=911352611 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21328")
+
+[node name="@Sprite3D@21328" type="Sprite3D" parent="Room/Ceiling3" unique_id=729661532]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="NWall" type="Node3D" parent="Room" unique_id=1536146702 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5, 0.5, 3)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21330")
+CollisionShape = NodePath("@StaticBody3D@21330/@CollisionShape3D@21331")
+Sprite = NodePath("@Sprite3D@21332")
+
+[node name="@StaticBody3D@21330" type="StaticBody3D" parent="Room/NWall" unique_id=2127851343]
+
+[node name="@CollisionShape3D@21331" type="CollisionShape3D" parent="Room/NWall/@StaticBody3D@21330" unique_id=2017642041]
+shape = SubResource("BoxShape3D_kobp4")
+
+[node name="@Sprite3D@21332" type="Sprite3D" parent="Room/NWall" unique_id=2132087690]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="EWall3" type="Node3D" parent="Room" unique_id=844531824 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 2.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21334")
+CollisionShape = NodePath("@StaticBody3D@21334/@CollisionShape3D@21335")
+Sprite = NodePath("@Sprite3D@21336")
+
+[node name="@StaticBody3D@21334" type="StaticBody3D" parent="Room/EWall3" unique_id=203090523]
+
+[node name="@CollisionShape3D@21335" type="CollisionShape3D" parent="Room/EWall3/@StaticBody3D@21334" unique_id=1735534833]
+shape = SubResource("BoxShape3D_w86v4")
+
+[node name="@Sprite3D@21336" type="Sprite3D" parent="Room/EWall3" unique_id=1186767168]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling4" type="Node3D" parent="Room" unique_id=1506883579 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 0.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21338")
+
+[node name="@Sprite3D@21338" type="Sprite3D" parent="Room/Ceiling4" unique_id=1533220964]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="SWall2" type="Node3D" parent="Room" unique_id=1058887969 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21340")
+CollisionShape = NodePath("@StaticBody3D@21340/@CollisionShape3D@21341")
+Sprite = NodePath("@Sprite3D@21342")
+
+[node name="@StaticBody3D@21340" type="StaticBody3D" parent="Room/SWall2" unique_id=61413373]
+
+[node name="@CollisionShape3D@21341" type="CollisionShape3D" parent="Room/SWall2/@StaticBody3D@21340" unique_id=1655009808]
+shape = SubResource("BoxShape3D_l3qxk")
+
+[node name="@Sprite3D@21342" type="Sprite3D" parent="Room/SWall2" unique_id=619788435]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling5" type="Node3D" parent="Room" unique_id=1760790470 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21344")
+
+[node name="@Sprite3D@21344" type="Sprite3D" parent="Room/Ceiling5" unique_id=1334164529]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling6" type="Node3D" parent="Room" unique_id=844881834 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21346")
+
+[node name="@Sprite3D@21346" type="Sprite3D" parent="Room/Ceiling6" unique_id=1002393418]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="NWall2" type="Node3D" parent="Room" unique_id=1648953938 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0.5, 3)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21348")
+CollisionShape = NodePath("@StaticBody3D@21348/@CollisionShape3D@21349")
+Sprite = NodePath("@Sprite3D@21350")
+
+[node name="@StaticBody3D@21348" type="StaticBody3D" parent="Room/NWall2" unique_id=2137035985]
+
+[node name="@CollisionShape3D@21349" type="CollisionShape3D" parent="Room/NWall2/@StaticBody3D@21348" unique_id=1172426717]
+shape = SubResource("BoxShape3D_4bnm5")
+
+[node name="@Sprite3D@21350" type="Sprite3D" parent="Room/NWall2" unique_id=2096305855]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling7" type="Node3D" parent="Room" unique_id=1517810361 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 0.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21352")
+
+[node name="@Sprite3D@21352" type="Sprite3D" parent="Room/Ceiling7" unique_id=1080512679]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="SWall3" type="Node3D" parent="Room" unique_id=20401397 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21354")
+CollisionShape = NodePath("@StaticBody3D@21354/@CollisionShape3D@21355")
+Sprite = NodePath("@Sprite3D@21356")
+
+[node name="@StaticBody3D@21354" type="StaticBody3D" parent="Room/SWall3" unique_id=1598131687]
+
+[node name="@CollisionShape3D@21355" type="CollisionShape3D" parent="Room/SWall3/@StaticBody3D@21354" unique_id=329874360]
+shape = SubResource("BoxShape3D_jcauo")
+
+[node name="@Sprite3D@21356" type="Sprite3D" parent="Room/SWall3" unique_id=278669469]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="WWall" type="Node3D" parent="Room" unique_id=443263381 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0.5, 0.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21358")
+CollisionShape = NodePath("@StaticBody3D@21358/@CollisionShape3D@21359")
+Sprite = NodePath("@Sprite3D@21360")
+
+[node name="@StaticBody3D@21358" type="StaticBody3D" parent="Room/WWall" unique_id=802939416]
+
+[node name="@CollisionShape3D@21359" type="CollisionShape3D" parent="Room/WWall/@StaticBody3D@21358" unique_id=1393724783]
+shape = SubResource("BoxShape3D_fqsy6")
+
+[node name="@Sprite3D@21360" type="Sprite3D" parent="Room/WWall" unique_id=1719575375]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling8" type="Node3D" parent="Room" unique_id=2065427109 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21362")
+
+[node name="@Sprite3D@21362" type="Sprite3D" parent="Room/Ceiling8" unique_id=1151983697]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="WWall2" type="Node3D" parent="Room" unique_id=1368502253 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0.5, 1.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21364")
+CollisionShape = NodePath("@StaticBody3D@21364/@CollisionShape3D@21365")
+Sprite = NodePath("@Sprite3D@21366")
+
+[node name="@StaticBody3D@21364" type="StaticBody3D" parent="Room/WWall2" unique_id=2069402934]
+
+[node name="@CollisionShape3D@21365" type="CollisionShape3D" parent="Room/WWall2/@StaticBody3D@21364" unique_id=295638511]
+shape = SubResource("BoxShape3D_4ixbf")
+
+[node name="@Sprite3D@21366" type="Sprite3D" parent="Room/WWall2" unique_id=1635629980]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling9" type="Node3D" parent="Room" unique_id=1714164679 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@21368")
+
+[node name="@Sprite3D@21368" type="Sprite3D" parent="Room/Ceiling9" unique_id=737676563]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="NWall3" type="Node3D" parent="Room" unique_id=1535943668 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5, 0.5, 3)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21370")
+CollisionShape = NodePath("@StaticBody3D@21370/@CollisionShape3D@21371")
+Sprite = NodePath("@Sprite3D@21372")
+
+[node name="@StaticBody3D@21370" type="StaticBody3D" parent="Room/NWall3" unique_id=1912864931]
+
+[node name="@CollisionShape3D@21371" type="CollisionShape3D" parent="Room/NWall3/@StaticBody3D@21370" unique_id=1374635786]
+shape = SubResource("BoxShape3D_ltkbo")
+
+[node name="@Sprite3D@21372" type="Sprite3D" parent="Room/NWall3" unique_id=749200021]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="WWall3" type="Node3D" parent="Room" unique_id=1519435931 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0.5, 2.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@21374")
+CollisionShape = NodePath("@StaticBody3D@21374/@CollisionShape3D@21375")
+Sprite = NodePath("@Sprite3D@21376")
+
+[node name="@StaticBody3D@21374" type="StaticBody3D" parent="Room/WWall3" unique_id=1604183499]
+
+[node name="@CollisionShape3D@21375" type="CollisionShape3D" parent="Room/WWall3/@StaticBody3D@21374" unique_id=1500774078]
+shape = SubResource("BoxShape3D_pjeai")
+
+[node name="@Sprite3D@21376" type="Sprite3D" parent="Room/WWall3" unique_id=278128272]
+pixel_size = 0.0033333334
+double_sided = false
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
