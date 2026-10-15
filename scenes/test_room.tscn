@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bgw8crkak14p1"]
+
+[ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="1_8uh7m"]
+[ext_resource type="Script" uid="uid://cydbpc1sm8m3l" path="res://scripts/environment/Room.cs" id="1_503t6"]
+[ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="3_mous7"]
+[ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_sg3ht"]
+[ext_resource type="Texture2D" uid="uid://p5nosxpnbhqs" path="res://art/dev_room/dev_door_frame.png" id="5_crnqe"]
+
+[node name="Node3D" type="Node3D" unique_id=2035165107]
+
+[node name="Room" type="Node3D" parent="." unique_id=1758817475]
+script = ExtResource("1_503t6")
+Wall = ExtResource("1_8uh7m")
+Floor = ExtResource("3_mous7")
+Ceiling = ExtResource("4_sg3ht")
+Door = ExtResource("5_crnqe")
+Size = 4
