@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cwl42t6koemdc"]
+
+[ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="1_im7wb"]
+[ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="2_sju7m"]
+[ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="3_fthar"]
+
+[sub_resource type="Shader" id="Shader_sju7m"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.7.1.stable.mono's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_nearest, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	vec4 albedo_tex = texture(texture_albedo, base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+}
+
+void light() {
+	SPECULAR_LIGHT = dot(NORMAL, LIGHT) * ATTENUATION * LIGHT_COLOR * ALBEDO;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fthar"]
+render_priority = 0
+shader = SubResource("Shader_sju7m")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_sju7m")
+shader_parameter/albedo_texture_size = Vector2i(300, 300)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.50999998860048
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="Environment" id="Environment_pp2t7"]
+ambient_light_source = 3
+
+[node name="Node3D" type="Node3D" unique_id=1500390691]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=457105498 node_paths=PackedStringArray("Sprite")]
+script = ExtResource("1_im7wb")
+Sprite = NodePath("@Sprite3D@22772")
+shaded = true
+
+[node name="@Sprite3D@22772" type="Sprite3D" parent="Node3D" unique_id=1255809330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0020043254, 0)
+material_override = SubResource("ShaderMaterial_fthar")
+pixel_size = 0.0033333334
+shaded = true
+texture_filter = 2
+texture = ExtResource("2_sju7m")
+script = ExtResource("3_fthar")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1896201407]
+environment = SubResource("Environment_pp2t7")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=366313434]
+transform = Transform3D(0.98881626, 0.12622096, 0.079438925, -0.14003572, 0.96903014, 0.20339753, -0.05130571, -0.21224707, 0.9758683, 0, 0, 1.2135361)
+spot_range = 2.105
+spot_attenuation = -2.95
+spot_angle = 20.91
+spot_angle_attenuation = 5.8563395
