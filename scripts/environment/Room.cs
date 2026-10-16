@@ -8,6 +8,7 @@ public partial class Room : GridAligned
 {
     [Export] Texture2D Wall, Floor, Ceiling, Door;
     [Export] public int Width_X, Width_Z;
+    [Export] public bool Shaded = true;
     private bool _rebuild = false;
     [Export] public bool Rebuild {
         get => _rebuild;
@@ -46,9 +47,10 @@ public partial class Room : GridAligned
         {
             for (int z = 0; z < Width_Z; z++)
             {
-                Surface floor = new();
+                Surface floor = new(){shaded = Shaded};
                 floor.RotateX(-Mathf.Pi/2f);
                 floor.Position = new Vector3(x + 0.5f, 0, z + 0.5f);
+                floor.SetMeta("_edit_group_", true);
                 AddChild(floor);
                 floor.Owner = GetTree().EditedSceneRoot;
                 floor.Sprite.DoubleSided = false;
@@ -75,9 +77,10 @@ public partial class Room : GridAligned
                 if (!floors[x,z]) continue;
 
                 //Add ceiling
-                Surface ceil = new();
+                Surface ceil = new(){shaded = Shaded};
                 ceil.RotateX(Mathf.Pi/2f);
                 ceil.Position = new Vector3(x - 0.5f, 1f, z - 0.5f);
+                ceil.SetMeta("_edit_group_", true);
                 AddChild(ceil);
                 ceil.Owner = GetTree().EditedSceneRoot;
                 ceil.Sprite.DoubleSided = false;
@@ -91,11 +94,12 @@ public partial class Room : GridAligned
                     new(new Vector2I(-1, 0), Mathf.Pi/2f, "E"),
                     new(new Vector2I(1, 0), 3f*Mathf.Pi/2f, "W"),
                 };
-
+        
                 foreach (var dir in dirs)
                 {
                     if (!floors[dir.Item1.X + x,dir.Item1.Y + z]) {
-                        Wall wall = new();
+                        Wall wall = new(){shaded = Shaded};
+                        wall.SetMeta("_edit_group_", true);
                         AddChild(wall);
                         wall.Owner = GetTree().EditedSceneRoot;
                         wall.RotateY(dir.Item2);
