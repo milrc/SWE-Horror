@@ -1,85 +1,13 @@
 [gd_scene format=3 uid="uid://cwl42t6koemdc"]
 
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="1_im7wb"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="2_fthar"]
 [ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="2_sju7m"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="3_fthar"]
 
-[sub_resource type="Shader" id="Shader_sju7m"]
-code = "// NOTE: Shader automatically converted from Godot Engine 4.7.1.stable.mono's StandardMaterial3D.
-
-shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
-
-//uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color, filter_nearest, repeat_enable;
-uniform sampler2D normal_map : hint_normal, filter_nearest;
-//uniform ivec2 albedo_texture_size;
-
-uniform float roughness : hint_range(0.0, 1.0);
-uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
-uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
-
-uniform float specular : hint_range(0.0, 1.0, 0.01);
-
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
-
-// Calculate screen-space displacement from the center of the current texel
-vec2 screen_delta(vec2 uv, sampler2D tex) {
-	vec2 tex_size = vec2(textureSize(tex, 0));
-	vec2 texel_center = (floor(uv * tex_size) + 0.5) / tex_size;
-	vec2 offset = texel_center - uv;
-	mat2 screen_to_uv = mat2(dFdx(uv), dFdy(uv));
-	mat2 uv_to_screen = inverse(screen_to_uv);
-	return uv_to_screen * offset;
-}
-
-// Snap vec_type to extrapolated value at the center of the current texel
-float texel_snap(float v, vec2 delta) {
-	return v + dFdx(v) * delta.x + dFdy(v) * delta.y;
-}
-
-vec2 texel_snap(vec2 v, vec2 delta) {
-	return v + dFdx(v) * delta.x + dFdy(v) * delta.y;
-}
-
-vec3 texel_snap(vec3 v, vec2 delta) {
-	return v + dFdx(v) * delta.x + dFdy(v) * delta.y;
-}
-
-vec4 texel_snap(vec4 v, vec2 delta) {
-	return v + dFdx(v) * delta.x + dFdy(v) * delta.y;
-}
-
-void vertex() {
-	UV = UV * uv1_scale.xy + uv1_offset.xy;
-}
-
-void fragment() {
-	//vec2 base_uv = UV;
-//
-	//vec4 albedo_tex = texture(texture_albedo, base_uv);
-	//ALBEDO = albedo.rgb * albedo_tex.rgb;
-	
-	vec2 delta = screen_delta(UV, texture_albedo);
-	LIGHT_VERTEX = texel_snap(VERTEX, delta);
-	NORMAL = texel_snap(NORMAL, delta);
-	
-	vec3 albedo_tex = texture(texture_albedo, UV).rgb;
-	ALBEDO = albedo_tex;
-	NORMAL_MAP = texture(normal_map, UV).xyz;
-	ROUGHNESS = roughness;
-}
-
-//void light() {
-	////SPECULAR_LIGHT = dot(NORMAL, LIGHT) * ATTENUATION * LIGHT_COLOR * ALBEDO;
-//}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fthar"]
 render_priority = 0
-shader = SubResource("Shader_sju7m")
+shader = ExtResource("2_fthar")
 shader_parameter/texture_albedo = ExtResource("2_sju7m")
 shader_parameter/roughness = 1.0
 shader_parameter/specular = 0.50999998860048
@@ -99,9 +27,9 @@ Sprite = NodePath("@Sprite3D@22772")
 shaded = true
 
 [node name="@Sprite3D@22772" type="Sprite3D" parent="Node3D" unique_id=1255809330]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0020043254, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33936426, -0.014897421, 0.19342154)
 material_override = SubResource("ShaderMaterial_fthar")
-pixel_size = 0.0033333334
+pixel_size = 0.0133333
 shaded = true
 texture_filter = 2
 texture = ExtResource("2_sju7m")
@@ -111,8 +39,7 @@ script = ExtResource("3_fthar")
 environment = SubResource("Environment_pp2t7")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=366313434]
-transform = Transform3D(0.99720645, 0.06855355, 0.029660778, -0.06800276, 0.9975004, -0.019197444, -0.030902691, 0.0171268, 0.99937564, 0, 0, 1.2135361)
-spot_range = 2.708
-spot_attenuation = 7.35
-spot_angle = 24.4
-spot_angle_attenuation = 0.5743513
+transform = Transform3D(-0.97646755, -0.048215628, 0.21020532, 0.06649486, -0.994512, 0.08077353, 0.20515718, 0.09285045, 0.9743148, 0, 0.13, 1.214)
+spot_range = 2.009
+spot_attenuation = 10.0
+spot_angle = 23.44

@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 public partial class Room : GridAligned
 {
     [Export] Texture2D Wall, Floor, Ceiling, Door;
+    [Export] public Shader Shader; 
     [Export] public int Width_X, Width_Z;
     [Export] public bool Shaded = true;
     private bool _rebuild = false;
@@ -47,7 +48,7 @@ public partial class Room : GridAligned
         {
             for (int z = 0; z < Width_Z; z++)
             {
-                Surface floor = new(){shaded = Shaded};
+                Surface floor = new(){shaded = Shaded, shader = Shader};
                 floor.RotateX(-Mathf.Pi/2f);
                 floor.Position = new Vector3(x + 0.5f, 0, z + 0.5f);
                 floor.SetMeta("_edit_group_", true);
@@ -55,6 +56,7 @@ public partial class Room : GridAligned
                 floor.Owner = GetTree().EditedSceneRoot;
                 floor.Sprite.DoubleSided = false;
                 floor.Sprite.Texture = Floor;
+                floor.setShaderTexture(Floor, 1);
                 floor.Name = "Floor";
             }
         }
@@ -77,7 +79,7 @@ public partial class Room : GridAligned
                 if (!floors[x,z]) continue;
 
                 //Add ceiling
-                Surface ceil = new(){shaded = Shaded};
+                Surface ceil = new(){shaded = Shaded, shader = Shader};
                 ceil.RotateX(Mathf.Pi/2f);
                 ceil.Position = new Vector3(x - 0.5f, 1f, z - 0.5f);
                 ceil.SetMeta("_edit_group_", true);
@@ -85,6 +87,7 @@ public partial class Room : GridAligned
                 ceil.Owner = GetTree().EditedSceneRoot;
                 ceil.Sprite.DoubleSided = false;
                 ceil.Sprite.Texture = Ceiling;
+                ceil.setShaderTexture(Ceiling, 1);
                 ceil.Name = "Ceiling";
 
                 //Add walls
@@ -98,7 +101,7 @@ public partial class Room : GridAligned
                 foreach (var dir in dirs)
                 {
                     if (!floors[dir.Item1.X + x,dir.Item1.Y + z]) {
-                        Wall wall = new(){shaded = Shaded};
+                        Wall wall = new(){shaded = Shaded, shader = Shader};
                         wall.SetMeta("_edit_group_", true);
                         AddChild(wall);
                         wall.Owner = GetTree().EditedSceneRoot;
@@ -106,6 +109,7 @@ public partial class Room : GridAligned
                         wall.Position = new Vector3(x - 0.5f, 0.5f, z - 0.5f) + new Vector3(dir.Item1.X/2f, 0, dir.Item1.Y/2f);
                         wall.Sprite.DoubleSided = false;
                         wall.Sprite.Texture = Wall;
+                        wall.setShaderTexture(Wall, 1);
                         wall.Name = dir.Item3 + "Wall";
                     }
                 }
