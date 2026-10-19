@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0708qoxm71cd"
-path.s3tc="res://.godot/imported/dev_floor.png-42c4b346ac247ab5f03bde0c4bf5ec30.s3tc.ctex"
+path="res://.godot/imported/dev_floor.png-42c4b346ac247ab5f03bde0c4bf5ec30.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://art/dev_room/dev_floor.png"
-dest_files=["res://.godot/imported/dev_floor.png-42c4b346ac247ab5f03bde0c4bf5ec30.s3tc.ctex"]
+dest_files=["res://.godot/imported/dev_floor.png-42c4b346ac247ab5f03bde0c4bf5ec30.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -1,23 +1,15 @@
 // NOTE: Shader automatically converted from Godot Engine 4.7.1.stable.mono's StandardMaterial3D.
 
 shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+render_mode blend_mix, depth_draw_opaque, diffuse_burley, specular_schlick_ggx;
 
 //uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color, filter_nearest, repeat_enable;
 uniform sampler2D normal_map : hint_normal, filter_nearest;
-//uniform ivec2 albedo_texture_size;
 
 uniform float roughness : hint_range(0.0, 1.0);
-uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
-uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
-
-uniform float specular : hint_range(0.0, 1.0, 0.01);
-
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
+//uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+//uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
 
 // Calculate screen-space displacement from the center of the current texel
 vec2 screen_delta(vec2 uv, sampler2D tex) {
@@ -47,7 +39,6 @@ vec4 texel_snap(vec4 v, vec2 delta) {
 }
 
 void vertex() {
-	UV = UV * uv1_scale.xy + uv1_offset.xy;
 }
 
 void fragment() {
@@ -67,5 +58,4 @@ void fragment() {
 }
 
 //void light() {
-	////SPECULAR_LIGHT = dot(NORMAL, LIGHT) * ATTENUATION * LIGHT_COLOR * ALBEDO;
 //}

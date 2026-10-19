@@ -6,10 +6,28 @@ using System.Security.Cryptography;
 [Tool]
 public partial class Room : GridAligned
 {
+    [ExportGroup("Textures")]
     [Export] Texture2D Wall, Floor, Ceiling, Door;
+    [ExportSubgroup("Normals")]
+    [Export] public Texture2D Wall_Normal, Floor_Normal, Ceiling_Normal, Door_Normal;
+    [ExportGroup("Texture Settings")]
+    [Export(PropertyHint.Range, "0.0,1.0")]
+    public float Wall_Roughness, Floor_Roughness, Ceil_Roughness, Door_Rougness;
+
+    [ExportCategory("Room Settings")]
     [Export] public Shader Shader; 
     [Export] public int Width_X, Width_Z;
-    [Export] public bool Shaded = true;
+    private bool _shaded = false;
+    [Export] public bool Shaded
+    {
+        get => _shaded;
+        set
+        {
+            _shaded = value;
+            ShadeSurfaces();
+        }
+        
+    }
     private bool _rebuild = false;
     [Export] public bool Rebuild {
         get => _rebuild;
@@ -42,6 +60,22 @@ public partial class Room : GridAligned
         }
     }
 
+    public void ShadeSurfaces()
+    {
+        foreach(Node child in GetChildren())
+        {
+            if (child is Surface)
+            {
+                (child as Surface).shaded = _shaded;
+                (child as Surface).ShadeSprite();
+                if (!_shaded)
+                {
+                    (child as Surface).Sprite.MaterialOverride = null;
+                }
+            }
+        }
+    }
+
     public void DrawFloor()
     {
         for (int x = 0; x < Width_X; x++)
@@ -54,9 +88,10 @@ public partial class Room : GridAligned
                 floor.SetMeta("_edit_group_", true);
                 AddChild(floor);
                 floor.Owner = GetTree().EditedSceneRoot;
+                floor.Sprite.roughness = Floor_Roughness;
                 floor.Sprite.DoubleSided = false;
+                floor.Sprite.normal = Floor_Normal;
                 floor.Sprite.Texture = Floor;
-                floor.setShaderTexture(Floor, 1);
                 floor.Name = "Floor";
             }
         }
@@ -84,10 +119,11 @@ public partial class Room : GridAligned
                 ceil.Position = new Vector3(x - 0.5f, 1f, z - 0.5f);
                 ceil.SetMeta("_edit_group_", true);
                 AddChild(ceil);
+                ceil.Sprite.roughness = Ceil_Roughness;
                 ceil.Owner = GetTree().EditedSceneRoot;
                 ceil.Sprite.DoubleSided = false;
+                ceil.Sprite.normal = Ceiling_Normal;
                 ceil.Sprite.Texture = Ceiling;
-                ceil.setShaderTexture(Ceiling, 1);
                 ceil.Name = "Ceiling";
 
                 //Add walls
@@ -107,9 +143,10 @@ public partial class Room : GridAligned
                         wall.Owner = GetTree().EditedSceneRoot;
                         wall.RotateY(dir.Item2);
                         wall.Position = new Vector3(x - 0.5f, 0.5f, z - 0.5f) + new Vector3(dir.Item1.X/2f, 0, dir.Item1.Y/2f);
+                        wall.Sprite.roughness = Wall_Roughness;
                         wall.Sprite.DoubleSided = false;
+                        wall.Sprite.normal = Wall_Normal;
                         wall.Sprite.Texture = Wall;
-                        wall.setShaderTexture(Wall, 1);
                         wall.Name = dir.Item3 + "Wall";
                     }
                 }

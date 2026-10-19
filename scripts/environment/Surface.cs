@@ -13,29 +13,25 @@ public partial class Surface : GridAligned
 
     public override void _EnterTree()
     {
-        if(shader != null) {
-            material = new ShaderMaterial();
-            material.Shader = shader;
-        }
-
         if (Sprite == null)
         {
             Sprite = new();
-            Sprite.Shaded = shaded;
             Sprite.TextureFilter = BaseMaterial3D.TextureFilterEnum.Nearest;
-            if(material != null) {Sprite.MaterialOverride = material;}
+            ShadeSprite();
             AddChild(Sprite);
             Sprite.Owner = GetTree().EditedSceneRoot;          
         }
         base._EnterTree();
     }
 
-    // roughness must be between 1 and 0
-    public void setShaderTexture(Texture tex, float roughness)
+    public void ShadeSprite()
     {
-        // might as well just set all shader properties
-        (Sprite.MaterialOverride as ShaderMaterial).SetShaderParameter("texture_albedo", tex);
-        (Sprite.MaterialOverride as ShaderMaterial).SetShaderParameter("roughness", roughness);
-        (Sprite.MaterialOverride as ShaderMaterial).SetShaderParameter("uv1_scale", new Vector3(1, 1, 1));
+        Sprite.Shaded = shaded;
+        if(shader != null && shaded) {
+            material = new ShaderMaterial(){Shader = shader};
+            Sprite.MaterialOverride = material;
+            Sprite.SetShaderTexture();
+        }
     }
+    
 }

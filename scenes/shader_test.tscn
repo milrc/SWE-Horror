@@ -4,17 +4,15 @@
 [ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="2_fthar"]
 [ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="2_sju7m"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="3_fthar"]
+[ext_resource type="Texture2D" uid="uid://la8htacac1sa" path="res://art/dev_room/normal_map_test.png" id="3_x1bir"]
+[ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="4_tmwol"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fthar"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sju7m"]
 render_priority = 0
 shader = ExtResource("2_fthar")
-shader_parameter/texture_albedo = ExtResource("2_sju7m")
-shader_parameter/roughness = 1.0
-shader_parameter/specular = 0.50999998860048
-shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/uv2_scale = Vector3(1, 1, 0)
-shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("4_tmwol")
+shader_parameter/normal_map = ExtResource("3_x1bir")
+shader_parameter/roughness = 0.42400002014
 
 [sub_resource type="Environment" id="Environment_pp2t7"]
 ambient_light_source = 3
@@ -28,7 +26,7 @@ shaded = true
 
 [node name="@Sprite3D@22772" type="Sprite3D" parent="Node3D" unique_id=1255809330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33936426, -0.014897421, 0.19342154)
-material_override = SubResource("ShaderMaterial_fthar")
+material_override = SubResource("ShaderMaterial_sju7m")
 pixel_size = 0.0133333
 shaded = true
 texture_filter = 2
@@ -39,7 +37,6 @@ script = ExtResource("3_fthar")
 environment = SubResource("Environment_pp2t7")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=366313434]
-transform = Transform3D(-0.97646755, -0.048215628, 0.21020532, 0.06649486, -0.994512, 0.08077353, 0.20515718, 0.09285045, 0.9743148, 0, 0.13, 1.214)
+transform = Transform3D(-0.94861215, -0.1388354, 0.28435865, 0.064045474, -0.96425146, -0.25713283, 0.3098924, -0.22570741, 0.9235924, -0.26947606, -0.431, 1.3366101)
 spot_range = 2.009
-spot_attenuation = 10.0
 spot_angle = 23.44
