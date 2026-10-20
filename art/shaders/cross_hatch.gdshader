@@ -16,9 +16,6 @@ uniform float hatch_4 : hint_range(0.0, 1.0, 0.005) = 0.01;
 uniform float hatch_density = 150;
 uniform float hatch_warp = 1.23;
 uniform float hatch_thickness = 0.16;
-uniform float edge_threshold = -.16;
-uniform float edge_thickness = 0.65;
-uniform float edge_warp = 0.01;
 uniform float steps_l : hint_range(1.0, 50.0, 1.0) = 4;
 uniform float level_c : hint_range(0.01, 15.0) = 15.0;
 uniform float level_h : hint_range(0.01, 0.1) = 0.05;
@@ -57,6 +54,12 @@ float posterize(float value, float levels) {
 	return round(value * levels) / levels;
 }
 
+vec2 sampleSphericalMap(vec3 direction) {
+    float u = atan(direction.z, direction.x) / (2.0 * 3.14159265) + 0.5;
+    float v = asin(direction.y) / 3.14159265 + 0.5;
+    return vec2(u, v);
+}
+
 void vertex() {
     POSITION = vec4(VERTEX.xy, 1.0, 1.0);
 }
@@ -64,21 +67,18 @@ void vertex() {
 void fragment() {
 	vec3 color;
 	vec2 uv = vec2(UV.x, 1.0 - UV.y);
-    vec2 ratio_uv = vec2(uv.x, uv.y * VIEWPORT_SIZE.y / VIEWPORT_SIZE.x);
 	float value = rgb_to_oklch(texture(screen_texture, uv).xyz).r;
-
-    //Draw outlines
-	vec2 edge_uv = uv;
-	float edgesDetected = draw_edges(screen_texture, uv + get_noise(uv + vec2(0.325f))*edge_warp, VIEWPORT_SIZE/edge_thickness);
-	edgesDetected = step(edge_threshold, edgesDetected); //remove phantom edges
+    vec4 viewRay = INV_PROJECTION_MATRIX * vec4(uv*2.0 - 1.0, -1.0, 1.0); //clip * inverse projection
+    viewRay = vec4(viewRay.xy, -1.0, 0.0);
+    vec2 hatch_uv = sampleSphericalMap(normalize(mat3(INV_VIEW_MATRIX) * viewRay.xyz)); // Transform to camera-surrounding space
 
     //Hatch to appropriate values
     float hatching = 1.0;
 	float sampled_thickness = mix(hatch_thickness, 1.0, texture(value_to_thickness, vec2(value)).r); // get thickness curve from texture
-    hatching *= hatch(ratio_uv, hatch_1, value, sampled_thickness, 3.0*PI/4.0, vec2(0.4f));
-    hatching *= hatch(ratio_uv, hatch_2, value, sampled_thickness, PI/4.0, vec2(0));
-    hatching *= hatch(ratio_uv, hatch_3, value, sampled_thickness, 0, vec2(0));
-    hatching *= hatch(ratio_uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
+    hatching *= hatch(hatch_uv, hatch_1, value, sampled_thickness, 3.0*PI/4.0, vec2(0.4f));
+    hatching *= hatch(hatch_uv, hatch_2, value, sampled_thickness, PI/4.0, vec2(0));
+    hatching *= hatch(hatch_uv, hatch_3, value, sampled_thickness, 0, vec2(0));
+    hatching *= hatch(hatch_uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
 
     //Fill color
 	vec3 oklch = rgb_to_oklch(texture(screen_texture, uv + get_noise(uv + vec2(0.125f))*color_boil).xyz); //convert to oklab color space
@@ -86,10 +86,8 @@ void fragment() {
     float oklch_mask = step(0.01, oklch.r + oklch.g); //get anywhere that isn't black
     
 	//compose
-	color = mix(vec3(1.0), get_nearest_color(oklch_to_rgb(oklch)), oklch_mask) //place colors or white
-			*hatching //hatch
-			*edgesDetected; //draw lines
-
+	color = mix(vec3(1.0), get_nearest_color(oklch_to_rgb(oklch)), oklch_mask)*hatching;
+	
 	//Just show hatch gray-scale if desired
 	if (preview_hatch_levels) {
 		float level = 0.0;
