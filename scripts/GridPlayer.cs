@@ -6,6 +6,7 @@ public partial class GridPlayer : Node3D
     [Export] public float StepSize = 1f;
     [Export] public float RayHeight = 0.5f;
     [Export] public uint CollisionMask = 1;
+    [Export] public float rotationWeight = .2f;
 
     // movement variables
     private Vector3 realPosition;
@@ -87,7 +88,7 @@ public partial class GridPlayer : Node3D
         // I'll fix this later, I'm just learning to use quaternions - betto
         Quaternion a = new(Transform.Basis);
         Quaternion b = new(realRotation.Basis);
-        Quaternion C = a.Slerp(b, .4f);
+        Quaternion C = a.Slerp(b, rotationWeight);
         Transform3D other = Transform;
         other.Basis = new(C);
         Transform = other;
