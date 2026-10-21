@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="SWE Horror"
-run/main_scene="res://scenes/movement_test.tscn"
+run/main_scene="uid://bgw8crkak14p1"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/viewport_width=768
+window/size/viewport_height=432
+window/size/resizable=false
+window/stretch/mode="viewport"
 
 [dotnet]
 
