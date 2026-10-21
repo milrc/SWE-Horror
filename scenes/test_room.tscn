@@ -5,724 +5,482 @@
 [ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="3_mous7"]
 [ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_sg3ht"]
 [ext_resource type="Texture2D" uid="uid://p5nosxpnbhqs" path="res://art/dev_room/dev_door_frame.png" id="5_crnqe"]
-[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="6_crnqe"]
-[ext_resource type="Texture2D" uid="uid://gedfwftwn0ou" path="res://art/dev_room/normal_wall.png" id="6_p0w5i"]
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="6_sg3ht"]
-[ext_resource type="Texture2D" uid="uid://la8htacac1sa" path="res://art/dev_room/normal_map_test.png" id="6_xsufa"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="6_xsufa"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="7_crnqe"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="8_crnqe"]
+[ext_resource type="Shader" uid="uid://bgbx0bdvdq54j" path="res://art/shaders/cross_hatch.gdshader" id="12_kobp4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsufa"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("3_mous7")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p0w5i"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kobp4"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w86v4"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l3qxk"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4bnm5"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jcauo"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fqsy6"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ixbf"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ltkbo"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pjeai"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vhqmy"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_48p6b"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_udknh"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y8oa5"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vke22"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_378j0"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ym3gy"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym3gy"]
+size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs8wx"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpyqm"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0e3n"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1hqm2"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ehtk"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o53a8"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_edc85"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_te8hy"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gop6d"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t7kom"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hpj8l"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8w4d7"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5ck4"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x7vqm"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h1vtn"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_356av"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym3gy"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs8wx"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cpyqm"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0e3n"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1hqm2"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ehtk"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o53a8"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edc85"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_te8hy"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gop6d"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7kom"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpj8l"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8w4d7"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5ck4"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7vqm"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1vtn"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_356av"]
+size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xp6dq"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w0y1d"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2wqth"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("3_mous7")
-shader_parameter/normal_map = ExtResource("6_xsufa")
-shader_parameter/roughness = 0.278
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3oqd4"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+shader_parameter/roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_onpe6"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_img5r"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7f344"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhvqj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f344"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhvqj"]
+size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2jtde"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5evqs"]
-size = Vector3(1, 1, 0.05)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5evqs"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nuwur"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vn418"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+shader_parameter/roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_257fl"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_de726"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n2xq3"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+shader_parameter/roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d8c5l"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_scbp6"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader_parameter/roughness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4btfy"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ongdj"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4btfy"]
 size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ongdj"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mfw4g"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0veah"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uqffj"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0veah"]
 size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqffj"]
+render_priority = 0
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("1_8uh7m")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dkccr"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader = ExtResource("6_xsufa")
+shader_parameter/texture_albedo = ExtResource("4_sg3ht")
+shader_parameter/roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2wq4"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0hbt4"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efhuw"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+shader_parameter/roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cenwd"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_480yw"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader_parameter/roughness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x3ys"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
+[sub_resource type="BoxShape3D" id="BoxShape3D_1x3ys"]
+size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5cy4v"]
 render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nqd3"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vudd4"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1clps"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g2jkh"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcg4p"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jly3p"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gpkdo"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6ako"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnrk2"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qf1ha"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_seb6f"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mqde"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gdpm"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4cu1j"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rnaai"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7hbs"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0gfuo"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqa5q"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoe5n"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_joa7t"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnby5"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gf2gs"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4trr8"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fl0ua"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4l4qs"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jywy3"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_furc0"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrfvv"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmhcy"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8bn7"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w2cke"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgl54"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1rbn"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yhb34"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_innq7"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8j16g"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wgg08"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gseha"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ncbqo"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6etyb"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bd5fw"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w40fi"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4v72d"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqa57"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a8d14"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1s11"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjbt1"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fclup"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdbmb"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_idxcq"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gx8x4"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gyr3p"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qipfg"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("4_sg3ht")
-shader_parameter/roughness = 0.356
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w7yw2"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3afr"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f7xus"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0mrq"]
-render_priority = 0
-shader = ExtResource("6_crnqe")
-shader_parameter/texture_albedo = ExtResource("1_8uh7m")
-shader_parameter/normal_map = ExtResource("6_p0w5i")
-shader_parameter/roughness = 0.376
+shader_parameter/roughness = 0.0
 
 [sub_resource type="Environment" id="Environment_iws7x"]
 ambient_light_source = 2
 ambient_light_color = Color(0.101240985, 0.101240985, 0.101240985, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w86v4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kobp4"]
+noise = SubResource("FastNoiseLite_w86v4")
+seamless = true
+
+[sub_resource type="Curve" id="Curve_p0w5i"]
+_data = [Vector2(0, 0.79464287), 0.0, -44.79047, 0, 0, Vector2(0.054726362, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xsufa"]
+curve = SubResource("Curve_p0w5i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx1s5"]
+render_priority = 1
+shader = ExtResource("12_kobp4")
+shader_parameter/noise = SubResource("NoiseTexture2D_kobp4")
+shader_parameter/preview_hatch_levels = false
+shader_parameter/hatch_1 = 0.375
+shader_parameter/hatch_2 = 0.205
+shader_parameter/hatch_3 = 0.11999999731776
+shader_parameter/hatch_4 = 0.01
+shader_parameter/hatch_density = 150.0
+shader_parameter/hatch_warp = 1.23
+shader_parameter/hatch_thickness = 0.16
+shader_parameter/edge_threshold = -0.16
+shader_parameter/edge_thickness = 0.65000000968578
+shader_parameter/edge_warp = 0.01
+shader_parameter/steps_l = 4.0
+shader_parameter/level_c = 15.0
+shader_parameter/level_h = 0.05000000167648
+shader_parameter/color_boil = 0.01
+shader_parameter/value_to_thickness = SubResource("CurveTexture_xsufa")
+
+[sub_resource type="QuadMesh" id="QuadMesh_401xl"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="Node3D" type="Node3D" unique_id=2035165107]
 
@@ -732,25 +490,37 @@ Wall = ExtResource("1_8uh7m")
 Floor = ExtResource("3_mous7")
 Ceiling = ExtResource("4_sg3ht")
 Door = ExtResource("5_crnqe")
-Wall_Normal = ExtResource("6_p0w5i")
-Floor_Normal = ExtResource("6_xsufa")
-Wall_Roughness = 0.376
-Floor_Roughness = 0.278
-Ceil_Roughness = 0.356
-Shader = ExtResource("6_crnqe")
-Width_X = 6
-Width_Z = 6
+Shader = ExtResource("6_xsufa")
+Width_X = 4
+Width_Z = 4
 Shaded = true
 
-[node name="Floor5" type="Node3D" parent="Room" unique_id=349449079 node_paths=PackedStringArray("Sprite")]
+[node name="Floor" type="Node3D" parent="Room" unique_id=1737141905 node_paths=PackedStringArray("Sprite")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23641")
+Sprite = NodePath("@Sprite3D@27584")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23641" type="Sprite3D" parent="Room/Floor5" unique_id=1907372853]
+[node name="@Sprite3D@27584" type="Sprite3D" parent="Room/Floor" unique_id=1737611547]
+material_override = SubResource("ShaderMaterial_xsufa")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_mous7")
+script = ExtResource("7_crnqe")
+
+[node name="Floor2" type="Node3D" parent="Room" unique_id=398548076 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@27586")
+shaded = true
+shader = ExtResource("6_xsufa")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@27586" type="Sprite3D" parent="Room/Floor2" unique_id=776664718]
 material_override = SubResource("ShaderMaterial_p0w5i")
 pixel_size = 0.013333334
 shaded = true
@@ -758,18 +528,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor6" type="Node3D" parent="Room" unique_id=307272134 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 1.5)
+[node name="Floor3" type="Node3D" parent="Room" unique_id=1990984828 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 2.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23643")
+Sprite = NodePath("@Sprite3D@27588")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23643" type="Sprite3D" parent="Room/Floor6" unique_id=313223349]
+[node name="@Sprite3D@27588" type="Sprite3D" parent="Room/Floor3" unique_id=1233478127]
 material_override = SubResource("ShaderMaterial_kobp4")
 pixel_size = 0.013333334
 shaded = true
@@ -777,18 +545,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor7" type="Node3D" parent="Room" unique_id=1498514490 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 2.5)
+[node name="Floor4" type="Node3D" parent="Room" unique_id=414103574 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23645")
+Sprite = NodePath("@Sprite3D@27590")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23645" type="Sprite3D" parent="Room/Floor7" unique_id=314993166]
+[node name="@Sprite3D@27590" type="Sprite3D" parent="Room/Floor4" unique_id=1629387134]
 material_override = SubResource("ShaderMaterial_w86v4")
 pixel_size = 0.013333334
 shaded = true
@@ -796,18 +562,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor8" type="Node3D" parent="Room" unique_id=1250047558 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 3.5)
+[node name="Floor9" type="Node3D" parent="Room" unique_id=950869433 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23647")
+Sprite = NodePath("@Sprite3D@27592")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23647" type="Sprite3D" parent="Room/Floor8" unique_id=383628548]
+[node name="@Sprite3D@27592" type="Sprite3D" parent="Room/Floor9" unique_id=582904580]
 material_override = SubResource("ShaderMaterial_l3qxk")
 pixel_size = 0.013333334
 shaded = true
@@ -815,18 +579,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor10" type="Node3D" parent="Room" unique_id=1781932603 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 4.5)
+[node name="Floor11" type="Node3D" parent="Room" unique_id=753301482 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 1.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23649")
+Sprite = NodePath("@Sprite3D@27594")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23649" type="Sprite3D" parent="Room/Floor10" unique_id=276578318]
+[node name="@Sprite3D@27594" type="Sprite3D" parent="Room/Floor11" unique_id=101643666]
 material_override = SubResource("ShaderMaterial_4bnm5")
 pixel_size = 0.013333334
 shaded = true
@@ -834,18 +596,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor12" type="Node3D" parent="Room" unique_id=326345261 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 5.5)
+[node name="Floor13" type="Node3D" parent="Room" unique_id=2060007688 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 2.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23651")
+Sprite = NodePath("@Sprite3D@27596")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23651" type="Sprite3D" parent="Room/Floor12" unique_id=462586393]
+[node name="@Sprite3D@27596" type="Sprite3D" parent="Room/Floor13" unique_id=66774544]
 material_override = SubResource("ShaderMaterial_jcauo")
 pixel_size = 0.013333334
 shaded = true
@@ -853,18 +613,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor17" type="Node3D" parent="Room" unique_id=672737925 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 0.5)
+[node name="Floor14" type="Node3D" parent="Room" unique_id=1429210932 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23653")
+Sprite = NodePath("@Sprite3D@27598")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23653" type="Sprite3D" parent="Room/Floor17" unique_id=1541316720]
+[node name="@Sprite3D@27598" type="Sprite3D" parent="Room/Floor14" unique_id=1609956659]
 material_override = SubResource("ShaderMaterial_fqsy6")
 pixel_size = 0.013333334
 shaded = true
@@ -872,18 +630,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor21" type="Node3D" parent="Room" unique_id=1604556402 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 1.5)
+[node name="Floor15" type="Node3D" parent="Room" unique_id=749847419 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23655")
+Sprite = NodePath("@Sprite3D@27600")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23655" type="Sprite3D" parent="Room/Floor21" unique_id=454420418]
+[node name="@Sprite3D@27600" type="Sprite3D" parent="Room/Floor15" unique_id=296819712]
 material_override = SubResource("ShaderMaterial_4ixbf")
 pixel_size = 0.013333334
 shaded = true
@@ -891,18 +647,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor23" type="Node3D" parent="Room" unique_id=1685304520 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 2.5)
+[node name="Floor16" type="Node3D" parent="Room" unique_id=386405849 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 1.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23657")
+Sprite = NodePath("@Sprite3D@27602")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23657" type="Sprite3D" parent="Room/Floor23" unique_id=345882954]
+[node name="@Sprite3D@27602" type="Sprite3D" parent="Room/Floor16" unique_id=1164323903]
 material_override = SubResource("ShaderMaterial_ltkbo")
 pixel_size = 0.013333334
 shaded = true
@@ -910,18 +664,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor25" type="Node3D" parent="Room" unique_id=1452774499 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 3.5)
+[node name="Floor18" type="Node3D" parent="Room" unique_id=1566814108 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 2.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23659")
+Sprite = NodePath("@Sprite3D@27604")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23659" type="Sprite3D" parent="Room/Floor25" unique_id=1010047706]
+[node name="@Sprite3D@27604" type="Sprite3D" parent="Room/Floor18" unique_id=1400365989]
 material_override = SubResource("ShaderMaterial_pjeai")
 pixel_size = 0.013333334
 shaded = true
@@ -929,18 +681,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor26" type="Node3D" parent="Room" unique_id=2080002021 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 4.5)
+[node name="Floor19" type="Node3D" parent="Room" unique_id=376766834 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23661")
+Sprite = NodePath("@Sprite3D@27606")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23661" type="Sprite3D" parent="Room/Floor26" unique_id=134646929]
+[node name="@Sprite3D@27606" type="Sprite3D" parent="Room/Floor19" unique_id=954823842]
 material_override = SubResource("ShaderMaterial_vhqmy")
 pixel_size = 0.013333334
 shaded = true
@@ -948,18 +698,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor27" type="Node3D" parent="Room" unique_id=2037765487 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 5.5)
+[node name="Floor20" type="Node3D" parent="Room" unique_id=293743281 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23663")
+Sprite = NodePath("@Sprite3D@27608")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23663" type="Sprite3D" parent="Room/Floor27" unique_id=548612606]
+[node name="@Sprite3D@27608" type="Sprite3D" parent="Room/Floor20" unique_id=1310734946]
 material_override = SubResource("ShaderMaterial_48p6b")
 pixel_size = 0.013333334
 shaded = true
@@ -967,18 +715,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor28" type="Node3D" parent="Room" unique_id=991553097 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 0.5)
+[node name="Floor22" type="Node3D" parent="Room" unique_id=1359509356 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 1.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23665")
+Sprite = NodePath("@Sprite3D@27610")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23665" type="Sprite3D" parent="Room/Floor28" unique_id=168968046]
+[node name="@Sprite3D@27610" type="Sprite3D" parent="Room/Floor22" unique_id=1615269145]
 material_override = SubResource("ShaderMaterial_udknh")
 pixel_size = 0.013333334
 shaded = true
@@ -986,18 +732,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor29" type="Node3D" parent="Room" unique_id=1155206814 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 1.5)
+[node name="Floor24" type="Node3D" parent="Room" unique_id=1426066199 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 2.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23667")
+Sprite = NodePath("@Sprite3D@27612")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23667" type="Sprite3D" parent="Room/Floor29" unique_id=1909008577]
+[node name="@Sprite3D@27612" type="Sprite3D" parent="Room/Floor24" unique_id=2075368905]
 material_override = SubResource("ShaderMaterial_y8oa5")
 pixel_size = 0.013333334
 shaded = true
@@ -1005,18 +749,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor30" type="Node3D" parent="Room" unique_id=522262393 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 2.5)
+[node name="Floor32" type="Node3D" parent="Room" unique_id=1234339961 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23669")
+Sprite = NodePath("@Sprite3D@27614")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23669" type="Sprite3D" parent="Room/Floor30" unique_id=1920029963]
+[node name="@Sprite3D@27614" type="Sprite3D" parent="Room/Floor32" unique_id=2121498086]
 material_override = SubResource("ShaderMaterial_vke22")
 pixel_size = 0.013333334
 shaded = true
@@ -1024,417 +766,303 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("3_mous7")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor31" type="Node3D" parent="Room" unique_id=350360035 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 3.5)
+[node name="Ceiling" type="Node3D" parent="Room" unique_id=1047082737 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23671")
+Sprite = NodePath("@Sprite3D@27616")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23671" type="Sprite3D" parent="Room/Floor31" unique_id=1173715857]
+[node name="@Sprite3D@27616" type="Sprite3D" parent="Room/Ceiling" unique_id=265206662]
 material_override = SubResource("ShaderMaterial_378j0")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor33" type="Node3D" parent="Room" unique_id=1150144146 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23673")
+[node name="SWall" type="Node3D" parent="Room" unique_id=777143330 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27618")
+CollisionShape = NodePath("@StaticBody3D@27618/@CollisionShape3D@27619")
+Sprite = NodePath("@Sprite3D@27620")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23673" type="Sprite3D" parent="Room/Floor33" unique_id=99805257]
-material_override = SubResource("ShaderMaterial_ym3gy")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27618" type="StaticBody3D" parent="Room/SWall" unique_id=798189196]
 
-[node name="Floor34" type="Node3D" parent="Room" unique_id=997179746 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23675")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27619" type="CollisionShape3D" parent="Room/SWall/@StaticBody3D@27618" unique_id=140549565]
+shape = SubResource("BoxShape3D_ym3gy")
 
-[node name="@Sprite3D@23675" type="Sprite3D" parent="Room/Floor34" unique_id=1076309869]
+[node name="@Sprite3D@27620" type="Sprite3D" parent="Room/SWall" unique_id=299882388]
 material_override = SubResource("ShaderMaterial_qs8wx")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor35" type="Node3D" parent="Room" unique_id=1549403261 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23677")
+[node name="EWall" type="Node3D" parent="Room" unique_id=874860159 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27622")
+CollisionShape = NodePath("@StaticBody3D@27622/@CollisionShape3D@27623")
+Sprite = NodePath("@Sprite3D@27624")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23677" type="Sprite3D" parent="Room/Floor35" unique_id=141168551]
-material_override = SubResource("ShaderMaterial_cpyqm")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27622" type="StaticBody3D" parent="Room/EWall" unique_id=475589146]
 
-[node name="Floor36" type="Node3D" parent="Room" unique_id=2109040132 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23679")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27623" type="CollisionShape3D" parent="Room/EWall/@StaticBody3D@27622" unique_id=662140933]
+shape = SubResource("BoxShape3D_cpyqm")
 
-[node name="@Sprite3D@23679" type="Sprite3D" parent="Room/Floor36" unique_id=130666263]
+[node name="@Sprite3D@27624" type="Sprite3D" parent="Room/EWall" unique_id=1127136239]
 material_override = SubResource("ShaderMaterial_i0e3n")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor37" type="Node3D" parent="Room" unique_id=876175439 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 2.5)
+[node name="Ceiling2" type="Node3D" parent="Room" unique_id=1020641583 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 1.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23681")
+Sprite = NodePath("@Sprite3D@27626")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23681" type="Sprite3D" parent="Room/Floor37" unique_id=1808097987]
+[node name="@Sprite3D@27626" type="Sprite3D" parent="Room/Ceiling2" unique_id=2011101150]
 material_override = SubResource("ShaderMaterial_1hqm2")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor38" type="Node3D" parent="Room" unique_id=800060432 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23683")
+[node name="EWall2" type="Node3D" parent="Room" unique_id=74068495 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 1.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27628")
+CollisionShape = NodePath("@StaticBody3D@27628/@CollisionShape3D@27629")
+Sprite = NodePath("@Sprite3D@27630")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23683" type="Sprite3D" parent="Room/Floor38" unique_id=2130133144]
-material_override = SubResource("ShaderMaterial_5ehtk")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27628" type="StaticBody3D" parent="Room/EWall2" unique_id=567080082]
 
-[node name="Floor39" type="Node3D" parent="Room" unique_id=1217217482 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23685")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27629" type="CollisionShape3D" parent="Room/EWall2/@StaticBody3D@27628" unique_id=200267114]
+shape = SubResource("BoxShape3D_5ehtk")
 
-[node name="@Sprite3D@23685" type="Sprite3D" parent="Room/Floor39" unique_id=1431052959]
+[node name="@Sprite3D@27630" type="Sprite3D" parent="Room/EWall2" unique_id=1679557712]
 material_override = SubResource("ShaderMaterial_o53a8")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor40" type="Node3D" parent="Room" unique_id=465468326 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 5.5)
+[node name="Ceiling3" type="Node3D" parent="Room" unique_id=75392127 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 2.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23687")
+Sprite = NodePath("@Sprite3D@27632")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23687" type="Sprite3D" parent="Room/Floor40" unique_id=511895680]
+[node name="@Sprite3D@27632" type="Sprite3D" parent="Room/Ceiling3" unique_id=1827015760]
 material_override = SubResource("ShaderMaterial_edc85")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor41" type="Node3D" parent="Room" unique_id=473447608 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23689")
+[node name="EWall3" type="Node3D" parent="Room" unique_id=1874806404 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 2.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27634")
+CollisionShape = NodePath("@StaticBody3D@27634/@CollisionShape3D@27635")
+Sprite = NodePath("@Sprite3D@27636")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23689" type="Sprite3D" parent="Room/Floor41" unique_id=2054536993]
-material_override = SubResource("ShaderMaterial_te8hy")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27634" type="StaticBody3D" parent="Room/EWall3" unique_id=1659295744]
 
-[node name="Floor42" type="Node3D" parent="Room" unique_id=530926754 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23691")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27635" type="CollisionShape3D" parent="Room/EWall3/@StaticBody3D@27634" unique_id=882460740]
+shape = SubResource("BoxShape3D_te8hy")
 
-[node name="@Sprite3D@23691" type="Sprite3D" parent="Room/Floor42" unique_id=894197563]
+[node name="@Sprite3D@27636" type="Sprite3D" parent="Room/EWall3" unique_id=340080638]
 material_override = SubResource("ShaderMaterial_gop6d")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor43" type="Node3D" parent="Room" unique_id=252786899 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 2.5)
+[node name="Ceiling4" type="Node3D" parent="Room" unique_id=629877279 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23693")
+Sprite = NodePath("@Sprite3D@27638")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23693" type="Sprite3D" parent="Room/Floor43" unique_id=692337773]
+[node name="@Sprite3D@27638" type="Sprite3D" parent="Room/Ceiling4" unique_id=1657320022]
 material_override = SubResource("ShaderMaterial_t7kom")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor44" type="Node3D" parent="Room" unique_id=585759538 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23695")
+[node name="NWall" type="Node3D" parent="Room" unique_id=901029662 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5, 0.5, 4)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27640")
+CollisionShape = NodePath("@StaticBody3D@27640/@CollisionShape3D@27641")
+Sprite = NodePath("@Sprite3D@27642")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23695" type="Sprite3D" parent="Room/Floor44" unique_id=1520309090]
-material_override = SubResource("ShaderMaterial_hpj8l")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27640" type="StaticBody3D" parent="Room/NWall" unique_id=995159377]
 
-[node name="Floor45" type="Node3D" parent="Room" unique_id=1633813856 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23697")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27641" type="CollisionShape3D" parent="Room/NWall/@StaticBody3D@27640" unique_id=350009039]
+shape = SubResource("BoxShape3D_hpj8l")
 
-[node name="@Sprite3D@23697" type="Sprite3D" parent="Room/Floor45" unique_id=1377022556]
+[node name="@Sprite3D@27642" type="Sprite3D" parent="Room/NWall" unique_id=983079714]
 material_override = SubResource("ShaderMaterial_8w4d7")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor46" type="Node3D" parent="Room" unique_id=407864113 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23699")
+[node name="EWall4" type="Node3D" parent="Room" unique_id=1982478204 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 3.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27644")
+CollisionShape = NodePath("@StaticBody3D@27644/@CollisionShape3D@27645")
+Sprite = NodePath("@Sprite3D@27646")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23699" type="Sprite3D" parent="Room/Floor46" unique_id=1981178109]
-material_override = SubResource("ShaderMaterial_k5ck4")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27644" type="StaticBody3D" parent="Room/EWall4" unique_id=1342992106]
 
-[node name="Floor47" type="Node3D" parent="Room" unique_id=1383404115 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 0, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23701")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27645" type="CollisionShape3D" parent="Room/EWall4/@StaticBody3D@27644" unique_id=1235555117]
+shape = SubResource("BoxShape3D_k5ck4")
 
-[node name="@Sprite3D@23701" type="Sprite3D" parent="Room/Floor47" unique_id=415485267]
+[node name="@Sprite3D@27646" type="Sprite3D" parent="Room/EWall4" unique_id=1857294994]
 material_override = SubResource("ShaderMaterial_x7vqm")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor48" type="Node3D" parent="Room" unique_id=165282664 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 0, 1.5)
+[node name="Ceiling5" type="Node3D" parent="Room" unique_id=430019691 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23703")
+Sprite = NodePath("@Sprite3D@27648")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23703" type="Sprite3D" parent="Room/Floor48" unique_id=2115188930]
+[node name="@Sprite3D@27648" type="Sprite3D" parent="Room/Ceiling5" unique_id=2080951240]
 material_override = SubResource("ShaderMaterial_h1vtn")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor49" type="Node3D" parent="Room" unique_id=752720809 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 0, 2.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23705")
+[node name="SWall2" type="Node3D" parent="Room" unique_id=427924897 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27650")
+CollisionShape = NodePath("@StaticBody3D@27650/@CollisionShape3D@27651")
+Sprite = NodePath("@Sprite3D@27652")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23705" type="Sprite3D" parent="Room/Floor49" unique_id=2074236075]
-material_override = SubResource("ShaderMaterial_356av")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("3_mous7")
-script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
+[node name="@StaticBody3D@27650" type="StaticBody3D" parent="Room/SWall2" unique_id=1486249295]
 
-[node name="Floor50" type="Node3D" parent="Room" unique_id=1234487020 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 0, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23707")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27651" type="CollisionShape3D" parent="Room/SWall2/@StaticBody3D@27650" unique_id=382893391]
+shape = SubResource("BoxShape3D_356av")
 
-[node name="@Sprite3D@23707" type="Sprite3D" parent="Room/Floor50" unique_id=1645253739]
+[node name="@Sprite3D@27652" type="Sprite3D" parent="Room/SWall2" unique_id=1824209874]
 material_override = SubResource("ShaderMaterial_xp6dq")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor51" type="Node3D" parent="Room" unique_id=1818131444 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 0, 4.5)
+[node name="Ceiling6" type="Node3D" parent="Room" unique_id=643154345 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 1.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23709")
+Sprite = NodePath("@Sprite3D@27654")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23709" type="Sprite3D" parent="Room/Floor51" unique_id=154666155]
+[node name="@Sprite3D@27654" type="Sprite3D" parent="Room/Ceiling6" unique_id=997837922]
 material_override = SubResource("ShaderMaterial_w0y1d")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Floor52" type="Node3D" parent="Room" unique_id=73551901 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 0, 5.5)
+[node name="Ceiling7" type="Node3D" parent="Room" unique_id=177483859 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 2.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23711")
+Sprite = NodePath("@Sprite3D@27656")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23711" type="Sprite3D" parent="Room/Floor52" unique_id=12919427]
+[node name="@Sprite3D@27656" type="Sprite3D" parent="Room/Ceiling7" unique_id=619184675]
 material_override = SubResource("ShaderMaterial_2wqth")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("3_mous7")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.278
-normal = ExtResource("6_xsufa")
 
-[node name="Ceiling" type="Node3D" parent="Room" unique_id=278184432 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 0.5)
+[node name="Ceiling8" type="Node3D" parent="Room" unique_id=676840291 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23713")
+Sprite = NodePath("@Sprite3D@27658")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23713" type="Sprite3D" parent="Room/Ceiling" unique_id=886879325]
+[node name="@Sprite3D@27658" type="Sprite3D" parent="Room/Ceiling8" unique_id=617567878]
 material_override = SubResource("ShaderMaterial_3oqd4")
 pixel_size = 0.013333334
 shaded = true
@@ -1442,24 +1070,23 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="SWall" type="Node3D" parent="Room" unique_id=1914644475 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+[node name="NWall2" type="Node3D" parent="Room" unique_id=691253850 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0.5, 4)
 script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23715")
-CollisionShape = NodePath("@StaticBody3D@23715/@CollisionShape3D@23716")
-Sprite = NodePath("@Sprite3D@23717")
+StaticBody = NodePath("@StaticBody3D@27660")
+CollisionShape = NodePath("@StaticBody3D@27660/@CollisionShape3D@27661")
+Sprite = NodePath("@Sprite3D@27662")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23715" type="StaticBody3D" parent="Room/SWall" unique_id=1218997619]
+[node name="@StaticBody3D@27660" type="StaticBody3D" parent="Room/NWall2" unique_id=197963270]
 
-[node name="@CollisionShape3D@23716" type="CollisionShape3D" parent="Room/SWall/@StaticBody3D@23715" unique_id=1341011441]
+[node name="@CollisionShape3D@27661" type="CollisionShape3D" parent="Room/NWall2/@StaticBody3D@27660" unique_id=256632366]
 shape = SubResource("BoxShape3D_onpe6")
 
-[node name="@Sprite3D@23717" type="Sprite3D" parent="Room/SWall" unique_id=1645312113]
+[node name="@Sprite3D@27662" type="Sprite3D" parent="Room/NWall2" unique_id=743652659]
 material_override = SubResource("ShaderMaterial_img5r")
 pixel_size = 0.013333334
 shaded = true
@@ -1467,88 +1094,91 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="EWall" type="Node3D" parent="Room" unique_id=12200636 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23719")
-CollisionShape = NodePath("@StaticBody3D@23719/@CollisionShape3D@23720")
-Sprite = NodePath("@Sprite3D@23721")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23719" type="StaticBody3D" parent="Room/EWall" unique_id=1222914483]
-
-[node name="@CollisionShape3D@23720" type="CollisionShape3D" parent="Room/EWall/@StaticBody3D@23719" unique_id=379706350]
-shape = SubResource("BoxShape3D_7f344")
-
-[node name="@Sprite3D@23721" type="Sprite3D" parent="Room/EWall" unique_id=1668013892]
-material_override = SubResource("ShaderMaterial_rhvqj")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling2" type="Node3D" parent="Room" unique_id=1128572838 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 1.5)
+[node name="Ceiling9" type="Node3D" parent="Room" unique_id=1395745137 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23723")
+Sprite = NodePath("@Sprite3D@27664")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23723" type="Sprite3D" parent="Room/Ceiling2" unique_id=1360589824]
-material_override = SubResource("ShaderMaterial_2jtde")
+[node name="@Sprite3D@27664" type="Sprite3D" parent="Room/Ceiling9" unique_id=1120700982]
+material_override = SubResource("ShaderMaterial_7f344")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="EWall2" type="Node3D" parent="Room" unique_id=471144436 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 1.5)
+[node name="SWall3" type="Node3D" parent="Room" unique_id=1595497825 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0)
 script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23725")
-CollisionShape = NodePath("@StaticBody3D@23725/@CollisionShape3D@23726")
-Sprite = NodePath("@Sprite3D@23727")
+StaticBody = NodePath("@StaticBody3D@27666")
+CollisionShape = NodePath("@StaticBody3D@27666/@CollisionShape3D@27667")
+Sprite = NodePath("@Sprite3D@27668")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23725" type="StaticBody3D" parent="Room/EWall2" unique_id=1485008463]
+[node name="@StaticBody3D@27666" type="StaticBody3D" parent="Room/SWall3" unique_id=2135070937]
 
-[node name="@CollisionShape3D@23726" type="CollisionShape3D" parent="Room/EWall2/@StaticBody3D@23725" unique_id=1400812722]
-shape = SubResource("BoxShape3D_5evqs")
+[node name="@CollisionShape3D@27667" type="CollisionShape3D" parent="Room/SWall3/@StaticBody3D@27666" unique_id=1678673322]
+shape = SubResource("BoxShape3D_rhvqj")
 
-[node name="@Sprite3D@23727" type="Sprite3D" parent="Room/EWall2" unique_id=107721328]
-material_override = SubResource("ShaderMaterial_nuwur")
+[node name="@Sprite3D@27668" type="Sprite3D" parent="Room/SWall3" unique_id=850508512]
+material_override = SubResource("ShaderMaterial_2jtde")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="Ceiling3" type="Node3D" parent="Room" unique_id=159741393 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 2.5)
+[node name="Ceiling10" type="Node3D" parent="Room" unique_id=1627866399 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 1.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23729")
+Sprite = NodePath("@Sprite3D@27670")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23729" type="Sprite3D" parent="Room/Ceiling3" unique_id=1223337162]
+[node name="@Sprite3D@27670" type="Sprite3D" parent="Room/Ceiling10" unique_id=998848999]
+material_override = SubResource("ShaderMaterial_5evqs")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling11" type="Node3D" parent="Room" unique_id=1017002096 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@27672")
+shaded = true
+shader = ExtResource("6_xsufa")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@27672" type="Sprite3D" parent="Room/Ceiling11" unique_id=43011753]
+material_override = SubResource("ShaderMaterial_nuwur")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_sg3ht")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling12" type="Node3D" parent="Room" unique_id=376897759 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 3.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@27674")
+shaded = true
+shader = ExtResource("6_xsufa")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@27674" type="Sprite3D" parent="Room/Ceiling12" unique_id=1471537558]
 material_override = SubResource("ShaderMaterial_vn418")
 pixel_size = 0.013333334
 shaded = true
@@ -1556,24 +1186,23 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="EWall3" type="Node3D" parent="Room" unique_id=92349312 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 2.5)
+[node name="NWall3" type="Node3D" parent="Room" unique_id=1386832417 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5, 0.5, 4)
 script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23731")
-CollisionShape = NodePath("@StaticBody3D@23731/@CollisionShape3D@23732")
-Sprite = NodePath("@Sprite3D@23733")
+StaticBody = NodePath("@StaticBody3D@27676")
+CollisionShape = NodePath("@StaticBody3D@27676/@CollisionShape3D@27677")
+Sprite = NodePath("@Sprite3D@27678")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23731" type="StaticBody3D" parent="Room/EWall3" unique_id=562204499]
+[node name="@StaticBody3D@27676" type="StaticBody3D" parent="Room/NWall3" unique_id=106686958]
 
-[node name="@CollisionShape3D@23732" type="CollisionShape3D" parent="Room/EWall3/@StaticBody3D@23731" unique_id=1801222283]
+[node name="@CollisionShape3D@27677" type="CollisionShape3D" parent="Room/NWall3/@StaticBody3D@27676" unique_id=1352094897]
 shape = SubResource("BoxShape3D_257fl")
 
-[node name="@Sprite3D@23733" type="Sprite3D" parent="Room/EWall3" unique_id=1807296195]
+[node name="@Sprite3D@27678" type="Sprite3D" parent="Room/NWall3" unique_id=64908372]
 material_override = SubResource("ShaderMaterial_de726")
 pixel_size = 0.013333334
 shaded = true
@@ -1581,18 +1210,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="Ceiling4" type="Node3D" parent="Room" unique_id=1666184317 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 3.5)
+[node name="Ceiling13" type="Node3D" parent="Room" unique_id=1419107318 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 0.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23735")
+Sprite = NodePath("@Sprite3D@27680")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23735" type="Sprite3D" parent="Room/Ceiling4" unique_id=258244696]
+[node name="@Sprite3D@27680" type="Sprite3D" parent="Room/Ceiling13" unique_id=1165575594]
 material_override = SubResource("ShaderMaterial_n2xq3")
 pixel_size = 0.013333334
 shaded = true
@@ -1600,24 +1227,23 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="EWall4" type="Node3D" parent="Room" unique_id=1734902320 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 3.5)
+[node name="SWall4" type="Node3D" parent="Room" unique_id=1048288340 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 0)
 script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23737")
-CollisionShape = NodePath("@StaticBody3D@23737/@CollisionShape3D@23738")
-Sprite = NodePath("@Sprite3D@23739")
+StaticBody = NodePath("@StaticBody3D@27682")
+CollisionShape = NodePath("@StaticBody3D@27682/@CollisionShape3D@27683")
+Sprite = NodePath("@Sprite3D@27684")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23737" type="StaticBody3D" parent="Room/EWall4" unique_id=1874955265]
+[node name="@StaticBody3D@27682" type="StaticBody3D" parent="Room/SWall4" unique_id=524466909]
 
-[node name="@CollisionShape3D@23738" type="CollisionShape3D" parent="Room/EWall4/@StaticBody3D@23737" unique_id=403128110]
+[node name="@CollisionShape3D@27683" type="CollisionShape3D" parent="Room/SWall4/@StaticBody3D@27682" unique_id=652838823]
 shape = SubResource("BoxShape3D_d8c5l")
 
-[node name="@Sprite3D@23739" type="Sprite3D" parent="Room/EWall4" unique_id=1697727243]
+[node name="@Sprite3D@27684" type="Sprite3D" parent="Room/SWall4" unique_id=1231332585]
 material_override = SubResource("ShaderMaterial_scbp6")
 pixel_size = 0.013333334
 shaded = true
@@ -1625,113 +1251,105 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="Ceiling5" type="Node3D" parent="Room" unique_id=634280393 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23741")
+[node name="WWall" type="Node3D" parent="Room" unique_id=191059250 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0.5, 0.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27686")
+CollisionShape = NodePath("@StaticBody3D@27686/@CollisionShape3D@27687")
+Sprite = NodePath("@Sprite3D@27688")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23741" type="Sprite3D" parent="Room/Ceiling5" unique_id=1420295721]
-material_override = SubResource("ShaderMaterial_4btfy")
+[node name="@StaticBody3D@27686" type="StaticBody3D" parent="Room/WWall" unique_id=1189289991]
+
+[node name="@CollisionShape3D@27687" type="CollisionShape3D" parent="Room/WWall/@StaticBody3D@27686" unique_id=115796810]
+shape = SubResource("BoxShape3D_4btfy")
+
+[node name="@Sprite3D@27688" type="Sprite3D" parent="Room/WWall" unique_id=1938401816]
+material_override = SubResource("ShaderMaterial_ongdj")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("4_sg3ht")
+texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="EWall5" type="Node3D" parent="Room" unique_id=1782427561 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 4.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23743")
-CollisionShape = NodePath("@StaticBody3D@23743/@CollisionShape3D@23744")
-Sprite = NodePath("@Sprite3D@23745")
+[node name="Ceiling14" type="Node3D" parent="Room" unique_id=498139514 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 1.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@27690")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23743" type="StaticBody3D" parent="Room/EWall5" unique_id=1299246198]
-
-[node name="@CollisionShape3D@23744" type="CollisionShape3D" parent="Room/EWall5/@StaticBody3D@23743" unique_id=1641651573]
-shape = SubResource("BoxShape3D_ongdj")
-
-[node name="@Sprite3D@23745" type="Sprite3D" parent="Room/EWall5" unique_id=116424866]
+[node name="@Sprite3D@27690" type="Sprite3D" parent="Room/Ceiling14" unique_id=333100474]
 material_override = SubResource("ShaderMaterial_mfw4g")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("1_8uh7m")
+texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="Ceiling6" type="Node3D" parent="Room" unique_id=488720937 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23747")
+[node name="WWall2" type="Node3D" parent="Room" unique_id=1659285913 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0.5, 1.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27692")
+CollisionShape = NodePath("@StaticBody3D@27692/@CollisionShape3D@27693")
+Sprite = NodePath("@Sprite3D@27694")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23747" type="Sprite3D" parent="Room/Ceiling6" unique_id=674518487]
-material_override = SubResource("ShaderMaterial_0veah")
+[node name="@StaticBody3D@27692" type="StaticBody3D" parent="Room/WWall2" unique_id=219204541]
+
+[node name="@CollisionShape3D@27693" type="CollisionShape3D" parent="Room/WWall2/@StaticBody3D@27692" unique_id=1174477904]
+shape = SubResource("BoxShape3D_0veah")
+
+[node name="@Sprite3D@27694" type="Sprite3D" parent="Room/WWall2" unique_id=2051986318]
+material_override = SubResource("ShaderMaterial_uqffj")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_8uh7m")
+script = ExtResource("7_crnqe")
+
+[node name="Ceiling15" type="Node3D" parent="Room" unique_id=1776468312 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 2.5)
+script = ExtResource("6_sg3ht")
+Sprite = NodePath("@Sprite3D@27696")
+shaded = true
+shader = ExtResource("6_xsufa")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@27696" type="Sprite3D" parent="Room/Ceiling15" unique_id=394536749]
+material_override = SubResource("ShaderMaterial_dkccr")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="NWall" type="Node3D" parent="Room" unique_id=757265623 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5, 0.5, 6)
+[node name="WWall3" type="Node3D" parent="Room" unique_id=1697413261 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0.5, 2.5)
 script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23749")
-CollisionShape = NodePath("@StaticBody3D@23749/@CollisionShape3D@23750")
-Sprite = NodePath("@Sprite3D@23751")
+StaticBody = NodePath("@StaticBody3D@27698")
+CollisionShape = NodePath("@StaticBody3D@27698/@CollisionShape3D@27699")
+Sprite = NodePath("@Sprite3D@27700")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23749" type="StaticBody3D" parent="Room/NWall" unique_id=1118165717]
+[node name="@StaticBody3D@27698" type="StaticBody3D" parent="Room/WWall3" unique_id=424798070]
 
-[node name="@CollisionShape3D@23750" type="CollisionShape3D" parent="Room/NWall/@StaticBody3D@23749" unique_id=1969384089]
-shape = SubResource("BoxShape3D_uqffj")
-
-[node name="@Sprite3D@23751" type="Sprite3D" parent="Room/NWall" unique_id=497486865]
-material_override = SubResource("ShaderMaterial_dkccr")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="EWall6" type="Node3D" parent="Room" unique_id=1988094975 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 5.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23753")
-CollisionShape = NodePath("@StaticBody3D@23753/@CollisionShape3D@23754")
-Sprite = NodePath("@Sprite3D@23755")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23753" type="StaticBody3D" parent="Room/EWall6" unique_id=1008058422]
-
-[node name="@CollisionShape3D@23754" type="CollisionShape3D" parent="Room/EWall6/@StaticBody3D@23753" unique_id=1104541824]
+[node name="@CollisionShape3D@27699" type="CollisionShape3D" parent="Room/WWall3/@StaticBody3D@27698" unique_id=1155770064]
 shape = SubResource("BoxShape3D_c2wq4")
 
-[node name="@Sprite3D@23755" type="Sprite3D" parent="Room/EWall6" unique_id=471440076]
+[node name="@Sprite3D@27700" type="Sprite3D" parent="Room/WWall3" unique_id=857791180]
 material_override = SubResource("ShaderMaterial_0hbt4")
 pixel_size = 0.013333334
 shaded = true
@@ -1739,18 +1357,16 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="Ceiling7" type="Node3D" parent="Room" unique_id=1684780613 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 0.5)
+[node name="Ceiling16" type="Node3D" parent="Room" unique_id=936517382 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 3.5)
 script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23757")
+Sprite = NodePath("@Sprite3D@27702")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23757" type="Sprite3D" parent="Room/Ceiling7" unique_id=1629293429]
+[node name="@Sprite3D@27702" type="Sprite3D" parent="Room/Ceiling16" unique_id=1185432076]
 material_override = SubResource("ShaderMaterial_efhuw")
 pixel_size = 0.013333334
 shaded = true
@@ -1758,24 +1374,23 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("4_sg3ht")
 script = ExtResource("7_crnqe")
-roughness = 0.356
 
-[node name="SWall2" type="Node3D" parent="Room" unique_id=535584850 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)
+[node name="NWall4" type="Node3D" parent="Room" unique_id=1048490981 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0.5, 4)
 script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23759")
-CollisionShape = NodePath("@StaticBody3D@23759/@CollisionShape3D@23760")
-Sprite = NodePath("@Sprite3D@23761")
+StaticBody = NodePath("@StaticBody3D@27704")
+CollisionShape = NodePath("@StaticBody3D@27704/@CollisionShape3D@27705")
+Sprite = NodePath("@Sprite3D@27706")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@StaticBody3D@23759" type="StaticBody3D" parent="Room/SWall2" unique_id=1457760127]
+[node name="@StaticBody3D@27704" type="StaticBody3D" parent="Room/NWall4" unique_id=2003024685]
 
-[node name="@CollisionShape3D@23760" type="CollisionShape3D" parent="Room/SWall2/@StaticBody3D@23759" unique_id=1122416400]
+[node name="@CollisionShape3D@27705" type="CollisionShape3D" parent="Room/NWall4/@StaticBody3D@27704" unique_id=1833084567]
 shape = SubResource("BoxShape3D_cenwd")
 
-[node name="@Sprite3D@23761" type="Sprite3D" parent="Room/SWall2" unique_id=466603601]
+[node name="@Sprite3D@27706" type="Sprite3D" parent="Room/NWall4" unique_id=1856499779]
 material_override = SubResource("ShaderMaterial_480yw")
 pixel_size = 0.013333334
 shaded = true
@@ -1783,920 +1398,30 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
-[node name="Ceiling8" type="Node3D" parent="Room" unique_id=1102836205 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23763")
+[node name="WWall4" type="Node3D" parent="Room" unique_id=839118849 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0.5, 3.5)
+script = ExtResource("8_crnqe")
+StaticBody = NodePath("@StaticBody3D@27708")
+CollisionShape = NodePath("@StaticBody3D@27708/@CollisionShape3D@27709")
+Sprite = NodePath("@Sprite3D@27710")
 shaded = true
-shader = ExtResource("6_crnqe")
+shader = ExtResource("6_xsufa")
 metadata/_edit_group_ = true
 
-[node name="@Sprite3D@23763" type="Sprite3D" parent="Room/Ceiling8" unique_id=1045260527]
-material_override = SubResource("ShaderMaterial_1x3ys")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
+[node name="@StaticBody3D@27708" type="StaticBody3D" parent="Room/WWall4" unique_id=1651369881]
 
-[node name="Ceiling9" type="Node3D" parent="Room" unique_id=1463347061 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 2.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23765")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
+[node name="@CollisionShape3D@27709" type="CollisionShape3D" parent="Room/WWall4/@StaticBody3D@27708" unique_id=669774523]
+shape = SubResource("BoxShape3D_1x3ys")
 
-[node name="@Sprite3D@23765" type="Sprite3D" parent="Room/Ceiling9" unique_id=737954927]
+[node name="@Sprite3D@27710" type="Sprite3D" parent="Room/WWall4" unique_id=655231991]
 material_override = SubResource("ShaderMaterial_5cy4v")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling10" type="Node3D" parent="Room" unique_id=2015679747 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23767")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23767" type="Sprite3D" parent="Room/Ceiling10" unique_id=1387196744]
-material_override = SubResource("ShaderMaterial_8nqd3")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling11" type="Node3D" parent="Room" unique_id=808030809 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23769")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23769" type="Sprite3D" parent="Room/Ceiling11" unique_id=766787848]
-material_override = SubResource("ShaderMaterial_vudd4")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling12" type="Node3D" parent="Room" unique_id=1930095010 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23771")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23771" type="Sprite3D" parent="Room/Ceiling12" unique_id=2093825832]
-material_override = SubResource("ShaderMaterial_1clps")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="NWall2" type="Node3D" parent="Room" unique_id=1131411238 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0.5, 6)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23773")
-CollisionShape = NodePath("@StaticBody3D@23773/@CollisionShape3D@23774")
-Sprite = NodePath("@Sprite3D@23775")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23773" type="StaticBody3D" parent="Room/NWall2" unique_id=1434697006]
-
-[node name="@CollisionShape3D@23774" type="CollisionShape3D" parent="Room/NWall2/@StaticBody3D@23773" unique_id=1769272113]
-shape = SubResource("BoxShape3D_g2jkh")
-
-[node name="@Sprite3D@23775" type="Sprite3D" parent="Room/NWall2" unique_id=348511180]
-material_override = SubResource("ShaderMaterial_tcg4p")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
 texture = ExtResource("1_8uh7m")
 script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling13" type="Node3D" parent="Room" unique_id=679482257 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23777")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23777" type="Sprite3D" parent="Room/Ceiling13" unique_id=1970036121]
-material_override = SubResource("ShaderMaterial_jly3p")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="SWall3" type="Node3D" parent="Room" unique_id=1971827160 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23779")
-CollisionShape = NodePath("@StaticBody3D@23779/@CollisionShape3D@23780")
-Sprite = NodePath("@Sprite3D@23781")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23779" type="StaticBody3D" parent="Room/SWall3" unique_id=1476517907]
-
-[node name="@CollisionShape3D@23780" type="CollisionShape3D" parent="Room/SWall3/@StaticBody3D@23779" unique_id=1068806663]
-shape = SubResource("BoxShape3D_gpkdo")
-
-[node name="@Sprite3D@23781" type="Sprite3D" parent="Room/SWall3" unique_id=464857335]
-material_override = SubResource("ShaderMaterial_a6ako")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling14" type="Node3D" parent="Room" unique_id=280755752 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23783")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23783" type="Sprite3D" parent="Room/Ceiling14" unique_id=1304767282]
-material_override = SubResource("ShaderMaterial_hnrk2")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling15" type="Node3D" parent="Room" unique_id=2130425828 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 2.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23785")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23785" type="Sprite3D" parent="Room/Ceiling15" unique_id=1949269003]
-material_override = SubResource("ShaderMaterial_qf1ha")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling16" type="Node3D" parent="Room" unique_id=1271603463 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23787")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23787" type="Sprite3D" parent="Room/Ceiling16" unique_id=532094533]
-material_override = SubResource("ShaderMaterial_seb6f")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling17" type="Node3D" parent="Room" unique_id=794326239 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23789")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23789" type="Sprite3D" parent="Room/Ceiling17" unique_id=658981272]
-material_override = SubResource("ShaderMaterial_1mqde")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling18" type="Node3D" parent="Room" unique_id=1248239058 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23791")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23791" type="Sprite3D" parent="Room/Ceiling18" unique_id=858590999]
-material_override = SubResource("ShaderMaterial_1gdpm")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="NWall3" type="Node3D" parent="Room" unique_id=855270998 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5, 0.5, 6)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23793")
-CollisionShape = NodePath("@StaticBody3D@23793/@CollisionShape3D@23794")
-Sprite = NodePath("@Sprite3D@23795")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23793" type="StaticBody3D" parent="Room/NWall3" unique_id=320697577]
-
-[node name="@CollisionShape3D@23794" type="CollisionShape3D" parent="Room/NWall3/@StaticBody3D@23793" unique_id=1624878508]
-shape = SubResource("BoxShape3D_4cu1j")
-
-[node name="@Sprite3D@23795" type="Sprite3D" parent="Room/NWall3" unique_id=1395558738]
-material_override = SubResource("ShaderMaterial_rnaai")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling19" type="Node3D" parent="Room" unique_id=113966116 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23797")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23797" type="Sprite3D" parent="Room/Ceiling19" unique_id=1613283944]
-material_override = SubResource("ShaderMaterial_g7hbs")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="SWall4" type="Node3D" parent="Room" unique_id=1337605783 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 0)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23799")
-CollisionShape = NodePath("@StaticBody3D@23799/@CollisionShape3D@23800")
-Sprite = NodePath("@Sprite3D@23801")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23799" type="StaticBody3D" parent="Room/SWall4" unique_id=73012872]
-
-[node name="@CollisionShape3D@23800" type="CollisionShape3D" parent="Room/SWall4/@StaticBody3D@23799" unique_id=219690596]
-shape = SubResource("BoxShape3D_0gfuo")
-
-[node name="@Sprite3D@23801" type="Sprite3D" parent="Room/SWall4" unique_id=1764059449]
-material_override = SubResource("ShaderMaterial_bqa5q")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling20" type="Node3D" parent="Room" unique_id=1360127398 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23803")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23803" type="Sprite3D" parent="Room/Ceiling20" unique_id=820925974]
-material_override = SubResource("ShaderMaterial_aoe5n")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling21" type="Node3D" parent="Room" unique_id=1357738454 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 2.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23805")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23805" type="Sprite3D" parent="Room/Ceiling21" unique_id=55694620]
-material_override = SubResource("ShaderMaterial_joa7t")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling22" type="Node3D" parent="Room" unique_id=804921591 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23807")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23807" type="Sprite3D" parent="Room/Ceiling22" unique_id=1163358659]
-material_override = SubResource("ShaderMaterial_wnby5")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling23" type="Node3D" parent="Room" unique_id=163494026 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23809")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23809" type="Sprite3D" parent="Room/Ceiling23" unique_id=8221276]
-material_override = SubResource("ShaderMaterial_gf2gs")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling24" type="Node3D" parent="Room" unique_id=629010515 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23811")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23811" type="Sprite3D" parent="Room/Ceiling24" unique_id=1851446689]
-material_override = SubResource("ShaderMaterial_4trr8")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="NWall4" type="Node3D" parent="Room" unique_id=591663376 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0.5, 6)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23813")
-CollisionShape = NodePath("@StaticBody3D@23813/@CollisionShape3D@23814")
-Sprite = NodePath("@Sprite3D@23815")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23813" type="StaticBody3D" parent="Room/NWall4" unique_id=1364825524]
-
-[node name="@CollisionShape3D@23814" type="CollisionShape3D" parent="Room/NWall4/@StaticBody3D@23813" unique_id=1860796814]
-shape = SubResource("BoxShape3D_fl0ua")
-
-[node name="@Sprite3D@23815" type="Sprite3D" parent="Room/NWall4" unique_id=1509369503]
-material_override = SubResource("ShaderMaterial_4l4qs")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling25" type="Node3D" parent="Room" unique_id=1494408235 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23817")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23817" type="Sprite3D" parent="Room/Ceiling25" unique_id=9981929]
-material_override = SubResource("ShaderMaterial_jywy3")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="SWall5" type="Node3D" parent="Room" unique_id=893759181 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 0)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23819")
-CollisionShape = NodePath("@StaticBody3D@23819/@CollisionShape3D@23820")
-Sprite = NodePath("@Sprite3D@23821")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23819" type="StaticBody3D" parent="Room/SWall5" unique_id=1331153572]
-
-[node name="@CollisionShape3D@23820" type="CollisionShape3D" parent="Room/SWall5/@StaticBody3D@23819" unique_id=1520290977]
-shape = SubResource("BoxShape3D_furc0")
-
-[node name="@Sprite3D@23821" type="Sprite3D" parent="Room/SWall5" unique_id=1164143490]
-material_override = SubResource("ShaderMaterial_mrfvv")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling26" type="Node3D" parent="Room" unique_id=980795878 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23823")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23823" type="Sprite3D" parent="Room/Ceiling26" unique_id=1328762122]
-material_override = SubResource("ShaderMaterial_lmhcy")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling27" type="Node3D" parent="Room" unique_id=1381111253 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 2.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23825")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23825" type="Sprite3D" parent="Room/Ceiling27" unique_id=1896260492]
-material_override = SubResource("ShaderMaterial_b8bn7")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling28" type="Node3D" parent="Room" unique_id=209172345 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23827")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23827" type="Sprite3D" parent="Room/Ceiling28" unique_id=1269132657]
-material_override = SubResource("ShaderMaterial_w2cke")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling29" type="Node3D" parent="Room" unique_id=2091144255 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23829")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23829" type="Sprite3D" parent="Room/Ceiling29" unique_id=281876150]
-material_override = SubResource("ShaderMaterial_qgl54")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="Ceiling30" type="Node3D" parent="Room" unique_id=527106779 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23831")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23831" type="Sprite3D" parent="Room/Ceiling30" unique_id=513164272]
-material_override = SubResource("ShaderMaterial_y1rbn")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="NWall5" type="Node3D" parent="Room" unique_id=1977293226 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0.5, 6)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23833")
-CollisionShape = NodePath("@StaticBody3D@23833/@CollisionShape3D@23834")
-Sprite = NodePath("@Sprite3D@23835")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23833" type="StaticBody3D" parent="Room/NWall5" unique_id=406735113]
-
-[node name="@CollisionShape3D@23834" type="CollisionShape3D" parent="Room/NWall5/@StaticBody3D@23833" unique_id=1893580471]
-shape = SubResource("BoxShape3D_yhb34")
-
-[node name="@Sprite3D@23835" type="Sprite3D" parent="Room/NWall5" unique_id=2047496439]
-material_override = SubResource("ShaderMaterial_innq7")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling31" type="Node3D" parent="Room" unique_id=2079677928 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.5, 1, 0.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23837")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23837" type="Sprite3D" parent="Room/Ceiling31" unique_id=398186643]
-material_override = SubResource("ShaderMaterial_8j16g")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="SWall6" type="Node3D" parent="Room" unique_id=1997937860 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, 0)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23839")
-CollisionShape = NodePath("@StaticBody3D@23839/@CollisionShape3D@23840")
-Sprite = NodePath("@Sprite3D@23841")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23839" type="StaticBody3D" parent="Room/SWall6" unique_id=120718231]
-
-[node name="@CollisionShape3D@23840" type="CollisionShape3D" parent="Room/SWall6/@StaticBody3D@23839" unique_id=1588727814]
-shape = SubResource("BoxShape3D_wgg08")
-
-[node name="@Sprite3D@23841" type="Sprite3D" parent="Room/SWall6" unique_id=368879620]
-material_override = SubResource("ShaderMaterial_gseha")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="WWall" type="Node3D" parent="Room" unique_id=1599913146 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0.5, 0.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23843")
-CollisionShape = NodePath("@StaticBody3D@23843/@CollisionShape3D@23844")
-Sprite = NodePath("@Sprite3D@23845")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23843" type="StaticBody3D" parent="Room/WWall" unique_id=500680157]
-
-[node name="@CollisionShape3D@23844" type="CollisionShape3D" parent="Room/WWall/@StaticBody3D@23843" unique_id=2090820467]
-shape = SubResource("BoxShape3D_ncbqo")
-
-[node name="@Sprite3D@23845" type="Sprite3D" parent="Room/WWall" unique_id=1865639784]
-material_override = SubResource("ShaderMaterial_6etyb")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling32" type="Node3D" parent="Room" unique_id=1982464140 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.5, 1, 1.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23847")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23847" type="Sprite3D" parent="Room/Ceiling32" unique_id=1677561277]
-material_override = SubResource("ShaderMaterial_bd5fw")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="WWall2" type="Node3D" parent="Room" unique_id=1969034184 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0.5, 1.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23849")
-CollisionShape = NodePath("@StaticBody3D@23849/@CollisionShape3D@23850")
-Sprite = NodePath("@Sprite3D@23851")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23849" type="StaticBody3D" parent="Room/WWall2" unique_id=1537007448]
-
-[node name="@CollisionShape3D@23850" type="CollisionShape3D" parent="Room/WWall2/@StaticBody3D@23849" unique_id=2078432279]
-shape = SubResource("BoxShape3D_w40fi")
-
-[node name="@Sprite3D@23851" type="Sprite3D" parent="Room/WWall2" unique_id=1053850450]
-material_override = SubResource("ShaderMaterial_4v72d")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling33" type="Node3D" parent="Room" unique_id=464696149 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.5, 1, 2.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23853")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23853" type="Sprite3D" parent="Room/Ceiling33" unique_id=1776029775]
-material_override = SubResource("ShaderMaterial_wqa57")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="WWall3" type="Node3D" parent="Room" unique_id=1974593535 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0.5, 2.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23855")
-CollisionShape = NodePath("@StaticBody3D@23855/@CollisionShape3D@23856")
-Sprite = NodePath("@Sprite3D@23857")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23855" type="StaticBody3D" parent="Room/WWall3" unique_id=1812882610]
-
-[node name="@CollisionShape3D@23856" type="CollisionShape3D" parent="Room/WWall3/@StaticBody3D@23855" unique_id=512764603]
-shape = SubResource("BoxShape3D_a8d14")
-
-[node name="@Sprite3D@23857" type="Sprite3D" parent="Room/WWall3" unique_id=1422225278]
-material_override = SubResource("ShaderMaterial_c1s11")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling34" type="Node3D" parent="Room" unique_id=2021498137 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.5, 1, 3.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23859")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23859" type="Sprite3D" parent="Room/Ceiling34" unique_id=918748825]
-material_override = SubResource("ShaderMaterial_hjbt1")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="WWall4" type="Node3D" parent="Room" unique_id=1625754209 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0.5, 3.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23861")
-CollisionShape = NodePath("@StaticBody3D@23861/@CollisionShape3D@23862")
-Sprite = NodePath("@Sprite3D@23863")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23861" type="StaticBody3D" parent="Room/WWall4" unique_id=319531479]
-
-[node name="@CollisionShape3D@23862" type="CollisionShape3D" parent="Room/WWall4/@StaticBody3D@23861" unique_id=577480777]
-shape = SubResource("BoxShape3D_fclup")
-
-[node name="@Sprite3D@23863" type="Sprite3D" parent="Room/WWall4" unique_id=2111550800]
-material_override = SubResource("ShaderMaterial_pdbmb")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling35" type="Node3D" parent="Room" unique_id=469810730 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.5, 1, 4.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23865")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23865" type="Sprite3D" parent="Room/Ceiling35" unique_id=482048781]
-material_override = SubResource("ShaderMaterial_idxcq")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="WWall5" type="Node3D" parent="Room" unique_id=1360147217 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0.5, 4.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23867")
-CollisionShape = NodePath("@StaticBody3D@23867/@CollisionShape3D@23868")
-Sprite = NodePath("@Sprite3D@23869")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23867" type="StaticBody3D" parent="Room/WWall5" unique_id=1284609536]
-
-[node name="@CollisionShape3D@23868" type="CollisionShape3D" parent="Room/WWall5/@StaticBody3D@23867" unique_id=991942280]
-shape = SubResource("BoxShape3D_gx8x4")
-
-[node name="@Sprite3D@23869" type="Sprite3D" parent="Room/WWall5" unique_id=1326784160]
-material_override = SubResource("ShaderMaterial_gyr3p")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="Ceiling36" type="Node3D" parent="Room" unique_id=256225261 node_paths=PackedStringArray("Sprite")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.5, 1, 5.5)
-script = ExtResource("6_sg3ht")
-Sprite = NodePath("@Sprite3D@23871")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@Sprite3D@23871" type="Sprite3D" parent="Room/Ceiling36" unique_id=614944748]
-material_override = SubResource("ShaderMaterial_qipfg")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("4_sg3ht")
-script = ExtResource("7_crnqe")
-roughness = 0.356
-
-[node name="NWall6" type="Node3D" parent="Room" unique_id=1094603490 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.5, 0.5, 6)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23873")
-CollisionShape = NodePath("@StaticBody3D@23873/@CollisionShape3D@23874")
-Sprite = NodePath("@Sprite3D@23875")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23873" type="StaticBody3D" parent="Room/NWall6" unique_id=1698056694]
-
-[node name="@CollisionShape3D@23874" type="CollisionShape3D" parent="Room/NWall6/@StaticBody3D@23873" unique_id=936496648]
-shape = SubResource("BoxShape3D_w7yw2")
-
-[node name="@Sprite3D@23875" type="Sprite3D" parent="Room/NWall6" unique_id=47533374]
-material_override = SubResource("ShaderMaterial_m3afr")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
-
-[node name="WWall6" type="Node3D" parent="Room" unique_id=743348236 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0.5, 5.5)
-script = ExtResource("8_crnqe")
-StaticBody = NodePath("@StaticBody3D@23877")
-CollisionShape = NodePath("@StaticBody3D@23877/@CollisionShape3D@23878")
-Sprite = NodePath("@Sprite3D@23879")
-shaded = true
-shader = ExtResource("6_crnqe")
-metadata/_edit_group_ = true
-
-[node name="@StaticBody3D@23877" type="StaticBody3D" parent="Room/WWall6" unique_id=106455057]
-
-[node name="@CollisionShape3D@23878" type="CollisionShape3D" parent="Room/WWall6/@StaticBody3D@23877" unique_id=1826878921]
-shape = SubResource("BoxShape3D_f7xus")
-
-[node name="@Sprite3D@23879" type="Sprite3D" parent="Room/WWall6" unique_id=2006642900]
-material_override = SubResource("ShaderMaterial_d0mrq")
-pixel_size = 0.013333334
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("1_8uh7m")
-script = ExtResource("7_crnqe")
-roughness = 0.376
-normal = ExtResource("6_p0w5i")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1715039471]
 transform = Transform3D(0.47950587, -0.22382604, -0.8485141, 0.33710855, -0.84574944, 0.41360098, -0.810205, -0.48436537, -0.33008814, 1.2048216, 0.8268268, 1.4410986)
@@ -2714,3 +1439,8 @@ environment = SubResource("Environment_iws7x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6665509, 0.42881978, 2.7169223)
 shadow_enabled = true
 omni_range = 6.999
+
+[node name="CrossHatch" type="MeshInstance3D" parent="." unique_id=1618486405]
+material_override = SubResource("ShaderMaterial_kx1s5")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_401xl")
