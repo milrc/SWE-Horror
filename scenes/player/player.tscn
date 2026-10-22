@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0yhxdeh4wgbt"]
+
+[ext_resource type="Script" uid="uid://cpgmpwf8vhkaq" path="res://scripts/GridPlayer.cs" id="1_8afob"]
+
+[node name="Player" type="Node3D" unique_id=677720040]
+script = ExtResource("1_8afob")
+
+[node name="PlayerCamera" type="Camera3D" parent="." unique_id=2043502293]
