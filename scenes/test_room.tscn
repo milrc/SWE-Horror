@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://la8htacac1sa" path="res://art/dev_room/normal_map_test.png" id="7_w86v4"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="8_crnqe"]
 [ext_resource type="Shader" uid="uid://bgbx0bdvdq54j" path="res://art/shaders/cross_hatch.gdshader" id="12_kobp4"]
+[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/value_to_thickness_curve.tres" id="13_w86v4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kobp4"]
 render_priority = 0
@@ -576,13 +577,6 @@ ambient_light_color = Color(0.101240985, 0.101240985, 0.101240985, 1)
 noise = SubResource("FastNoiseLite_w86v4")
 seamless = true
 
-[sub_resource type="Curve" id="Curve_p0w5i"]
-_data = [Vector2(0, 0.79464287), 0.0, -44.79047, 0, 0, Vector2(0.054726362, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_xsufa"]
-curve = SubResource("Curve_p0w5i")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kx1s5"]
 render_priority = 1
 shader = ExtResource("12_kobp4")
@@ -599,7 +593,7 @@ shader_parameter/steps_l = 4.0
 shader_parameter/level_c = 15.0
 shader_parameter/level_h = 0.05
 shader_parameter/color_boil = 0.005
-shader_parameter/value_to_thickness = SubResource("CurveTexture_xsufa")
+shader_parameter/value_to_thickness = ExtResource("13_w86v4")
 
 [sub_resource type="QuadMesh" id="QuadMesh_401xl"]
 flip_faces = true

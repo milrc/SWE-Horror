@@ -3,23 +3,22 @@ render_mode unshaded, fog_disabled, depth_test_disabled;
 
 #include "oklab.gdshaderinc"
 #include "palette.gdshaderinc"
-#include "sobel.gdshaderinc"
 
-uniform sampler2D depth_texture : source_color, hint_depth_texture;
-uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
+uniform sampler2D depth_texture : source_color, hint_depth_texture, repeat_disable;
+uniform sampler2D screen_texture : hint_screen_texture, filter_nearest, repeat_disable;
 uniform sampler2D noise : repeat_disable, filter_nearest;
 uniform bool preview_hatch_levels = false;
-uniform float hatch_1 : hint_range(0.0, 1.0, 0.005) = 0.375;
-uniform float hatch_2 : hint_range(0.0, 1.0, 0.005) = 0.205;
-uniform float hatch_3 : hint_range(0.0, 1.0, 0.005) = 0.12;
+uniform float hatch_1 : hint_range(0.0, 1.0, 0.005) = 0.265;
+uniform float hatch_2 : hint_range(0.0, 1.0, 0.005) = 0.13;
+uniform float hatch_3 : hint_range(0.0, 1.0, 0.005) = 0.045;
 uniform float hatch_4 : hint_range(0.0, 1.0, 0.005) = 0.01;
-uniform float hatch_density = 150;
-uniform float hatch_warp = 1.23;
-uniform float hatch_thickness = 0.16;
+uniform float hatch_density = 300;
+uniform float hatch_warp = 0.25;
+uniform float hatch_thickness = 0.33;
 uniform float steps_l : hint_range(1.0, 50.0, 1.0) = 4;
 uniform float level_c : hint_range(0.01, 15.0) = 15.0;
 uniform float level_h : hint_range(0.01, 0.1) = 0.05;
-uniform float color_boil = 0.01;
+uniform float color_boil = 0.005;
 uniform sampler2D value_to_thickness : repeat_disable, filter_linear;
 
 
@@ -70,23 +69,25 @@ void fragment() {
 	float value = rgb_to_oklch(texture(screen_texture, uv).xyz).r;
     vec4 viewRay = INV_PROJECTION_MATRIX * vec4(uv*2.0 - 1.0, -1.0, 1.0); //clip * inverse projection
     viewRay = vec4(viewRay.xy, -1.0, 0.0);
-    vec2 hatch_uv = sampleSphericalMap(normalize(mat3(INV_VIEW_MATRIX) * viewRay.xyz)); // Transform to camera-surrounding space
+    vec2 sphere_uv = sampleSphericalMap(normalize(mat3(INV_VIEW_MATRIX) * viewRay.xyz)); // Transform to camera-surrounding space
 
     //Hatch to appropriate values
     float hatching = 1.0;
 	float sampled_thickness = mix(hatch_thickness, 1.0, texture(value_to_thickness, vec2(value)).r); // get thickness curve from texture
-    hatching *= hatch(hatch_uv, hatch_1, value, sampled_thickness, 3.0*PI/4.0, vec2(0.4f));
-    hatching *= hatch(hatch_uv, hatch_2, value, sampled_thickness, PI/4.0, vec2(0));
-    hatching *= hatch(hatch_uv, hatch_3, value, sampled_thickness, 0, vec2(0));
-    hatching *= hatch(hatch_uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
+    hatching *= hatch(sphere_uv, hatch_1, value, sampled_thickness, 3.0*PI/4.0, vec2(0.4f));
+    hatching *= hatch(sphere_uv, hatch_2, value, sampled_thickness, PI/4.0, vec2(0));
+    hatching *= hatch(sphere_uv, hatch_3, value, sampled_thickness, 0, vec2(0));
+    hatching *= hatch(sphere_uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
 
     //Fill color
-	vec3 oklch = rgb_to_oklch(texture(screen_texture, uv + get_noise(uv + vec2(0.125f))*color_boil).xyz); //convert to oklab color space
+    vec2 color_uv = clamp(uv + get_noise(sphere_uv + vec2(0.125f))*color_boil, vec2(0.0), vec2(1.0)); //add noise to screen uv
+	vec3 oklch = rgb_to_oklch(texture(screen_texture, color_uv).xyz); //convert screen color to oklab color space
     oklch = vec3(posterize(oklch.r, steps_l), posterize(oklch.g, level_c), posterize(oklch.b, level_h)); //posterize lightness, chroma, and hues
     float oklch_mask = step(0.01, oklch.r + oklch.g); //get anywhere that isn't black
     
 	//compose
-	color = mix(vec3(1.0), get_nearest_color(oklch_to_rgb(oklch)), oklch_mask)*hatching;
+	color = mix(vec3(1.0), get_nearest_color(oklch_to_rgb(oklch)), oklch_mask); //paint white or color, based on oklch_mask
+    color *= hatching; //apply hatching mask
 	
 	//Just show hatch gray-scale if desired
 	if (preview_hatch_levels) {
