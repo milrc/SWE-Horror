@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://mld822rvysrd"]
+
+[ext_resource type="Script" uid="uid://dmkryx81cv781" path="res://scripts/ui/MainMenu.cs" id="1_menu"]
+[ext_resource type="PackedScene" uid="uid://b1pus62u2gbg4" path="res://scenes/movement_test.tscn" id="2_gameplay"]
+
+[sub_resource type="Theme" id="Theme_menu"]
+default_font_size = 20
+
+[node name="MainMenu" type="Control" unique_id=1038995619]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_menu")
+script = ExtResource("1_menu")
+NewGameScene = ExtResource("2_gameplay")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1245028914]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.055, 0.055, 0.065, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1141845900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuPanel" type="VBoxContainer" parent="Center" unique_id=1538552442]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Center/MenuPanel" unique_id=1236217103]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "SWE HORROR"
+horizontal_alignment = 1
+
+[node name="NewGame" type="Button" parent="Center/MenuPanel" unique_id=1242361150]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
+text = "New Game"
+
+[node name="Settings" type="Button" parent="Center/MenuPanel" unique_id=374554880]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Center/MenuPanel" unique_id=976914529]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_neighbor_top = NodePath("../NewGame")
+focus_neighbor_bottom = NodePath("../NewGame")
+focus_next = NodePath("../NewGame")
+focus_previous = NodePath("../NewGame")
+text = "Quit"
