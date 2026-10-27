@@ -15,6 +15,10 @@ run/main_scene="res://scenes/movement_test.tscn"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Mixer="*uid://cag56lg3ykb2c"
+
 [display]
 
 window/size/viewport_width=768

@@ -27,8 +27,6 @@ public partial class GridPlayer : Node3D
         _screenResHalf.X /= 2;
         _screenResHalf.Y /= 2;
 
-        GD.Print(_screenResHalf);
-
         // grab camera
         _camera = GetNode<Camera3D>("PlayerCamera");
         _camera.Position = new Vector3(0f, 0.5f, 0f);
