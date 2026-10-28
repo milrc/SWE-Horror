@@ -51,8 +51,9 @@ void fragment() {
 	LIGHT_VERTEX = texel_snap(VERTEX, delta);
 	NORMAL = texel_snap(NORMAL, delta);
 	
-	vec3 albedo_tex = texture(texture_albedo, UV).rgb;
-	ALBEDO = albedo_tex;
+	vec4 albedo_tex = texture(texture_albedo, UV).rgba;
+	ALBEDO = albedo_tex.rgb;
+	//ALPHA = albedo_tex.a;
 	NORMAL_MAP = texture(normal_map, UV).xyz;
 	ROUGHNESS = roughness;
 }

@@ -33,7 +33,7 @@ public partial class GridPlayer : Node3D
         _camera = GetNode<Camera3D>("PlayerCamera");
         _camera.Position = new Vector3(0f, 0.5f, 0f);
 
-        realPosition = new Vector3(0.5f, 0.0f, 0.5f);
+        realPosition = GlobalPosition;
 
         // GlobalPosition = realPosition;
         centerRotation = Transform;
