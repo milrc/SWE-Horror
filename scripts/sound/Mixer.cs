@@ -8,8 +8,9 @@ using System.Collections.Generic;
 
 public partial class Mixer : Node
 {
-    static public Mixer Instance {get; private set;}
+    public AudioPool<AudioStreamPlayer> SoundPool = new();
     public Dictionary<SoundLibrary.Sound, List<AudioStreamPlayer>> Players = new();
+    static public Mixer Instance {get; private set;}
     
     public override void _EnterTree()
     {
@@ -27,41 +28,8 @@ public partial class Mixer : Node
     /// </param>
     public void Play(SoundLibrary.Sound sound, float pitchEpsilon = 0f)
     {
-        //Create a new player
-        AudioStreamPlayer player = new AudioStreamPlayer();
-        AddChild(player);
-
-        //Start sound
-        player.Stream = GD.Load<AudioStream>(sound.GetVariant());
-        if (pitchEpsilon != 0f)
-        {   //randomly skew pitch if requested
-            RandomNumberGenerator rng = new();
-            player.PitchScale = rng.RandfRange(1f + pitchEpsilon, 1f - pitchEpsilon);
-        }
-        player.Play();
-
-        //Save player
-        if (!Players.ContainsKey(sound)) Players[sound] = new();
-        Players[sound].Add(player);
-
-        //Queue cull
-        player.Finished += () => {_CullStream(sound);};
-    }
-    private void _CullStream(SoundLibrary.Sound sound)
-    {
-        //Check that we have this key
-        if (!Players.ContainsKey(sound)) return;
-
-        //check if any players are finished and remove them
-        for (int i = 0; i < Players[sound].Count; i++)
-        {
-            if (Players[sound][i].Playing) continue; //skip useful players
-            Players[sound][i].QueueFree(); //remove from tree
-            Players[sound].RemoveAt(i); //remove from dict
-        }
-
-        //remove key if now unused
-        if (Players[sound].Count == 0)
-            Players.Remove(sound);
+        AudioStreamPlayer p = new();
+        AddChild(p);
+        SoundPool.StartPlayer(Players, p, sound, pitchEpsilon);
     }
 }

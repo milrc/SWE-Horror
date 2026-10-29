@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Game="*uid://dyqwb8b66wd23"
 Mixer="*uid://cag56lg3ykb2c"
 
 [display]
