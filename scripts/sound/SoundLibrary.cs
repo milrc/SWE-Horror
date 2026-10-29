@@ -4,6 +4,14 @@ using System.Collections.Generic;
 
 public static class SoundLibrary
 {
+    public static class Effects
+    {
+        public static readonly Sound STEP = new("res://sound/jump.wav");
+    }
+    public static class Music
+    {
+        public static readonly Sound TITLE = new("res://sound/title.mp3");
+    }
     public readonly struct Sound
     {
         public readonly List<string> Variants;
@@ -20,13 +28,5 @@ public static class SoundLibrary
             RandomNumberGenerator rng = new();
             return Variants[rng.RandiRange(0, Variants.Count - 1)];
         }
-    }
-    public static class Effects
-    {
-        public static readonly Sound STEP = new("res://sound/jump.wav");        
-    }
-    public static class Music
-    {
-        public static readonly Sound TITLE = new("res://sound/title.mp3");
     }
 }

@@ -47,6 +47,7 @@ public partial class Mixer3D : Node3D
         }
         if (SoundTimers[sound].Use())
         {
+            SoundTimers[sound].SetTime(timeLimit);
             Play(sound, pitchEpsilon);
         }
     }

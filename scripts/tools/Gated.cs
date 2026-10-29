@@ -15,6 +15,7 @@ public class Gated
 
     private float timeLimit = 1f;
     private Timer timer = null;
+    private static Node root = null;
     public bool Ready = true;
 
     /// <summary>
@@ -60,7 +61,10 @@ public class Gated
                 WaitTime = timeLimit
             };
             timer.Timeout += () => Ready = true;
-            Game.Instance.AddChild(timer);
+            if (root == null) {
+                root = (Engine.GetMainLoop() as SceneTree).Root;
+            }
+            root.AddChild(timer);
         }
         timer.Start();
     }

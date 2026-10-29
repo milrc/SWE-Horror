@@ -8,7 +8,7 @@ public partial class GridPlayer : Node3D
     private Camera3D _camera;
     private Vector2 _screenResHalf;
     // sound node
-    private Mixer3D _foot;
+    private Mixer3D _mixer;
 
     [Export] public float StepSize = 1f;
     [Export] public float RayHeight = 0.5f;
@@ -33,7 +33,7 @@ public partial class GridPlayer : Node3D
         _camera = GetNode<Camera3D>("PlayerCamera");
         _camera.Position = new Vector3(0f, 0.5f, 0f);
 
-        _foot = GetNode<Mixer3D>("Mixer3D");
+        _mixer = GetNode<Mixer3D>("Mixer3D");
 
         realPosition = new Vector3(0.5f, 0.0f, 0.5f);
 
@@ -129,7 +129,7 @@ public partial class GridPlayer : Node3D
     {
         if (GlobalPosition != realPosition)
         {
-            _foot.PlayGated(0.1f, SoundLibrary.Effects.STEP, 0.1f);
+            _mixer.PlayGated(0.1f, SoundLibrary.Effects.STEP, 0.1f);
             GlobalPosition = GlobalPosition.Lerp(realPosition, MovementWeight);
             if (GlobalPosition.DistanceSquaredTo(realPosition) < 0.0001f)
                 GlobalPosition = realPosition;
