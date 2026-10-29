@@ -53,9 +53,10 @@ void fragment() {
 	
 	vec4 albedo_tex = texture(texture_albedo, UV).rgba;
 	ALBEDO = albedo_tex.rgb;
-	//ALPHA = albedo_tex.a;
+	ALPHA = albedo_tex.a;
 	NORMAL_MAP = texture(normal_map, UV).xyz;
 	ROUGHNESS = roughness;
+    ALPHA_SCISSOR_THRESHOLD = 0.5f;
 }
 
 //void light() {
