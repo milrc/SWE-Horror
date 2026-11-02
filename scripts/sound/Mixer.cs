@@ -69,7 +69,8 @@ public partial class Mixer : Node
     {
         MusicPlayer = new();
         AddChild(MusicPlayer);
-        MusicPlayer.Finished += _PickTrackFromQueue;        
+        MusicPlayer.Finished += _PickTrackFromQueue;
+        MusicPlayer.Bus = SoundLibrary.Music.BUS;
     }
     private void _PickTrackFromQueue() {
         if (MusicQueue.Count > 0) { //if there's more songs to play
@@ -148,7 +149,8 @@ public partial class Mixer : Node
     public void Play(SoundLibrary.Sound sound, float pitchEpsilon = 0f)
     {
         AudioStreamPlayer p = new();
-        AddChild(p);
+        AddChild(p); 
+        p.Bus = SoundLibrary.Effects.BUS;
         SoundPool.StartPlayer(EffectPlayers, p, sound, pitchEpsilon);
     }
     /// <summary>

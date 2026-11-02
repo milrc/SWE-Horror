@@ -24,6 +24,7 @@ public partial class Mixer3D : Node3D
     {
         AudioStreamPlayer3D p = new();
         AddChild(p);
+        p.Bus = SoundLibrary.Effects.BUS;
         SoundPool.StartPlayer(Players, p, sound, pitchEpsilon);
     }
     /// <summary>

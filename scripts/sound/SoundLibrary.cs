@@ -1,17 +1,20 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 
 public static class SoundLibrary
 {
     public static class Effects
     {
-        public static readonly Sound STEP = new("res://sound/jump.wav");
+        public const string BUS = "Sound Effects";
+        public static readonly Sound STEP = new("res://sound/effects/jump.wav");
     }
     public static class Music
     {
-        public static readonly Sound TITLE = new("res://sound/3AM.mp3");
-        public static readonly Sound RUN = new("res://sound/Scary Mansion.mp3");
+        public const string BUS = "Music";
+        public static readonly Sound TITLE = new("res://sound/music/3AM.mp3");
+        public static readonly Sound RUN = new("res://sound/music/Scary Mansion.mp3");
     }
     public readonly struct Sound
     {
