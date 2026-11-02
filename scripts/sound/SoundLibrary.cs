@@ -10,7 +10,8 @@ public static class SoundLibrary
     }
     public static class Music
     {
-        public static readonly Sound TITLE = new("res://sound/title.mp3");
+        public static readonly Sound TITLE = new("res://sound/3AM.mp3");
+        public static readonly Sound RUN = new("res://sound/Scary Mansion.mp3");
     }
     public readonly struct Sound
     {
