@@ -69,6 +69,7 @@ public partial class GridPlayer : Node3D
         if (hit.Count != 0)
             return;
 
+        _mixer.Play(SoundLibrary.Effects.STEP, 0.1f);
         realPosition += step;
     }
 
@@ -129,10 +130,11 @@ public partial class GridPlayer : Node3D
     {
         if (GlobalPosition != realPosition)
         {
-            _mixer.PlayGated(0.1f, SoundLibrary.Effects.STEP, 0.1f);
             GlobalPosition = GlobalPosition.Lerp(realPosition, MovementWeight);
             if (GlobalPosition.DistanceSquaredTo(realPosition) < 0.0001f)
+            {
                 GlobalPosition = realPosition;
+            }
         }
     }
 

@@ -8,7 +8,22 @@ public static class SoundLibrary
     public static class Effects
     {
         public const string BUS = "Sound Effects";
-        public static readonly Sound STEP = new("res://sound/effects/jump.wav");
+        public static readonly Sound STEP = new([
+        "res://sound/sfx/footsteps/step_0.wav",
+        "res://sound/sfx/footsteps/step_1.wav",
+        "res://sound/sfx/footsteps/step_2.wav",
+        "res://sound/sfx/footsteps/step_3.wav",
+        "res://sound/sfx/footsteps/step_4.wav"
+        ]);
+    }
+    public static class Ambience
+    {
+        public const string BUS = "Ambiance";
+        public static readonly Sound ROOM = new([            
+            "res://sound/ambience/room_ambience_0.mp3",
+            "res://sound/ambience/room_ambience_1.mp3",
+            "res://sound/ambience/room_ambience_2.mp3",
+        ]);
     }
     public static class Music
     {

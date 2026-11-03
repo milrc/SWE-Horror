@@ -11,6 +11,7 @@ public partial class Mixer : Node
     public AudioPool<AudioStreamPlayer> SoundPool = new();
     public Dictionary<SoundLibrary.Sound, List<AudioStreamPlayer>> EffectPlayers = new();
     public Dictionary<SoundLibrary.Sound, Gated> SoundTimers = new();
+    public AudioStreamPlayer AmbiencePlayer;
     public AudioStreamPlayer MusicPlayer;
     private AudioStreamPlayer _MusicFader;
     private bool _Transitioning = false;
@@ -22,6 +23,7 @@ public partial class Mixer : Node
     public override void _EnterTree()
     {
         Instance = this;
+        PlayAmbience();
     }
     public override void _Process(double delta)
     {
@@ -34,11 +36,11 @@ public partial class Mixer : Node
             _timeElapsed += delta;
         }
     }
-    public void Pause()
+    public void PauseMusic()
     {
         MusicPlayer.StreamPaused = true;
     }
-    public void Resume()
+    public void ResumeMusic()
     {
         MusicPlayer.StreamPaused = false;
     }
@@ -135,6 +137,27 @@ public partial class Mixer : Node
             //remove timer
             t.QueueFree();
         };
+    }
+    public void PlayAmbience()
+    {
+        if (AmbiencePlayer == null) {
+            AmbiencePlayer = new();
+            AddChild(AmbiencePlayer);
+            AmbiencePlayer.Bus = SoundLibrary.Ambience.BUS;
+            AmbiencePlayer.Stream = GD.Load<AudioStream>(SoundLibrary.Ambience.ROOM.GetVariant());
+            AmbiencePlayer.Play();
+            AmbiencePlayer.Finished += () =>
+            {
+                AmbiencePlayer.Stream = GD.Load<AudioStream>(SoundLibrary.Ambience.ROOM.GetVariant());
+                AmbiencePlayer.Play();            
+            };            
+        } else {
+            AmbiencePlayer.StreamPaused = false;
+        }
+    }
+    public void PauseAmbience()
+    {
+        if (AmbiencePlayer != null) AmbiencePlayer.StreamPaused = true;        
     }
     /// <summary>
     ///     Ask the mixer to play a sound effect or song.
