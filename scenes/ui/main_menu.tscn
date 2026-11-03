@@ -2,9 +2,51 @@
 
 [ext_resource type="Script" uid="uid://dmkryx81cv781" path="res://scripts/ui/MainMenu.cs" id="1_menu"]
 [ext_resource type="PackedScene" uid="uid://b1pus62u2gbg4" path="res://scenes/movement_test.tscn" id="2_gameplay"]
+[ext_resource type="Shader" uid="uid://b34djuqoov18o" path="res://art/shaders/menu_splash.gdshader" id="3_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_btxxm"]
+[ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="5_wb0q5"]
+[ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="7_q85j6"]
 
 [sub_resource type="Theme" id="Theme_menu"]
 default_font_size = 20
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lvxji"]
+frequency = 0.0025
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gmlin"]
+noise = SubResource("FastNoiseLite_lvxji")
+seamless = true
+
+[sub_resource type="Curve" id="Curve_p0w5i"]
+_data = [Vector2(0, 1), 0.0, 0.06714116, 0, 0, Vector2(0.103260875, 0), 0.37860057, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uhagc"]
+curve = SubResource("Curve_p0w5i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dovo2"]
+shader = ExtResource("3_m1kxf")
+shader_parameter/noise = SubResource("NoiseTexture2D_gmlin")
+shader_parameter/preview_hatch_levels = false
+shader_parameter/hatch_1 = 0.535
+shader_parameter/hatch_2 = 0.43
+shader_parameter/hatch_3 = 0.16
+shader_parameter/hatch_4 = 0.055
+shader_parameter/hatch_density = 200.0
+shader_parameter/hatch_warp = 0.25
+shader_parameter/hatch_thickness = 0.5
+shader_parameter/steps_l = 4.0
+shader_parameter/level_c = 15.0
+shader_parameter/level_h = 0.05
+shader_parameter/color_boil = 0.005
+shader_parameter/value_to_thickness = SubResource("CurveTexture_uhagc")
+shader_parameter/ceiling_texture = ExtResource("4_btxxm")
+shader_parameter/wall_texture = ExtResource("7_q85j6")
+shader_parameter/floor_texture = ExtResource("5_wb0q5")
+shader_parameter/time_scale = 0.03
+shader_parameter/walk_speed = 0.1
+shader_parameter/uv_scale = Vector2(3, 1)
+shader_parameter/boil_strength = 0.05
 
 [node name="MainMenu" type="Control" unique_id=1038995619]
 layout_mode = 3
@@ -18,10 +60,14 @@ script = ExtResource("1_menu")
 NewGameScene = ExtResource("2_gameplay")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1245028914]
+material = SubResource("ShaderMaterial_dovo2")
+custom_minimum_size = Vector2(768, 768)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

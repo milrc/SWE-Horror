@@ -15,6 +15,14 @@ run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dali084hpxbjo"
+
+[autoload]
+
+Mixer="*uid://cag56lg3ykb2c"
+
 [display]
 
 window/size/viewport_width=768

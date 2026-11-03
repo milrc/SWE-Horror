@@ -1,11 +1,7 @@
-shader_type spatial;
-render_mode unshaded, fog_disabled, depth_test_disabled;
-
 #include "oklab.gdshaderinc"
 #include "palette.gdshaderinc"
+#include "uv_maps.gdshaderinc"
 
-uniform sampler2D depth_texture : source_color, hint_depth_texture, repeat_disable;
-uniform sampler2D screen_texture : hint_screen_texture, filter_nearest, repeat_disable;
 uniform sampler2D noise : repeat_disable, filter_nearest;
 uniform bool preview_hatch_levels = false;
 uniform float hatch_1 : hint_range(0.0, 1.0, 0.005) = 0.265;
@@ -20,16 +16,6 @@ uniform float level_c : hint_range(0.01, 15.0) = 15.0;
 uniform float level_h : hint_range(0.01, 0.1) = 0.05;
 uniform float color_boil = 0.005;
 uniform sampler2D value_to_thickness : repeat_disable, filter_linear;
-
-
-vec2 rotateUV(vec2 uv, float r)
-{
-    float mid = 0.5;
-    return vec2(
-        cos(r) * (uv.x - mid) + sin(r) * (uv.y - mid) + mid,
-        cos(r) * (uv.y - mid) - sin(r) * (uv.x - mid) + mid
-    );
-}
 
 vec2 get_noise(vec2 uv) {
 	return texture(noise, fract(uv)).xy - vec2(0.5f);
@@ -53,35 +39,21 @@ float posterize(float value, float levels) {
 	return round(value * levels) / levels;
 }
 
-vec2 sampleSphericalMap(vec3 direction) {
-    float u = atan(direction.z, direction.x) / (2.0 * 3.14159265) + 0.5;
-    float v = asin(direction.y) / 3.14159265 + 0.5;
-    return vec2(u, v);
-}
-
-void vertex() {
-    POSITION = vec4(VERTEX.xy, 1.0, 1.0);
-}
-
-void fragment() {
+vec3 hatching_effect(vec3 input_color, vec2 uv) {
 	vec3 color;
-	vec2 uv = vec2(UV.x, 1.0 - UV.y);
-	float value = rgb_to_oklch(texture(screen_texture, uv).xyz).r;
-    vec4 viewRay = INV_PROJECTION_MATRIX * vec4(uv*2.0 - 1.0, -1.0, 1.0); //clip * inverse projection
-    viewRay = vec4(viewRay.xy, -1.0, 0.0);
-    vec2 sphere_uv = sampleSphericalMap(normalize(mat3(INV_VIEW_MATRIX) * viewRay.xyz)); // Transform to camera-surrounding space
+	float value = rgb_to_oklch(input_color).r;
 
     //Hatch to appropriate values
     float hatching = 1.0;
 	float sampled_thickness = mix(hatch_thickness, 1.0, texture(value_to_thickness, vec2(value)).r); // get thickness curve from texture
-    hatching *= hatch(sphere_uv, hatch_1, value, sampled_thickness, 3.0*PI/4.0, vec2(0.4f));
-    hatching *= hatch(sphere_uv, hatch_2, value, sampled_thickness, PI/4.0, vec2(0));
-    hatching *= hatch(sphere_uv, hatch_3, value, sampled_thickness, 0, vec2(0));
-    hatching *= hatch(sphere_uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
+    hatching *= hatch(uv, hatch_1, value, sampled_thickness, 3.0*PI/4.0, vec2(0.4f));
+    hatching *= hatch(uv, hatch_2, value, sampled_thickness, PI/4.0, vec2(0));
+    hatching *= hatch(uv, hatch_3, value, sampled_thickness, 0, vec2(0));
+    hatching *= hatch(uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
 
     //Fill color
-    vec2 color_uv = clamp(uv + get_noise(sphere_uv + vec2(0.125f))*color_boil, vec2(0.0), vec2(1.0)); //add noise to screen uv
-	vec3 oklch = rgb_to_oklch(texture(screen_texture, color_uv).xyz); //convert screen color to oklab color space
+    vec2 color_uv = clamp(uv + get_noise(uv + vec2(0.125f))*color_boil, vec2(0.0), vec2(1.0)); //add noise to screen uv
+	vec3 oklch = rgb_to_oklch(input_color); //convert screen color to oklab color space
     oklch = vec3(posterize(oklch.r, steps_l), posterize(oklch.g, level_c), posterize(oklch.b, level_h)); //posterize lightness, chroma, and hues
     float oklch_mask = step(0.01, oklch.r + oklch.g); //get anywhere that isn't black
     
@@ -98,7 +70,5 @@ void fragment() {
 		level += step(hatch_4, value)*0.2f;
 		color = vec3(level);
 	}
-
-	ALBEDO = color;
-	DEPTH = 0.0;
+    return color;
 }
