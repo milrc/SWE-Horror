@@ -18,7 +18,7 @@ void fragment() {
     viewRay = vec4(viewRay.xy, -1.0, 0.0);
     vec2 sphere_uv = spherical_map(normalize(mat3(INV_VIEW_MATRIX) * viewRay.xyz)); // Transform to camera-surrounding space
 
-    color = hatching_effect(texture(screen_texture, uv).xyz, sphere_uv);
+    color = hatching_effect(texture(screen_texture, uv + get_noise(sphere_uv + vec2(0.125f))*color_boil).xyz, sphere_uv);
 
 	ALBEDO = color;
 	DEPTH = 0.0;

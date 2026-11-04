@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://blk51mvvrkjn1"]
+
+[ext_resource type="Texture2D" uid="uid://cvjyvi7l43ghs" path="res://art/ui/fade_panel_small.png" id="1_2gm3l"]
+
+[resource]
+texture = ExtResource("1_2gm3l")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.07762883, 0.07762881, 0.07762881, 1)

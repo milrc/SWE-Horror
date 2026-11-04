@@ -1,0 +1,40 @@
+[gd_resource type="Theme" format=3 uid="uid://bpmgaqcimmxn3"]
+
+[ext_resource type="StyleBox" uid="uid://mrsyuyamsg6g" path="res://art/ui/drop_shadow_box.tres" id="1_1q40c"]
+[ext_resource type="Texture2D" uid="uid://cvjyvi7l43ghs" path="res://art/ui/fade_panel_small.png" id="1_3sgex"]
+[ext_resource type="StyleBox" uid="uid://blk51mvvrkjn1" path="res://art/ui/button_normal.tres" id="2_c81ik"]
+[ext_resource type="FontFile" uid="uid://gedrfknpy8wb" path="res://art/ui/Comico-Regular.ttf" id="4_g86ss"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwyie"]
+texture = ExtResource("1_3sgex")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_boiwv"]
+texture = ExtResource("1_3sgex")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.1749846, 0.17498463, 0.17498457, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8jrv"]
+texture = ExtResource("1_3sgex")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("4_g86ss")
+default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxTexture_dwyie")
+Button/styles/hover = SubResource("StyleBoxTexture_boiwv")
+Button/styles/normal = ExtResource("2_c81ik")
+Button/styles/pressed = SubResource("StyleBoxTexture_r8jrv")
+Panel/styles/panel = ExtResource("1_1q40c")
+PanelContainer/styles/panel = ExtResource("1_1q40c")

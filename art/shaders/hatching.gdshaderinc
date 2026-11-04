@@ -52,7 +52,7 @@ vec3 hatching_effect(vec3 input_color, vec2 uv) {
     hatching *= hatch(uv, hatch_4, value, sampled_thickness, PI/2.0, vec2(0.15));
 
     //Fill color
-    vec2 color_uv = clamp(uv + get_noise(uv + vec2(0.125f))*color_boil, vec2(0.0), vec2(1.0)); //add noise to screen uv
+    vec2 color_uv = clamp(uv, vec2(0.0), vec2(1.0)); //add noise to screen uv
 	vec3 oklch = rgb_to_oklch(input_color); //convert screen color to oklab color space
     oklch = vec3(posterize(oklch.r, steps_l), posterize(oklch.g, level_c), posterize(oklch.b, level_h)); //posterize lightness, chroma, and hues
     float oklch_mask = step(0.01, oklch.r + oklch.g); //get anywhere that isn't black

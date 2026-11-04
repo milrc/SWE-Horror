@@ -16,24 +16,28 @@ vec2 tunnel_left_uv(vec2 uv) {
     float y = uv.y - 0.5;
     y /= (1.0 - uv.x);
     y += 0.5;
+    uv.x = 1.0/(1.0 - uv.x);
     return vec2(uv.x, clamp(0.0, 1.0, y));
 }
 vec2 tunnel_right_uv(vec2 uv) {
     float y = uv.y - 0.5;
     y /= uv.x;
     y += 0.5;
+    uv.x = 1.0/uv.x;
     return vec2(uv.x, clamp(0.0, 1.0, y));
 }
 vec2 tunnel_top_uv(vec2 uv) {
     float x = uv.x - 0.5;
     x /= (1.0 - uv.y);
     x += 0.5;
+    uv.y = 1.0/(1.0 - uv.y);
     return vec2(clamp(0.0, 1.0, x), uv.y);
 }
 vec2 tunnel_bottom_uv(vec2 uv) {
     float x = uv.x - 0.5;
     x /= uv.y;
     x += 0.5;
+    uv.y = 1.0/uv.y;
     return vec2(clamp(0.0, 1.0, x), uv.y);
 }
 float tunnel_left_mask(vec2 uv) {
@@ -64,11 +68,15 @@ float tunnel_bottom_mask(vec2 uv) {
 vec2 tunnel_map(vec2 uv, vec2 offset, vec2 scale) {
     //add all wall segments
     vec2 result = vec2(0.0);
-    result += (tunnel_left_uv(vec2(uv.x*2.0, uv.y))+offset)*scale                            *tunnel_left_mask(uv);
-    result += (tunnel_right_uv(vec2(uv.x*2.0-1.0, uv.y))+offset*vec2(-1.0, 1.0))*scale       *tunnel_right_mask(uv);
-    result += (tunnel_top_uv(vec2(uv.x, uv.y *2.0))+offset.yx)*scale.yx                      *tunnel_top_mask(uv);
-    result += (tunnel_bottom_uv(vec2(uv.x, uv.y*2.0-1.0))+offset.yx*vec2(1.0, -1.0))*scale.yx*tunnel_bottom_mask(uv);
+    result += (tunnel_left_uv(vec2(uv.x*2.0, uv.y))+offset)*scale            *tunnel_left_mask(uv);
+    result += (tunnel_right_uv(vec2(uv.x*2.0-1.0, uv.y))+offset)*scale       *tunnel_right_mask(uv);
+    result += (tunnel_top_uv(vec2(uv.x, uv.y *2.0))+offset.yx)*scale.yx      *tunnel_top_mask(uv);
+    result += (tunnel_bottom_uv(vec2(uv.x, uv.y*2.0-1.0))+offset.yx)*scale.yx*tunnel_bottom_mask(uv);
     return result;
+}
+float tube_depth(vec2 uv) {
+    //distance from center of the screen
+    return 1.0-distance(uv, vec2(0.5))*2.0;
 }
 float tunnel_depth(vec2 uv) {
     //distance from center of the screen (in each dimension)
