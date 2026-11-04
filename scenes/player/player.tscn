@@ -1,8 +1,51 @@
 [gd_scene format=3 uid="uid://b0yhxdeh4wgbt"]
 
 [ext_resource type="Script" uid="uid://cpgmpwf8vhkaq" path="res://scripts/GridPlayer.cs" id="1_8afob"]
+[ext_resource type="Script" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
 
 [node name="Player" type="Node3D" unique_id=677720040]
 script = ExtResource("1_8afob")
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=2043502293]
+
+[node name="HandPoint" type="Node3D" parent="PlayerCamera"]
+position = Vector3(0.23, -0.17, -0.55)
+
+[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint")]
+target_position = Vector3(0, 0, -2.8)
+collision_mask = 3
+collide_with_areas = false
+script = ExtResource("2_interactor")
+PromptLabel = NodePath("../../InteractionHUD/Overlay/PromptLabel")
+HandLabel = NodePath("../../InteractionHUD/Overlay/HandLabel")
+HandPoint = NodePath("../HandPoint")
+
+[node name="InteractionHUD" type="CanvasLayer" parent="."]
+
+[node name="Overlay" type="Control" parent="InteractionHUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PromptLabel" type="Label" parent="InteractionHUD/Overlay"]
+visible = false
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
+text = "Left click to pick up"
+mouse_filter = 2
+
+[node name="HandLabel" type="Label" parent="InteractionHUD/Overlay"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 250.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
+text = "Hand: empty"
+mouse_filter = 2

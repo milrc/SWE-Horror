@@ -1,11 +1,113 @@
 [gd_scene format=3 uid="uid://b1pus62u2gbg4"]
 
 [ext_resource type="PackedScene" uid="uid://bgw8crkak14p1" path="res://scenes/test_room.tscn" id="1_room"]
-[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="3_08uda"]
+[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scenes/interactions/test_key.tscn" id="4_key"]
+[ext_resource type="PackedScene" path="res://scenes/interactions/placement_spot.tscn" id="5_spot"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_test_table_top"]
+size = Vector3(0.6, 0.05, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_test_table_top"]
+size = Vector3(0.6, 0.05, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_test_table_leg"]
+size = Vector3(0.08, 0.29, 0.08)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_test_table"]
+albedo_color = Color(0.57, 0.57, 0.57, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_test_table_legs"]
+albedo_color = Color(0.31, 0.31, 0.31, 1)
+roughness = 0.95
 
 [node name="MovementTest" type="Node3D" unique_id=1476754260]
 
 [node name="TestRoom" parent="." unique_id=728825556 instance=ExtResource("1_room")]
 
-[node name="Player" parent="." unique_id=677720040 instance=ExtResource("3_08uda")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+[node name="Player" parent="." unique_id=677720040 instance=ExtResource("3_player")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0, 0.5)
+
+
+[node name="KeyTableA" type="StaticBody3D" parent="."]
+position = Vector3(0.5, 0, 1.5)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Top" type="MeshInstance3D" parent="KeyTableA"]
+position = Vector3(0, 0.295, 0)
+mesh = SubResource("BoxMesh_test_table_top")
+material_override = SubResource("StandardMaterial3D_test_table")
+
+[node name="TopCollider" type="CollisionShape3D" parent="KeyTableA"]
+position = Vector3(0, 0.295, 0)
+shape = SubResource("BoxShape3D_test_table_top")
+
+[node name="Leg1" type="MeshInstance3D" parent="KeyTableA"]
+position = Vector3(-0.22, 0.145, -0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="Leg2" type="MeshInstance3D" parent="KeyTableA"]
+position = Vector3(0.22, 0.145, -0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="Leg3" type="MeshInstance3D" parent="KeyTableA"]
+position = Vector3(-0.22, 0.145, 0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="Leg4" type="MeshInstance3D" parent="KeyTableA"]
+position = Vector3(0.22, 0.145, 0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="KeyTableB" type="StaticBody3D" parent="."]
+position = Vector3(2.5, 0, 1.5)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Top" type="MeshInstance3D" parent="KeyTableB"]
+position = Vector3(0, 0.295, 0)
+mesh = SubResource("BoxMesh_test_table_top")
+material_override = SubResource("StandardMaterial3D_test_table")
+
+[node name="TopCollider" type="CollisionShape3D" parent="KeyTableB"]
+position = Vector3(0, 0.295, 0)
+shape = SubResource("BoxShape3D_test_table_top")
+
+[node name="Leg1" type="MeshInstance3D" parent="KeyTableB"]
+position = Vector3(-0.22, 0.145, -0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="Leg2" type="MeshInstance3D" parent="KeyTableB"]
+position = Vector3(0.22, 0.145, -0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="Leg3" type="MeshInstance3D" parent="KeyTableB"]
+position = Vector3(-0.22, 0.145, 0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="Leg4" type="MeshInstance3D" parent="KeyTableB"]
+position = Vector3(0.22, 0.145, 0.22)
+mesh = SubResource("BoxMesh_test_table_leg")
+material_override = SubResource("StandardMaterial3D_test_table_legs")
+
+[node name="BrassKey" parent="." instance=ExtResource("4_key")]
+position = Vector3(0.5, 0.335, 1.5)
+
+[node name="SilverKey" parent="." instance=ExtResource("4_key")]
+position = Vector3(2.5, 0.335, 1.5)
+KeyId = "test_silver_key"
+DisplayName = "silver key"
+
+[node name="PlacementSpotA" parent="." instance=ExtResource("5_spot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0.35, 1.75)
+
+[node name="PlacementSpotB" parent="." instance=ExtResource("5_spot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.35, 2.7)
