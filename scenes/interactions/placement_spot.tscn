@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactions/PlaceSpot.cs" id="1_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hit"]
+size = Vector3(0.5, 0.08, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_stand"]
+size = Vector3(0.065, 0.34, 0.065)
+
+[sub_resource type="BoxMesh" id="BoxMesh_top"]
+size = Vector3(0.55, 0.06, 0.55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wood"]
+albedo_color = Color(0.55, 0.55, 0.55, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_legs"]
+albedo_color = Color(0.29, 0.29, 0.29, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_highlight"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.22, 1, 0.55, 0.55)
+
+[node name="PlacementSpot" type="StaticBody3D" node_paths=PackedStringArray("HighlightMesh")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_script")
+HighlightMesh = NodePath("Highlight")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_hit")
+
+[node name="Leg1" type="MeshInstance3D" parent="."]
+position = Vector3(-0.19, -0.20, -0.19)
+material_override = SubResource("StandardMaterial3D_legs")
+mesh = SubResource("BoxMesh_stand")
+
+[node name="Leg2" type="MeshInstance3D" parent="."]
+position = Vector3(0.19, -0.20, -0.19)
+material_override = SubResource("StandardMaterial3D_legs")
+mesh = SubResource("BoxMesh_stand")
+
+[node name="Leg3" type="MeshInstance3D" parent="."]
+position = Vector3(-0.19, -0.20, 0.19)
+material_override = SubResource("StandardMaterial3D_legs")
+mesh = SubResource("BoxMesh_stand")
+
+[node name="Leg4" type="MeshInstance3D" parent="."]
+position = Vector3(0.19, -0.20, 0.19)
+material_override = SubResource("StandardMaterial3D_legs")
+mesh = SubResource("BoxMesh_stand")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wood")
+mesh = SubResource("BoxMesh_top")
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+visible = false
+position = Vector3(0, 0.038, 0)
+material_override = SubResource("StandardMaterial3D_highlight")
+mesh = SubResource("BoxMesh_top")

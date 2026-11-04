@@ -35,7 +35,7 @@ public partial class GridPlayer : Node3D
 
         _mixer = GetNode<Mixer3D>("Mixer3D");
 
-        realPosition = new Vector3(0.5f, 0.0f, 0.5f);
+        realPosition = GlobalPosition;
 
         // GlobalPosition = realPosition;
         centerRotation = Transform;

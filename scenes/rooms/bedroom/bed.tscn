@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://drgswivuhnihf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pp2t7"]
+
+[node name="bed" type="Node3D" unique_id=1859397078]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=939005749]
+
+[node name="bed_test_csg" type="CSGBox3D" parent="StaticBody3D" unique_id=1483799996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.19999991)
+size = Vector3(0.8, 0.3, 1.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=814790390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_pp2t7")
