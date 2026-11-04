@@ -7,6 +7,8 @@ public partial class GridPlayer : Node3D
     // camera node
     private Camera3D _camera;
     private Vector2 _screenResHalf;
+    // sound node
+    private Mixer3D _mixer;
 
     [Export] public float StepSize = 1f;
     [Export] public float RayHeight = 0.5f;
@@ -27,13 +29,13 @@ public partial class GridPlayer : Node3D
         _screenResHalf.X /= 2;
         _screenResHalf.Y /= 2;
 
-        GD.Print(_screenResHalf);
-
         // grab camera
         _camera = GetNode<Camera3D>("PlayerCamera");
         _camera.Position = new Vector3(0f, 0.5f, 0f);
 
-        realPosition = new Vector3(0.5f, 0.0f, 0.5f);
+        _mixer = GetNode<Mixer3D>("Mixer3D");
+
+        realPosition = GlobalPosition;
 
         // GlobalPosition = realPosition;
         centerRotation = Transform;
@@ -48,7 +50,6 @@ public partial class GridPlayer : Node3D
         AnimateCamera();
     }
 
-    
     private void Move(Vector3 direction)
     {
         Vector3 step = new Vector3(
@@ -68,6 +69,7 @@ public partial class GridPlayer : Node3D
         if (hit.Count != 0)
             return;
 
+        _mixer.Play(SoundLibrary.Effects.STEP, 0.1f);
         realPosition += step;
     }
 
@@ -126,7 +128,14 @@ public partial class GridPlayer : Node3D
 
     public void AnimateMovement()
     {
-        GlobalPosition = GlobalPosition.Lerp(realPosition, MovementWeight);
+        if (GlobalPosition != realPosition)
+        {
+            GlobalPosition = GlobalPosition.Lerp(realPosition, MovementWeight);
+            if (GlobalPosition.DistanceSquaredTo(realPosition) < 0.0001f)
+            {
+                GlobalPosition = realPosition;
+            }
+        }
     }
 
     public void AnimateCamera()

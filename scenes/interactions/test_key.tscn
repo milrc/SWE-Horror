@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/interactions/CollectibleKey.cs" id="1_key"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ring_top"]
+size = Vector3(0.0832, 0.01664, 0.0176)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ring_side"]
+size = Vector3(0.0176, 0.0736, 0.0176)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shaft"]
+size = Vector3(0.02752, 0.1088, 0.0208)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tooth"]
+size = Vector3(0.0464, 0.0192, 0.0208)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gold"]
+albedo_color = Color(0.98, 0.7, 0.15, 1)
+metallic = 0.35
+roughness = 0.35
+
+[sub_resource type="TorusMesh" id="TorusMesh_ring"]
+inner_radius = 0.024
+outer_radius = 0.0496
+rings = 24
+ring_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_shaft"]
+top_radius = 0.01376
+bottom_radius = 0.01376
+height = 0.1056
+radial_segments = 8
+
+[sub_resource type="BoxMesh" id="BoxMesh_tooth"]
+size = Vector3(0.0464, 0.01824, 0.0192)
+
+[node name="TestKey" type="StaticBody3D"]
+rotation = Vector3(1.5707964, 0, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_key")
+KeyId = "test_brass_key"
+DisplayName = "brass key"
+
+[node name="RingTopCollider" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.08384, 0)
+shape = SubResource("BoxShape3D_ring_top")
+
+[node name="RingBottomCollider" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.0112, 0)
+shape = SubResource("BoxShape3D_ring_top")
+
+[node name="RingLeftCollider" type="CollisionShape3D" parent="."]
+position = Vector3(-0.03552, 0.048, 0)
+shape = SubResource("BoxShape3D_ring_side")
+
+[node name="RingRightCollider" type="CollisionShape3D" parent="."]
+position = Vector3(0.03552, 0.048, 0)
+shape = SubResource("BoxShape3D_ring_side")
+
+[node name="ShaftCollider" type="CollisionShape3D" parent="."]
+position = Vector3(0, -0.0272, 0)
+shape = SubResource("BoxShape3D_shaft")
+
+[node name="ToothCollider" type="CollisionShape3D" parent="."]
+position = Vector3(0.024, -0.06976, 0)
+shape = SubResource("BoxShape3D_tooth")
+
+[node name="Ring" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.0464, 0)
+material_override = SubResource("StandardMaterial3D_gold")
+mesh = SubResource("TorusMesh_ring")
+
+[node name="Shaft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0272, 0)
+material_override = SubResource("StandardMaterial3D_gold")
+mesh = SubResource("CylinderMesh_shaft")
+
+[node name="Tooth" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024, -0.06976, 0)
+material_override = SubResource("StandardMaterial3D_gold")
+mesh = SubResource("BoxMesh_tooth")

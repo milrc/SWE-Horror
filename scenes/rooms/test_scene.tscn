@@ -1,0 +1,2019 @@
+[gd_scene format=3 uid="uid://ba6n4m25s4jh0"]
+
+[ext_resource type="Script" uid="uid://cydbpc1sm8m3l" path="res://scripts/environment/Room.cs" id="1_oo3xe"]
+[ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="2_8ugdt"]
+[ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="3_34bcs"]
+[ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_nvn3b"]
+[ext_resource type="Texture2D" uid="uid://gedfwftwn0ou" path="res://art/dev_room/normal_wall.png" id="5_bhfio"]
+[ext_resource type="Texture2D" uid="uid://la8htacac1sa" path="res://art/dev_room/normal_map_test.png" id="6_qhto0"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="7_lhfkx"]
+[ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="8_y256q"]
+[ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="9_vsbfq"]
+[ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="10_c4nqf"]
+[ext_resource type="PackedScene" uid="uid://c6gwk5sjxbj0e" path="res://scenes/shader_scene/cross_hatch.tscn" id="11_8lg43"]
+[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="12_8ugdt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ugdt"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34bcs"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvn3b"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhfio"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhto0"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lhfkx"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y256q"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vsbfq"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4nqf"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lg43"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvrpa"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_so7x5"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3dto"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_msvhq"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_er14r"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6l6rv"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0xnr"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3e4pw"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8bgc"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bvir"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_baxwn"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2cmw"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2llc0"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hj5od"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nf3h"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("3_34bcs")
+shader_parameter/normal_map = ExtResource("6_qhto0")
+shader_parameter/roughness = 0.207
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8o3os"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfd6m"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_umk5o"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ax3oo"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7x14h"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmj4g"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3f3s"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbqwf"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17dkq"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ie8xe"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hn56e"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anwoe"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ue88n"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2tr1m"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6x04n"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7c2o"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1gil"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcpjh"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2irky"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pu8ue"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_arugy"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hsrbf"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52vko"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvoaq"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q11wc"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fhp0l"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m16jv"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fc5ur"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6fii"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvoqu"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4gukl"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uf5m6"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7ghn"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_csqr2"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lepma"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ggjd"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svt4x"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylh8k"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5v8w"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmw78"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj8cv"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq42o"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r35jr"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqbo5"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j82tm"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xnek"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7g5o"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5e13"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rttit"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qri0b"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iw1c4"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1q6vi"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eddpm"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g8s1"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7s8a3"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbxvu"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tynmj"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unamt"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33iqm"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lkijw"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45ctl"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("4_nvn3b")
+shader_parameter/roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hak1d"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pjyi"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4pm1o"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hbbn2"]
+render_priority = 0
+shader = ExtResource("7_lhfkx")
+shader_parameter/texture_albedo = ExtResource("2_8ugdt")
+shader_parameter/normal_map = ExtResource("5_bhfio")
+shader_parameter/roughness = 0.563
+
+[node name="test_scene" type="Node3D" unique_id=1056112741]
+
+[node name="room" type="Node3D" parent="." unique_id=176992727]
+script = ExtResource("1_oo3xe")
+Wall = ExtResource("2_8ugdt")
+Floor = ExtResource("3_34bcs")
+Ceiling = ExtResource("4_nvn3b")
+Wall_Normal = ExtResource("5_bhfio")
+Floor_Normal = ExtResource("6_qhto0")
+Wall_Roughness = 0.563
+Floor_Roughness = 0.207
+Ceil_Roughness = 1.0
+Door_Rougness = 1.0
+Shader = ExtResource("7_lhfkx")
+Width_X = 5
+Width_Z = 5
+Shaded = true
+
+[node name="Floor" type="Node3D" parent="room" unique_id=1733868588 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40215")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40215" type="Sprite3D" parent="room/Floor" unique_id=1656569484]
+material_override = SubResource("ShaderMaterial_8ugdt")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor2" type="Node3D" parent="room" unique_id=314851705 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40217")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40217" type="Sprite3D" parent="room/Floor2" unique_id=1503374620]
+material_override = SubResource("ShaderMaterial_34bcs")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor3" type="Node3D" parent="room" unique_id=324790563 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40219")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40219" type="Sprite3D" parent="room/Floor3" unique_id=1502732717]
+material_override = SubResource("ShaderMaterial_nvn3b")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor4" type="Node3D" parent="room" unique_id=793609833 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40221")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40221" type="Sprite3D" parent="room/Floor4" unique_id=1959155769]
+material_override = SubResource("ShaderMaterial_bhfio")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor5" type="Node3D" parent="room" unique_id=477317726 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40223")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40223" type="Sprite3D" parent="room/Floor5" unique_id=2067889922]
+material_override = SubResource("ShaderMaterial_qhto0")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor6" type="Node3D" parent="room" unique_id=1894227165 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40225")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40225" type="Sprite3D" parent="room/Floor6" unique_id=1894067818]
+material_override = SubResource("ShaderMaterial_lhfkx")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor7" type="Node3D" parent="room" unique_id=3162168 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40227")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40227" type="Sprite3D" parent="room/Floor7" unique_id=994867754]
+material_override = SubResource("ShaderMaterial_y256q")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor8" type="Node3D" parent="room" unique_id=1504168381 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40229")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40229" type="Sprite3D" parent="room/Floor8" unique_id=224802651]
+material_override = SubResource("ShaderMaterial_vsbfq")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor9" type="Node3D" parent="room" unique_id=843151730 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40231")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40231" type="Sprite3D" parent="room/Floor9" unique_id=261217347]
+material_override = SubResource("ShaderMaterial_c4nqf")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor10" type="Node3D" parent="room" unique_id=94397685 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 0, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40233")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40233" type="Sprite3D" parent="room/Floor10" unique_id=1327377703]
+material_override = SubResource("ShaderMaterial_8lg43")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor11" type="Node3D" parent="room" unique_id=1993552057 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40235")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40235" type="Sprite3D" parent="room/Floor11" unique_id=1494077687]
+material_override = SubResource("ShaderMaterial_yvrpa")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor12" type="Node3D" parent="room" unique_id=1556353807 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40237")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40237" type="Sprite3D" parent="room/Floor12" unique_id=1635477902]
+material_override = SubResource("ShaderMaterial_so7x5")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor13" type="Node3D" parent="room" unique_id=2118149524 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40239")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40239" type="Sprite3D" parent="room/Floor13" unique_id=65976308]
+material_override = SubResource("ShaderMaterial_v3dto")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor14" type="Node3D" parent="room" unique_id=1806280923 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40241")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40241" type="Sprite3D" parent="room/Floor14" unique_id=219632302]
+material_override = SubResource("ShaderMaterial_msvhq")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor15" type="Node3D" parent="room" unique_id=971601740 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40243")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40243" type="Sprite3D" parent="room/Floor15" unique_id=539421414]
+material_override = SubResource("ShaderMaterial_er14r")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor16" type="Node3D" parent="room" unique_id=1989823618 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40245")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40245" type="Sprite3D" parent="room/Floor16" unique_id=1971299249]
+material_override = SubResource("ShaderMaterial_6l6rv")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor17" type="Node3D" parent="room" unique_id=1582446142 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40247")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40247" type="Sprite3D" parent="room/Floor17" unique_id=2099701042]
+material_override = SubResource("ShaderMaterial_b0xnr")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor18" type="Node3D" parent="room" unique_id=665580475 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40249")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40249" type="Sprite3D" parent="room/Floor18" unique_id=1524500736]
+material_override = SubResource("ShaderMaterial_3e4pw")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor19" type="Node3D" parent="room" unique_id=1847581810 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40251")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40251" type="Sprite3D" parent="room/Floor19" unique_id=1489741873]
+material_override = SubResource("ShaderMaterial_i8bgc")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor20" type="Node3D" parent="room" unique_id=1199263611 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 0, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40253")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40253" type="Sprite3D" parent="room/Floor20" unique_id=599157205]
+material_override = SubResource("ShaderMaterial_2bvir")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor21" type="Node3D" parent="room" unique_id=1326351943 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40255")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40255" type="Sprite3D" parent="room/Floor21" unique_id=1372167485]
+material_override = SubResource("ShaderMaterial_baxwn")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor22" type="Node3D" parent="room" unique_id=878664637 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40257")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40257" type="Sprite3D" parent="room/Floor22" unique_id=666920286]
+material_override = SubResource("ShaderMaterial_i2cmw")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor23" type="Node3D" parent="room" unique_id=994899462 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40259")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40259" type="Sprite3D" parent="room/Floor23" unique_id=529661022]
+material_override = SubResource("ShaderMaterial_2llc0")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor24" type="Node3D" parent="room" unique_id=1720685491 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40261")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40261" type="Sprite3D" parent="room/Floor24" unique_id=1794013746]
+material_override = SubResource("ShaderMaterial_hj5od")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Floor25" type="Node3D" parent="room" unique_id=659165920 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 0, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40263")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40263" type="Sprite3D" parent="room/Floor25" unique_id=1462854754]
+material_override = SubResource("ShaderMaterial_5nf3h")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("3_34bcs")
+script = ExtResource("9_vsbfq")
+roughness = 0.207
+normal = ExtResource("6_qhto0")
+
+[node name="Ceiling" type="Node3D" parent="room" unique_id=308796507 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40265")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40265" type="Sprite3D" parent="room/Ceiling" unique_id=1547731364]
+material_override = SubResource("ShaderMaterial_8o3os")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="SWall" type="Node3D" parent="room" unique_id=1426723635 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40267")
+CollisionShape = NodePath("@StaticBody3D@40267/@CollisionShape3D@40268")
+Sprite = NodePath("@Sprite3D@40269")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40267" type="StaticBody3D" parent="room/SWall" unique_id=625538081]
+
+[node name="@CollisionShape3D@40268" type="CollisionShape3D" parent="room/SWall/@StaticBody3D@40267" unique_id=1449725386]
+shape = SubResource("BoxShape3D_pfd6m")
+
+[node name="@Sprite3D@40269" type="Sprite3D" parent="room/SWall" unique_id=163167828]
+material_override = SubResource("ShaderMaterial_umk5o")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="EWall" type="Node3D" parent="room" unique_id=443586346 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40271")
+CollisionShape = NodePath("@StaticBody3D@40271/@CollisionShape3D@40272")
+Sprite = NodePath("@Sprite3D@40273")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40271" type="StaticBody3D" parent="room/EWall" unique_id=1441256753]
+
+[node name="@CollisionShape3D@40272" type="CollisionShape3D" parent="room/EWall/@StaticBody3D@40271" unique_id=1120433754]
+shape = SubResource("BoxShape3D_ax3oo")
+
+[node name="@Sprite3D@40273" type="Sprite3D" parent="room/EWall" unique_id=1455606926]
+material_override = SubResource("ShaderMaterial_7x14h")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling2" type="Node3D" parent="room" unique_id=1021253596 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40275")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40275" type="Sprite3D" parent="room/Ceiling2" unique_id=1258208704]
+material_override = SubResource("ShaderMaterial_cmj4g")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="EWall2" type="Node3D" parent="room" unique_id=287202989 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 1.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40277")
+CollisionShape = NodePath("@StaticBody3D@40277/@CollisionShape3D@40278")
+Sprite = NodePath("@Sprite3D@40279")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40277" type="StaticBody3D" parent="room/EWall2" unique_id=1237233350]
+
+[node name="@CollisionShape3D@40278" type="CollisionShape3D" parent="room/EWall2/@StaticBody3D@40277" unique_id=768674411]
+shape = SubResource("BoxShape3D_p3f3s")
+
+[node name="@Sprite3D@40279" type="Sprite3D" parent="room/EWall2" unique_id=394382943]
+material_override = SubResource("ShaderMaterial_rbqwf")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling3" type="Node3D" parent="room" unique_id=84265256 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40281")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40281" type="Sprite3D" parent="room/Ceiling3" unique_id=820573886]
+material_override = SubResource("ShaderMaterial_17dkq")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="EWall3" type="Node3D" parent="room" unique_id=1909128318 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 2.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40283")
+CollisionShape = NodePath("@StaticBody3D@40283/@CollisionShape3D@40284")
+Sprite = NodePath("@Sprite3D@40285")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40283" type="StaticBody3D" parent="room/EWall3" unique_id=1899778876]
+
+[node name="@CollisionShape3D@40284" type="CollisionShape3D" parent="room/EWall3/@StaticBody3D@40283" unique_id=214203390]
+shape = SubResource("BoxShape3D_ie8xe")
+
+[node name="@Sprite3D@40285" type="Sprite3D" parent="room/EWall3" unique_id=195570626]
+material_override = SubResource("ShaderMaterial_hn56e")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling4" type="Node3D" parent="room" unique_id=1492592174 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40287")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40287" type="Sprite3D" parent="room/Ceiling4" unique_id=37417472]
+material_override = SubResource("ShaderMaterial_anwoe")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="EWall4" type="Node3D" parent="room" unique_id=671264007 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 3.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40289")
+CollisionShape = NodePath("@StaticBody3D@40289/@CollisionShape3D@40290")
+Sprite = NodePath("@Sprite3D@40291")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40289" type="StaticBody3D" parent="room/EWall4" unique_id=999294226]
+
+[node name="@CollisionShape3D@40290" type="CollisionShape3D" parent="room/EWall4/@StaticBody3D@40289" unique_id=1793232607]
+shape = SubResource("BoxShape3D_ue88n")
+
+[node name="@Sprite3D@40291" type="Sprite3D" parent="room/EWall4" unique_id=1687779432]
+material_override = SubResource("ShaderMaterial_2tr1m")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling5" type="Node3D" parent="room" unique_id=1030080843 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40293")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40293" type="Sprite3D" parent="room/Ceiling5" unique_id=1061573063]
+material_override = SubResource("ShaderMaterial_6x04n")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="NWall" type="Node3D" parent="room" unique_id=1385486557 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5, 0.5, 5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40295")
+CollisionShape = NodePath("@StaticBody3D@40295/@CollisionShape3D@40296")
+Sprite = NodePath("@Sprite3D@40297")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40295" type="StaticBody3D" parent="room/NWall" unique_id=1173438318]
+
+[node name="@CollisionShape3D@40296" type="CollisionShape3D" parent="room/NWall/@StaticBody3D@40295" unique_id=1972770957]
+shape = SubResource("BoxShape3D_c7c2o")
+
+[node name="@Sprite3D@40297" type="Sprite3D" parent="room/NWall" unique_id=587269389]
+material_override = SubResource("ShaderMaterial_y1gil")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="EWall5" type="Node3D" parent="room" unique_id=1971534261 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 4.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40299")
+CollisionShape = NodePath("@StaticBody3D@40299/@CollisionShape3D@40300")
+Sprite = NodePath("@Sprite3D@40301")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40299" type="StaticBody3D" parent="room/EWall5" unique_id=1898773243]
+
+[node name="@CollisionShape3D@40300" type="CollisionShape3D" parent="room/EWall5/@StaticBody3D@40299" unique_id=1260177598]
+shape = SubResource("BoxShape3D_hcpjh")
+
+[node name="@Sprite3D@40301" type="Sprite3D" parent="room/EWall5" unique_id=22486009]
+material_override = SubResource("ShaderMaterial_2irky")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling6" type="Node3D" parent="room" unique_id=1114078115 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40303")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40303" type="Sprite3D" parent="room/Ceiling6" unique_id=1207595060]
+material_override = SubResource("ShaderMaterial_pu8ue")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="SWall2" type="Node3D" parent="room" unique_id=590813822 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40305")
+CollisionShape = NodePath("@StaticBody3D@40305/@CollisionShape3D@40306")
+Sprite = NodePath("@Sprite3D@40307")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40305" type="StaticBody3D" parent="room/SWall2" unique_id=1240921770]
+
+[node name="@CollisionShape3D@40306" type="CollisionShape3D" parent="room/SWall2/@StaticBody3D@40305" unique_id=1193816651]
+shape = SubResource("BoxShape3D_arugy")
+
+[node name="@Sprite3D@40307" type="Sprite3D" parent="room/SWall2" unique_id=1796148258]
+material_override = SubResource("ShaderMaterial_hsrbf")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling7" type="Node3D" parent="room" unique_id=894548631 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40309")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40309" type="Sprite3D" parent="room/Ceiling7" unique_id=514216958]
+material_override = SubResource("ShaderMaterial_52vko")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling8" type="Node3D" parent="room" unique_id=1602686383 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40311")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40311" type="Sprite3D" parent="room/Ceiling8" unique_id=1656198826]
+material_override = SubResource("ShaderMaterial_hvoaq")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling9" type="Node3D" parent="room" unique_id=1711204688 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40313")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40313" type="Sprite3D" parent="room/Ceiling9" unique_id=505962648]
+material_override = SubResource("ShaderMaterial_q11wc")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling10" type="Node3D" parent="room" unique_id=442090608 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 1, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40315")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40315" type="Sprite3D" parent="room/Ceiling10" unique_id=387462578]
+material_override = SubResource("ShaderMaterial_fhp0l")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="NWall2" type="Node3D" parent="room" unique_id=560676700 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0.5, 5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40317")
+CollisionShape = NodePath("@StaticBody3D@40317/@CollisionShape3D@40318")
+Sprite = NodePath("@Sprite3D@40319")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40317" type="StaticBody3D" parent="room/NWall2" unique_id=1396155545]
+
+[node name="@CollisionShape3D@40318" type="CollisionShape3D" parent="room/NWall2/@StaticBody3D@40317" unique_id=1541811144]
+shape = SubResource("BoxShape3D_m16jv")
+
+[node name="@Sprite3D@40319" type="Sprite3D" parent="room/NWall2" unique_id=1627086307]
+material_override = SubResource("ShaderMaterial_fc5ur")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling11" type="Node3D" parent="room" unique_id=1890922093 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40321")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40321" type="Sprite3D" parent="room/Ceiling11" unique_id=779681063]
+material_override = SubResource("ShaderMaterial_w6fii")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="SWall3" type="Node3D" parent="room" unique_id=283208162 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40323")
+CollisionShape = NodePath("@StaticBody3D@40323/@CollisionShape3D@40324")
+Sprite = NodePath("@Sprite3D@40325")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40323" type="StaticBody3D" parent="room/SWall3" unique_id=1476374219]
+
+[node name="@CollisionShape3D@40324" type="CollisionShape3D" parent="room/SWall3/@StaticBody3D@40323" unique_id=1972905334]
+shape = SubResource("BoxShape3D_kvoqu")
+
+[node name="@Sprite3D@40325" type="Sprite3D" parent="room/SWall3" unique_id=754020352]
+material_override = SubResource("ShaderMaterial_4gukl")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling12" type="Node3D" parent="room" unique_id=1820364373 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40327")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40327" type="Sprite3D" parent="room/Ceiling12" unique_id=751458806]
+material_override = SubResource("ShaderMaterial_uf5m6")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling13" type="Node3D" parent="room" unique_id=825942095 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40329")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40329" type="Sprite3D" parent="room/Ceiling13" unique_id=938619216]
+material_override = SubResource("ShaderMaterial_f7ghn")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling14" type="Node3D" parent="room" unique_id=2124632827 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40331")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40331" type="Sprite3D" parent="room/Ceiling14" unique_id=953020057]
+material_override = SubResource("ShaderMaterial_csqr2")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling15" type="Node3D" parent="room" unique_id=1890230562 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40333")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40333" type="Sprite3D" parent="room/Ceiling15" unique_id=1603806247]
+material_override = SubResource("ShaderMaterial_lepma")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="NWall3" type="Node3D" parent="room" unique_id=1147233136 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5, 0.5, 5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40335")
+CollisionShape = NodePath("@StaticBody3D@40335/@CollisionShape3D@40336")
+Sprite = NodePath("@Sprite3D@40337")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40335" type="StaticBody3D" parent="room/NWall3" unique_id=975695808]
+
+[node name="@CollisionShape3D@40336" type="CollisionShape3D" parent="room/NWall3/@StaticBody3D@40335" unique_id=1178662825]
+shape = SubResource("BoxShape3D_1ggjd")
+
+[node name="@Sprite3D@40337" type="Sprite3D" parent="room/NWall3" unique_id=1811301299]
+material_override = SubResource("ShaderMaterial_svt4x")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling16" type="Node3D" parent="room" unique_id=856076863 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40339")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40339" type="Sprite3D" parent="room/Ceiling16" unique_id=1635157780]
+material_override = SubResource("ShaderMaterial_ylh8k")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="SWall4" type="Node3D" parent="room" unique_id=1860406509 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 0)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40341")
+CollisionShape = NodePath("@StaticBody3D@40341/@CollisionShape3D@40342")
+Sprite = NodePath("@Sprite3D@40343")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40341" type="StaticBody3D" parent="room/SWall4" unique_id=2129451410]
+
+[node name="@CollisionShape3D@40342" type="CollisionShape3D" parent="room/SWall4/@StaticBody3D@40341" unique_id=1784267830]
+shape = SubResource("BoxShape3D_f5v8w")
+
+[node name="@Sprite3D@40343" type="Sprite3D" parent="room/SWall4" unique_id=1959220]
+material_override = SubResource("ShaderMaterial_nmw78")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling17" type="Node3D" parent="room" unique_id=519485225 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40345")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40345" type="Sprite3D" parent="room/Ceiling17" unique_id=1401176532]
+material_override = SubResource("ShaderMaterial_kj8cv")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling18" type="Node3D" parent="room" unique_id=1167046510 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40347")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40347" type="Sprite3D" parent="room/Ceiling18" unique_id=1647541855]
+material_override = SubResource("ShaderMaterial_iq42o")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling19" type="Node3D" parent="room" unique_id=1409862459 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40349")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40349" type="Sprite3D" parent="room/Ceiling19" unique_id=1115119027]
+material_override = SubResource("ShaderMaterial_r35jr")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="Ceiling20" type="Node3D" parent="room" unique_id=210479195 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 1, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40351")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40351" type="Sprite3D" parent="room/Ceiling20" unique_id=2027563626]
+material_override = SubResource("ShaderMaterial_bqbo5")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="NWall4" type="Node3D" parent="room" unique_id=1205007319 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0.5, 5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40353")
+CollisionShape = NodePath("@StaticBody3D@40353/@CollisionShape3D@40354")
+Sprite = NodePath("@Sprite3D@40355")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40353" type="StaticBody3D" parent="room/NWall4" unique_id=534392084]
+
+[node name="@CollisionShape3D@40354" type="CollisionShape3D" parent="room/NWall4/@StaticBody3D@40353" unique_id=1665081187]
+shape = SubResource("BoxShape3D_j82tm")
+
+[node name="@Sprite3D@40355" type="Sprite3D" parent="room/NWall4" unique_id=750426831]
+material_override = SubResource("ShaderMaterial_7xnek")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling21" type="Node3D" parent="room" unique_id=2073429608 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 0.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40357")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40357" type="Sprite3D" parent="room/Ceiling21" unique_id=418339509]
+material_override = SubResource("ShaderMaterial_u7g5o")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="SWall5" type="Node3D" parent="room" unique_id=1167086003 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 0)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40359")
+CollisionShape = NodePath("@StaticBody3D@40359/@CollisionShape3D@40360")
+Sprite = NodePath("@Sprite3D@40361")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40359" type="StaticBody3D" parent="room/SWall5" unique_id=908932971]
+
+[node name="@CollisionShape3D@40360" type="CollisionShape3D" parent="room/SWall5/@StaticBody3D@40359" unique_id=520441570]
+shape = SubResource("BoxShape3D_d5e13")
+
+[node name="@Sprite3D@40361" type="Sprite3D" parent="room/SWall5" unique_id=1153861359]
+material_override = SubResource("ShaderMaterial_rttit")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="WWall" type="Node3D" parent="room" unique_id=1170544617 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0.5, 0.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40363")
+CollisionShape = NodePath("@StaticBody3D@40363/@CollisionShape3D@40364")
+Sprite = NodePath("@Sprite3D@40365")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40363" type="StaticBody3D" parent="room/WWall" unique_id=620601555]
+
+[node name="@CollisionShape3D@40364" type="CollisionShape3D" parent="room/WWall/@StaticBody3D@40363" unique_id=600548658]
+shape = SubResource("BoxShape3D_qri0b")
+
+[node name="@Sprite3D@40365" type="Sprite3D" parent="room/WWall" unique_id=1924177295]
+material_override = SubResource("ShaderMaterial_iw1c4")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling22" type="Node3D" parent="room" unique_id=1074345639 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 1.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40367")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40367" type="Sprite3D" parent="room/Ceiling22" unique_id=637620775]
+material_override = SubResource("ShaderMaterial_1q6vi")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="WWall2" type="Node3D" parent="room" unique_id=519418529 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0.5, 1.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40369")
+CollisionShape = NodePath("@StaticBody3D@40369/@CollisionShape3D@40370")
+Sprite = NodePath("@Sprite3D@40371")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40369" type="StaticBody3D" parent="room/WWall2" unique_id=177321295]
+
+[node name="@CollisionShape3D@40370" type="CollisionShape3D" parent="room/WWall2/@StaticBody3D@40369" unique_id=1080996723]
+shape = SubResource("BoxShape3D_eddpm")
+
+[node name="@Sprite3D@40371" type="Sprite3D" parent="room/WWall2" unique_id=1123430631]
+material_override = SubResource("ShaderMaterial_1g8s1")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling23" type="Node3D" parent="room" unique_id=1122565408 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 2.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40373")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40373" type="Sprite3D" parent="room/Ceiling23" unique_id=149292438]
+material_override = SubResource("ShaderMaterial_7s8a3")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="WWall3" type="Node3D" parent="room" unique_id=1768121177 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0.5, 2.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40375")
+CollisionShape = NodePath("@StaticBody3D@40375/@CollisionShape3D@40376")
+Sprite = NodePath("@Sprite3D@40377")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40375" type="StaticBody3D" parent="room/WWall3" unique_id=1921436790]
+
+[node name="@CollisionShape3D@40376" type="CollisionShape3D" parent="room/WWall3/@StaticBody3D@40375" unique_id=634187911]
+shape = SubResource("BoxShape3D_sbxvu")
+
+[node name="@Sprite3D@40377" type="Sprite3D" parent="room/WWall3" unique_id=1806242894]
+material_override = SubResource("ShaderMaterial_tynmj")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling24" type="Node3D" parent="room" unique_id=17699537 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 3.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40379")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40379" type="Sprite3D" parent="room/Ceiling24" unique_id=536205657]
+material_override = SubResource("ShaderMaterial_unamt")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="WWall4" type="Node3D" parent="room" unique_id=1153284827 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0.5, 3.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40381")
+CollisionShape = NodePath("@StaticBody3D@40381/@CollisionShape3D@40382")
+Sprite = NodePath("@Sprite3D@40383")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40381" type="StaticBody3D" parent="room/WWall4" unique_id=1562853465]
+
+[node name="@CollisionShape3D@40382" type="CollisionShape3D" parent="room/WWall4/@StaticBody3D@40381" unique_id=194371217]
+shape = SubResource("BoxShape3D_33iqm")
+
+[node name="@Sprite3D@40383" type="Sprite3D" parent="room/WWall4" unique_id=2130543677]
+material_override = SubResource("ShaderMaterial_lkijw")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="Ceiling25" type="Node3D" parent="room" unique_id=1749930278 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.5, 1, 4.5)
+script = ExtResource("8_y256q")
+Sprite = NodePath("@Sprite3D@40385")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@Sprite3D@40385" type="Sprite3D" parent="room/Ceiling25" unique_id=1521718959]
+material_override = SubResource("ShaderMaterial_45ctl")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_nvn3b")
+script = ExtResource("9_vsbfq")
+roughness = 1.0
+
+[node name="NWall5" type="Node3D" parent="room" unique_id=951301915 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0.5, 5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40387")
+CollisionShape = NodePath("@StaticBody3D@40387/@CollisionShape3D@40388")
+Sprite = NodePath("@Sprite3D@40389")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40387" type="StaticBody3D" parent="room/NWall5" unique_id=1963752631]
+
+[node name="@CollisionShape3D@40388" type="CollisionShape3D" parent="room/NWall5/@StaticBody3D@40387" unique_id=1685773483]
+shape = SubResource("BoxShape3D_hak1d")
+
+[node name="@Sprite3D@40389" type="Sprite3D" parent="room/NWall5" unique_id=2102605992]
+material_override = SubResource("ShaderMaterial_6pjyi")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="WWall5" type="Node3D" parent="room" unique_id=938306027 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0.5, 4.5)
+script = ExtResource("10_c4nqf")
+StaticBody = NodePath("@StaticBody3D@40391")
+CollisionShape = NodePath("@StaticBody3D@40391/@CollisionShape3D@40392")
+Sprite = NodePath("@Sprite3D@40393")
+shaded = true
+shader = ExtResource("7_lhfkx")
+metadata/_edit_group_ = true
+
+[node name="@StaticBody3D@40391" type="StaticBody3D" parent="room/WWall5" unique_id=392936910]
+
+[node name="@CollisionShape3D@40392" type="CollisionShape3D" parent="room/WWall5/@StaticBody3D@40391" unique_id=451717180]
+shape = SubResource("BoxShape3D_4pm1o")
+
+[node name="@Sprite3D@40393" type="Sprite3D" parent="room/WWall5" unique_id=827209414]
+material_override = SubResource("ShaderMaterial_hbbn2")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_8ugdt")
+script = ExtResource("9_vsbfq")
+roughness = 0.563
+normal = ExtResource("5_bhfio")
+
+[node name="CrossHatch" parent="." unique_id=1665997343 instance=ExtResource("11_8lg43")]
+
+[node name="Player" parent="." unique_id=677720040 instance=ExtResource("12_8ugdt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0, 0.5)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=33767961]
+transform = Transform3D(0.98555684, 0.16934486, 3.5165544e-09, -0.14406487, 0.83843184, 0.52562094, 0.08901121, -0.5180293, 0.8507189, 2.2817416, 0.59771717, 2.2686143)
+light_energy = 2.541
+shadow_enabled = true
+spot_range = 12.764
+spot_attenuation = 0.53
+spot_angle = 52.61
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=966409729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8120034, 0.61538184, 3.7609427)
+shadow_enabled = true
