@@ -1,6 +1,6 @@
 #include "oklab.gdshaderinc"
 
-const vec3 COLOR_PALETTE[16] = vec3[](
+const vec3 COLOR_PALETTE[17] = vec3[](
 	vec3(0.2745098039, 0.1411764705882353, 0.10980392156862745), // #46241c
  	vec3(0.35294117647058826, 0.16470588235294117, 0.12156862745098039), // #5a2a1f
 	vec3(0.3607843137254902, 0.23137254901960785, 0.2), // #5c3b33
@@ -12,18 +12,20 @@ const vec3 COLOR_PALETTE[16] = vec3[](
 	vec3(0.396078431372549, 0.3254901960784314, 0.2901960784313726), // #65534a
 	vec3(0.25098039215686274, 0.20784313725490197, 0.18823529411764706), // #403530
 	vec3(0.5137254901960784, 0.43137254901960786, 0.38823529411764707), // #836e63
-	//vec3(0.984313725490196, 0.9490196078431372, 0.21176470588235294), // #fbf236
+	vec3(0.984313725490196, 0.9490196078431372, 0.21176470588235294), // #fbf236
 	vec3(0.6784313725490196, 0.6078431372549019, 0.5411764705882353), // #ad9b8a
 	vec3(0.7764705882352941, 0.7215686274509804, 0.6705882352941176), // #c6b8ab
 	vec3(0.803921568627451, 0.7686274509803922, 0.7333333333333333), // #cdc4bb
 	vec3(0.12549019607843137, 0.09803921568627451, 0.08235294117647059), // #201915
 	vec3(1.0, 1.0, 1.0)  // #FFFFFF
 );
+
+//find closest color in oklch color space
 vec3 get_nearest_color(vec3 color) {
 	float min_diff = 100.0;
 	vec3 nearest_color = color;
 	for (int i = 0; i < COLOR_PALETTE.length(); i++) {
-		float curr_dist = distance(rgb_to_oklch(COLOR_PALETTE[i]), rgb_to_oklch(color));
+		float curr_dist = distance(rgb_to_oklch(COLOR_PALETTE[i]), color);
 		if (curr_dist < min_diff) {
 			min_diff = curr_dist;
 			nearest_color = COLOR_PALETTE[i];
