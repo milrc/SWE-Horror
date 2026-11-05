@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://cpgmpwf8vhkaq" path="res://scripts/GridPlayer.cs" id="1_8afob"]
 [ext_resource type="Script" uid="uid://dp18mwjdnhak4" path="res://scripts/sound/Mixer3D.cs" id="2_dovo2"]
 [ext_resource type="Script" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
+[ext_resource type="PackedScene" path="res://scenes/ui/note_ui.tscn" id="4_reader"]
 
-[node name="Player" type="Node3D" unique_id=677720040]
+[node name="Player" type="Node3D" unique_id=677720040 node_paths=PackedStringArray("Reader")]
 script = ExtResource("1_8afob")
+Reader = NodePath("InteractionHUD/Overlay/NoteUI")
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=2043502293]
 
@@ -17,7 +19,7 @@ script = ExtResource("2_dovo2")
 [node name="HandPoint" type="Node3D" parent="PlayerCamera"]
 position = Vector3(0.23, -0.17, -0.55)
 
-[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint")]
+[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint", "Reader")]
 target_position = Vector3(0, 0, -2.8)
 collision_mask = 3
 collide_with_areas = false
@@ -25,6 +27,7 @@ script = ExtResource("2_interactor")
 PromptLabel = NodePath("../../InteractionHUD/Overlay/PromptLabel")
 HandLabel = NodePath("../../InteractionHUD/Overlay/HandLabel")
 HandPoint = NodePath("../HandPoint")
+Reader = NodePath("../../InteractionHUD/Overlay/NoteUI")
 
 [node name="InteractionHUD" type="CanvasLayer" parent="."]
 
@@ -55,3 +58,6 @@ offset_bottom = 42.0
 theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
 text = "Hand: empty"
 mouse_filter = 2
+
+[node name="NoteUI" parent="InteractionHUD/Overlay" instance=ExtResource("4_reader")]
+layout_mode = 1

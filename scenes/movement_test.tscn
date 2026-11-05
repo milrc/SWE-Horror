@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://6juk8eq7v7xc" path="res://scenes/rooms/bedroom/bedroom.tscn" id="2_755td"]
 [ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="3_08uda"]
 [ext_resource type="PackedScene" uid="uid://c6gwk5sjxbj0e" path="res://scenes/shader_scene/cross_hatch.tscn" id="3_qolh1"]
+[ext_resource type="PackedScene" uid="uid://d08emnjwpfvhb" path="res://scenes/interactions/note.tscn" id="4_qolh1"]
 
 [node name="MovementTest" type="Node3D" unique_id=1476754260]
 
@@ -12,3 +13,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5,
 [node name="bedroom" parent="." unique_id=540705334 instance=ExtResource("2_755td")]
 
 [node name="CrossHatch" parent="." unique_id=1665997343 instance=ExtResource("3_qolh1")]
+
+[node name="Note" parent="." unique_id=1049265717 instance=ExtResource("4_qolh1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.020438343, 0.46923417, 2.492459)

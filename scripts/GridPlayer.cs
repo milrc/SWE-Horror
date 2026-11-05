@@ -16,6 +16,7 @@ public partial class GridPlayer : Node3D
     [Export] public float MovementWeight = .3f;
     [Export] public float RotationWeight = .2f;
     [Export(PropertyHint.Range, "0.0,1.0")] public float CameraLimit = 1/6f;
+    [Export] public NoteUI Reader;
 
     // movement variables
     private Vector3 realPosition;
@@ -45,6 +46,9 @@ public partial class GridPlayer : Node3D
 
     public override void _Process(double delta)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         // animate the player
         AnimateMovement();
         AnimateCamera();
@@ -80,6 +84,9 @@ public partial class GridPlayer : Node3D
 
     public override void _UnhandledKeyInput(InputEvent @event)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         // keyboard movement
         if (@event is not InputEventKey key || !key.Pressed || key.Echo)
             return;
@@ -103,6 +110,9 @@ public partial class GridPlayer : Node3D
 
     public override void _UnhandledInput(InputEvent @event)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         if (@event is InputEventMouseMotion eventMouseMotion)
         {
             ApplyMouseRotation(eventMouseMotion.Position);
