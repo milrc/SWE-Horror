@@ -14,6 +14,20 @@
 [ext_resource type="PackedScene" uid="uid://b3njaiit131s5" path="res://scenes/rooms/bedroom/cabinet.tscn" id="12_u5x5l"]
 [ext_resource type="Texture2D" uid="uid://0dj5il4lywg8" path="res://art/bedroom/lightbulb.png" id="13_rs6in"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rs6in"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("3_03njj")
+shader_parameter/normal_map = ExtResource("6_iupqa")
+shader_parameter/roughness = 0.493
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_03njj"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("3_03njj")
+shader_parameter/normal_map = ExtResource("6_iupqa")
+shader_parameter/roughness = 0.493
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iupqa"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
@@ -66,27 +80,13 @@ shader_parameter/roughness = 0.493
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mpmen"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("3_03njj")
-shader_parameter/normal_map = ExtResource("6_iupqa")
-shader_parameter/roughness = 0.493
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3m4q"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("3_03njj")
-shader_parameter/normal_map = ExtResource("6_iupqa")
-shader_parameter/roughness = 0.493
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtl7h"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("4_iupqa")
 shader_parameter/roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ir5nd"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8fw82"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3m4q"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("2_03njj")
@@ -94,6 +94,22 @@ shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vp4n0"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtl7h"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("2_03njj")
+shader_parameter/normal_map = ExtResource("5_iupqa")
+shader_parameter/roughness = 0.751
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8fw82"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("4_iupqa")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ls25y"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dbd7t"]
@@ -109,7 +125,7 @@ shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("4_iupqa")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ls25y"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_w2jrj"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_22hcm"]
@@ -119,23 +135,23 @@ shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vp4n0"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("4_iupqa")
-shader_parameter/roughness = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w2jrj"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jb2v"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gh0k8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vp4n0"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0jb2v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gh0k8"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("4_iupqa")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0v4ry"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0a2w"]
@@ -151,21 +167,21 @@ shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("4_iupqa")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0v4ry"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dspe"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("4_iupqa")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aes75"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dspe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k68i1"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k68i1"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("4_iupqa")
-shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2jrj"]
 render_priority = 0
@@ -173,7 +189,7 @@ shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("4_iupqa")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_aes75"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjc4m"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8acv6"]
@@ -183,23 +199,23 @@ shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jb2v"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("4_iupqa")
-shader_parameter/roughness = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vjc4m"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_si50b"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mgko"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jb2v"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_si50b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mgko"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("4_iupqa")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6os3a"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cmywp"]
@@ -215,7 +231,7 @@ shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("4_iupqa")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6os3a"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cuolb"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lclgu"]
@@ -225,26 +241,10 @@ shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lyakd"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("4_iupqa")
-shader_parameter/roughness = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cuolb"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8yhe"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("2_03njj")
-shader_parameter/normal_map = ExtResource("5_iupqa")
-shader_parameter/roughness = 0.751
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_evre4"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aes75"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lyakd"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("2_03njj")
@@ -279,7 +279,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31328" type="Sprite3D" parent="room-builder/Floor10" unique_id=1503672294]
-material_override = SubResource("ShaderMaterial_iupqa")
+material_override = SubResource("ShaderMaterial_rs6in")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -298,7 +298,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31330" type="Sprite3D" parent="room-builder/Floor11" unique_id=354401988]
-material_override = SubResource("ShaderMaterial_p1pqg")
+material_override = SubResource("ShaderMaterial_03njj")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -317,7 +317,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31332" type="Sprite3D" parent="room-builder/Floor12" unique_id=1239101360]
-material_override = SubResource("ShaderMaterial_glxe3")
+material_override = SubResource("ShaderMaterial_iupqa")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -336,7 +336,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31334" type="Sprite3D" parent="room-builder/Floor13" unique_id=142008906]
-material_override = SubResource("ShaderMaterial_hjadq")
+material_override = SubResource("ShaderMaterial_p1pqg")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -355,7 +355,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31336" type="Sprite3D" parent="room-builder/Floor14" unique_id=104826453]
-material_override = SubResource("ShaderMaterial_al4p7")
+material_override = SubResource("ShaderMaterial_glxe3")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -374,7 +374,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31338" type="Sprite3D" parent="room-builder/Floor15" unique_id=1860191953]
-material_override = SubResource("ShaderMaterial_kwn8b")
+material_override = SubResource("ShaderMaterial_hjadq")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -393,7 +393,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31340" type="Sprite3D" parent="room-builder/Floor16" unique_id=749020047]
-material_override = SubResource("ShaderMaterial_rr51s")
+material_override = SubResource("ShaderMaterial_al4p7")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -412,7 +412,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31342" type="Sprite3D" parent="room-builder/Floor17" unique_id=792791561]
-material_override = SubResource("ShaderMaterial_mpmen")
+material_override = SubResource("ShaderMaterial_kwn8b")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -431,7 +431,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31344" type="Sprite3D" parent="room-builder/Floor18" unique_id=1906316235]
-material_override = SubResource("ShaderMaterial_u3m4q")
+material_override = SubResource("ShaderMaterial_rr51s")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -450,7 +450,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31346" type="Sprite3D" parent="room-builder/Ceiling" unique_id=504624872]
-material_override = SubResource("ShaderMaterial_mtl7h")
+material_override = SubResource("ShaderMaterial_mpmen")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -474,7 +474,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_ir5nd")
 
 [node name="@Sprite3D@31350" type="Sprite3D" parent="room-builder/SWall" unique_id=886278652]
-material_override = SubResource("ShaderMaterial_8fw82")
+material_override = SubResource("ShaderMaterial_u3m4q")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -500,7 +500,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_vp4n0")
 
 [node name="@Sprite3D@31354" type="Sprite3D" parent="room-builder/EWall" unique_id=1068449082]
-material_override = SubResource("ShaderMaterial_dbd7t")
+material_override = SubResource("ShaderMaterial_mtl7h")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -519,7 +519,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31356" type="Sprite3D" parent="room-builder/Ceiling2" unique_id=2001375626]
-material_override = SubResource("ShaderMaterial_ir5nd")
+material_override = SubResource("ShaderMaterial_8fw82")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -543,7 +543,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_ls25y")
 
 [node name="@Sprite3D@31360" type="Sprite3D" parent="room-builder/EWall2" unique_id=782331947]
-material_override = SubResource("ShaderMaterial_22hcm")
+material_override = SubResource("ShaderMaterial_dbd7t")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -562,7 +562,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31362" type="Sprite3D" parent="room-builder/Ceiling3" unique_id=2117012870]
-material_override = SubResource("ShaderMaterial_vp4n0")
+material_override = SubResource("ShaderMaterial_ir5nd")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -586,7 +586,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_w2jrj")
 
 [node name="@Sprite3D@31366" type="Sprite3D" parent="room-builder/NWall" unique_id=1339195977]
-material_override = SubResource("ShaderMaterial_gh0k8")
+material_override = SubResource("ShaderMaterial_22hcm")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -612,7 +612,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_0jb2v")
 
 [node name="@Sprite3D@31370" type="Sprite3D" parent="room-builder/EWall3" unique_id=495897279]
-material_override = SubResource("ShaderMaterial_y0a2w")
+material_override = SubResource("ShaderMaterial_vp4n0")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -631,7 +631,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31372" type="Sprite3D" parent="room-builder/Ceiling4" unique_id=432160176]
-material_override = SubResource("ShaderMaterial_ls25y")
+material_override = SubResource("ShaderMaterial_gh0k8")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -655,7 +655,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_0v4ry")
 
 [node name="@Sprite3D@31376" type="Sprite3D" parent="room-builder/SWall2" unique_id=757084211]
-material_override = SubResource("ShaderMaterial_0dspe")
+material_override = SubResource("ShaderMaterial_y0a2w")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -674,7 +674,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31378" type="Sprite3D" parent="room-builder/Ceiling5" unique_id=2007550197]
-material_override = SubResource("ShaderMaterial_k68i1")
+material_override = SubResource("ShaderMaterial_ls25y")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -691,7 +691,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31380" type="Sprite3D" parent="room-builder/Ceiling6" unique_id=1573035902]
-material_override = SubResource("ShaderMaterial_w2jrj")
+material_override = SubResource("ShaderMaterial_0dspe")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -715,7 +715,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_aes75")
 
 [node name="@Sprite3D@31384" type="Sprite3D" parent="room-builder/NWall2" unique_id=566675512]
-material_override = SubResource("ShaderMaterial_8acv6")
+material_override = SubResource("ShaderMaterial_k68i1")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -734,7 +734,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31386" type="Sprite3D" parent="room-builder/Ceiling7" unique_id=1934428061]
-material_override = SubResource("ShaderMaterial_0jb2v")
+material_override = SubResource("ShaderMaterial_w2jrj")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -758,7 +758,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_vjc4m")
 
 [node name="@Sprite3D@31390" type="Sprite3D" parent="room-builder/SWall3" unique_id=580253696]
-material_override = SubResource("ShaderMaterial_1mgko")
+material_override = SubResource("ShaderMaterial_8acv6")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -784,7 +784,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_si50b")
 
 [node name="@Sprite3D@31394" type="Sprite3D" parent="room-builder/WWall" unique_id=1777019090]
-material_override = SubResource("ShaderMaterial_cmywp")
+material_override = SubResource("ShaderMaterial_0jb2v")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -803,7 +803,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31396" type="Sprite3D" parent="room-builder/Ceiling8" unique_id=1358219749]
-material_override = SubResource("ShaderMaterial_0v4ry")
+material_override = SubResource("ShaderMaterial_1mgko")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -827,7 +827,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_6os3a")
 
 [node name="@Sprite3D@31400" type="Sprite3D" parent="room-builder/WWall2" unique_id=1842637330]
-material_override = SubResource("ShaderMaterial_lclgu")
+material_override = SubResource("ShaderMaterial_cmywp")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -846,7 +846,7 @@ shader = ExtResource("7_hjadq")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@31402" type="Sprite3D" parent="room-builder/Ceiling9" unique_id=187268225]
-material_override = SubResource("ShaderMaterial_lyakd")
+material_override = SubResource("ShaderMaterial_0v4ry")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -870,7 +870,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_cuolb")
 
 [node name="@Sprite3D@31406" type="Sprite3D" parent="room-builder/NWall3" unique_id=2139509789]
-material_override = SubResource("ShaderMaterial_x8yhe")
+material_override = SubResource("ShaderMaterial_lclgu")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -896,7 +896,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_evre4")
 
 [node name="@Sprite3D@31410" type="Sprite3D" parent="room-builder/WWall3" unique_id=753999536]
-material_override = SubResource("ShaderMaterial_aes75")
+material_override = SubResource("ShaderMaterial_lyakd")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -920,7 +920,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11209631, 0)
 light_size = 0.215
 shadow_enabled = true
 omni_range = 1.895
-omni_attenuation = 0.556
 
 [node name="Sprite3D" type="Sprite3D" parent="lightbulb" unique_id=1756363951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17899078, 0)
