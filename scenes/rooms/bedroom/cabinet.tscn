@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://b3njaiit131s5"]
 
+[ext_resource type="ArrayMesh" uid="uid://bhpbxnr72e3ld" path="res://art/bedroom/cabinet.obj" id="1_yg0i0"]
+
 [node name="cabinet" type="Node3D" unique_id=1275261043]
 
 [node name="cabinet_test_csg" type="CSGBox3D" parent="." unique_id=336287801]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.14999999, 0.35000002)
+visible = false
 size = Vector3(0.90000004, 0.3, 0.3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=27413666]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.16340798, 0.35052377)
+mesh = ExtResource("1_yg0i0")

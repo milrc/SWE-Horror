@@ -251,6 +251,12 @@ shader_parameter/texture_albedo = ExtResource("2_03njj")
 shader_parameter/normal_map = ExtResource("5_iupqa")
 shader_parameter/roughness = 0.751
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3v85x"]
+render_priority = 0
+shader = ExtResource("7_hjadq")
+shader_parameter/texture_albedo = ExtResource("13_rs6in")
+shader_parameter/roughness = 0.12800000608
+
 [sub_resource type="Environment" id="Environment_pp2t7"]
 ambient_light_source = 3
 
@@ -923,6 +929,7 @@ omni_range = 1.895
 
 [node name="Sprite3D" type="Sprite3D" parent="lightbulb" unique_id=1756363951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17899078, 0)
+material_override = SubResource("ShaderMaterial_3v85x")
 shaded = true
 alpha_cut = 1
 texture_filter = 0
