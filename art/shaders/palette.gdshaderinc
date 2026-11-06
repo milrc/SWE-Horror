@@ -19,11 +19,13 @@ const vec3 COLOR_PALETTE[17] = vec3[](
 	vec3(0.12549019607843137, 0.09803921568627451, 0.08235294117647059), // #201915
 	vec3(1.0, 1.0, 1.0)  // #FFFFFF
 );
+
+//find closest color in oklch color space
 vec3 get_nearest_color(vec3 color) {
 	float min_diff = 100.0;
 	vec3 nearest_color = color;
 	for (int i = 0; i < COLOR_PALETTE.length(); i++) {
-		float curr_dist = distance(rgb_to_oklch(COLOR_PALETTE[i]), rgb_to_oklch(color));
+		float curr_dist = distance(rgb_to_oklch(COLOR_PALETTE[i]), color);
 		if (curr_dist < min_diff) {
 			min_diff = curr_dist;
 			nearest_color = COLOR_PALETTE[i];
