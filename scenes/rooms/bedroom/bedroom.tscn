@@ -10,9 +10,15 @@
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="8_al4p7"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="9_kwn8b"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="10_rr51s"]
+[ext_resource type="Texture2D" uid="uid://cxh38x4y5y3lu" path="res://art/bedroom/ruined_window_normal.png" id="11_p1pqg"]
+[ext_resource type="Texture2D" uid="uid://deye8p33ny3dr" path="res://art/bedroom/ruined_window.png" id="12_glxe3"]
 [ext_resource type="PackedScene" uid="uid://drgswivuhnihf" path="res://scenes/rooms/bedroom/bed.tscn" id="12_u3m4q"]
 [ext_resource type="PackedScene" uid="uid://b3njaiit131s5" path="res://scenes/rooms/bedroom/cabinet.tscn" id="12_u5x5l"]
+[ext_resource type="Shader" uid="uid://baq0widfnjh1j" path="res://art/shaders/texel_space_double_sided.gdshader" id="13_03njj"]
+[ext_resource type="Texture2D" uid="uid://kxpuxuh4w8mj" path="res://art/bedroom/ruined_door_frame.png" id="13_glxe3"]
+[ext_resource type="Texture2D" uid="uid://dqn3y3gkoul6e" path="res://art/bedroom/ruined_door_frame_normal.png" id="13_hjadq"]
 [ext_resource type="Texture2D" uid="uid://0dj5il4lywg8" path="res://art/bedroom/lightbulb.png" id="13_rs6in"]
+[ext_resource type="Texture2D" uid="uid://cvyn5gjoo7cy5" path="res://art/bedroom/ruined_door.png" id="19_al4p7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rs6in"]
 render_priority = 0
@@ -115,8 +121,8 @@ size = Vector3(1, 1, 0.05)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dbd7t"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("2_03njj")
-shader_parameter/normal_map = ExtResource("5_iupqa")
+shader_parameter/texture_albedo = ExtResource("12_glxe3")
+shader_parameter/normal_map = ExtResource("11_p1pqg")
 shader_parameter/roughness = 0.751
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ir5nd"]
@@ -179,8 +185,8 @@ size = Vector3(1, 1, 0.05)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k68i1"]
 render_priority = 0
 shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("2_03njj")
-shader_parameter/normal_map = ExtResource("5_iupqa")
+shader_parameter/texture_albedo = ExtResource("13_glxe3")
+shader_parameter/normal_map = ExtResource("13_hjadq")
 shader_parameter/roughness = 0.751
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2jrj"]
@@ -253,16 +259,20 @@ shader_parameter/roughness = 0.751
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3v85x"]
 render_priority = 0
-shader = ExtResource("7_hjadq")
+shader = ExtResource("13_03njj")
 shader_parameter/texture_albedo = ExtResource("13_rs6in")
 shader_parameter/roughness = 0.12800000608
 
-[sub_resource type="Environment" id="Environment_pp2t7"]
-ambient_light_source = 3
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8yhe"]
+render_priority = 0
+shader = ExtResource("13_03njj")
+shader_parameter/texture_albedo = ExtResource("19_al4p7")
+shader_parameter/roughness = 0.5850000277875
 
 [node name="bedroom" type="Node3D" unique_id=540705334]
 
 [node name="room-builder" type="Node3D" parent="." unique_id=1055704571]
+visible = false
 script = ExtResource("1_u5x5l")
 Wall = ExtResource("2_03njj")
 Floor = ExtResource("3_03njj")
@@ -554,10 +564,10 @@ pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("2_03njj")
+texture = ExtResource("12_glxe3")
 script = ExtResource("9_kwn8b")
 roughness = 0.751
-normal = ExtResource("5_iupqa")
+normal = ExtResource("11_p1pqg")
 
 [node name="Ceiling3" type="Node3D" parent="room-builder" unique_id=682489548 node_paths=PackedStringArray("Sprite")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 2.5)
@@ -719,6 +729,7 @@ metadata/_edit_group_ = true
 
 [node name="@CollisionShape3D@31383" type="CollisionShape3D" parent="room-builder/NWall2/@StaticBody3D@31382" unique_id=1372369622]
 shape = SubResource("BoxShape3D_aes75")
+disabled = true
 
 [node name="@Sprite3D@31384" type="Sprite3D" parent="room-builder/NWall2" unique_id=566675512]
 material_override = SubResource("ShaderMaterial_k68i1")
@@ -726,10 +737,10 @@ pixel_size = 0.013333334
 shaded = true
 double_sided = false
 texture_filter = 0
-texture = ExtResource("2_03njj")
+texture = ExtResource("13_glxe3")
 script = ExtResource("9_kwn8b")
 roughness = 0.751
-normal = ExtResource("5_iupqa")
+normal = ExtResource("13_hjadq")
 
 [node name="Ceiling7" type="Node3D" parent="room-builder" unique_id=457464407 node_paths=PackedStringArray("Sprite")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 1, 0.5)
@@ -913,27 +924,44 @@ roughness = 0.751
 normal = ExtResource("5_iupqa")
 
 [node name="bed" parent="." unique_id=1859397078 instance=ExtResource("12_u3m4q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5006163)
 
 [node name="cabinet" parent="." unique_id=1275261043 instance=ExtResource("12_u5x5l")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5, 0, 1.5)
 
 [node name="lightbulb" type="Node3D" parent="." unique_id=1034016383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.8, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.70393556, 1.5)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lightbulb" unique_id=1915796160]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11209631, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.046082973, 0)
 light_size = 0.215
 shadow_enabled = true
 omni_range = 1.895
 
-[node name="Sprite3D" type="Sprite3D" parent="lightbulb" unique_id=1756363951]
+[node name="sprite1" type="Sprite3D" parent="lightbulb" unique_id=1756363951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17899078, 0)
 material_override = SubResource("ShaderMaterial_3v85x")
+pixel_size = 0.0133333
 shaded = true
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("13_rs6in")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1412942402]
-environment = SubResource("Environment_pp2t7")
+[node name="sprite2" type="Sprite3D" parent="lightbulb" unique_id=1744399934]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.17899078, 0)
+material_override = SubResource("ShaderMaterial_3v85x")
+pixel_size = 0.0133333
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("13_rs6in")
+
+[node name="door" type="Node3D" parent="." unique_id=765438415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 3)
+
+[node name="sprite1" type="Sprite3D" parent="door" unique_id=1755815080]
+material_override = SubResource("ShaderMaterial_x8yhe")
+pixel_size = 0.0133333
+shaded = true
+texture_filter = 2
+texture = ExtResource("19_al4p7")

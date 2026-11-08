@@ -15,23 +15,28 @@ seamless = true
 render_priority = 1
 shader = ExtResource("3_qolh1")
 shader_parameter/noise = SubResource("NoiseTexture2D_kobp4")
-shader_parameter/preview_hatch_levels = false
 shader_parameter/hatch_1 = 0.27999999374144
 shader_parameter/hatch_2 = 0.14499999675896
 shader_parameter/hatch_3 = 0.06499999854712
 shader_parameter/hatch_4 = 0.01999999955296
+shader_parameter/preview_hatch_levels = false
 shader_parameter/hatch_density = 200.74
 shader_parameter/hatch_warp = 0.25
 shader_parameter/hatch_thickness = 0.23
 shader_parameter/steps_l = 1.0
 shader_parameter/level_c = 15.0
 shader_parameter/level_h = 0.05
+shader_parameter/preview_posterize_color = false
 shader_parameter/color_boil = 0.005
 shader_parameter/value_to_thickness = ExtResource("4_gdjh5")
 
 [sub_resource type="QuadMesh" id="QuadMesh_8fw82"]
 flip_faces = true
 size = Vector2(2, 2)
+
+[sub_resource type="Environment" id="Environment_qolh1"]
+background_mode = 2
+ambient_light_source = 3
 
 [node name="MovementTest" type="Node3D" unique_id=1476754260]
 
@@ -44,3 +49,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5,
 material_override = SubResource("ShaderMaterial_d5coj")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_8fw82")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=832125650]
+environment = SubResource("Environment_qolh1")
