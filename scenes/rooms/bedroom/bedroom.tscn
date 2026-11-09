@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dohp5nfxxgc63" path="res://art/bedroom/ruined_ceiling.png" id="4_iupqa"]
 [ext_resource type="Texture2D" uid="uid://cb44d07ur4wca" path="res://art/bedroom/ruined_wall_normal.png" id="5_iupqa"]
 [ext_resource type="Texture2D" uid="uid://dtxajotst31br" path="res://art/bedroom/ruined_floor_normal.png" id="6_iupqa"]
-[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="7_hjadq"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/materials/textured_texel_space.gdshader" id="7_hjadq"]
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="8_al4p7"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="9_kwn8b"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="10_rr51s"]

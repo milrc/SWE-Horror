@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-#include "hatching.gdshaderinc"
+#include "../includes/hatching.gdshaderinc"
 
 uniform sampler2D ceiling_texture : filter_nearest, repeat_enable;
 uniform sampler2D wall_texture : filter_nearest, repeat_enable;

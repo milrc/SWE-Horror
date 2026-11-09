@@ -1,8 +1,8 @@
 shader_type spatial;
 render_mode unshaded, fog_disabled, depth_test_disabled;
 
-#include "uv_maps.gdshaderinc"
-#include "hatching.gdshaderinc"
+#include "../includes/uv_maps.gdshaderinc"
+#include "../includes/hatching.gdshaderinc"
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_nearest, repeat_disable;
 

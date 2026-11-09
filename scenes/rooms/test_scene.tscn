@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_nvn3b"]
 [ext_resource type="Texture2D" uid="uid://gedfwftwn0ou" path="res://art/dev_room/normal_wall.png" id="5_bhfio"]
 [ext_resource type="Texture2D" uid="uid://la8htacac1sa" path="res://art/dev_room/normal_map_test.png" id="6_qhto0"]
-[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="7_lhfkx"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/materials/textured_texel_space.gdshader" id="7_lhfkx"]
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="8_y256q"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="9_vsbfq"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="10_c4nqf"]

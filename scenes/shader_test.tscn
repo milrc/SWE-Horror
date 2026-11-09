@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwl42t6koemdc"]
 
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="1_im7wb"]
-[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="2_fthar"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/materials/textured_texel_space.gdshader" id="2_fthar"]
 [ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="2_sju7m"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="3_fthar"]
 [ext_resource type="Texture2D" uid="uid://gedfwftwn0ou" path="res://art/dev_room/normal_wall.png" id="3_ugewl"]

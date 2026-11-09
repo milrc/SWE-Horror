@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6gwk5sjxbj0e"]
 
-[ext_resource type="Shader" uid="uid://bgbx0bdvdq54j" path="res://art/shaders/post_processing.gdshader" id="1_3c57e"]
-[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/value_to_thickness_curve.tres" id="2_1hapn"]
+[ext_resource type="Shader" uid="uid://bgbx0bdvdq54j" path="res://art/shaders/materials/post_processing.gdshader" id="1_3c57e"]
+[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/resources/value_to_thickness_curve.tres" id="2_1hapn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_al4p7"]
 
@@ -17,16 +17,17 @@ shader_parameter/hatch_1 = 0.27999999374144
 shader_parameter/hatch_2 = 0.14499999675896
 shader_parameter/hatch_3 = 0.06499999854712
 shader_parameter/hatch_4 = 0.01999999955296
-shader_parameter/preview_hatch_levels = false
 shader_parameter/hatch_density = 200.74
 shader_parameter/hatch_warp = 0.25
 shader_parameter/hatch_thickness = 0.23
-shader_parameter/steps_l = 4.0
-shader_parameter/level_c = 15.0
-shader_parameter/level_h = 0.05
-shader_parameter/preview_posterize_color = false
-shader_parameter/color_boil = 0.005
 shader_parameter/value_to_thickness = ExtResource("2_1hapn")
+shader_parameter/preview_hatch_levels = false
+shader_parameter/steps_l = 50.0
+shader_parameter/level_c = 15.0
+shader_parameter/level_h = 0.10000000149012
+shader_parameter/color_threshold = 0.0230000010925
+shader_parameter/color_boil = 0.005
+shader_parameter/preview_colors = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_8fw82"]
 flip_faces = true
