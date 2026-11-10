@@ -8,6 +8,11 @@ public partial class FlashLight : SpotLight3D
     {
         camera = GetParent() as Camera3D;
     }
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed("toggle_flashlight"))
+            Visible = !Visible;
+    }
 
     public override void _Process(double delta)
     {
