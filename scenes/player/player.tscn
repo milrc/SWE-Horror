@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cpgmpwf8vhkaq" path="res://scripts/GridPlayer.cs" id="1_8afob"]
 [ext_resource type="Script" uid="uid://dp18mwjdnhak4" path="res://scripts/sound/Mixer3D.cs" id="2_dovo2"]
-[ext_resource type="Script" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
+[ext_resource type="Script" uid="uid://cw0k5ymt2tw4p" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
+[ext_resource type="Script" uid="uid://wrwe55o0umce" path="res://scenes/player/FlashLight.cs" id="2_lvxji"]
 
 [node name="Player" type="Node3D" unique_id=677720040]
 script = ExtResource("1_8afob")
@@ -12,23 +13,33 @@ script = ExtResource("1_8afob")
 [node name="AudioListener3D" type="AudioListener3D" parent="PlayerCamera" unique_id=241874532]
 current = true
 
-[node name="Mixer3D" type="Node3D" parent="." unique_id=1136128941]
-script = ExtResource("2_dovo2")
-[node name="HandPoint" type="Node3D" parent="PlayerCamera"]
-position = Vector3(0.23, -0.17, -0.55)
+[node name="HandPoint" type="Node3D" parent="PlayerCamera" unique_id=556093910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, -0.17, -0.55)
 
-[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint")]
+[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" unique_id=1580354104 node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint")]
 target_position = Vector3(0, 0, -2.8)
 collision_mask = 3
-collide_with_areas = false
 script = ExtResource("2_interactor")
 PromptLabel = NodePath("../../InteractionHUD/Overlay/PromptLabel")
 HandLabel = NodePath("../../InteractionHUD/Overlay/HandLabel")
 HandPoint = NodePath("../HandPoint")
 
-[node name="InteractionHUD" type="CanvasLayer" parent="."]
+[node name="SpotLight3D" type="SpotLight3D" parent="PlayerCamera" unique_id=1288507657]
+spot_attenuation = 2.0
+spot_angle = 6.0
+script = ExtResource("2_lvxji")
 
-[node name="Overlay" type="Control" parent="InteractionHUD"]
+[node name="SpotLight3D" type="SpotLight3D" parent="PlayerCamera/SpotLight3D" unique_id=1900496857]
+light_energy = 0.1
+spot_attenuation = 2.0
+spot_angle = 15.0
+
+[node name="Mixer3D" type="Node3D" parent="." unique_id=1136128941]
+script = ExtResource("2_dovo2")
+
+[node name="InteractionHUD" type="CanvasLayer" parent="." unique_id=132686990]
+
+[node name="Overlay" type="Control" parent="InteractionHUD" unique_id=1785368057]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,16 +48,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PromptLabel" type="Label" parent="InteractionHUD/Overlay"]
+[node name="PromptLabel" type="Label" parent="InteractionHUD/Overlay" unique_id=1085810862]
 visible = false
 layout_mode = 0
 offset_right = 260.0
 offset_bottom = 26.0
 theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
 text = "Left click to pick up"
-mouse_filter = 2
 
-[node name="HandLabel" type="Label" parent="InteractionHUD/Overlay"]
+[node name="HandLabel" type="Label" parent="InteractionHUD/Overlay" unique_id=994223520]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 12.0
@@ -54,4 +64,3 @@ offset_right = 250.0
 offset_bottom = 42.0
 theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
 text = "Hand: empty"
-mouse_filter = 2
