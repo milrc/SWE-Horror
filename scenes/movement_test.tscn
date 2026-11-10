@@ -24,10 +24,7 @@ shader_parameter/hatch_warp = 0.25
 shader_parameter/hatch_thickness = 0.23
 shader_parameter/value_to_thickness = ExtResource("4_gdjh5")
 shader_parameter/preview_hatch_levels = false
-shader_parameter/steps_l = 1.0
-shader_parameter/level_c = 15.0
-shader_parameter/level_h = 0.05
-shader_parameter/color_threshold = 0.4
+shader_parameter/color_threshold = 0.10000000475
 shader_parameter/color_boil = 0.005
 shader_parameter/preview_colors = false
 

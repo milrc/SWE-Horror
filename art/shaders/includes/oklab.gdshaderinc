@@ -96,7 +96,7 @@ vec3 oklch_to_rgb(vec3 lch) {
 
 float ok_distance_squared(vec3 lch, vec3 lch2) {
 	float chroma_distance = mod(((lch.z - lch2.z) + 180.0), 360.0) - 180.0;
-	return pow(lch.x - lch.x, 2.0) + pow(lch.y - lch.y, 2.0) + pow(chroma_distance/180.0, 2.0);
+	return pow(lch.x - lch2.x, 2.0) + pow((lch.y - lch2.y)/0.37, 2.0) + pow(chroma_distance/180.0, 2.0);
 }
 float ok_distance(vec3 lch, vec3 lch2) {
 	return sqrt(ok_distance_squared(lch, lch2));	
@@ -104,7 +104,7 @@ float ok_distance(vec3 lch, vec3 lch2) {
 
 float ok_distance_weighted_squared(vec3 lch, vec3 lch2, vec3 weights) {
 	float chroma_distance = mod(((lch.z - lch2.z) + 180.0), 360.0) - 180.0;
-	return pow((lch.x - lch.x)*weights.x, 2.0) + pow((lch.y - lch.y)*weights.y, 2.0) + pow((chroma_distance/180.0)*weights.z, 2.0);
+	return pow((lch.x - lch2.x)*weights.x, 2.0) + pow(((lch.y - lch2.y)/0.37)*weights.y, 2.0) + pow((chroma_distance/180.0)*weights.z, 2.0);
 }
 float ok_distance_weighted(vec3 lch, vec3 lch2, vec3 weights) {
 	return sqrt(ok_distance_weighted_squared(lch, lch2, weights));	

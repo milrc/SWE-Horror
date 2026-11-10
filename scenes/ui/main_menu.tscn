@@ -28,19 +28,16 @@ shader_parameter/warp_strength = 4.00000019
 shader_parameter/walk_speed = 0.1
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/boil_strength = 0.05
-shader_parameter/hatch_1 = 0.5499999877064
-shader_parameter/hatch_2 = 0.31499999295912
-shader_parameter/hatch_3 = 0.1999999955296
-shader_parameter/hatch_4 = 0.10999999754128
+shader_parameter/hatch_1 = 0.47999998927104
+shader_parameter/hatch_2 = 0.27999999374144
+shader_parameter/hatch_3 = 0.15499999653544
+shader_parameter/hatch_4 = 0.10499999765304
 shader_parameter/hatch_density = 200.0
 shader_parameter/hatch_warp = 0.25
 shader_parameter/hatch_thickness = 0.5
 shader_parameter/value_to_thickness = ExtResource("5_x2yvf")
 shader_parameter/preview_hatch_levels = false
-shader_parameter/steps_l = 4.0
-shader_parameter/level_c = 15.0
-shader_parameter/level_h = 0.05
-shader_parameter/color_threshold = 0.186000008835
+shader_parameter/color_threshold = 0.1
 shader_parameter/color_boil = 0.005
 shader_parameter/preview_colors = false
 
@@ -71,7 +68,6 @@ mouse_filter = 2
 color = Color(0.055, 0.055, 0.065, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=409501937]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
