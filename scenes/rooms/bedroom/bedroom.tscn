@@ -989,6 +989,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.70393556, 1.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.046082973, 0)
 light_size = 0.215
 shadow_enabled = true
+shadow_blur = 0.0
 omni_range = 1.895
 
 [node name="sprite1" type="Sprite3D" parent="lightbulb" unique_id=1756363951]
