@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://d08emnjwpfvhb"]
 
 [ext_resource type="Script" uid="uid://cmd4rhim1yrf3" path="res://scripts/interactions/Note.cs" id="1_note"]
+[ext_resource type="PackedScene" uid="uid://b0onpunu2bdkl" path="res://art/bedroom/note.gltf" id="2_model"]
+[ext_resource type="Texture2D" uid="uid://cn1kwbb88m2bw" path="res://art/bedroom/notetexture.png" id="3_texture"]
+[ext_resource type="Shader" path="res://art/shaders/textured_texel_space.gdshader" id="4_shader"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_note"]
-size = Vector3(0.28, 0.36, 0.01)
+size = Vector3(0.14, 0.42, 0.32)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_paper"]
-shading_mode = 0
-albedo_color = Color(0.9, 0.85, 0.7, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_note"]
-material = SubResource("StandardMaterial3D_paper")
-size = Vector3(0.28, 0.36, 0.01)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_paper"]
+shader = ExtResource("4_shader")
+shader_parameter/texture_albedo = ExtResource("3_texture")
+shader_parameter/roughness = 0.9450000448875
 
 [node name="Note" type="StaticBody3D" unique_id=1049265717]
 collision_layer = 2
@@ -19,7 +19,12 @@ collision_mask = 0
 script = ExtResource("1_note")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=297477024]
+position = Vector3(0.0655, 0.0315, 0.0009)
 shape = SubResource("BoxShape3D_note")
 
-[node name="Paper" type="MeshInstance3D" parent="." unique_id=1325006607]
-mesh = SubResource("BoxMesh_note")
+[node name="Paper" parent="." instance=ExtResource("2_model")]
+
+[node name="Plane" parent="Paper" index="0"]
+material_override = SubResource("ShaderMaterial_paper")
+
+[editable path="Paper"]
