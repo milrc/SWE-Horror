@@ -1010,7 +1010,7 @@ texture_filter = 0
 texture = ExtResource("13_rs6in")
 
 [node name="door" type="Node3D" parent="." unique_id=765438415]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.998)
 
 [node name="sprite1" type="Sprite3D" parent="door" unique_id=1755815080]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -1023,7 +1023,7 @@ texture = ExtResource("19_al4p7")
 [node name="note" parent="." unique_id=1492883850 instance=ExtResource("20_kwn8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51234406, 2.5645428)
 
-[node name="Plane" parent="note" index="0" unique_id=347350860]
+[node name="Plane" parent="note" index="0" unique_id=1925937892]
 material_override = SubResource("ShaderMaterial_sj13j")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=423967628]
