@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dmkryx81cv781" path="res://scripts/ui/MainMenu.cs" id="1_menu"]
 [ext_resource type="PackedScene" uid="uid://b1pus62u2gbg4" path="res://scenes/movement_test.tscn" id="2_gameplay"]
-[ext_resource type="Shader" uid="uid://b34djuqoov18o" path="res://art/shaders/menu_splash.gdshader" id="3_m1kxf"]
-[ext_resource type="Texture2D" uid="uid://eay01hum1x0w" path="res://art/dev_room/dev_ceiling.png" id="4_btxxm"]
-[ext_resource type="Texture2D" uid="uid://c0708qoxm71cd" path="res://art/dev_room/dev_floor.png" id="5_wb0q5"]
-[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/value_to_thickness_curve.tres" id="5_x2yvf"]
-[ext_resource type="Texture2D" uid="uid://y65xpwraxilw" path="res://art/dev_room/dev_wall.png" id="7_q85j6"]
+[ext_resource type="Shader" uid="uid://b34djuqoov18o" path="res://art/shaders/materials/menu_splash.gdshader" id="3_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://dohp5nfxxgc63" path="res://art/bedroom/ruined_ceiling.png" id="4_btxxm"]
+[ext_resource type="Texture2D" uid="uid://d20e576egnft8" path="res://art/bedroom/ruined_floor.png" id="5_wb0q5"]
+[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/resources/value_to_thickness_curve.tres" id="5_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://dgrixqh8t01ic" path="res://art/bedroom/ruined_wall.png" id="7_q85j6"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lvxji"]
 frequency = 0.0025
@@ -18,28 +18,28 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dovo2"]
 shader = ExtResource("3_m1kxf")
 shader_parameter/noise = SubResource("NoiseTexture2D_gmlin")
-shader_parameter/preview_hatch_levels = false
-shader_parameter/hatch_1 = 0.36499999184152
-shader_parameter/hatch_2 = 0.19499999564136
-shader_parameter/hatch_3 = 0.04499999899416
-shader_parameter/hatch_4 = 0.0249999994412
-shader_parameter/hatch_density = 200.0
-shader_parameter/hatch_warp = 0.25
-shader_parameter/hatch_thickness = 0.5
-shader_parameter/steps_l = 4.0
-shader_parameter/level_c = 15.0
-shader_parameter/level_h = 0.05
-shader_parameter/color_boil = 0.005
-shader_parameter/value_to_thickness = ExtResource("5_x2yvf")
 shader_parameter/ceiling_texture = ExtResource("4_btxxm")
 shader_parameter/wall_texture = ExtResource("7_q85j6")
 shader_parameter/floor_texture = ExtResource("5_wb0q5")
+shader_parameter/preview_textures = false
 shader_parameter/boil_speed = 0.050000002375
 shader_parameter/warp_speed = 0.1
 shader_parameter/warp_strength = 4.00000019
 shader_parameter/walk_speed = 0.1
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/boil_strength = 0.05
+shader_parameter/hatch_1 = 0.47999998927104
+shader_parameter/hatch_2 = 0.27999999374144
+shader_parameter/hatch_3 = 0.15499999653544
+shader_parameter/hatch_4 = 0.10499999765304
+shader_parameter/hatch_density = 200.0
+shader_parameter/hatch_warp = 0.25
+shader_parameter/hatch_thickness = 0.5
+shader_parameter/value_to_thickness = ExtResource("5_x2yvf")
+shader_parameter/preview_hatch_levels = false
+shader_parameter/color_threshold = 0.1
+shader_parameter/color_boil = 0.005
+shader_parameter/preview_colors = false
 
 [node name="MainMenu" type="Control" unique_id=1038995619 node_paths=PackedStringArray("NewGameButton", "QuitButton")]
 layout_mode = 3

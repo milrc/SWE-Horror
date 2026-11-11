@@ -3,20 +3,24 @@
 #include "uv_maps.gdshaderinc"
 
 uniform sampler2D noise : repeat_disable, filter_nearest;
+
+group_uniforms Hatching;
 uniform float hatch_1 : hint_range(0.0, 1.0, 0.005) = 0.265;
 uniform float hatch_2 : hint_range(0.0, 1.0, 0.005) = 0.13;
 uniform float hatch_3 : hint_range(0.0, 1.0, 0.005) = 0.045;
 uniform float hatch_4 : hint_range(0.0, 1.0, 0.005) = 0.01;
-uniform bool preview_hatch_levels = false;
 uniform float hatch_density = 300;
 uniform float hatch_warp = 0.25;
 uniform float hatch_thickness = 0.33;
-uniform float steps_l : hint_range(1.0, 50.0, 1.0) = 4;
-uniform float level_c : hint_range(0.01, 15.0) = 15.0;
-uniform float level_h : hint_range(0.01, 0.1) = 0.05;
-uniform bool preview_posterize_color = false;
+uniform sampler2D value_to_thickness : repeat_disable, filter_linear, hint_default_black;
+uniform bool preview_hatch_levels = false;
+
+group_uniforms Color_Matching;
+uniform float color_threshold : hint_range(0, 1.0) = 0.1;
 uniform float color_boil = 0.005;
-uniform sampler2D value_to_thickness : repeat_disable, filter_linear;
+uniform bool preview_colors = false;
+
+group_uniforms;
 
 vec2 get_noise(vec2 uv) {
 	return texture(noise, fract(uv)).xy - vec2(0.5f);
@@ -34,6 +38,28 @@ float hatch(vec2 uv, float step, float value, float thickness, float rot, vec2 o
 	float line = step(thickness/2.0, grid_uv.x);
 	line *= step(grid_uv.x, 1.0 - thickness/2.0);
 	return line*hatch + step(step, value);
+}
+
+float distance_squared(vec3 p, vec3 p2) {
+	vec3 diff = p - p2;
+	return dot(diff, diff);
+}
+
+//find closest color in oklch color space
+vec3 get_nearest_color(vec3 color, vec3 weights) {
+	float min_diff = 100.0;
+	vec3 nearest_color = vec3(1.0, 0.0, 0.86);
+	for (int i = 0; i < COLOR_PALETTE.length(); i++) {
+		float curr_dist = ok_distance_squared(rgb_to_oklch(COLOR_PALETTE[i]), color);
+		if (curr_dist < min_diff) {
+			min_diff = curr_dist;
+			nearest_color = COLOR_PALETTE[i];
+		}
+	}
+	return nearest_color;
+}
+vec3 get_nearest_color(vec3 color) {
+	return get_nearest_color(color, vec3(1.0));
 }
 
 float posterize(float value, float levels) {
@@ -54,14 +80,19 @@ vec3 hatching_effect(vec3 input_color, vec2 uv) {
 
     //Fill color
     vec2 color_uv = clamp(uv, vec2(0.0), vec2(1.0)); //add noise to screen uv
+	// input_color/= (input_color.x + input_color.y + input_color.z)/3.0; //remove gray scale
 	vec3 oklch = rgb_to_oklch(input_color); //convert screen color to oklab color space
-    oklch = vec3(posterize(oklch.r, steps_l), posterize(oklch.g, level_c), posterize(oklch.b, level_h)); //posterize lightness, chroma, and hues
-    float oklch_mask = step(0.01, oklch.r + oklch.g); //get anywhere that isn't black
-    
+
 	//compose
-	color = mix(vec3(1.0), get_nearest_color(oklch), oklch_mask); //paint white or color, based on oklch_mask
-    color *= hatching; //apply hatching mask
-	
+	color = mix(get_nearest_color(oklch), vec3(1.0), step(oklch.x, color_threshold)); //paint white or color, based on oklch_mask
+	// color = vec3(1.0) * ok_distance_weighted_squared(rgb_to_oklch(COLOR_PALETTE[0]), oklch, vec3(1.0, 0.0, 0.0));
+
+	if (!preview_colors) {
+		color *= hatching; //apply hatching mask
+	} else {
+		// color = oklch_to_rgb(oklch);
+	}
+
 	//Just show hatch gray-scale if desired
 	if (preview_hatch_levels) {
 		float level = 0.0;
@@ -72,9 +103,5 @@ vec3 hatching_effect(vec3 input_color, vec2 uv) {
 		color = vec3(level);
 	}
 
-	//just show color, before pallette lookup
-	if (preview_posterize_color) {
-		color = oklch_to_rgb(oklch);
-	}
     return color;
 }

@@ -1,10 +1,11 @@
 shader_type canvas_item;
 
-#include "hatching.gdshaderinc"
+#include "../includes/hatching.gdshaderinc"
 
 uniform sampler2D ceiling_texture : filter_nearest, repeat_enable;
 uniform sampler2D wall_texture : filter_nearest, repeat_enable;
 uniform sampler2D floor_texture : filter_nearest, repeat_enable;
+uniform bool preview_textures = false;
 uniform float boil_speed : hint_range(0, 2) = 0.1;
 uniform float warp_speed : hint_range(0, 2) = 0.1;
 uniform float warp_strength : hint_range(0, 10) = 0.1;
@@ -30,7 +31,8 @@ void fragment() {
     color *= value; //darken image by value
 
     //Hatch to appropriate values
-    color = hatching_effect(color, screen_uv);
+    if (!preview_textures) 
+      color = hatching_effect(color, screen_uv);
 
     COLOR = vec4(color, 1.0);
 }
