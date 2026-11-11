@@ -7,14 +7,17 @@ public partial class PlayerInteractor : RayCast3D
     [Export] public Label HandLabel;
     [Export] public Node3D HandPoint;
     [Export] public float Reach = 2.8f;
+    [Export] public NoteUI Reader;
 
     private Camera3D camera;
+    private GridPlayer player;
     private CollectibleKey heldKey;
     private PlaceSpot lastSpot;
 
     public override void _Ready()
     {
         camera = GetParent() as Camera3D;
+        player = camera.GetParent<GridPlayer>();
         Input.MouseMode = Input.MouseModeEnum.Visible;
         PromptLabel.Hide();
         UpdateHandLabel();
@@ -40,13 +43,22 @@ public partial class PlayerInteractor : RayCast3D
     {
         CollectibleKey key = GetCollider() as CollectibleKey;
         PlaceSpot spot = GetCollider() as PlaceSpot;
+        Note note = GetCollider() as Note;
 
         if (lastSpot != null)
             lastSpot.ShowHighlight(false);
         lastSpot = null;
         PromptLabel.Hide();
 
-        if (heldKey == null && key != null)
+        if (Reader != null && Reader.IsOpen)
+            return;
+
+        if (note != null && Reader != null && note.CanReadFrom(player))
+        {
+            PromptLabel.Text = "Left click to read note";
+            PromptLabel.Show();
+        }
+        else if (heldKey == null && key != null)
         {
             PromptLabel.Text = "Left click to pick up " + key.DisplayName;
             PromptLabel.Show();
@@ -64,11 +76,22 @@ public partial class PlayerInteractor : RayCast3D
 
     public override void _UnhandledInput(InputEvent @event)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         if (@event is not InputEventMouseButton mouseClick ||
             mouseClick.ButtonIndex != MouseButton.Left || !mouseClick.Pressed)
             return;
 
         CheckMouse();
+
+        if (GetCollider() is Note note && Reader != null && note.CanReadFrom(player))
+        {
+            Reader.Open(note);
+            ShowPrompt();
+            GetViewport().SetInputAsHandled();
+            return;
+        }
 
         if (heldKey == null)
         {

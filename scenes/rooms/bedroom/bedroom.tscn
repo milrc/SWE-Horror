@@ -20,8 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dqn3y3gkoul6e" path="res://art/bedroom/ruined_door_frame_normal.png" id="13_hjadq"]
 [ext_resource type="Texture2D" uid="uid://0dj5il4lywg8" path="res://art/bedroom/lightbulb.png" id="13_rs6in"]
 [ext_resource type="Texture2D" uid="uid://cvyn5gjoo7cy5" path="res://art/bedroom/ruined_door.png" id="19_al4p7"]
-[ext_resource type="PackedScene" uid="uid://b0onpunu2bdkl" path="res://art/bedroom/note.gltf" id="20_kwn8b"]
-[ext_resource type="Texture2D" uid="uid://cn1kwbb88m2bw" path="res://art/bedroom/notetexture.png" id="21_rr51s"]
+[ext_resource type="PackedScene" uid="uid://d08emnjwpfvhb" path="res://scenes/interactions/note.tscn" id="20_kwn8b"]
 [ext_resource type="Texture2D" uid="uid://cvojdvsljmwt0" path="res://art/bedroom/bedroom_key.png" id="22_mpmen"]
 [ext_resource type="Texture2D" uid="uid://b2mabxam1ehbs" path="res://art/bedroom/board.png" id="23_u3m4q"]
 
@@ -282,12 +281,6 @@ render_priority = 0
 shader = ExtResource("13_03njj")
 shader_parameter/texture_albedo = ExtResource("19_al4p7")
 shader_parameter/roughness = 0.5850000277875
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sj13j"]
-render_priority = 0
-shader = ExtResource("7_hjadq")
-shader_parameter/texture_albedo = ExtResource("21_rr51s")
-shader_parameter/roughness = 0.9450000448875
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pp2t7"]
 render_priority = 0
@@ -1023,9 +1016,6 @@ texture = ExtResource("19_al4p7")
 [node name="note" parent="." unique_id=1492883850 instance=ExtResource("20_kwn8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51234406, 2.5645428)
 
-[node name="Plane" parent="note" index="0" unique_id=932464343]
-material_override = SubResource("ShaderMaterial_sj13j")
-
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=423967628]
 transform = Transform3D(-0.007955169, 0.9659258, 0.25869676, 0.029689098, 0.258819, -0.9654696, -0.9995277, 1.110223e-16, -0.030736417, 2.7809024, 0.3439718, 1.7103255)
 material_override = SubResource("ShaderMaterial_pp2t7")
@@ -1079,5 +1069,3 @@ material_override = SubResource("ShaderMaterial_ujlft")
 pixel_size = 0.0133333
 texture_filter = 0
 texture = ExtResource("23_u3m4q")
-
-[editable path="note"]
