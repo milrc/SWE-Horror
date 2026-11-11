@@ -15,16 +15,16 @@ seamless = true
 render_priority = 1
 shader = ExtResource("3_qolh1")
 shader_parameter/noise = SubResource("NoiseTexture2D_kobp4")
-shader_parameter/hatch_1 = 0.27999999374144
-shader_parameter/hatch_2 = 0.14499999675896
-shader_parameter/hatch_3 = 0.06499999854712
-shader_parameter/hatch_4 = 0.01999999955296
+shader_parameter/hatch_1 = 0.28499999362968
+shader_parameter/hatch_2 = 0.18999999575312
+shader_parameter/hatch_3 = 0.07999999821184
+shader_parameter/hatch_4 = 0.00499999988824
 shader_parameter/hatch_density = 200.74
 shader_parameter/hatch_warp = 0.25
 shader_parameter/hatch_thickness = 0.23
 shader_parameter/value_to_thickness = ExtResource("4_gdjh5")
 shader_parameter/preview_hatch_levels = false
-shader_parameter/color_threshold = 0.10000000475
+shader_parameter/color_threshold = 0.030000001425
 shader_parameter/color_boil = 0.005
 shader_parameter/preview_colors = false
 
@@ -43,9 +43,11 @@ ambient_light_source = 3
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 0, 0.5)
 
 [node name="bedroom" parent="." unique_id=540705334 instance=ExtResource("2_755td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063985586, -0.015936196, 0.0013129413)
 
 [node name="CrossHatch" type="MeshInstance3D" parent="." unique_id=1665997343]
 material_override = SubResource("ShaderMaterial_d5coj")
+cast_shadow = 0
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_8fw82")
 

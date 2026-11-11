@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="12_8ugdt"]
 [ext_resource type="Texture2D" uid="uid://deye8p33ny3dr" path="res://art/bedroom/ruined_window.png" id="12_y256q"]
 [ext_resource type="Texture2D" uid="uid://cvyn5gjoo7cy5" path="res://art/bedroom/ruined_door.png" id="13_vsbfq"]
-[ext_resource type="Shader" uid="uid://baq0widfnjh1j" path="res://art/shaders/texel_space_double_sided.gdshader" id="13_y256q"]
+[ext_resource type="Shader" uid="uid://baq0widfnjh1j" path="res://art/shaders/materials/texel_space_double_sided.gdshader" id="13_y256q"]
 [ext_resource type="Texture2D" uid="uid://dqn3y3gkoul6e" path="res://art/bedroom/ruined_door_frame_normal.png" id="14_c4nqf"]
 [ext_resource type="Texture2D" uid="uid://kxpuxuh4w8mj" path="res://art/bedroom/ruined_door_frame.png" id="15_8lg43"]
 
