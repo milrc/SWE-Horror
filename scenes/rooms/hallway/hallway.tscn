@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://1ds3j3qhenbg"]
+
+[ext_resource type="Script" uid="uid://drvfb2mu40fy6" path="res://scripts/environment/Hallway.cs" id="1_o57v5"]
+[ext_resource type="PackedScene" uid="uid://dg7ef6s5q0qks" path="res://scenes/rooms/hallway/hallway_segment.tscn" id="1_wrxb8"]
+[ext_resource type="Script" uid="uid://cjhryursli72m" path="res://scripts/interactions/TeleportTrigger.cs" id="4_atylr"]
+[ext_resource type="Script" uid="uid://p30b2y4yl5bp" path="res://scripts/environment/FakeTunnel.cs" id="4_btcgh"]
+[ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="7_8aqp6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kx1s5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_401xl"]
+viewport_path = NodePath("FakeTunnel")
+
+[node name="Hallway" type="Node3D" unique_id=483328774]
+script = ExtResource("1_o57v5")
+
+[node name="HallwaySegment" parent="." unique_id=451214221 instance=ExtResource("1_wrxb8")]
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment2" parent="." unique_id=1520411023 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment3" parent="." unique_id=1617356085 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment4" parent="." unique_id=1877983816 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment5" parent="." unique_id=952776017 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment6" parent="." unique_id=1722411895 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment7" parent="." unique_id=732993741 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+metadata/_edit_group_ = true
+
+[node name="HallwaySegment8" parent="." unique_id=1576687144 instance=ExtResource("1_wrxb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+metadata/_edit_group_ = true
+
+[node name="PZTrigger" type="Area3D" parent="." unique_id=600448785 node_paths=PackedStringArray("Target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+script = ExtResource("4_atylr")
+Target = NodePath("Target")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PZTrigger" unique_id=1050108151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_kx1s5")
+
+[node name="Target" type="Node3D" parent="PZTrigger" unique_id=116665645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="ZTrigger" type="Area3D" parent="." unique_id=1865046472 node_paths=PackedStringArray("Target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.5)
+script = ExtResource("4_atylr")
+Target = NodePath("Target")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZTrigger" unique_id=1695981851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_kx1s5")
+
+[node name="Target" type="Node3D" parent="ZTrigger" unique_id=1567746980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="FakeTunnel" type="SubViewport" parent="." unique_id=415471129]
+
+[node name="Pivot" type="Node3D" parent="FakeTunnel" unique_id=698973183 node_paths=PackedStringArray("CorrectSideVisible", "WrongSideVisible")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+script = ExtResource("4_btcgh")
+CorrectSideVisible = NodePath("")
+WrongSideVisible = NodePath("TunnelCam/WrongSideVisible")
+
+[node name="TunnelCam" type="Camera3D" parent="FakeTunnel/Pivot" unique_id=732809144]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.536743e-07, 0.5, -11)
+cull_mask = 1048573
+fov = 30.0
+
+[node name="WrongSideVisible" type="VisibleOnScreenNotifier3D" parent="FakeTunnel/Pivot/TunnelCam" unique_id=805019522]
+layers = 2
+aabb = AABB(-0.5, -0.5, 0, 1, 1, 1)
+
+[node name="TunnelTexture" type="Sprite3D" parent="FakeTunnel/Pivot" unique_id=1231789947]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.5, 12)
+pixel_size = 0.0019531
+transparent = false
+double_sided = false
+texture = SubResource("ViewportTexture_401xl")
+script = ExtResource("7_8aqp6")
