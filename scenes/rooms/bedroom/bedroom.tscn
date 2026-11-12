@@ -1004,7 +1004,7 @@ texture_filter = 0
 texture = ExtResource("13_rs6in")
 
 [node name="door" type="Node3D" parent="." unique_id=765438415]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.998)
 
 [node name="sprite1" type="Sprite3D" parent="door" unique_id=1755815080]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.001)
