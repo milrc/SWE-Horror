@@ -35,6 +35,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e67jo")
 
 [node name="locker" type="Node3D" unique_id=1242230306]
+visible = false
 
 [node name="Cube" type="MeshInstance3D" parent="." unique_id=1788911194]
 mesh = SubResource("ArrayMesh_q55k8")

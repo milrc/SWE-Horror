@@ -77,6 +77,11 @@ public partial class GridPlayer : Node3D
         realPosition += step;
     }
 
+    public void SetDesiredPosition(Vector3 position)
+    {
+        realPosition = position;
+    }
+
     private void RotateSelf(float rotation)
     {
         centerRotation.Basis = centerRotation.Basis.Rotated(Vector3.Up, rotation);
@@ -91,20 +96,14 @@ public partial class GridPlayer : Node3D
         if (@event is not InputEventKey key || !key.Pressed || key.Echo)
             return;
 
-        switch (key.Keycode)
-        {
-            case Key.W:
-                Move(-Transform.Basis.Z);
-                break;
-            case Key.S:
-                Move(Transform.Basis.Z);
-                break;
-            case Key.A:
-                RotateSelf(Mathf.Pi / 2f);
-                break;
-            case Key.D:
-                RotateSelf(-Mathf.Pi / 2f);
-                break;
+        if (Input.IsActionJustPressed("move_forward")) {
+            Move(-Transform.Basis.Z);
+        } else if (Input.IsActionJustPressed("move_backward")) {
+            Move(Transform.Basis.Z);
+        } else if (Input.IsActionJustPressed("turn_left")) {
+            RotateSelf(Mathf.Pi / 2f);
+        } else if (Input.IsActionJustPressed("turn_right")) {
+            RotateSelf(-Mathf.Pi / 2f);
         }
     }
 

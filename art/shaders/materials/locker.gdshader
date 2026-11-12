@@ -7,11 +7,11 @@ render_mode blend_mix, depth_draw_opaque, diffuse_burley, specular_schlick_ggx, 
 uniform sampler2D texture_albedo : source_color, filter_nearest, repeat_enable;
 uniform sampler2D normal_map : hint_normal, filter_nearest;
 
-uniform float roughness : hint_range(0.0, 1.0);
-uniform float max_displacement : hint_range(0.0, 1.0);
-uniform float max_distance : hint_range(0, 50.0);
-uniform float affect_speed = 2.0;
-uniform float distance_period = 2.0;
+uniform float roughness : hint_range(0.0, 1.0) = 0.7;
+uniform float max_displacement : hint_range(0.0, 1.0) = 0.05;
+uniform float max_distance : hint_range(0, 50.0) = 5.0;
+uniform float effect_speed = 1.0;
+uniform float distance_period = 1.0;
 uniform sampler2D distance_to_displacement : repeat_disable;
 
 // Calculate screen-space displacement from the center of the current texel
@@ -52,21 +52,16 @@ void vertex() {
 	float dist = length((MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz); //get distance from camera
 	float power = textureLod(distance_to_displacement, vec2(dist/max_distance, 0.0), 0.0).r;
 
-	//calculate affect
+	//calculate effect
 	vec3 worldPos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	float affect = (sin(TIME*affect_speed + (worldPos.z*distance_period)) - 1.0) * max_displacement;
+	float effect = (sin(TIME*effect_speed + (worldPos.z*distance_period)) - 1.0) * max_displacement;
 
-	//apply affect
-	VERTEX.z += power * affect;
+	//apply effect
+	VERTEX.z += power * effect;
 	VERTEX.x += (hash(MODEL_MATRIX[3].xyz))*0.001; //slight random offset to prevent Forward+ crash.
 }
 
 void fragment() {
-	//vec2 base_uv = UV;
-//
-	//vec4 albedo_tex = texture(texture_albedo, base_uv);
-	//ALBEDO = albedo.rgb * albedo_tex.rgb;
-	
 	vec2 delta = screen_delta(UV, texture_albedo);
 	LIGHT_VERTEX = texel_snap(VERTEX, delta);
 	NORMAL = texel_snap(NORMAL, delta);
@@ -78,6 +73,3 @@ void fragment() {
 	ROUGHNESS = roughness;
     ALPHA_SCISSOR_THRESHOLD = 0.5f;
 }
-
-//void light() {
-//}

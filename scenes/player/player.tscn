@@ -4,7 +4,10 @@
 [ext_resource type="Script" uid="uid://dp18mwjdnhak4" path="res://scripts/sound/Mixer3D.cs" id="2_dovo2"]
 [ext_resource type="Script" uid="uid://cw0k5ymt2tw4p" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
 [ext_resource type="Script" uid="uid://wrwe55o0umce" path="res://scenes/player/FlashLight.cs" id="2_lvxji"]
-[ext_resource type="PackedScene" path="res://scenes/ui/note_ui.tscn" id="4_reader"]
+[ext_resource type="PackedScene" uid="uid://dqtvs8luqn3jj" path="res://scenes/ui/note_ui.tscn" id="4_reader"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_401xl"]
+radius = 0.1
 
 [node name="Player" type="Node3D" unique_id=677720040 node_paths=PackedStringArray("Reader")]
 script = ExtResource("1_8afob")
@@ -18,7 +21,7 @@ current = true
 [node name="HandPoint" type="Node3D" parent="PlayerCamera" unique_id=556093910]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, -0.17, -0.55)
 
-[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint", "Reader")]
+[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" unique_id=1793259650 node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint", "Reader")]
 target_position = Vector3(0, 0, -2.8)
 collision_mask = 3
 script = ExtResource("2_interactor")
@@ -67,7 +70,12 @@ offset_right = 250.0
 offset_bottom = 42.0
 theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
 text = "Hand: empty"
-mouse_filter = 2
 
-[node name="NoteUI" parent="InteractionHUD/Overlay" instance=ExtResource("4_reader")]
+[node name="NoteUI" parent="InteractionHUD/Overlay" unique_id=585040552 instance=ExtResource("4_reader")]
 layout_mode = 1
+
+[node name="PLAYER_BODY" type="StaticBody3D" parent="." unique_id=515516977]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PLAYER_BODY" unique_id=1483640285]
+shape = SubResource("SphereShape3D_401xl")
