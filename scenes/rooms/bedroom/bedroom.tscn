@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d08emnjwpfvhb" path="res://scenes/interactions/note.tscn" id="20_kwn8b"]
 [ext_resource type="Texture2D" uid="uid://cvojdvsljmwt0" path="res://art/bedroom/bedroom_key.png" id="22_mpmen"]
 [ext_resource type="Texture2D" uid="uid://b2mabxam1ehbs" path="res://art/bedroom/board.png" id="23_u3m4q"]
+[ext_resource type="Script" path="res://scripts/interactions/Door.cs" id="24_door"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mtl7h"]
 render_priority = 0
@@ -93,6 +94,9 @@ shader = ExtResource("7_hjadq")
 shader_parameter/texture_albedo = ExtResource("4_iupqa")
 shader_parameter/normal_map = ExtResource("8_mtl7h")
 shader_parameter/roughness = 0.931
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door"]
+size = Vector3(0.56, 0.8, 0.08)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w2jrj"]
 size = Vector3(1, 1, 0.05)
@@ -770,6 +774,7 @@ metadata/_edit_group_ = true
 
 [node name="@CollisionShape3D@72734" type="CollisionShape3D" parent="room-builder/NWall2/@StaticBody3D@72733" unique_id=1288444997]
 shape = SubResource("BoxShape3D_6os3a")
+disabled = true
 
 [node name="@Sprite3D@72735" type="Sprite3D" parent="room-builder/NWall2" unique_id=1079824191]
 material_override = SubResource("ShaderMaterial_lvile")
@@ -1003,15 +1008,26 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("13_rs6in")
 
-[node name="door" type="Node3D" parent="." unique_id=765438415]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.998)
+[node name="door" type="Node3D" parent="." unique_id=765438415 node_paths=PackedStringArray("DoorBody")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22, 0.5, 2.998)
+script = ExtResource("24_door")
+DoorBody = NodePath("DoorPanel/DoorBody")
 
-[node name="sprite1" type="Sprite3D" parent="door" unique_id=1755815080]
+[node name="DoorPanel" type="Node3D" parent="door"]
+position = Vector3(0.28, 0, 0)
+
+[node name="sprite1" type="Sprite3D" parent="door/DoorPanel" unique_id=1755815080]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.001)
 material_override = SubResource("ShaderMaterial_x8yhe")
 pixel_size = 0.0133333
+shaded = true
 texture_filter = 0
 texture = ExtResource("19_al4p7")
+
+[node name="DoorBody" type="StaticBody3D" parent="door/DoorPanel"]
+
+[node name="DoorCollision" type="CollisionShape3D" parent="door/DoorPanel/DoorBody"]
+shape = SubResource("BoxShape3D_door")
 
 [node name="note" parent="." unique_id=1492883850 instance=ExtResource("20_kwn8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51234406, 2.5645428)

@@ -3,121 +3,165 @@ using Godot;
 //raycast on the camera, checks what the mouse is pointing at
 public partial class PlayerInteractor : RayCast3D
 {
-    [Export] public Label PromptLabel;
-    [Export] public Label HandLabel;
-    [Export] public Node3D HandPoint;
-    [Export] public float Reach = 2.8f;
-    [Export] public NoteUI Reader;
+	[Export] public Label PromptLabel;
+	[Export] public Label HandLabel;
+	[Export] public Node3D HandPoint;
+	[Export] public float Reach = 2.8f;
+	[Export] public float DoorReach = 1.0f;
+	[Export] public int PromptFontSize = 11;
+	[Export] public NoteUI Reader;
 
-    private Camera3D camera;
-    private GridPlayer player;
-    private CollectibleKey heldKey;
-    private PlaceSpot lastSpot;
+	private Camera3D camera;
+	private GridPlayer player;
+	private CollectibleKey heldKey;
+	private PlaceSpot lastSpot;
 
-    public override void _Ready()
-    {
-        camera = GetParent() as Camera3D;
-        player = camera.GetParent<GridPlayer>();
-        Input.MouseMode = Input.MouseModeEnum.Visible;
-        PromptLabel.Hide();
-        UpdateHandLabel();
-    }
+	public override void _Ready()
+	{
+		camera = GetParent() as Camera3D;
+		player = camera.GetParent<GridPlayer>();
+		Input.MouseMode = Input.MouseModeEnum.Visible;
+		PromptLabel.AddThemeFontSizeOverride("font_size", PromptFontSize);
+		PromptLabel.Hide();
+		UpdateHandLabel();
+	}
 
-    public override void _PhysicsProcess(double delta)
-    {
-        CheckMouse();
-        ShowPrompt();
-    }
+	public override void _PhysicsProcess(double delta)
+	{
+		CheckMouse();
+		ShowPrompt();
+	}
 
-    private void CheckMouse()
-    {
-        //raay needs to follow the cursor instead of staying in the center
-        Vector2 mouse = GetViewport().GetMousePosition();
-        Vector3 start = camera.ProjectRayOrigin(mouse);
-        Vector3 dir = camera.ProjectRayNormal(mouse);
-        TargetPosition = ToLocal(start + dir * Reach);
-        ForceRaycastUpdate();
-    }
+	private void CheckMouse()
+	{
+		//raay needs to follow the cursor instead of staying in the center
+		Vector2 mouse = GetViewport().GetMousePosition();
+		Vector3 start = camera.ProjectRayOrigin(mouse);
+		Vector3 dir = camera.ProjectRayNormal(mouse);
+		TargetPosition = ToLocal(start + dir * Reach);
+		ForceRaycastUpdate();
+	}
 
-    private void ShowPrompt()
-    {
-        CollectibleKey key = GetCollider() as CollectibleKey;
-        PlaceSpot spot = GetCollider() as PlaceSpot;
-        Note note = GetCollider() as Note;
+	private void ShowPrompt()
+	{
+		Door door = GetDoor();
+		CollectibleKey key = GetCollider() as CollectibleKey;
+		PlaceSpot spot = GetCollider() as PlaceSpot;
+		Note note = GetCollider() as Note;
 
-        if (lastSpot != null)
-            lastSpot.ShowHighlight(false);
-        lastSpot = null;
-        PromptLabel.Hide();
+		if (lastSpot != null)
+			lastSpot.ShowHighlight(false);
+		lastSpot = null;
+		PromptLabel.Hide();
 
-        if (Reader != null && Reader.IsOpen)
-            return;
+		if (Reader != null && Reader.IsOpen)
+			return;
 
-        if (note != null && Reader != null && note.CanReadFrom(player))
-        {
-            PromptLabel.Text = "Left click to read note";
-            PromptLabel.Show();
-        }
-        else if (heldKey == null && key != null)
-        {
-            PromptLabel.Text = "Left click to pick up " + key.DisplayName;
-            PromptLabel.Show();
-        }
-        else if (heldKey != null && spot != null && spot.IsEmpty())
-        {
-            spot.ShowHighlight(true);
-            lastSpot = spot;
-            PromptLabel.Text = "Left click to place " + heldKey.DisplayName;
-            PromptLabel.Show();
-        }
+		if (door != null)
+		{
+			PromptLabel.Text = "Press E to " + (door.IsOpen ? "close" : "open") + " door";
+			PromptLabel.Show();
+		}
+		else if (note != null && Reader != null && note.CanReadFrom(player))
+		{
+			PromptLabel.Text = "Left click to read note";
+			PromptLabel.Show();
+		}
+		else if (heldKey == null && key != null)
+		{
+			PromptLabel.Text = "Left click to pick up " + key.DisplayName;
+			PromptLabel.Show();
+		}
+		else if (heldKey != null && spot != null && spot.IsEmpty())
+		{
+			spot.ShowHighlight(true);
+			lastSpot = spot;
+			PromptLabel.Text = "Left click to place " + heldKey.DisplayName;
+			PromptLabel.Show();
+		}
 
-        PromptLabel.Position = GetViewport().GetMousePosition() + new Vector2(14, 18);
-    }
+		PromptLabel.Position = GetViewport().GetMousePosition() + new Vector2(14, 18);
+	}
 
-    public override void _UnhandledInput(InputEvent @event)
-    {
-        if (Reader != null && Reader.IsOpen)
-            return;
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (Reader != null && Reader.IsOpen)
+			return;
 
-        if (@event is not InputEventMouseButton mouseClick ||
-            mouseClick.ButtonIndex != MouseButton.Left || !mouseClick.Pressed)
-            return;
+		if (@event is InputEventKey keyPress && keyPress.Pressed && !keyPress.Echo && keyPress.Keycode == Key.E)
+		{
+			CheckMouse();
+			Door door = GetDoor();
+			if (door != null)
+			{
+				door.ToggleDoor();
+				ShowPrompt();
+				GetViewport().SetInputAsHandled();
+			}
+			return;
+		}
 
-        CheckMouse();
+		if (@event is not InputEventMouseButton mouseClick ||
+			mouseClick.ButtonIndex != MouseButton.Left || !mouseClick.Pressed)
+			return;
 
-        if (GetCollider() is Note note && Reader != null && note.CanReadFrom(player))
-        {
-            Reader.Open(note);
-            ShowPrompt();
-            GetViewport().SetInputAsHandled();
-            return;
-        }
+		CheckMouse();
 
-        if (heldKey == null)
-        {
-            CollectibleKey key = GetCollider() as CollectibleKey;
-            if (key == null)
-                return;
+		if (GetCollider() is Note note && Reader != null && note.CanReadFrom(player))
+		{
+			Reader.Open(note);
+			ShowPrompt();
+			GetViewport().SetInputAsHandled();
+			return;
+		}
 
-            heldKey = key;
-            key.PickUp(HandPoint);
-        }
-        else
-        {
-            PlaceSpot spot = GetCollider() as PlaceSpot;
-            if (spot == null || !spot.PutKey(heldKey))
-                return;
+		if (heldKey == null)
+		{
+			CollectibleKey key = GetCollider() as CollectibleKey;
+			if (key == null)
+				return;
 
-            heldKey = null;
-        }
+			heldKey = key;
+			key.PickUp(HandPoint);
+		}
+		else
+		{
+			PlaceSpot spot = GetCollider() as PlaceSpot;
+			if (spot == null || !spot.PutKey(heldKey))
+				return;
 
-        UpdateHandLabel();
-        ShowPrompt();
-        GetViewport().SetInputAsHandled();
-    }
+			heldKey = null;
+		}
 
-    private void UpdateHandLabel()
-    {
-        HandLabel.Text = heldKey == null ? "Hand: empty" : "Holding: " + heldKey.DisplayName;
-    }
+		UpdateHandLabel();
+		ShowPrompt();
+		GetViewport().SetInputAsHandled();
+	}
+
+	private Door GetDoor()
+	{
+		if (!IsColliding())
+			return null;
+
+		Node hit = GetCollider() as Node;
+		while (hit != null)
+		{
+			if (hit is Door door)
+			{
+				if (GlobalPosition.DistanceTo(GetCollisionPoint()) <= DoorReach &&
+				    GlobalPosition.DistanceTo(door.GlobalPosition) <= DoorReach)
+				{
+					return door;
+				}
+				return null;
+			}
+			hit = hit.GetParent();
+		}
+		return null;
+	}
+
+	private void UpdateHandLabel()
+	{
+		HandLabel.Text = heldKey == null ? "Hand: empty" : "Holding: " + heldKey.DisplayName;
+	}
 }
