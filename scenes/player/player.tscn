@@ -19,7 +19,7 @@ Reader = NodePath("InteractionHUD/Overlay/NoteUI")
 current = true
 
 [node name="HandPoint" type="Node3D" parent="PlayerCamera" unique_id=556093910]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, -0.17, -0.55)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12762551, -0.05103202, -0.17526975)
 
 [node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" unique_id=1793259650 node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint", "Reader")]
 target_position = Vector3(0, 0, -2.8)

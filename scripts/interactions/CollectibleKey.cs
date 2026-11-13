@@ -6,6 +6,9 @@ public partial class CollectibleKey : StaticBody3D
     [Export] public string KeyId = "test_brass_key";
     [Export] public string DisplayName = "brass key";
 
+    [Export] public Vector3 placePosition = new(0, 0.045f, 0);
+    [Export] public Vector3 placeRotation = new(90, 0, 0);
+
     private PlaceSpot oldSpot;
 
     public void PickUp(Node3D hand)
@@ -25,8 +28,8 @@ public partial class CollectibleKey : StaticBody3D
     public void PutDown(PlaceSpot spot)
     {
         Reparent(spot);
-        Position = new Vector3(0, 0.045f, 0);
-        RotationDegrees = new Vector3(90, 0, 0);
+        Position = placePosition;
+        RotationDegrees = placeRotation;
         CollisionLayer = 2;
         oldSpot = spot;
     }
