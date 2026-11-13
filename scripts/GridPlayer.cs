@@ -41,6 +41,10 @@ public partial class GridPlayer : Node3D
         // GlobalPosition = realPosition;
         centerRotation = Transform;
         mouseRotation = Transform3D.Identity;
+
+
+        // init mouse
+        Mouse mice = new();
     }
 
 
