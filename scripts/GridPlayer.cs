@@ -7,6 +7,8 @@ public partial class GridPlayer : Node3D
     // camera node
     private Camera3D _camera;
     private Vector2 _screenResHalf;
+    // sound node
+    private Mixer3D _mixer;
 
     [Export] public float StepSize = 1f;
     [Export] public float RayHeight = 0.5f;
@@ -14,6 +16,7 @@ public partial class GridPlayer : Node3D
     [Export] public float MovementWeight = .3f;
     [Export] public float RotationWeight = .2f;
     [Export(PropertyHint.Range, "0.0,1.0")] public float CameraLimit = 1/6f;
+    [Export] public NoteUI Reader;
 
     // movement variables
     private Vector3 realPosition;
@@ -27,13 +30,13 @@ public partial class GridPlayer : Node3D
         _screenResHalf.X /= 2;
         _screenResHalf.Y /= 2;
 
-        GD.Print(_screenResHalf);
-
         // grab camera
         _camera = GetNode<Camera3D>("PlayerCamera");
         _camera.Position = new Vector3(0f, 0.5f, 0f);
 
-        realPosition = new Vector3(0.5f, 0.0f, 0.5f);
+        _mixer = GetNode<Mixer3D>("Mixer3D");
+
+        realPosition = GlobalPosition;
 
         // GlobalPosition = realPosition;
         centerRotation = Transform;
@@ -43,12 +46,14 @@ public partial class GridPlayer : Node3D
 
     public override void _Process(double delta)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         // animate the player
         AnimateMovement();
         AnimateCamera();
     }
 
-    
     private void Move(Vector3 direction)
     {
         Vector3 step = new Vector3(
@@ -68,39 +73,51 @@ public partial class GridPlayer : Node3D
         if (hit.Count != 0)
             return;
 
+        _mixer.Play(SoundLibrary.Effects.STEP, 0.1f);
         realPosition += step;
+    }
+
+    public void SetDesiredPosition(Vector3 position)
+    {
+        realPosition = position;
     }
 
     private void RotateSelf(float rotation)
     {
+        // check if player is currently turning, and if so snap their movement to the current
+        // center rotation before setting a new one
+        Transform3D finalTransform = Transform;
+        finalTransform.Basis = centerRotation.Basis;
+        Transform = finalTransform;
+
         centerRotation.Basis = centerRotation.Basis.Rotated(Vector3.Up, rotation);
     }
 
     public override void _UnhandledKeyInput(InputEvent @event)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         // keyboard movement
         if (@event is not InputEventKey key || !key.Pressed || key.Echo)
             return;
 
-        switch (key.Keycode)
-        {
-            case Key.W:
-                Move(-Transform.Basis.Z);
-                break;
-            case Key.S:
-                Move(Transform.Basis.Z);
-                break;
-            case Key.A:
-                RotateSelf(Mathf.Pi / 2f);
-                break;
-            case Key.D:
-                RotateSelf(-Mathf.Pi / 2f);
-                break;
+        if (Input.IsActionJustPressed("move_forward")) {
+            Move(-Transform.Basis.Z);
+        } else if (Input.IsActionJustPressed("move_backward")) {
+            Move(Transform.Basis.Z);
+        } else if (Input.IsActionJustPressed("turn_left")) {
+            RotateSelf(Mathf.Pi / 2f);
+        } else if (Input.IsActionJustPressed("turn_right")) {
+            RotateSelf(-Mathf.Pi / 2f);
         }
     }
 
     public override void _UnhandledInput(InputEvent @event)
     {
+        if (Reader != null && Reader.IsOpen)
+            return;
+
         if (@event is InputEventMouseMotion eventMouseMotion)
         {
             ApplyMouseRotation(eventMouseMotion.Position);
@@ -126,7 +143,14 @@ public partial class GridPlayer : Node3D
 
     public void AnimateMovement()
     {
-        GlobalPosition = GlobalPosition.Lerp(realPosition, MovementWeight);
+        if (GlobalPosition != realPosition)
+        {
+            GlobalPosition = GlobalPosition.Lerp(realPosition, MovementWeight);
+            if (GlobalPosition.DistanceSquaredTo(realPosition) < 0.0001f)
+            {
+                GlobalPosition = realPosition;
+            }
+        }
     }
 
     public void AnimateCamera()
@@ -134,6 +158,7 @@ public partial class GridPlayer : Node3D
         Quaternion from = new(Transform.Basis);
         Quaternion dest = new(centerRotation.Basis);
         Quaternion rotLerp = from.Slerp(dest, RotationWeight);
+        rotLerp = rotLerp.Normalized();
         Transform3D nextTransform = Transform;
         nextTransform.Basis = new(rotLerp);
         Transform = nextTransform;

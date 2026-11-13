@@ -1,0 +1,42 @@
+[gd_scene format=4 uid="uid://bwcof0es20rxu"]
+
+[ext_resource type="Material" uid="uid://detpqkigmewlg" path="res://art/hallway/locker.tres" id="1_k7slx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pub2"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e67jo"]
+_surfaces = [{
+"aabb": AABB(0, 0, -0.19999999, 0.25, 0.75, 0.19999999),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABQADAAYABwAEAAAABQAHAAAABwAGAAQABQAGAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAREQAAAAA//8AAP//AAD//0REAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q55k8"]
+resource_name = "locker_Cube"
+_surfaces = [{
+"aabb": AABB(0, 0, -0.19999999, 0.25, 0.75, 0.19999999),
+"attribute_data": PackedByteArray("//8AACS/F0v//xdLJL8AACS///+0gQAAJL8AALSBjsK0gY7CRET//0REjsK0gf//RESOwgAAAABERAAAAAD//7SBjsJERAAAtIEAAEREjsI="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": SubResource("StandardMaterial3D_7pub2"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("/////wAAqioAAP////+qKgAA//8AAKoq////////qioAAAAA//8TwAAA//8AAADAAAD//////78AAEREAAArwAAAREQAAP////8AAP///////0REAAD//wAAAAD///////9ERAAAEsD///////8AwP////8AAP+///8AAP//GcAAAEREAAD///////8AAP//AAD//wAA/////0REAAD//1TVqipU1aoqVNWqKlTVqirZerL1o35H/f9///+VeCvxfKX//3yl//98pf//fKX///h1AwU6fWIB/38AAGN0zgX/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e67jo")
+
+[node name="locker" type="Node3D" unique_id=1242230306]
+visible = false
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1788911194]
+mesh = SubResource("ArrayMesh_q55k8")
+surface_material_override/0 = ExtResource("1_k7slx")

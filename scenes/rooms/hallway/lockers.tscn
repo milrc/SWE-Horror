@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0u1bt4s16nda"]
+
+[ext_resource type="Script" uid="uid://lr0fs0xuokkw" path="res://scripts/environment/GridAligned.cs" id="1_vf7yj"]
+[ext_resource type="PackedScene" uid="uid://bwcof0es20rxu" path="res://art/hallway/locker.tscn" id="2_7iqj0"]
+
+[node name="Lockers" type="Node3D" unique_id=602943988]
+script = ExtResource("1_vf7yj")
+
+[node name="locker" parent="." unique_id=1242230306 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0)
+
+[node name="locker2" parent="." unique_id=394173647 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0.25)
+
+[node name="locker3" parent="." unique_id=982802185 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0.5)
+
+[node name="locker4" parent="." unique_id=49617062 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0.75)
+
+[node name="locker5" parent="." unique_id=999718515 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 1)
+
+[node name="locker6" parent="." unique_id=911821096 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 0.75)
+
+[node name="locker7" parent="." unique_id=1790535780 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 0.5)
+
+[node name="locker8" parent="." unique_id=590468456 instance=ExtResource("2_7iqj0")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 0.25)

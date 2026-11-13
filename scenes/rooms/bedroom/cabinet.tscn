@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3njaiit131s5"]
+
+[ext_resource type="PackedScene" uid="uid://r0q35ytp3h8m" path="res://art/bedroom/cabinet.gltf" id="1_tx0uy"]
+[ext_resource type="Texture2D" uid="uid://2ketugyg74tj" path="res://art/bedroom/cabinettexture.png" id="3_tx0uy"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="3_ujkmu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_87g0t"]
+render_priority = 0
+shader = ExtResource("3_ujkmu")
+shader_parameter/texture_albedo = ExtResource("3_tx0uy")
+shader_parameter/roughness = 0.4350000206625
+
+[node name="cabinet" type="Node3D" unique_id=1275261043]
+
+[node name="model" parent="." unique_id=1203251152 instance=ExtResource("1_tx0uy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Cube" parent="model" index="0" unique_id=324439817]
+transform = Transform3D(0.9, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.33287096, 0.6008658)
+material_override = SubResource("ShaderMaterial_87g0t")
+
+[editable path="model"]

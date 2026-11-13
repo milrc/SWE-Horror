@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://drgswivuhnihf"]
+
+[ext_resource type="PackedScene" uid="uid://clpg4y0mgava8" path="res://art/bedroom/bed.gltf" id="1_yebye"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="2_klpay"]
+[ext_resource type="Texture2D" uid="uid://b4bwg5e0sa2nm" path="res://art/bedroom/bedtexture.png" id="3_yebye"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pp2t7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6ssd"]
+render_priority = 0
+shader = ExtResource("2_klpay")
+shader_parameter/texture_albedo = ExtResource("3_yebye")
+shader_parameter/roughness = 0.8150000387125
+
+[node name="bed" type="Node3D" unique_id=1859397078]
+
+[node name="bed_col" type="StaticBody3D" parent="." unique_id=939005749]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bed_col" unique_id=814790390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_pp2t7")
+
+[node name="model" parent="." unique_id=1816498573 instance=ExtResource("1_yebye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16018096, 0.2136922)
+
+[node name="Cube_001" parent="model" index="0" unique_id=395147261]
+transform = Transform3D(-0.38292634, 0, 5.8129622e-08, 0, 0.16113007, 0, -3.3476486e-08, 0, -0.6649254, 0, 0, -0.042527795)
+material_override = SubResource("ShaderMaterial_f6ssd")
+
+[editable path="model"]

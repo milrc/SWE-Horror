@@ -1,8 +1,81 @@
 [gd_scene format=3 uid="uid://b0yhxdeh4wgbt"]
 
 [ext_resource type="Script" uid="uid://cpgmpwf8vhkaq" path="res://scripts/GridPlayer.cs" id="1_8afob"]
+[ext_resource type="Script" uid="uid://dp18mwjdnhak4" path="res://scripts/sound/Mixer3D.cs" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://cw0k5ymt2tw4p" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
+[ext_resource type="Script" uid="uid://wrwe55o0umce" path="res://scenes/player/FlashLight.cs" id="2_lvxji"]
+[ext_resource type="PackedScene" uid="uid://dqtvs8luqn3jj" path="res://scenes/ui/note_ui.tscn" id="4_reader"]
 
-[node name="Player" type="Node3D" unique_id=677720040]
+[sub_resource type="SphereShape3D" id="SphereShape3D_401xl"]
+radius = 0.1
+
+[node name="Player" type="Node3D" unique_id=677720040 node_paths=PackedStringArray("Reader")]
 script = ExtResource("1_8afob")
+Reader = NodePath("InteractionHUD/Overlay/NoteUI")
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=2043502293]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="PlayerCamera" unique_id=241874532]
+current = true
+
+[node name="HandPoint" type="Node3D" parent="PlayerCamera" unique_id=556093910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, -0.17, -0.55)
+
+[node name="InteractionRay" type="RayCast3D" parent="PlayerCamera" unique_id=1793259650 node_paths=PackedStringArray("PromptLabel", "HandLabel", "HandPoint", "Reader")]
+target_position = Vector3(0, 0, -2.8)
+collision_mask = 3
+script = ExtResource("2_interactor")
+PromptLabel = NodePath("../../InteractionHUD/Overlay/PromptLabel")
+HandLabel = NodePath("../../InteractionHUD/Overlay/HandLabel")
+HandPoint = NodePath("../HandPoint")
+Reader = NodePath("../../InteractionHUD/Overlay/NoteUI")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PlayerCamera" unique_id=1288507657]
+spot_attenuation = 2.0
+spot_angle = 6.0
+script = ExtResource("2_lvxji")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PlayerCamera/SpotLight3D" unique_id=1900496857]
+light_energy = 0.1
+spot_attenuation = 2.0
+spot_angle = 15.0
+
+[node name="Mixer3D" type="Node3D" parent="." unique_id=1136128941]
+script = ExtResource("2_dovo2")
+
+[node name="InteractionHUD" type="CanvasLayer" parent="." unique_id=132686990]
+
+[node name="Overlay" type="Control" parent="InteractionHUD" unique_id=1785368057]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PromptLabel" type="Label" parent="InteractionHUD/Overlay" unique_id=1085810862]
+visible = false
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
+text = "Left click to pick up"
+
+[node name="HandLabel" type="Label" parent="InteractionHUD/Overlay" unique_id=994223520]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 250.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0.92, 0.63, 1)
+text = "Hand: empty"
+
+[node name="NoteUI" parent="InteractionHUD/Overlay" unique_id=585040552 instance=ExtResource("4_reader")]
+layout_mode = 1
+
+[node name="PLAYER_BODY" type="StaticBody3D" parent="." unique_id=515516977]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PLAYER_BODY" unique_id=1483640285]
+shape = SubResource("SphereShape3D_401xl")

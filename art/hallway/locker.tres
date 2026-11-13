@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://detpqkigmewlg"]
+
+[ext_resource type="Shader" uid="uid://b7vyobn8i2ad5" path="res://art/shaders/materials/locker.gdshader" id="1_duw8l"]
+[ext_resource type="Texture2D" uid="uid://co18xt0lxgrky" path="res://art/hallway/locker_normal.png" id="2_duw8l"]
+[ext_resource type="Texture2D" uid="uid://daj8m76e4txrw" path="res://art/hallway/locker.png" id="2_hu04c"]
+
+[sub_resource type="Curve" id="Curve_7iqj0"]
+_data = [Vector2(0.08951406, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vf7yj"]
+curve = SubResource("Curve_7iqj0")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_duw8l")
+shader_parameter/texture_albedo = ExtResource("2_hu04c")
+shader_parameter/normal_map = ExtResource("2_duw8l")
+shader_parameter/roughness = 0.70000003325
+shader_parameter/max_displacement = 0.05
+shader_parameter/max_distance = 5.0000002375
+shader_parameter/affect_speed = 1.0
+shader_parameter/distance_period = 1.0
+shader_parameter/distance_to_displacement = SubResource("CurveTexture_vf7yj")
