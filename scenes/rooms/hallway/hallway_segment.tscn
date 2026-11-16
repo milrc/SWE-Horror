@@ -366,11 +366,11 @@ roughness = 0.75
 [node name="TubeLight" type="Node3D" parent="." unique_id=1162565468 node_paths=PackedStringArray("OnModel", "OffModel")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 1, 0.5)
 script = ExtResource("10_fthpw")
-OnModel = NodePath("on")
-OffModel = NodePath("off")
 OnInterval = 2.0
 OffInterval = 0.5
 IntervalEpsilon = 0.9
+OnModel = NodePath("on")
+OffModel = NodePath("off")
 metadata/_edit_group_ = true
 
 [node name="off" type="CSGBox3D" parent="TubeLight" unique_id=2058221575]

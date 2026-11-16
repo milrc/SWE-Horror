@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c3pjj8ct58tl7"]
+
+[ext_resource type="Shader" uid="uid://dqjiq5c5rdvu8" path="res://art/shaders/materials/locker_doublesided.gdshader" id="1_bst7w"]
+[ext_resource type="Texture2D" uid="uid://bhc0dstuuvec3" path="res://art/hallway/open_locker.png" id="2_bst7w"]
+[ext_resource type="Texture2D" uid="uid://bb5m3oa84oiap" path="res://art/hallway/locker_distance_to_displacement.tres" id="2_h7ntp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bst7w")
+shader_parameter/texture_albedo = ExtResource("2_bst7w")
+shader_parameter/roughness = 0.7
+shader_parameter/max_displacement = 0.05
+shader_parameter/max_distance = 5.0
+shader_parameter/effect_speed = 1.0
+shader_parameter/distance_period = 1.0
+shader_parameter/distance_to_displacement = ExtResource("2_h7ntp")

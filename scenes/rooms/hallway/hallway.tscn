@@ -2,9 +2,296 @@
 
 [ext_resource type="Script" uid="uid://drvfb2mu40fy6" path="res://scripts/environment/Hallway.cs" id="1_o57v5"]
 [ext_resource type="PackedScene" uid="uid://dg7ef6s5q0qks" path="res://scenes/rooms/hallway/hallway_segment.tscn" id="1_wrxb8"]
+[ext_resource type="Script" uid="uid://lr0fs0xuokkw" path="res://scripts/environment/GridAligned.cs" id="2_b1bbl"]
+[ext_resource type="PackedScene" uid="uid://brly2nmejt6vb" path="res://art/hallway/open_locker.tscn" id="3_w5ien"]
+[ext_resource type="Texture2D" uid="uid://b5hrabbggx5g0" path="res://art/hallway/brick_wall.png" id="4_a4k46"]
 [ext_resource type="Script" uid="uid://cjhryursli72m" path="res://scripts/interactions/TeleportTrigger.cs" id="4_atylr"]
 [ext_resource type="Script" uid="uid://p30b2y4yl5bp" path="res://scripts/environment/FakeTunnel.cs" id="4_btcgh"]
+[ext_resource type="Texture2D" uid="uid://bmtqvychecs3f" path="res://art/hallway/linolium_floor.png" id="5_oflxj"]
+[ext_resource type="Texture2D" uid="uid://dhstri527ovwr" path="res://art/hallway/dropceiling.png" id="6_70yjj"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="7_8aqp6"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/materials/textured_texel_space.gdshader" id="7_n22dg"]
+[ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="8_ih05h"]
+[ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="10_joa5k"]
+[ext_resource type="Script" uid="uid://2dvb3t1ua1ff" path="res://scripts/environment/FlickeringLight.cs" id="11_lfxr3"]
+[ext_resource type="Texture2D" uid="uid://ccuvm46wivjup" path="res://art/hallway/drop_light.png" id="12_bjq3e"]
+[ext_resource type="PackedScene" uid="uid://bwcof0es20rxu" path="res://art/hallway/locker.tscn" id="13_krl5w"]
+[ext_resource type="PackedScene" uid="uid://b0u1bt4s16nda" path="res://scenes/rooms/hallway/lockers.tscn" id="14_av5sq"]
+[ext_resource type="PackedScene" uid="uid://d08emnjwpfvhb" path="res://scenes/interactions/note.tscn" id="15_b1bbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yd4d"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("5_oflxj")
+shader_parameter/roughness = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6l84"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gtxeg"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("5_oflxj")
+shader_parameter/roughness = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g84on"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eafqw"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("5_oflxj")
+shader_parameter/roughness = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70yjj"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8aqp6"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("6_70yjj")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ih05h"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w6l84"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1bbl"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("4_a4k46")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1s0v"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crpcg"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g84on"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4k46"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("4_a4k46")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8let7"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52dtl"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oflxj"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("6_70yjj")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y78h8"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_70yjj"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n22dg"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("4_a4k46")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4vxon"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsbb2"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ih05h"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_joa5k"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("4_a4k46")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l06oq"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vyxr6"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfxr3"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("6_70yjj")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yatu1"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_av5sq"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wc36"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("4_a4k46")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojrsj"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_16aa8"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1dacx"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ym02u"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("4_a4k46")
+shader_parameter/roughness = 0.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mryi7"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_emhuu"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nooqr"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/texture_albedo = ExtResource("12_bjq3e")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xifva"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oa0tx"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83ceq"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1s0v"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4vxon"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsbb2"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyxr6"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojrsj"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16aa8"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emhuu"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3co7k"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5202d"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8r85"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjq3e"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krl5w"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av5sq"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dacx"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym02u"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oa0tx"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcc8s"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83ceq"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crpcg"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8let7"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52dtl"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y78h8"]
+size = Vector3(1, 1, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kx1s5"]
 
@@ -14,8 +301,450 @@ viewport_path = NodePath("FakeTunnel")
 [node name="Hallway" type="Node3D" unique_id=483328774]
 script = ExtResource("1_o57v5")
 
-[node name="HallwaySegment" parent="." unique_id=451214221 instance=ExtResource("1_wrxb8")]
+[node name="HallwaySegment" type="Node3D" parent="." unique_id=451214221]
+script = ExtResource("2_b1bbl")
+
+[node name="room-builder" type="Node3D" parent="HallwaySegment" unique_id=2012672194]
+
+[node name="Floor" type="Node3D" parent="HallwaySegment/room-builder" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 0.5)
+script = ExtResource("8_ih05h")
+Sprite = NodePath("@Sprite3D@20722")
+shaded = true
+shader = ExtResource("7_n22dg")
 metadata/_edit_group_ = true
+
+[node name="_Sprite3D_26289" type="Sprite3D" parent="HallwaySegment/room-builder/Floor" unique_id=1195700222]
+material_override = SubResource("ShaderMaterial_0yd4d")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("5_oflxj")
+script = ExtResource("7_8aqp6")
+roughness = 0.1
+
+[node name="@Sprite3D@20722" type="Sprite3D" parent="HallwaySegment/room-builder/Floor" unique_id=286615361]
+material_override = SubResource("ShaderMaterial_w6l84")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Floor2" type="Node3D" parent="HallwaySegment/room-builder" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 1.5)
+script = ExtResource("8_ih05h")
+Sprite = NodePath("@Sprite3D@20723")
+shaded = true
+shader = ExtResource("7_n22dg")
+metadata/_edit_group_ = true
+
+[node name="_Sprite3D_26291" type="Sprite3D" parent="HallwaySegment/room-builder/Floor2" unique_id=648664723]
+material_override = SubResource("ShaderMaterial_gtxeg")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("5_oflxj")
+script = ExtResource("7_8aqp6")
+roughness = 0.1
+
+[node name="@Sprite3D@20723" type="Sprite3D" parent="HallwaySegment/room-builder/Floor2" unique_id=1563176252]
+material_override = SubResource("ShaderMaterial_g84on")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Floor3" type="Node3D" parent="HallwaySegment/room-builder" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0, 2.5)
+script = ExtResource("8_ih05h")
+Sprite = NodePath("@Sprite3D@20724")
+shaded = true
+shader = ExtResource("7_n22dg")
+metadata/_edit_group_ = true
+
+[node name="_Sprite3D_26293" type="Sprite3D" parent="HallwaySegment/room-builder/Floor3" unique_id=272512838]
+material_override = SubResource("ShaderMaterial_eafqw")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("5_oflxj")
+script = ExtResource("7_8aqp6")
+roughness = 0.1
+
+[node name="@Sprite3D@20724" type="Sprite3D" parent="HallwaySegment/room-builder/Floor3" unique_id=657438007]
+material_override = SubResource("ShaderMaterial_70yjj")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling" type="Node3D" parent="HallwaySegment/room-builder" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 0.5)
+script = ExtResource("8_ih05h")
+Sprite = NodePath("@Sprite3D@20725")
+shaded = true
+shader = ExtResource("7_n22dg")
+metadata/_edit_group_ = true
+
+[node name="_Sprite3D_26295" type="Sprite3D" parent="HallwaySegment/room-builder/Ceiling" unique_id=1164919826]
+material_override = SubResource("ShaderMaterial_8aqp6")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("6_70yjj")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@Sprite3D@20725" type="Sprite3D" parent="HallwaySegment/room-builder/Ceiling" unique_id=1684188061]
+material_override = SubResource("ShaderMaterial_ih05h")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall" type="Node3D" parent="HallwaySegment/room-builder" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0.5)
+script = ExtResource("10_joa5k")
+StaticBody = NodePath("@StaticBody3D@20214")
+CollisionShape = NodePath("@StaticBody3D@20214/@CollisionShape3D@20215")
+Sprite = NodePath("@Sprite3D@20726")
+metadata/_edit_group_ = true
+
+[node name="_StaticBody3D_26301" type="StaticBody3D" parent="HallwaySegment/room-builder/EWall" unique_id=1725956849]
+
+[node name="_CollisionShape3D_26302" type="CollisionShape3D" parent="HallwaySegment/room-builder/EWall/_StaticBody3D_26301" unique_id=1725779702]
+shape = SubResource("BoxShape3D_w6l84")
+
+[node name="_Sprite3D_26303" type="Sprite3D" parent="HallwaySegment/room-builder/EWall" unique_id=467640321]
+material_override = SubResource("ShaderMaterial_b1bbl")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_a4k46")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@StaticBody3D@20214" type="StaticBody3D" parent="HallwaySegment/room-builder/EWall" unique_id=1966236497]
+
+[node name="@CollisionShape3D@20215" type="CollisionShape3D" parent="HallwaySegment/room-builder/EWall/@StaticBody3D@20214" unique_id=1662427468]
+shape = SubResource("BoxShape3D_u1s0v")
+
+[node name="@Sprite3D@20216" type="Sprite3D" parent="HallwaySegment/room-builder/EWall" unique_id=627337853]
+material_override = SubResource("ShaderMaterial_crpcg")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="@Sprite3D@20726" type="Sprite3D" parent="HallwaySegment/room-builder/EWall" unique_id=881450501]
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall" type="Node3D" parent="HallwaySegment/room-builder" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5, 0.5)
+script = ExtResource("10_joa5k")
+StaticBody = NodePath("@StaticBody3D@20217")
+CollisionShape = NodePath("@StaticBody3D@20217/@CollisionShape3D@20218")
+Sprite = NodePath("@Sprite3D@20727")
+metadata/_edit_group_ = true
+
+[node name="_StaticBody3D_26305" type="StaticBody3D" parent="HallwaySegment/room-builder/WWall" unique_id=596413652]
+
+[node name="_CollisionShape3D_26306" type="CollisionShape3D" parent="HallwaySegment/room-builder/WWall/_StaticBody3D_26305" unique_id=632587297]
+shape = SubResource("BoxShape3D_g84on")
+
+[node name="_Sprite3D_26307" type="Sprite3D" parent="HallwaySegment/room-builder/WWall" unique_id=1054658878]
+material_override = SubResource("ShaderMaterial_a4k46")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_a4k46")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@StaticBody3D@20217" type="StaticBody3D" parent="HallwaySegment/room-builder/WWall" unique_id=1219346200]
+
+[node name="@CollisionShape3D@20218" type="CollisionShape3D" parent="HallwaySegment/room-builder/WWall/@StaticBody3D@20217" unique_id=183745047]
+shape = SubResource("BoxShape3D_8let7")
+
+[node name="@Sprite3D@20219" type="Sprite3D" parent="HallwaySegment/room-builder/WWall" unique_id=1447383227]
+material_override = SubResource("ShaderMaterial_52dtl")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="@Sprite3D@20727" type="Sprite3D" parent="HallwaySegment/room-builder/WWall" unique_id=1691641400]
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling2" type="Node3D" parent="HallwaySegment/room-builder" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 1.5)
+script = ExtResource("8_ih05h")
+Sprite = NodePath("@Sprite3D@20220")
+shaded = true
+shader = ExtResource("7_n22dg")
+metadata/_edit_group_ = true
+
+[node name="_Sprite3D_26309" type="Sprite3D" parent="HallwaySegment/room-builder/Ceiling2" unique_id=1648964905]
+material_override = SubResource("ShaderMaterial_oflxj")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("6_70yjj")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@Sprite3D@20220" type="Sprite3D" parent="HallwaySegment/room-builder/Ceiling2" unique_id=1201895694]
+material_override = SubResource("ShaderMaterial_y78h8")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall2" type="Node3D" parent="HallwaySegment/room-builder" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 1.5)
+script = ExtResource("10_joa5k")
+StaticBody = NodePath("@StaticBody3D@20221")
+CollisionShape = NodePath("@StaticBody3D@20221/@CollisionShape3D@20222")
+Sprite = NodePath("@Sprite3D@20728")
+metadata/_edit_group_ = true
+
+[node name="_StaticBody3D_26311" type="StaticBody3D" parent="HallwaySegment/room-builder/EWall2" unique_id=236819355]
+
+[node name="_CollisionShape3D_26312" type="CollisionShape3D" parent="HallwaySegment/room-builder/EWall2/_StaticBody3D_26311" unique_id=1211512648]
+shape = SubResource("BoxShape3D_70yjj")
+
+[node name="_Sprite3D_26313" type="Sprite3D" parent="HallwaySegment/room-builder/EWall2" unique_id=783351800]
+material_override = SubResource("ShaderMaterial_n22dg")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_a4k46")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@StaticBody3D@20221" type="StaticBody3D" parent="HallwaySegment/room-builder/EWall2" unique_id=649462285]
+
+[node name="@CollisionShape3D@20222" type="CollisionShape3D" parent="HallwaySegment/room-builder/EWall2/@StaticBody3D@20221" unique_id=1039612073]
+shape = SubResource("BoxShape3D_4vxon")
+
+[node name="@Sprite3D@20223" type="Sprite3D" parent="HallwaySegment/room-builder/EWall2" unique_id=773748997]
+material_override = SubResource("ShaderMaterial_gsbb2")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="@Sprite3D@20728" type="Sprite3D" parent="HallwaySegment/room-builder/EWall2" unique_id=664031970]
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall2" type="Node3D" parent="HallwaySegment/room-builder" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5, 1.5)
+script = ExtResource("10_joa5k")
+StaticBody = NodePath("@StaticBody3D@20224")
+CollisionShape = NodePath("@StaticBody3D@20224/@CollisionShape3D@20225")
+Sprite = NodePath("@Sprite3D@20729")
+metadata/_edit_group_ = true
+
+[node name="_StaticBody3D_26315" type="StaticBody3D" parent="HallwaySegment/room-builder/WWall2" unique_id=1224505342]
+
+[node name="_CollisionShape3D_26316" type="CollisionShape3D" parent="HallwaySegment/room-builder/WWall2/_StaticBody3D_26315" unique_id=912396685]
+shape = SubResource("BoxShape3D_ih05h")
+
+[node name="_Sprite3D_26317" type="Sprite3D" parent="HallwaySegment/room-builder/WWall2" unique_id=1138769599]
+material_override = SubResource("ShaderMaterial_joa5k")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_a4k46")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@StaticBody3D@20224" type="StaticBody3D" parent="HallwaySegment/room-builder/WWall2" unique_id=258893983]
+
+[node name="@CollisionShape3D@20225" type="CollisionShape3D" parent="HallwaySegment/room-builder/WWall2/@StaticBody3D@20224" unique_id=1046066741]
+shape = SubResource("BoxShape3D_l06oq")
+
+[node name="@Sprite3D@20226" type="Sprite3D" parent="HallwaySegment/room-builder/WWall2" unique_id=1740749174]
+material_override = SubResource("ShaderMaterial_vyxr6")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="@Sprite3D@20729" type="Sprite3D" parent="HallwaySegment/room-builder/WWall2" unique_id=2033430804]
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling3" type="Node3D" parent="HallwaySegment/room-builder" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1, 2.5)
+script = ExtResource("8_ih05h")
+Sprite = NodePath("@Sprite3D@20227")
+shaded = true
+shader = ExtResource("7_n22dg")
+metadata/_edit_group_ = true
+
+[node name="_Sprite3D_26319" type="Sprite3D" parent="HallwaySegment/room-builder/Ceiling3" unique_id=1031107428]
+material_override = SubResource("ShaderMaterial_lfxr3")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("6_70yjj")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@Sprite3D@20227" type="Sprite3D" parent="HallwaySegment/room-builder/Ceiling3" unique_id=384625452]
+material_override = SubResource("ShaderMaterial_yatu1")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall3" type="Node3D" parent="HallwaySegment/room-builder" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 2.5)
+script = ExtResource("10_joa5k")
+StaticBody = NodePath("@StaticBody3D@20228")
+CollisionShape = NodePath("@StaticBody3D@20228/@CollisionShape3D@20229")
+Sprite = NodePath("@Sprite3D@20730")
+metadata/_edit_group_ = true
+
+[node name="_StaticBody3D_26325" type="StaticBody3D" parent="HallwaySegment/room-builder/EWall3" unique_id=2142558584]
+
+[node name="_CollisionShape3D_26326" type="CollisionShape3D" parent="HallwaySegment/room-builder/EWall3/_StaticBody3D_26325" unique_id=2010389986]
+shape = SubResource("BoxShape3D_av5sq")
+
+[node name="_Sprite3D_26327" type="Sprite3D" parent="HallwaySegment/room-builder/EWall3" unique_id=197669953]
+material_override = SubResource("ShaderMaterial_1wc36")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_a4k46")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@StaticBody3D@20228" type="StaticBody3D" parent="HallwaySegment/room-builder/EWall3" unique_id=1180102129]
+
+[node name="@CollisionShape3D@20229" type="CollisionShape3D" parent="HallwaySegment/room-builder/EWall3/@StaticBody3D@20228" unique_id=28223425]
+shape = SubResource("BoxShape3D_ojrsj")
+
+[node name="@Sprite3D@20230" type="Sprite3D" parent="HallwaySegment/room-builder/EWall3" unique_id=1292274623]
+material_override = SubResource("ShaderMaterial_16aa8")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="@Sprite3D@20730" type="Sprite3D" parent="HallwaySegment/room-builder/EWall3" unique_id=300987029]
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall3" type="Node3D" parent="HallwaySegment/room-builder" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5, 2.5)
+script = ExtResource("10_joa5k")
+StaticBody = NodePath("@StaticBody3D@20231")
+CollisionShape = NodePath("@StaticBody3D@20231/@CollisionShape3D@20232")
+Sprite = NodePath("@Sprite3D@20731")
+metadata/_edit_group_ = true
+
+[node name="_StaticBody3D_26329" type="StaticBody3D" parent="HallwaySegment/room-builder/WWall3" unique_id=1099556418]
+
+[node name="_CollisionShape3D_26330" type="CollisionShape3D" parent="HallwaySegment/room-builder/WWall3/_StaticBody3D_26329" unique_id=1573230985]
+shape = SubResource("BoxShape3D_1dacx")
+
+[node name="_Sprite3D_26331" type="Sprite3D" parent="HallwaySegment/room-builder/WWall3" unique_id=352221388]
+material_override = SubResource("ShaderMaterial_ym02u")
+pixel_size = 0.013333334
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("4_a4k46")
+script = ExtResource("7_8aqp6")
+roughness = 0.75
+
+[node name="@StaticBody3D@20231" type="StaticBody3D" parent="HallwaySegment/room-builder/WWall3" unique_id=228058009]
+
+[node name="@CollisionShape3D@20232" type="CollisionShape3D" parent="HallwaySegment/room-builder/WWall3/@StaticBody3D@20231" unique_id=975905526]
+shape = SubResource("BoxShape3D_mryi7")
+
+[node name="@Sprite3D@20233" type="Sprite3D" parent="HallwaySegment/room-builder/WWall3" unique_id=1551749141]
+material_override = SubResource("ShaderMaterial_emhuu")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="@Sprite3D@20731" type="Sprite3D" parent="HallwaySegment/room-builder/WWall3" unique_id=1026853394]
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="TubeLight" type="Node3D" parent="HallwaySegment" unique_id=1162565468 node_paths=PackedStringArray("OnModel", "OffModel")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 1, 0.5)
+script = ExtResource("11_lfxr3")
+OnModel = NodePath("on")
+OffModel = NodePath("off")
+OnInterval = 2.0
+OffInterval = 0.5
+IntervalEpsilon = 0.9
+metadata/_edit_group_ = true
+
+[node name="off" type="CSGBox3D" parent="HallwaySegment/TubeLight" unique_id=2058221575]
+visible = false
+cast_shadow = 0
+size = Vector3(0.64, 0.2, 0.01)
+material = SubResource("ShaderMaterial_nooqr")
+
+[node name="on" type="CSGBox3D" parent="HallwaySegment/TubeLight" unique_id=2107543432]
+material_overlay = SubResource("StandardMaterial3D_xifva")
+cast_shadow = 0
+size = Vector3(0.64, 0.2, 0.01)
+material = SubResource("ShaderMaterial_nooqr")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="HallwaySegment/TubeLight/on" unique_id=744666507]
+light_energy = 0.4
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+area_range = 2.0
+area_size = Vector2(0.64, 0.2)
+
+[node name="Lockers" type="Node3D" parent="HallwaySegment" unique_id=602943988]
+script = ExtResource("2_b1bbl")
+
+[node name="locker2" parent="HallwaySegment/Lockers" unique_id=394173647 instance=ExtResource("13_krl5w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0.25)
+
+[node name="locker3" parent="HallwaySegment/Lockers" unique_id=982802185 instance=ExtResource("13_krl5w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0)
+
+[node name="locker4" parent="HallwaySegment/Lockers" unique_id=49617062 instance=ExtResource("13_krl5w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0.75)
+
+[node name="locker5" parent="HallwaySegment/Lockers" unique_id=999718515 instance=ExtResource("13_krl5w")]
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 1)
+
+[node name="locker6" parent="HallwaySegment/Lockers" unique_id=911821096 instance=ExtResource("13_krl5w")]
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 0.75)
+
+[node name="locker7" parent="HallwaySegment/Lockers" unique_id=1790535780 instance=ExtResource("13_krl5w")]
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 0.5)
+
+[node name="locker8" parent="HallwaySegment/Lockers" unique_id=590468456 instance=ExtResource("13_krl5w")]
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 0.25)
+
+[node name="Lockers2" parent="HallwaySegment" unique_id=401591302 instance=ExtResource("14_av5sq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Lockers3" parent="HallwaySegment" unique_id=68122816 instance=ExtResource("14_av5sq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="open_locker" parent="HallwaySegment" unique_id=1791203062 instance=ExtResource("3_w5ien")]
+transform = Transform3D(-4.3667676e-08, 0, -1, 0, 1, 0, 0.999, 0, -4.371139e-08, 0.001, 0, 0.501)
+visible = true
+
+[node name="Note" parent="HallwaySegment/open_locker" unique_id=1049265717 instance=ExtResource("15_b1bbl")]
+transform = Transform3D(0.023461148, 0, 0.5194704, 0, 0.5199999, 0, -0.51947045, 0, 0.023461051, 0.11753458, 0.5, -0.04550477)
+Title = ""
+Text = "VVV<<^>>"
 
 [node name="HallwaySegment2" parent="." unique_id=1520411023 instance=ExtResource("1_wrxb8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
@@ -37,6 +766,170 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 metadata/_edit_group_ = true
 
+[node name="room-builder" parent="HallwaySegment6" index="0" unique_id=2012672194]
+Wall = null
+Floor = null
+Ceiling = null
+Wall_Roughness = 0.0
+Floor_Roughness = 0.0
+Ceil_Roughness = 0.0
+Shader = null
+Width_X = 0
+Width_Z = 0
+
+[node name="Floor" parent="HallwaySegment6/room-builder" index="0" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20828")
+
+[node name="@Sprite3D@20828" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor" index="1" unique_id=2109239433]
+material_override = SubResource("ShaderMaterial_oa0tx")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Floor2" parent="HallwaySegment6/room-builder" index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20829")
+
+[node name="@Sprite3D@20829" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor2" index="1" unique_id=1844387591]
+material_override = SubResource("ShaderMaterial_83ceq")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Floor3" parent="HallwaySegment6/room-builder" index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20830")
+
+[node name="@Sprite3D@20830" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor3" index="1" unique_id=1288894350]
+material_override = SubResource("ShaderMaterial_u1s0v")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling" parent="HallwaySegment6/room-builder" index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20831")
+
+[node name="@Sprite3D@20831" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling" index="1" unique_id=859353998]
+material_override = SubResource("ShaderMaterial_4vxon")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall" parent="HallwaySegment6/room-builder" index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20832")
+CollisionShape = NodePath("@StaticBody3D@20832/@CollisionShape3D@20833")
+Sprite = NodePath("@Sprite3D@20834")
+shader = null
+
+[node name="@StaticBody3D@20832" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall" index="2" unique_id=1458498587]
+
+[node name="@CollisionShape3D@20833" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall/@StaticBody3D@20832" unique_id=1297108949]
+shape = SubResource("BoxShape3D_gsbb2")
+
+[node name="@Sprite3D@20834" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall" index="3" unique_id=1906555528]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall" parent="HallwaySegment6/room-builder" index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20835")
+CollisionShape = NodePath("@StaticBody3D@20835/@CollisionShape3D@20836")
+Sprite = NodePath("@Sprite3D@20837")
+shader = null
+
+[node name="@StaticBody3D@20835" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall" index="2" unique_id=1067045428]
+
+[node name="@CollisionShape3D@20836" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall/@StaticBody3D@20835" unique_id=1900144487]
+shape = SubResource("BoxShape3D_vyxr6")
+
+[node name="@Sprite3D@20837" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall" index="3" unique_id=1586556791]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling2" parent="HallwaySegment6/room-builder" index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20838")
+
+[node name="@Sprite3D@20838" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling2" index="1" unique_id=1273352821]
+material_override = SubResource("ShaderMaterial_ojrsj")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall2" parent="HallwaySegment6/room-builder" index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20839")
+CollisionShape = NodePath("@StaticBody3D@20839/@CollisionShape3D@20840")
+Sprite = NodePath("@Sprite3D@20841")
+shader = null
+
+[node name="@StaticBody3D@20839" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall2" index="2" unique_id=1995606070]
+
+[node name="@CollisionShape3D@20840" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall2/@StaticBody3D@20839" unique_id=1772976992]
+shape = SubResource("BoxShape3D_16aa8")
+
+[node name="@Sprite3D@20841" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall2" index="3" unique_id=678960242]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall2" parent="HallwaySegment6/room-builder" index="8" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20842")
+CollisionShape = NodePath("@StaticBody3D@20842/@CollisionShape3D@20843")
+Sprite = NodePath("@Sprite3D@20844")
+shader = null
+
+[node name="@StaticBody3D@20842" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall2" index="2" unique_id=352313374]
+
+[node name="@CollisionShape3D@20843" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall2/@StaticBody3D@20842" unique_id=1299377418]
+shape = SubResource("BoxShape3D_emhuu")
+
+[node name="@Sprite3D@20844" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall2" index="3" unique_id=689589645]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling3" parent="HallwaySegment6/room-builder" index="9" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20845")
+
+[node name="@Sprite3D@20845" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling3" index="1" unique_id=1122872212]
+material_override = SubResource("ShaderMaterial_3co7k")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall3" parent="HallwaySegment6/room-builder" index="10" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20846")
+CollisionShape = NodePath("@StaticBody3D@20846/@CollisionShape3D@20847")
+Sprite = NodePath("@Sprite3D@20848")
+shader = null
+
+[node name="@StaticBody3D@20846" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall3" index="2" unique_id=1683692930]
+
+[node name="@CollisionShape3D@20847" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall3/@StaticBody3D@20846" unique_id=1746580055]
+shape = SubResource("BoxShape3D_5202d")
+
+[node name="@Sprite3D@20848" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall3" index="3" unique_id=1619424577]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall3" parent="HallwaySegment6/room-builder" index="11" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20849")
+CollisionShape = NodePath("@StaticBody3D@20849/@CollisionShape3D@20850")
+Sprite = NodePath("@Sprite3D@20851")
+shader = null
+
+[node name="@StaticBody3D@20849" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall3" index="2" unique_id=1851375121]
+
+[node name="@CollisionShape3D@20850" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall3/@StaticBody3D@20849" unique_id=1187654096]
+shape = SubResource("BoxShape3D_q8r85")
+
+[node name="@Sprite3D@20851" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall3" index="3" unique_id=1572160323]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="TubeLight" parent="HallwaySegment6" index="1" unique_id=1162565468]
+Seed = 14
+
 [node name="HallwaySegment7" parent="." unique_id=732993741 instance=ExtResource("1_wrxb8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
 metadata/_edit_group_ = true
@@ -45,8 +938,172 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 metadata/_edit_group_ = true
 
+[node name="room-builder" parent="HallwaySegment8" index="0" unique_id=2012672194]
+Wall = null
+Floor = null
+Ceiling = null
+Wall_Roughness = 0.0
+Floor_Roughness = 0.0
+Ceil_Roughness = 0.0
+Shader = null
+Width_X = 0
+Width_Z = 0
+
+[node name="Floor" parent="HallwaySegment8/room-builder" index="0" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20876")
+
+[node name="@Sprite3D@20876" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor" index="1" unique_id=420533170]
+material_override = SubResource("ShaderMaterial_bjq3e")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Floor2" parent="HallwaySegment8/room-builder" index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20877")
+
+[node name="@Sprite3D@20877" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor2" index="1" unique_id=1635777264]
+material_override = SubResource("ShaderMaterial_krl5w")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Floor3" parent="HallwaySegment8/room-builder" index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20878")
+
+[node name="@Sprite3D@20878" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor3" index="1" unique_id=889461151]
+material_override = SubResource("ShaderMaterial_av5sq")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling" parent="HallwaySegment8/room-builder" index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20879")
+
+[node name="@Sprite3D@20879" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling" index="1" unique_id=1761246295]
+material_override = SubResource("ShaderMaterial_1dacx")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall" parent="HallwaySegment8/room-builder" index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20880")
+CollisionShape = NodePath("@StaticBody3D@20880/@CollisionShape3D@20881")
+Sprite = NodePath("@Sprite3D@20882")
+shader = null
+
+[node name="@StaticBody3D@20880" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall" index="2" unique_id=1490655482]
+
+[node name="@CollisionShape3D@20881" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall/@StaticBody3D@20880" unique_id=1980402868]
+shape = SubResource("BoxShape3D_ym02u")
+
+[node name="@Sprite3D@20882" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall" index="3" unique_id=90513530]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall" parent="HallwaySegment8/room-builder" index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20883")
+CollisionShape = NodePath("@StaticBody3D@20883/@CollisionShape3D@20884")
+Sprite = NodePath("@Sprite3D@20885")
+shader = null
+
+[node name="@StaticBody3D@20883" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall" index="2" unique_id=1251013684]
+
+[node name="@CollisionShape3D@20884" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall/@StaticBody3D@20883" unique_id=1405930345]
+shape = SubResource("BoxShape3D_oa0tx")
+
+[node name="@Sprite3D@20885" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall" index="3" unique_id=1147696126]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling2" parent="HallwaySegment8/room-builder" index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20886")
+
+[node name="@Sprite3D@20886" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling2" index="1" unique_id=589216570]
+material_override = SubResource("ShaderMaterial_wcc8s")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall2" parent="HallwaySegment8/room-builder" index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20887")
+CollisionShape = NodePath("@StaticBody3D@20887/@CollisionShape3D@20888")
+Sprite = NodePath("@Sprite3D@20889")
+shader = null
+
+[node name="@StaticBody3D@20887" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall2" index="2" unique_id=1000116640]
+
+[node name="@CollisionShape3D@20888" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall2/@StaticBody3D@20887" unique_id=1732291497]
+shape = SubResource("BoxShape3D_83ceq")
+
+[node name="@Sprite3D@20889" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall2" index="3" unique_id=776246047]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall2" parent="HallwaySegment8/room-builder" index="8" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20890")
+CollisionShape = NodePath("@StaticBody3D@20890/@CollisionShape3D@20891")
+Sprite = NodePath("@Sprite3D@20892")
+shader = null
+
+[node name="@StaticBody3D@20890" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall2" index="2" unique_id=2038901631]
+
+[node name="@CollisionShape3D@20891" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall2/@StaticBody3D@20890" unique_id=1274561572]
+shape = SubResource("BoxShape3D_crpcg")
+
+[node name="@Sprite3D@20892" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall2" index="3" unique_id=806853392]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling3" parent="HallwaySegment8/room-builder" index="9" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@20893")
+
+[node name="@Sprite3D@20893" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling3" index="1" unique_id=196910945]
+material_override = SubResource("ShaderMaterial_8let7")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall3" parent="HallwaySegment8/room-builder" index="10" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20894")
+CollisionShape = NodePath("@StaticBody3D@20894/@CollisionShape3D@20895")
+Sprite = NodePath("@Sprite3D@20896")
+shader = null
+
+[node name="@StaticBody3D@20894" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall3" index="2" unique_id=1195223893]
+
+[node name="@CollisionShape3D@20895" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall3/@StaticBody3D@20894" unique_id=1471573673]
+shape = SubResource("BoxShape3D_52dtl")
+
+[node name="@Sprite3D@20896" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall3" index="3" unique_id=455796907]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall3" parent="HallwaySegment8/room-builder" index="11" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@20897")
+CollisionShape = NodePath("@StaticBody3D@20897/@CollisionShape3D@20898")
+Sprite = NodePath("@Sprite3D@20899")
+shader = null
+
+[node name="@StaticBody3D@20897" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall3" index="2" unique_id=1096699730]
+
+[node name="@CollisionShape3D@20898" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall3/@StaticBody3D@20897" unique_id=433205028]
+shape = SubResource("BoxShape3D_y78h8")
+
+[node name="@Sprite3D@20899" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall3" index="3" unique_id=947549886]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="TubeLight" parent="HallwaySegment8" index="1" unique_id=1162565468]
+Seed = 14
+
 [node name="PZTrigger" type="Area3D" parent="." unique_id=600448785 node_paths=PackedStringArray("Target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 6.5)
 script = ExtResource("4_atylr")
 Target = NodePath("Target")
 
@@ -58,7 +1115,7 @@ shape = SubResource("BoxShape3D_kx1s5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="ZTrigger" type="Area3D" parent="." unique_id=1865046472 node_paths=PackedStringArray("Target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -5.5)
 script = ExtResource("4_atylr")
 Target = NodePath("Target")
 
@@ -70,15 +1127,15 @@ shape = SubResource("BoxShape3D_kx1s5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="FakeTunnel" type="SubViewport" parent="." unique_id=415471129]
+size = Vector2i(128, 128)
 
-[node name="Pivot" type="Node3D" parent="FakeTunnel" unique_id=698973183 node_paths=PackedStringArray("CorrectSideVisible", "WrongSideVisible")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="Pivot" type="Node3D" parent="FakeTunnel" unique_id=698973183 node_paths=PackedStringArray("WrongSideVisible")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0, -1)
 script = ExtResource("4_btcgh")
-CorrectSideVisible = NodePath("")
 WrongSideVisible = NodePath("TunnelCam/WrongSideVisible")
 
 [node name="TunnelCam" type="Camera3D" parent="FakeTunnel/Pivot" unique_id=732809144]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.536743e-07, 0.5, -11)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.5, -12.31)
 cull_mask = 1048573
 fov = 30.0
 
@@ -87,9 +1144,12 @@ layers = 2
 aabb = AABB(-0.5, -0.5, 0, 1, 1, 1)
 
 [node name="TunnelTexture" type="Sprite3D" parent="FakeTunnel/Pivot" unique_id=1231789947]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.5, 12)
-pixel_size = 0.0019531
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.9604645e-08, 0.5, 11)
+pixel_size = 0.0078125
 transparent = false
 double_sided = false
 texture = SubResource("ViewportTexture_401xl")
 script = ExtResource("7_8aqp6")
+
+[editable path="HallwaySegment6"]
+[editable path="HallwaySegment8"]

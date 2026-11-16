@@ -19,13 +19,13 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.1
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.125, 0, 0.75)
 
 [node name="locker5" parent="." unique_id=999718515 instance=ExtResource("2_7iqj0")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 1)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 1)
 
 [node name="locker6" parent="." unique_id=911821096 instance=ExtResource("2_7iqj0")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 0.75)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 0.75)
 
 [node name="locker7" parent="." unique_id=1790535780 instance=ExtResource("2_7iqj0")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 0.5)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 0.5)
 
 [node name="locker8" parent="." unique_id=590468456 instance=ExtResource("2_7iqj0")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.125, 0, 0.25)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 1.125, 0, 0.25)

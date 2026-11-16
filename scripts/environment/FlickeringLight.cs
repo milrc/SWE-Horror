@@ -5,10 +5,17 @@ public partial class FlickeringLight : GridAligned
 {
     [Export] public Node3D OnModel;
     [Export] public Node3D OffModel;
+    [Export] public int Seed = -1;
     [Export] public float OnInterval, OffInterval, IntervalEpsilon;
     Timer _onT, _offT;
+    RandomNumberGenerator rng;
     public override void _Ready()
     {
+        //Seed RNG
+        rng = new();
+        if (Seed >= 0)
+            rng.Seed = (ulong)Seed;
+
         //set up timers
         _onT = new()
         {
@@ -42,7 +49,6 @@ public partial class FlickeringLight : GridAligned
     }
     void startTimer(Timer t, float waitTime, float epsilon)
     {
-        RandomNumberGenerator rng = new();
         t.WaitTime = rng.RandfRange(waitTime * (1f - epsilon), waitTime * (1f + epsilon));
         t.Start();
     }
