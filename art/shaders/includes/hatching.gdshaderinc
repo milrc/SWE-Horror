@@ -47,7 +47,7 @@ float distance_squared(vec3 p, vec3 p2) {
 
 //find closest color in oklch color space
 vec3 get_nearest_color(vec3 color, vec3 weights) {
-	float min_diff = 100.0;
+	float min_diff = 1e5;
 	vec3 nearest_color = vec3(1.0, 0.0, 0.86);
 	for (int i = 0; i < COLOR_PALETTE.length(); i++) {
 		float curr_dist = ok_distance_squared(rgb_to_oklch(COLOR_PALETTE[i]), color);
@@ -80,17 +80,13 @@ vec3 hatching_effect(vec3 input_color, vec2 uv) {
 
     //Fill color
     vec2 color_uv = clamp(uv, vec2(0.0), vec2(1.0)); //add noise to screen uv
-	// input_color/= (input_color.x + input_color.y + input_color.z)/3.0; //remove gray scale
 	vec3 oklch = rgb_to_oklch(input_color); //convert screen color to oklab color space
 
 	//compose
 	color = mix(get_nearest_color(oklch), vec3(1.0), step(oklch.x, color_threshold)); //paint white or color, based on oklch_mask
-	// color = vec3(1.0) * ok_distance_weighted_squared(rgb_to_oklch(COLOR_PALETTE[0]), oklch, vec3(1.0, 0.0, 0.0));
 
 	if (!preview_colors) {
 		color *= hatching; //apply hatching mask
-	} else {
-		// color = oklch_to_rgb(oklch);
 	}
 
 	//Just show hatch gray-scale if desired
