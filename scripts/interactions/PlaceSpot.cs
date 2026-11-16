@@ -1,4 +1,4 @@
-using Godot;
+    using Godot;
 
 //a place where the player can put a key down (table, shelf, etc)
 public partial class PlaceSpot : StaticBody3D

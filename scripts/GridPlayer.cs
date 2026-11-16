@@ -84,6 +84,12 @@ public partial class GridPlayer : Node3D
 
     private void RotateSelf(float rotation)
     {
+        // check if player is currently turning, and if so snap their movement to the current
+        // center rotation before setting a new one
+        Transform3D finalTransform = Transform;
+        finalTransform.Basis = centerRotation.Basis;
+        Transform = finalTransform;
+
         centerRotation.Basis = centerRotation.Basis.Rotated(Vector3.Up, rotation);
     }
 
@@ -152,6 +158,7 @@ public partial class GridPlayer : Node3D
         Quaternion from = new(Transform.Basis);
         Quaternion dest = new(centerRotation.Basis);
         Quaternion rotLerp = from.Slerp(dest, RotationWeight);
+        rotLerp = rotLerp.Normalized();
         Transform3D nextTransform = Transform;
         nextTransform.Basis = new(rotLerp);
         Transform = nextTransform;

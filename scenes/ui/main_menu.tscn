@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mld822rvysrd"]
 
 [ext_resource type="Script" uid="uid://dmkryx81cv781" path="res://scripts/ui/MainMenu.cs" id="1_menu"]
-[ext_resource type="PackedScene" uid="uid://b1pus62u2gbg4" path="res://scenes/movement_test.tscn" id="2_gameplay"]
+[ext_resource type="PackedScene" uid="uid://b1pus62u2gbg4" path="res://scenes/main_scene.tscn" id="2_gameplay"]
 [ext_resource type="Shader" uid="uid://b34djuqoov18o" path="res://art/shaders/materials/menu_splash.gdshader" id="3_m1kxf"]
 [ext_resource type="Texture2D" uid="uid://dohp5nfxxgc63" path="res://art/bedroom/ruined_ceiling.png" id="4_btxxm"]
 [ext_resource type="Texture2D" uid="uid://d20e576egnft8" path="res://art/bedroom/ruined_floor.png" id="5_wb0q5"]
