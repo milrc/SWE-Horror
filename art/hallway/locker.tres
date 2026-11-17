@@ -15,6 +15,6 @@ shader_parameter/max_displacement = 0.05
 shader_parameter/max_distance = 5.0000002375
 shader_parameter/effect_speed = 1.0
 shader_parameter/distance_period = 1.0
-shader_parameter/open_locker_pos = 0.45
+shader_parameter/open_locker_pos = 15.45
 shader_parameter/open_locker_influence = 1.815
 shader_parameter/distance_to_displacement = ExtResource("2_2vi8w")

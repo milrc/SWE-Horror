@@ -39,9 +39,6 @@ background_mode = 1
 background_color = Color(1, 1, 1, 1)
 ambient_light_source = 3
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rt2n2"]
-viewport_path = NodePath("FakeTunnel")
-
 [node name="main" type="Node3D" unique_id=1476754260]
 script = ExtResource("1_rt2n2")
 
@@ -49,6 +46,9 @@ script = ExtResource("1_rt2n2")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 0, 0.5)
 
 [node name="bedroom" parent="." unique_id=540705334 instance=ExtResource("2_gubc5")]
+
+[node name="Hallway" parent="." unique_id=483328774 instance=ExtResource("6_rt2n2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 15.002)
 
 [node name="CrossHatch" type="MeshInstance3D" parent="." unique_id=1665997343]
 material_override = SubResource("ShaderMaterial_d5coj")
@@ -58,18 +58,3 @@ mesh = SubResource("QuadMesh_8fw82")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=832125650]
 environment = SubResource("Environment_qolh1")
-
-[node name="Hallway" parent="." unique_id=483328774 instance=ExtResource("6_rt2n2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 15.002)
-
-[node name="Pivot" parent="Hallway/FakeTunnel" parent_id_path=PackedInt32Array(483328774, 415471129) index="0" unique_id=698973183]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 0, 14.002)
-
-[node name="TunnelTexture" parent="Hallway/FakeTunnel/Pivot" index="1" unique_id=1231789947]
-texture = SubResource("ViewportTexture_rt2n2")
-
-[editable path="bedroom"]
-[editable path="Hallway"]
-[editable path="Hallway/HallwaySegment3"]
-[editable path="Hallway/HallwaySegment6"]
-[editable path="Hallway/HallwaySegment8"]
