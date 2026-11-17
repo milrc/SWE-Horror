@@ -13,6 +13,11 @@ public partial class ScaledSprite : Sprite3D
         TextureChanged += FixScale;
         TextureChanged += SetShaderTexture;
     }
+    public override void _ExitTree()
+    {
+        TextureChanged -= FixScale;
+        TextureChanged -= SetShaderTexture;
+    }
 
     public void FixScale()
     {

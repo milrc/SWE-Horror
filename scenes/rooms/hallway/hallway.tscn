@@ -220,7 +220,7 @@ render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m4vjl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym02u"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa0tx"]
@@ -228,28 +228,20 @@ render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lcuyt"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcc8s"]
 size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcc8s"]
-render_priority = 0
-shader = ExtResource("7_n22dg")
-shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_83ceq"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v8w4n"]
-size = Vector3(1, 1, 0.05)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u1s0v"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t7j2k"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_crpcg"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8let7"]
@@ -257,26 +249,29 @@ render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_52dtl"]
+size = Vector3(1, 1, 0.05)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4vxon"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rb8in"]
-size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l06oq"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_34fsx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyxr6"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojrsj"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16aa8"]
+size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mryi7"]
 render_priority = 0
@@ -298,58 +293,26 @@ render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gsbb2"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vyxr6"]
-size = Vector3(1, 1, 0.05)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m4vjl"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_16aa8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_yp4dv"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_emhuu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcuyt"]
 size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yp4dv"]
-render_priority = 0
-shader = ExtResource("7_n22dg")
-shader_parameter/roughness = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5202d"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_q8r85"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcuyt"]
-render_priority = 0
-shader = ExtResource("7_n22dg")
-shader_parameter/roughness = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_243i3"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtbsk"]
-render_priority = 0
-shader = ExtResource("7_n22dg")
-shader_parameter/roughness = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8w4n"]
-render_priority = 0
-shader = ExtResource("7_n22dg")
-shader_parameter/roughness = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ym02u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtbsk"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oa0tx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8w4n"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8jtup"]
@@ -357,21 +320,58 @@ render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_83ceq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7j2k"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_crpcg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7h7yj"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7j2k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb8in"]
 render_priority = 0
 shader = ExtResource("7_n22dg")
 shader_parameter/roughness = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_52dtl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2o3h"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34fsx"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fwr0"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m535t"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y78h8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_braq0"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmxe7"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_62xq8"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tiqtm"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wr3jx"]
+render_priority = 0
+shader = ExtResource("7_n22dg")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g7f3y"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yjqf6"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kx1s5"]
@@ -851,152 +851,155 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 metadata/_edit_group_ = true
 
-[node name="Floor" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="0" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@21061")
+[node name="room-builder" parent="HallwaySegment3" index="0" unique_id=2012672194]
+script = null
 
-[node name="@Sprite3D@21061" type="Sprite3D" parent="HallwaySegment3/room-builder/Floor" index="1" unique_id=1423876038]
+[node name="Floor" parent="HallwaySegment3/room-builder" index="0" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48601")
+
+[node name="@Sprite3D@48601" type="Sprite3D" parent="HallwaySegment3/room-builder/Floor" index="1" unique_id=922697324]
 material_override = SubResource("ShaderMaterial_bjq3e")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="Floor2" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@21062")
+[node name="Floor2" parent="HallwaySegment3/room-builder" index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48602")
 
-[node name="@Sprite3D@21062" type="Sprite3D" parent="HallwaySegment3/room-builder/Floor2" index="1" unique_id=528020751]
+[node name="@Sprite3D@48602" type="Sprite3D" parent="HallwaySegment3/room-builder/Floor2" index="1" unique_id=808784305]
 material_override = SubResource("ShaderMaterial_krl5w")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="Floor3" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@21063")
+[node name="Floor3" parent="HallwaySegment3/room-builder" index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48603")
 
-[node name="@Sprite3D@21063" type="Sprite3D" parent="HallwaySegment3/room-builder/Floor3" index="1" unique_id=1547110380]
+[node name="@Sprite3D@48603" type="Sprite3D" parent="HallwaySegment3/room-builder/Floor3" index="1" unique_id=1657540096]
 material_override = SubResource("ShaderMaterial_av5sq")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="Ceiling" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@21064")
+[node name="Ceiling" parent="HallwaySegment3/room-builder" index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48604")
 
-[node name="@Sprite3D@21064" type="Sprite3D" parent="HallwaySegment3/room-builder/Ceiling" index="1" unique_id=1379071123]
+[node name="@Sprite3D@48604" type="Sprite3D" parent="HallwaySegment3/room-builder/Ceiling" index="1" unique_id=638479103]
 material_override = SubResource("ShaderMaterial_1dacx")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="EWall" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@21065")
-CollisionShape = NodePath("@StaticBody3D@21065/@CollisionShape3D@21066")
-Sprite = NodePath("@Sprite3D@21067")
+[node name="EWall" parent="HallwaySegment3/room-builder" index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48605")
+CollisionShape = NodePath("@StaticBody3D@48605/@CollisionShape3D@48606")
+Sprite = NodePath("@Sprite3D@48607")
 
-[node name="@StaticBody3D@21065" type="StaticBody3D" parent="HallwaySegment3/room-builder/EWall" index="2" unique_id=204844981]
+[node name="@StaticBody3D@48605" type="StaticBody3D" parent="HallwaySegment3/room-builder/EWall" index="2" unique_id=1438135354]
 
-[node name="@CollisionShape3D@21066" type="CollisionShape3D" parent="HallwaySegment3/room-builder/EWall/@StaticBody3D@21065" unique_id=1808531371]
-shape = SubResource("BoxShape3D_m4vjl")
+[node name="@CollisionShape3D@48606" type="CollisionShape3D" parent="HallwaySegment3/room-builder/EWall/@StaticBody3D@48605" unique_id=282483279]
+shape = SubResource("BoxShape3D_ym02u")
 
-[node name="@Sprite3D@21067" type="Sprite3D" parent="HallwaySegment3/room-builder/EWall" index="3" unique_id=2026039827]
+[node name="@Sprite3D@48607" type="Sprite3D" parent="HallwaySegment3/room-builder/EWall" index="3" unique_id=37973865]
 material_override = SubResource("ShaderMaterial_oa0tx")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="WWall" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@21068")
-CollisionShape = NodePath("@StaticBody3D@21068/@CollisionShape3D@21069")
-Sprite = NodePath("@Sprite3D@21070")
+[node name="WWall" parent="HallwaySegment3/room-builder" index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48608")
+CollisionShape = NodePath("@StaticBody3D@48608/@CollisionShape3D@48609")
+Sprite = NodePath("@Sprite3D@48610")
 
-[node name="@StaticBody3D@21068" type="StaticBody3D" parent="HallwaySegment3/room-builder/WWall" index="2" unique_id=1167653281]
+[node name="@StaticBody3D@48608" type="StaticBody3D" parent="HallwaySegment3/room-builder/WWall" index="2" unique_id=1656178356]
 
-[node name="@CollisionShape3D@21069" type="CollisionShape3D" parent="HallwaySegment3/room-builder/WWall/@StaticBody3D@21068" unique_id=731647131]
-shape = SubResource("BoxShape3D_lcuyt")
+[node name="@CollisionShape3D@48609" type="CollisionShape3D" parent="HallwaySegment3/room-builder/WWall/@StaticBody3D@48608" unique_id=1973281055]
+shape = SubResource("BoxShape3D_wcc8s")
 
-[node name="@Sprite3D@21070" type="Sprite3D" parent="HallwaySegment3/room-builder/WWall" index="3" unique_id=483744943]
-material_override = SubResource("ShaderMaterial_wcc8s")
-shaded = true
-texture_filter = 0
-script = ExtResource("7_8aqp6")
-
-[node name="Ceiling2" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@21071")
-
-[node name="@Sprite3D@21071" type="Sprite3D" parent="HallwaySegment3/room-builder/Ceiling2" index="1" unique_id=1877468177]
+[node name="@Sprite3D@48610" type="Sprite3D" parent="HallwaySegment3/room-builder/WWall" index="3" unique_id=750555769]
 material_override = SubResource("ShaderMaterial_83ceq")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="EWall2" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@21072")
-CollisionShape = NodePath("@StaticBody3D@21072/@CollisionShape3D@21073")
-Sprite = NodePath("@Sprite3D@21074")
+[node name="Ceiling2" parent="HallwaySegment3/room-builder" index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48611")
 
-[node name="@StaticBody3D@21072" type="StaticBody3D" parent="HallwaySegment3/room-builder/EWall2" index="2" unique_id=925259310]
-
-[node name="@CollisionShape3D@21073" type="CollisionShape3D" parent="HallwaySegment3/room-builder/EWall2/@StaticBody3D@21072" unique_id=439799187]
-shape = SubResource("BoxShape3D_v8w4n")
-
-[node name="@Sprite3D@21074" type="Sprite3D" parent="HallwaySegment3/room-builder/EWall2" index="3" unique_id=124514545]
+[node name="@Sprite3D@48611" type="Sprite3D" parent="HallwaySegment3/room-builder/Ceiling2" index="1" unique_id=1047823325]
 material_override = SubResource("ShaderMaterial_u1s0v")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="WWall2" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="8" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@21075")
-CollisionShape = NodePath("@StaticBody3D@21075/@CollisionShape3D@21076")
-Sprite = NodePath("@Sprite3D@21077")
+[node name="EWall2" parent="HallwaySegment3/room-builder" index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48612")
+CollisionShape = NodePath("@StaticBody3D@48612/@CollisionShape3D@48613")
+Sprite = NodePath("@Sprite3D@48614")
 
-[node name="@StaticBody3D@21075" type="StaticBody3D" parent="HallwaySegment3/room-builder/WWall2" index="2" unique_id=753585867]
+[node name="@StaticBody3D@48612" type="StaticBody3D" parent="HallwaySegment3/room-builder/EWall2" index="2" unique_id=540060654]
 
-[node name="@CollisionShape3D@21076" type="CollisionShape3D" parent="HallwaySegment3/room-builder/WWall2/@StaticBody3D@21075" unique_id=417764800]
-shape = SubResource("BoxShape3D_t7j2k")
+[node name="@CollisionShape3D@48613" type="CollisionShape3D" parent="HallwaySegment3/room-builder/EWall2/@StaticBody3D@48612" unique_id=1255797203]
+shape = SubResource("BoxShape3D_crpcg")
 
-[node name="@Sprite3D@21077" type="Sprite3D" parent="HallwaySegment3/room-builder/WWall2" index="3" unique_id=958764519]
+[node name="@Sprite3D@48614" type="Sprite3D" parent="HallwaySegment3/room-builder/EWall2" index="3" unique_id=416944990]
 material_override = SubResource("ShaderMaterial_8let7")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="Ceiling3" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="9" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@21078")
+[node name="WWall2" parent="HallwaySegment3/room-builder" index="8" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48615")
+CollisionShape = NodePath("@StaticBody3D@48615/@CollisionShape3D@48616")
+Sprite = NodePath("@Sprite3D@48617")
 
-[node name="@Sprite3D@21078" type="Sprite3D" parent="HallwaySegment3/room-builder/Ceiling3" index="1" unique_id=101405223]
+[node name="@StaticBody3D@48615" type="StaticBody3D" parent="HallwaySegment3/room-builder/WWall2" index="2" unique_id=592336481]
+
+[node name="@CollisionShape3D@48616" type="CollisionShape3D" parent="HallwaySegment3/room-builder/WWall2/@StaticBody3D@48615" unique_id=198195291]
+shape = SubResource("BoxShape3D_52dtl")
+
+[node name="@Sprite3D@48617" type="Sprite3D" parent="HallwaySegment3/room-builder/WWall2" index="3" unique_id=1147555783]
 material_override = SubResource("ShaderMaterial_4vxon")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="EWall3" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="10" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@21079")
-CollisionShape = NodePath("@StaticBody3D@21079/@CollisionShape3D@21080")
-Sprite = NodePath("@Sprite3D@21081")
+[node name="Ceiling3" parent="HallwaySegment3/room-builder" index="9" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48618")
 
-[node name="@StaticBody3D@21079" type="StaticBody3D" parent="HallwaySegment3/room-builder/EWall3" index="2" unique_id=955287700]
-
-[node name="@CollisionShape3D@21080" type="CollisionShape3D" parent="HallwaySegment3/room-builder/EWall3/@StaticBody3D@21079" unique_id=2003673585]
-shape = SubResource("BoxShape3D_rb8in")
-
-[node name="@Sprite3D@21081" type="Sprite3D" parent="HallwaySegment3/room-builder/EWall3" index="3" unique_id=3245546]
+[node name="@Sprite3D@48618" type="Sprite3D" parent="HallwaySegment3/room-builder/Ceiling3" index="1" unique_id=1936084469]
 material_override = SubResource("ShaderMaterial_l06oq")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="WWall3" parent="HallwaySegment3/room-builder" parent_id_path=PackedInt32Array(1617356085, 2012672194) index="11" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@21082")
-CollisionShape = NodePath("@StaticBody3D@21082/@CollisionShape3D@21083")
-Sprite = NodePath("@Sprite3D@21084")
+[node name="EWall3" parent="HallwaySegment3/room-builder" index="10" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48619")
+CollisionShape = NodePath("@StaticBody3D@48619/@CollisionShape3D@48620")
+Sprite = NodePath("@Sprite3D@48621")
 
-[node name="@StaticBody3D@21082" type="StaticBody3D" parent="HallwaySegment3/room-builder/WWall3" index="2" unique_id=1465196145]
+[node name="@StaticBody3D@48619" type="StaticBody3D" parent="HallwaySegment3/room-builder/EWall3" index="2" unique_id=1065276598]
 
-[node name="@CollisionShape3D@21083" type="CollisionShape3D" parent="HallwaySegment3/room-builder/WWall3/@StaticBody3D@21082" unique_id=1387840688]
-shape = SubResource("BoxShape3D_34fsx")
+[node name="@CollisionShape3D@48620" type="CollisionShape3D" parent="HallwaySegment3/room-builder/EWall3/@StaticBody3D@48619" unique_id=1458672399]
+shape = SubResource("BoxShape3D_vyxr6")
 
-[node name="@Sprite3D@21084" type="Sprite3D" parent="HallwaySegment3/room-builder/WWall3" index="3" unique_id=216817173]
+[node name="@Sprite3D@48621" type="Sprite3D" parent="HallwaySegment3/room-builder/EWall3" index="3" unique_id=965329307]
 material_override = SubResource("ShaderMaterial_ojrsj")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall3" parent="HallwaySegment3/room-builder" index="11" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48622")
+CollisionShape = NodePath("@StaticBody3D@48622/@CollisionShape3D@48623")
+Sprite = NodePath("@Sprite3D@48624")
+
+[node name="@StaticBody3D@48622" type="StaticBody3D" parent="HallwaySegment3/room-builder/WWall3" index="2" unique_id=1575446327]
+
+[node name="@CollisionShape3D@48623" type="CollisionShape3D" parent="HallwaySegment3/room-builder/WWall3/@StaticBody3D@48622" unique_id=700124324]
+shape = SubResource("BoxShape3D_16aa8")
+
+[node name="@Sprite3D@48624" type="Sprite3D" parent="HallwaySegment3/room-builder/WWall3" index="3" unique_id=454168783]
+material_override = SubResource("ShaderMaterial_mryi7")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
@@ -1017,162 +1020,154 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 metadata/_edit_group_ = true
 
 [node name="room-builder" parent="HallwaySegment6" index="0" unique_id=2012672194]
-Wall = null
-Floor = null
-Ceiling = null
-Wall_Roughness = 0.0
-Floor_Roughness = 0.0
-Ceil_Roughness = 0.0
-Shader = null
-Width_X = 0
-Width_Z = 0
+script = null
 
 [node name="Floor" parent="HallwaySegment6/room-builder" index="0" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20828")
+Sprite = NodePath("@Sprite3D@48673")
 
-[node name="@Sprite3D@20828" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor" index="1" unique_id=2109239433]
-material_override = SubResource("ShaderMaterial_mryi7")
-shaded = true
-texture_filter = 0
-script = ExtResource("7_8aqp6")
-
-[node name="Floor2" parent="HallwaySegment6/room-builder" index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20829")
-
-[node name="@Sprite3D@20829" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor2" index="1" unique_id=1844387591]
+[node name="@Sprite3D@48673" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor" index="1" unique_id=1862305004]
 material_override = SubResource("ShaderMaterial_3co7k")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="Floor3" parent="HallwaySegment6/room-builder" index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20830")
+[node name="Floor2" parent="HallwaySegment6/room-builder" index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48674")
 
-[node name="@Sprite3D@20830" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor3" index="1" unique_id=1288894350]
+[node name="@Sprite3D@48674" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor2" index="1" unique_id=947857103]
 material_override = SubResource("ShaderMaterial_5202d")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="Ceiling" parent="HallwaySegment6/room-builder" index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20831")
+[node name="Floor3" parent="HallwaySegment6/room-builder" index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48675")
 
-[node name="@Sprite3D@20831" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling" index="1" unique_id=859353998]
+[node name="@Sprite3D@48675" type="Sprite3D" parent="HallwaySegment6/room-builder/Floor3" index="1" unique_id=1384192415]
 material_override = SubResource("ShaderMaterial_q8r85")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="EWall" parent="HallwaySegment6/room-builder" index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20832")
-CollisionShape = NodePath("@StaticBody3D@20832/@CollisionShape3D@20833")
-Sprite = NodePath("@Sprite3D@20834")
-shader = null
+[node name="Ceiling" parent="HallwaySegment6/room-builder" index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48676")
 
-[node name="@StaticBody3D@20832" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall" index="2" unique_id=1458498587]
-
-[node name="@CollisionShape3D@20833" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall/@StaticBody3D@20832" unique_id=1297108949]
-shape = SubResource("BoxShape3D_gsbb2")
-
-[node name="@Sprite3D@20834" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall" index="3" unique_id=1906555528]
-shaded = true
-texture_filter = 0
-script = ExtResource("7_8aqp6")
-
-[node name="WWall" parent="HallwaySegment6/room-builder" index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20835")
-CollisionShape = NodePath("@StaticBody3D@20835/@CollisionShape3D@20836")
-Sprite = NodePath("@Sprite3D@20837")
-shader = null
-
-[node name="@StaticBody3D@20835" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall" index="2" unique_id=1067045428]
-
-[node name="@CollisionShape3D@20836" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall/@StaticBody3D@20835" unique_id=1900144487]
-shape = SubResource("BoxShape3D_vyxr6")
-
-[node name="@Sprite3D@20837" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall" index="3" unique_id=1586556791]
-shaded = true
-texture_filter = 0
-script = ExtResource("7_8aqp6")
-
-[node name="Ceiling2" parent="HallwaySegment6/room-builder" index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20838")
-
-[node name="@Sprite3D@20838" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling2" index="1" unique_id=1273352821]
+[node name="@Sprite3D@48676" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling" index="1" unique_id=1086708078]
 material_override = SubResource("ShaderMaterial_m4vjl")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
-[node name="EWall2" parent="HallwaySegment6/room-builder" index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20839")
-CollisionShape = NodePath("@StaticBody3D@20839/@CollisionShape3D@20840")
-Sprite = NodePath("@Sprite3D@20841")
+[node name="EWall" parent="HallwaySegment6/room-builder" index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48677")
+CollisionShape = NodePath("@StaticBody3D@48677/@CollisionShape3D@48678")
+Sprite = NodePath("@Sprite3D@48679")
 shader = null
 
-[node name="@StaticBody3D@20839" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall2" index="2" unique_id=1995606070]
+[node name="@StaticBody3D@48677" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall" index="2" unique_id=1820583083]
 
-[node name="@CollisionShape3D@20840" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall2/@StaticBody3D@20839" unique_id=1772976992]
-shape = SubResource("BoxShape3D_16aa8")
+[node name="@CollisionShape3D@48678" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall/@StaticBody3D@48677" unique_id=1195520246]
+shape = SubResource("BoxShape3D_yp4dv")
 
-[node name="@Sprite3D@20841" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall2" index="3" unique_id=678960242]
+[node name="@Sprite3D@48679" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall" index="3" unique_id=2084065497]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="WWall" parent="HallwaySegment6/room-builder" index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48680")
+CollisionShape = NodePath("@StaticBody3D@48680/@CollisionShape3D@48681")
+Sprite = NodePath("@Sprite3D@48682")
+shader = null
+
+[node name="@StaticBody3D@48680" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall" index="2" unique_id=603992459]
+
+[node name="@CollisionShape3D@48681" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall/@StaticBody3D@48680" unique_id=1481602472]
+shape = SubResource("BoxShape3D_lcuyt")
+
+[node name="@Sprite3D@48682" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall" index="3" unique_id=1829484074]
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="Ceiling2" parent="HallwaySegment6/room-builder" index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
+Sprite = NodePath("@Sprite3D@48683")
+
+[node name="@Sprite3D@48683" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling2" index="1" unique_id=1288891811]
+material_override = SubResource("ShaderMaterial_243i3")
+shaded = true
+texture_filter = 0
+script = ExtResource("7_8aqp6")
+
+[node name="EWall2" parent="HallwaySegment6/room-builder" index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
+StaticBody = NodePath("@StaticBody3D@48684")
+CollisionShape = NodePath("@StaticBody3D@48684/@CollisionShape3D@48685")
+Sprite = NodePath("@Sprite3D@48686")
+shader = null
+
+[node name="@StaticBody3D@48684" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall2" index="2" unique_id=1705004186]
+
+[node name="@CollisionShape3D@48685" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall2/@StaticBody3D@48684" unique_id=1572645843]
+shape = SubResource("BoxShape3D_mtbsk")
+
+[node name="@Sprite3D@48686" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall2" index="3" unique_id=1532937403]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="WWall2" parent="HallwaySegment6/room-builder" index="8" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20842")
-CollisionShape = NodePath("@StaticBody3D@20842/@CollisionShape3D@20843")
-Sprite = NodePath("@Sprite3D@20844")
+StaticBody = NodePath("@StaticBody3D@48687")
+CollisionShape = NodePath("@StaticBody3D@48687/@CollisionShape3D@48688")
+Sprite = NodePath("@Sprite3D@48689")
 shader = null
 
-[node name="@StaticBody3D@20842" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall2" index="2" unique_id=352313374]
+[node name="@StaticBody3D@48687" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall2" index="2" unique_id=1169037189]
 
-[node name="@CollisionShape3D@20843" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall2/@StaticBody3D@20842" unique_id=1299377418]
-shape = SubResource("BoxShape3D_emhuu")
+[node name="@CollisionShape3D@48688" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall2/@StaticBody3D@48687" unique_id=1442585889]
+shape = SubResource("BoxShape3D_v8w4n")
 
-[node name="@Sprite3D@20844" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall2" index="3" unique_id=689589645]
+[node name="@Sprite3D@48689" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall2" index="3" unique_id=56130605]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="Ceiling3" parent="HallwaySegment6/room-builder" index="9" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20845")
+Sprite = NodePath("@Sprite3D@48690")
 
-[node name="@Sprite3D@20845" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling3" index="1" unique_id=1122872212]
-material_override = SubResource("ShaderMaterial_yp4dv")
+[node name="@Sprite3D@48690" type="Sprite3D" parent="HallwaySegment6/room-builder/Ceiling3" index="1" unique_id=124706102]
+material_override = SubResource("ShaderMaterial_8jtup")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="EWall3" parent="HallwaySegment6/room-builder" index="10" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20846")
-CollisionShape = NodePath("@StaticBody3D@20846/@CollisionShape3D@20847")
-Sprite = NodePath("@Sprite3D@20848")
+StaticBody = NodePath("@StaticBody3D@48691")
+CollisionShape = NodePath("@StaticBody3D@48691/@CollisionShape3D@48692")
+Sprite = NodePath("@Sprite3D@48693")
 shader = null
 
-[node name="@StaticBody3D@20846" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall3" index="2" unique_id=1683692930]
+[node name="@StaticBody3D@48691" type="StaticBody3D" parent="HallwaySegment6/room-builder/EWall3" index="2" unique_id=579812466]
 
-[node name="@CollisionShape3D@20847" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall3/@StaticBody3D@20846" unique_id=1746580055]
-shape = SubResource("BoxShape3D_5202d")
+[node name="@CollisionShape3D@48692" type="CollisionShape3D" parent="HallwaySegment6/room-builder/EWall3/@StaticBody3D@48691" unique_id=1315410194]
+shape = SubResource("BoxShape3D_t7j2k")
 
-[node name="@Sprite3D@20848" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall3" index="3" unique_id=1619424577]
+[node name="@Sprite3D@48693" type="Sprite3D" parent="HallwaySegment6/room-builder/EWall3" index="3" unique_id=258772298]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="WWall3" parent="HallwaySegment6/room-builder" index="11" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20849")
-CollisionShape = NodePath("@StaticBody3D@20849/@CollisionShape3D@20850")
-Sprite = NodePath("@Sprite3D@20851")
+StaticBody = NodePath("@StaticBody3D@48694")
+CollisionShape = NodePath("@StaticBody3D@48694/@CollisionShape3D@48695")
+Sprite = NodePath("@Sprite3D@48696")
 shader = null
 
-[node name="@StaticBody3D@20849" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall3" index="2" unique_id=1851375121]
+[node name="@StaticBody3D@48694" type="StaticBody3D" parent="HallwaySegment6/room-builder/WWall3" index="2" unique_id=379390350]
 
-[node name="@CollisionShape3D@20850" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall3/@StaticBody3D@20849" unique_id=1187654096]
-shape = SubResource("BoxShape3D_q8r85")
+[node name="@CollisionShape3D@48695" type="CollisionShape3D" parent="HallwaySegment6/room-builder/WWall3/@StaticBody3D@48694" unique_id=1296214648]
+shape = SubResource("BoxShape3D_7h7yj")
 
-[node name="@Sprite3D@20851" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall3" index="3" unique_id=1572160323]
+[node name="@Sprite3D@48696" type="Sprite3D" parent="HallwaySegment6/room-builder/WWall3" index="3" unique_id=1872103508]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
@@ -1189,162 +1184,154 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 metadata/_edit_group_ = true
 
 [node name="room-builder" parent="HallwaySegment8" index="0" unique_id=2012672194]
-Wall = null
-Floor = null
-Ceiling = null
-Wall_Roughness = 0.0
-Floor_Roughness = 0.0
-Ceil_Roughness = 0.0
-Shader = null
-Width_X = 0
-Width_Z = 0
+script = null
 
 [node name="Floor" parent="HallwaySegment8/room-builder" index="0" unique_id=1653855057 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20876")
+Sprite = NodePath("@Sprite3D@48721")
 
-[node name="@Sprite3D@20876" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor" index="1" unique_id=420533170]
-material_override = SubResource("ShaderMaterial_lcuyt")
+[node name="@Sprite3D@48721" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor" index="1" unique_id=164198454]
+material_override = SubResource("ShaderMaterial_rb8in")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="Floor2" parent="HallwaySegment8/room-builder" index="1" unique_id=1479744500 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20877")
+Sprite = NodePath("@Sprite3D@48722")
 
-[node name="@Sprite3D@20877" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor2" index="1" unique_id=1635777264]
-material_override = SubResource("ShaderMaterial_243i3")
+[node name="@Sprite3D@48722" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor2" index="1" unique_id=1346455042]
+material_override = SubResource("ShaderMaterial_h2o3h")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="Floor3" parent="HallwaySegment8/room-builder" index="2" unique_id=1327234759 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20878")
+Sprite = NodePath("@Sprite3D@48723")
 
-[node name="@Sprite3D@20878" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor3" index="1" unique_id=889461151]
-material_override = SubResource("ShaderMaterial_mtbsk")
+[node name="@Sprite3D@48723" type="Sprite3D" parent="HallwaySegment8/room-builder/Floor3" index="1" unique_id=701922791]
+material_override = SubResource("ShaderMaterial_34fsx")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="Ceiling" parent="HallwaySegment8/room-builder" index="3" unique_id=648330111 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20879")
+Sprite = NodePath("@Sprite3D@48724")
 
-[node name="@Sprite3D@20879" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling" index="1" unique_id=1761246295]
-material_override = SubResource("ShaderMaterial_v8w4n")
+[node name="@Sprite3D@48724" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling" index="1" unique_id=1945790655]
+material_override = SubResource("ShaderMaterial_4fwr0")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="EWall" parent="HallwaySegment8/room-builder" index="4" unique_id=228595004 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20880")
-CollisionShape = NodePath("@StaticBody3D@20880/@CollisionShape3D@20881")
-Sprite = NodePath("@Sprite3D@20882")
+StaticBody = NodePath("@StaticBody3D@48725")
+CollisionShape = NodePath("@StaticBody3D@48725/@CollisionShape3D@48726")
+Sprite = NodePath("@Sprite3D@48727")
 shader = null
 
-[node name="@StaticBody3D@20880" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall" index="2" unique_id=1490655482]
+[node name="@StaticBody3D@48725" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall" index="2" unique_id=1359038912]
 
-[node name="@CollisionShape3D@20881" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall/@StaticBody3D@20880" unique_id=1980402868]
-shape = SubResource("BoxShape3D_ym02u")
+[node name="@CollisionShape3D@48726" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall/@StaticBody3D@48725" unique_id=757528150]
+shape = SubResource("BoxShape3D_m535t")
 
-[node name="@Sprite3D@20882" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall" index="3" unique_id=90513530]
+[node name="@Sprite3D@48727" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall" index="3" unique_id=796405890]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="WWall" parent="HallwaySegment8/room-builder" index="5" unique_id=436665427 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20883")
-CollisionShape = NodePath("@StaticBody3D@20883/@CollisionShape3D@20884")
-Sprite = NodePath("@Sprite3D@20885")
+StaticBody = NodePath("@StaticBody3D@48728")
+CollisionShape = NodePath("@StaticBody3D@48728/@CollisionShape3D@48729")
+Sprite = NodePath("@Sprite3D@48730")
 shader = null
 
-[node name="@StaticBody3D@20883" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall" index="2" unique_id=1251013684]
+[node name="@StaticBody3D@48728" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall" index="2" unique_id=67614104]
 
-[node name="@CollisionShape3D@20884" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall/@StaticBody3D@20883" unique_id=1405930345]
-shape = SubResource("BoxShape3D_oa0tx")
+[node name="@CollisionShape3D@48729" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall/@StaticBody3D@48728" unique_id=556207799]
+shape = SubResource("BoxShape3D_braq0")
 
-[node name="@Sprite3D@20885" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall" index="3" unique_id=1147696126]
+[node name="@Sprite3D@48730" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall" index="3" unique_id=1749934713]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="Ceiling2" parent="HallwaySegment8/room-builder" index="6" unique_id=11464145 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20886")
+Sprite = NodePath("@Sprite3D@48731")
 
-[node name="@Sprite3D@20886" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling2" index="1" unique_id=589216570]
-material_override = SubResource("ShaderMaterial_8jtup")
+[node name="@Sprite3D@48731" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling2" index="1" unique_id=1394466306]
+material_override = SubResource("ShaderMaterial_gmxe7")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="EWall2" parent="HallwaySegment8/room-builder" index="7" unique_id=1152901041 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20887")
-CollisionShape = NodePath("@StaticBody3D@20887/@CollisionShape3D@20888")
-Sprite = NodePath("@Sprite3D@20889")
+StaticBody = NodePath("@StaticBody3D@48732")
+CollisionShape = NodePath("@StaticBody3D@48732/@CollisionShape3D@48733")
+Sprite = NodePath("@Sprite3D@48734")
 shader = null
 
-[node name="@StaticBody3D@20887" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall2" index="2" unique_id=1000116640]
+[node name="@StaticBody3D@48732" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall2" index="2" unique_id=1965462124]
 
-[node name="@CollisionShape3D@20888" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall2/@StaticBody3D@20887" unique_id=1732291497]
-shape = SubResource("BoxShape3D_83ceq")
+[node name="@CollisionShape3D@48733" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall2/@StaticBody3D@48732" unique_id=208641537]
+shape = SubResource("BoxShape3D_62xq8")
 
-[node name="@Sprite3D@20889" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall2" index="3" unique_id=776246047]
+[node name="@Sprite3D@48734" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall2" index="3" unique_id=880933343]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="WWall2" parent="HallwaySegment8/room-builder" index="8" unique_id=665500198 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20890")
-CollisionShape = NodePath("@StaticBody3D@20890/@CollisionShape3D@20891")
-Sprite = NodePath("@Sprite3D@20892")
+StaticBody = NodePath("@StaticBody3D@48735")
+CollisionShape = NodePath("@StaticBody3D@48735/@CollisionShape3D@48736")
+Sprite = NodePath("@Sprite3D@48737")
 shader = null
 
-[node name="@StaticBody3D@20890" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall2" index="2" unique_id=2038901631]
+[node name="@StaticBody3D@48735" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall2" index="2" unique_id=789373582]
 
-[node name="@CollisionShape3D@20891" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall2/@StaticBody3D@20890" unique_id=1274561572]
-shape = SubResource("BoxShape3D_crpcg")
+[node name="@CollisionShape3D@48736" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall2/@StaticBody3D@48735" unique_id=1756374029]
+shape = SubResource("BoxShape3D_tiqtm")
 
-[node name="@Sprite3D@20892" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall2" index="3" unique_id=806853392]
+[node name="@Sprite3D@48737" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall2" index="3" unique_id=1298216518]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="Ceiling3" parent="HallwaySegment8/room-builder" index="9" unique_id=1114019378 node_paths=PackedStringArray("Sprite")]
-Sprite = NodePath("@Sprite3D@20893")
+Sprite = NodePath("@Sprite3D@48738")
 
-[node name="@Sprite3D@20893" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling3" index="1" unique_id=196910945]
-material_override = SubResource("ShaderMaterial_t7j2k")
+[node name="@Sprite3D@48738" type="Sprite3D" parent="HallwaySegment8/room-builder/Ceiling3" index="1" unique_id=18471448]
+material_override = SubResource("ShaderMaterial_wr3jx")
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="EWall3" parent="HallwaySegment8/room-builder" index="10" unique_id=630713089 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20894")
-CollisionShape = NodePath("@StaticBody3D@20894/@CollisionShape3D@20895")
-Sprite = NodePath("@Sprite3D@20896")
+StaticBody = NodePath("@StaticBody3D@48739")
+CollisionShape = NodePath("@StaticBody3D@48739/@CollisionShape3D@48740")
+Sprite = NodePath("@Sprite3D@48741")
 shader = null
 
-[node name="@StaticBody3D@20894" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall3" index="2" unique_id=1195223893]
+[node name="@StaticBody3D@48739" type="StaticBody3D" parent="HallwaySegment8/room-builder/EWall3" index="2" unique_id=1049164933]
 
-[node name="@CollisionShape3D@20895" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall3/@StaticBody3D@20894" unique_id=1471573673]
-shape = SubResource("BoxShape3D_52dtl")
+[node name="@CollisionShape3D@48740" type="CollisionShape3D" parent="HallwaySegment8/room-builder/EWall3/@StaticBody3D@48739" unique_id=1836333155]
+shape = SubResource("BoxShape3D_g7f3y")
 
-[node name="@Sprite3D@20896" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall3" index="3" unique_id=455796907]
+[node name="@Sprite3D@48741" type="Sprite3D" parent="HallwaySegment8/room-builder/EWall3" index="3" unique_id=464327139]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
 
 [node name="WWall3" parent="HallwaySegment8/room-builder" index="11" unique_id=303839272 node_paths=PackedStringArray("StaticBody", "CollisionShape", "Sprite")]
-StaticBody = NodePath("@StaticBody3D@20897")
-CollisionShape = NodePath("@StaticBody3D@20897/@CollisionShape3D@20898")
-Sprite = NodePath("@Sprite3D@20899")
+StaticBody = NodePath("@StaticBody3D@48742")
+CollisionShape = NodePath("@StaticBody3D@48742/@CollisionShape3D@48743")
+Sprite = NodePath("@Sprite3D@48744")
 shader = null
 
-[node name="@StaticBody3D@20897" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall3" index="2" unique_id=1096699730]
+[node name="@StaticBody3D@48742" type="StaticBody3D" parent="HallwaySegment8/room-builder/WWall3" index="2" unique_id=427378521]
 
-[node name="@CollisionShape3D@20898" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall3/@StaticBody3D@20897" unique_id=433205028]
-shape = SubResource("BoxShape3D_y78h8")
+[node name="@CollisionShape3D@48743" type="CollisionShape3D" parent="HallwaySegment8/room-builder/WWall3/@StaticBody3D@48742" unique_id=1118221103]
+shape = SubResource("BoxShape3D_yjqf6")
 
-[node name="@Sprite3D@20899" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall3" index="3" unique_id=947549886]
+[node name="@Sprite3D@48744" type="Sprite3D" parent="HallwaySegment8/room-builder/WWall3" index="3" unique_id=153395507]
 shaded = true
 texture_filter = 0
 script = ExtResource("7_8aqp6")
@@ -1377,7 +1364,7 @@ shape = SubResource("BoxShape3D_kx1s5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="EntranceTrigger" type="Area3D" parent="." unique_id=1141863109 node_paths=PackedStringArray("Target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 11.5)
 script = ExtResource("4_atylr")
 Target = NodePath("Target")
 
@@ -1386,10 +1373,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_kx1s5")
 
 [node name="Target" type="Node3D" parent="EntranceTrigger" unique_id=1797606937]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
 
 [node name="Pivot" type="Node3D" parent="." unique_id=698973183 node_paths=PackedStringArray("WrongSideVisible")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 script = ExtResource("4_btcgh")
 WrongSideVisible = NodePath("RemoteTransform3D/WrongSideVisible")
 
@@ -1414,7 +1401,7 @@ texture = SubResource("ViewportTexture_401xl")
 size = Vector2i(128, 128)
 
 [node name="TunnelCam" type="Camera3D" parent="FakeTunnel" unique_id=732809144]
-transform = Transform3D(-1, 0, -2.384975e-08, 0, 1, 0, 2.384975e-08, 0, -1, -0.5000022, 0.5, -12.81)
+transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -0.499999, 0.5, 11.81)
 cull_mask = 1048573
 fov = 30.0
 
