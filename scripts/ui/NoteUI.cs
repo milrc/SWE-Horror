@@ -4,6 +4,8 @@ public partial class NoteUI : Control
 {
     public bool IsOpen => Visible;
 
+    private PanelContainer paper;
+    private StyleBox defaultPaperStyle;
     private Label title;
     private RichTextLabel text;
     private Button closeButton;
@@ -11,6 +13,8 @@ public partial class NoteUI : Control
 
     public override void _Ready()
     {
+        paper = GetNode<PanelContainer>("Paper");
+        defaultPaperStyle = paper.GetThemeStylebox("panel");
         title = GetNode<Label>("Paper/Margin/Content/Header/Title");
         text = GetNode<RichTextLabel>("Paper/Margin/Content/Text");
         closeButton = GetNode<Button>("Paper/CloseArea/CloseButton");
@@ -21,6 +25,7 @@ public partial class NoteUI : Control
     public void Open(Note note)
     {
         mousePositionBeforeReading = GetViewport().GetMousePosition();
+        paper.AddThemeStyleboxOverride("panel", note.BackgroundTexture == null ? defaultPaperStyle : new StyleBoxTexture { Texture = note.BackgroundTexture });
         title.Text = note.Title;
         text.Text = note.Text;
         text.ScrollToLine(0);
@@ -51,6 +56,13 @@ public partial class NoteUI : Control
         {
             Close();
             GetViewport().SetInputAsHandled();
+        }
+        else if (@event is InputEventKey &&
+            (@event.IsActionPressed("move_forward") || @event.IsActionPressed("move_backward") ||
+             @event.IsActionPressed("turn_left") || @event.IsActionPressed("turn_right")))
+        {
+            // Let the same keypress reach GridPlayer after closing the note
+            Close();
         }
     }
 }

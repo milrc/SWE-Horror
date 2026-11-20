@@ -4,6 +4,7 @@ public partial class Note : StaticBody3D
 {
     [Export] public string Title = "Title";
     [Export(PropertyHint.MultilineText)] public string Text = "If you hear knocking, don't open the door.";
+    [Export] public Texture2D BackgroundTexture;
 
     public bool CanReadFrom(GridPlayer player)
     {
