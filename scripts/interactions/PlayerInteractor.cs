@@ -6,8 +6,8 @@ public partial class PlayerInteractor : RayCast3D
 	[Export] public Label PromptLabel;
 	[Export] public Label HandLabel;
 	[Export] public Node3D HandPoint;
-	[Export] public float Reach = 2.8f;
-	[Export] public float DoorReach = 1.0f;
+	[Export] public float Reach = 1.0f;
+	// [Export] public float DoorReach = 1.0f;
 	[Export] public int PromptFontSize = 11;
 	[Export] public NoteUI Reader;
 
