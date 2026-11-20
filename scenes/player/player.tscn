@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cw0k5ymt2tw4p" path="res://scripts/interactions/PlayerInteractor.cs" id="2_interactor"]
 [ext_resource type="Script" uid="uid://wrwe55o0umce" path="res://scenes/player/FlashLight.cs" id="2_lvxji"]
 [ext_resource type="PackedScene" uid="uid://dqtvs8luqn3jj" path="res://scenes/ui/note_ui.tscn" id="4_reader"]
+[ext_resource type="PackedScene" uid="uid://d3c8jk4ciynpx" path="res://scenes/ui/pause_menu.tscn" id="6_75vfm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_401xl"]
 radius = 0.1
@@ -79,3 +80,6 @@ unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PLAYER_BODY" unique_id=1483640285]
 shape = SubResource("SphereShape3D_401xl")
+
+[node name="PauseMenu" parent="." unique_id=1038995619 instance=ExtResource("6_75vfm")]
+visible = false

@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d20e576egnft8" path="res://art/bedroom/ruined_floor.png" id="5_wb0q5"]
 [ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/resources/value_to_thickness_curve.tres" id="5_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://dgrixqh8t01ic" path="res://art/bedroom/ruined_wall.png" id="7_q85j6"]
-[ext_resource type="PackedScene" uid="uid://twlclcbus4u3" path="res://scenes/ui/settings.tscn" id="8_wb0q5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lvxji"]
 frequency = 0.0025
@@ -42,7 +41,7 @@ shader_parameter/color_threshold = 0.1
 shader_parameter/color_boil = 0.005
 shader_parameter/preview_colors = false
 
-[node name="MainMenu" type="Control" unique_id=1038995619 node_paths=PackedStringArray("NewGameButton", "QuitButton")]
+[node name="MainMenu" type="Control" unique_id=1038995619 node_paths=PackedStringArray("NewGameButton", "SettingsButton", "QuitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +51,7 @@ grow_vertical = 2
 script = ExtResource("1_menu")
 NewGameScene = ExtResource("2_gameplay")
 NewGameButton = NodePath("PanelContainer/Center/MenuPanel/NewGame")
+SettingsButton = NodePath("PanelContainer/Center/MenuPanel/Settings")
 QuitButton = NodePath("PanelContainer/Center/MenuPanel/Quit")
 
 [node name="AnimatedBackground" type="ColorRect" parent="." unique_id=1245028914]
@@ -103,7 +103,6 @@ text = "New Game"
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 focus_mode = 0
-disabled = true
 text = "Settings"
 
 [node name="Quit" type="Button" parent="PanelContainer/Center/MenuPanel" unique_id=976914529]
@@ -126,7 +125,3 @@ theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "[center][outline_size=15][outline_color=BLACK][wave amp=100.0 freq=1 connected=0]FUNHOUSE"
 fit_content = true
-
-[node name="Settings" parent="." unique_id=650264046 instance=ExtResource("8_wb0q5")]
-layout_mode = 0
-anchors_preset = 0

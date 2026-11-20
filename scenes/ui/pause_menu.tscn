@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://d3c8jk4ciynpx"]
+
+[ext_resource type="Script" uid="uid://ccnxmr3iafy2d" path="res://scripts/ui/PauseMenu.cs" id="1_6tw0m"]
+
+[node name="PauseMenu" type="Control" unique_id=1038995619 node_paths=PackedStringArray("ResumeButton", "SettingsButton", "QuitButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tw0m")
+ResumeButton = NodePath("PanelContainer/Center/MenuPanel/Resume")
+SettingsButton = NodePath("PanelContainer/Center/MenuPanel/Settings")
+QuitButton = NodePath("PanelContainer/Center/MenuPanel/Quit")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=337218555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06666667, 0.06666667, 0.06666667, 0.39215687)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=409501937]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -185.0
+offset_right = 192.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="PanelContainer" unique_id=1141845900]
+layout_mode = 2
+
+[node name="MenuPanel" type="VBoxContainer" parent="PanelContainer/Center" unique_id=1538552442]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Resume" type="Button" parent="PanelContainer/Center/MenuPanel" unique_id=1242361150]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
+text = "Resume"
+
+[node name="Settings" type="Button" parent="PanelContainer/Center/MenuPanel" unique_id=374554880]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Settings"
+
+[node name="Quit" type="Button" parent="PanelContainer/Center/MenuPanel" unique_id=976914529]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../Resume")
+text = "Quit"

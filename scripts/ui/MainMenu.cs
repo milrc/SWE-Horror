@@ -5,6 +5,7 @@ public partial class MainMenu : Control
     // Able to choose new game scene in Godot inspector
     [Export] public PackedScene NewGameScene { get; set; }
     [Export] Button NewGameButton;
+    [Export] Button SettingsButton;
     [Export] Button QuitButton;
 
     // Set up the menu once Godot initializes nodes
@@ -12,6 +13,11 @@ public partial class MainMenu : Control
     {
         // Connect New Game button and assign StartNewGame method to press event
         NewGameButton.Pressed += StartNewGame;
+
+        SettingsButton.Pressed += () => {
+            GameSettings.Instance.Visible = true;
+            GameSettings.Instance.MoveToFront();
+        };
 
         // Connect Quit button and assign lambda for closing the game to press event
         QuitButton.Pressed += () => GetTree().Quit();

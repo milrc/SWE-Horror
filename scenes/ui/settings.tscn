@@ -1,14 +1,27 @@
 [gd_scene format=3 uid="uid://twlclcbus4u3"]
 
-[ext_resource type="Script" uid="uid://ct4aq6u0cn37s" path="res://scenes/ui/ControlScheme.cs" id="1_8wfqe"]
+[ext_resource type="Script" uid="uid://cvf6aqp8pural" path="res://scripts/ui/GameSettings.cs" id="1_7pacj"]
+[ext_resource type="Script" uid="uid://ct4aq6u0cn37s" path="res://scripts/ui/controls/ControlScheme.cs" id="1_8wfqe"]
+[ext_resource type="Script" uid="uid://m20y818hmm2f" path="res://scripts/ui/controls/ControlButton.cs" id="3_h175o"]
+[ext_resource type="Script" uid="uid://cadc6j054bxa5" path="res://scripts/ui/controls/ControlChoice.cs" id="3_ptynm"]
 
-[node name="Settings" type="ColorRect" unique_id=650264046]
+[node name="Settings" type="ColorRect" unique_id=650264046 node_paths=PackedStringArray("SaveButton", "Cancel", "Controls", "WindowMode", "MasterVolume", "MusicVolume", "AmbienceVolume", "EffectsVolume")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.06666667, 0.06666667, 0.06666667, 0.39215687)
+color = Color(0.06666667, 0.06666667, 0.06666667, 0)
+script = ExtResource("1_7pacj")
+SaveButton = NodePath("VBoxContainer/HBoxContainer/Save")
+Cancel = NodePath("VBoxContainer/HBoxContainer/Cancel")
+Controls = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Controls")
+WindowMode = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Graphics/Window/OptionButton")
+MasterVolume = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders/Master")
+MusicVolume = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders/Music")
+AmbienceVolume = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders/Ambience")
+EffectsVolume = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders/Effects")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2028980140]
 layout_mode = 1
@@ -26,17 +39,16 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1741679698]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -281.0
-offset_top = -197.0
+offset_top = -394.0
 offset_right = 281.0
-offset_bottom = 197.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1074239361]
 layout_mode = 2
@@ -51,6 +63,7 @@ size_flags_vertical = 3
 [node name="Graphics" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=375077901]
 layout_mode = 2
 title = "Graphics"
+title_alignment = 1
 
 [node name="Window" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics" unique_id=2119319815]
 layout_mode = 2
@@ -78,12 +91,10 @@ layout_mode = 2
 
 [node name="Volume" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=558355429]
 layout_mode = 2
-folded = true
 title = "Volume"
 title_alignment = 1
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume" unique_id=314672359]
-visible = false
 layout_mode = 2
 split_offsets = PackedInt32Array(-122)
 dragging_enabled = false
@@ -145,11 +156,19 @@ value = 100.0
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1251543593]
 layout_mode = 2
 
-[node name="Controls" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=998117903]
+[node name="Controls" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=998117903 node_paths=PackedStringArray("Actions")]
 layout_mode = 2
 title = "Controls"
 title_alignment = 1
 script = ExtResource("1_8wfqe")
+Actions = {
+"interact": NodePath("HSplitContainer/Names/Interact"),
+"move_backward": NodePath("HSplitContainer/Names/Backward"),
+"move_forward": NodePath("HSplitContainer/Names/Forward"),
+"toggle_flashlight": NodePath("HSplitContainer/Names/Flashlight"),
+"turn_left": NodePath("HSplitContainer/Names/Left"),
+"turn_right": NodePath("HSplitContainer/Names/Right")
+}
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls" unique_id=1728470901]
 layout_mode = 2
@@ -162,47 +181,65 @@ split_offset = -32
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Forward" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=969404412]
+[node name="Forward" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=969404412 node_paths=PackedStringArray("Primary", "Secondary")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Move forward"
 vertical_alignment = 1
+script = ExtResource("3_ptynm")
+Primary = NodePath("../../HBoxContainer/Primary/W")
+Secondary = NodePath("../../HBoxContainer/Secondary/Up")
 
-[node name="Backward" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=869503234]
+[node name="Backward" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=869503234 node_paths=PackedStringArray("Primary", "Secondary")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Move backward"
 vertical_alignment = 1
+script = ExtResource("3_ptynm")
+Primary = NodePath("../../HBoxContainer/Primary/S")
+Secondary = NodePath("../../HBoxContainer/Secondary/Down")
 
-[node name="Left" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=864784080]
+[node name="Left" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=864784080 node_paths=PackedStringArray("Primary", "Secondary")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Turn Left"
 vertical_alignment = 1
+script = ExtResource("3_ptynm")
+Primary = NodePath("../../HBoxContainer/Primary/A")
+Secondary = NodePath("../../HBoxContainer/Secondary/Left")
 
-[node name="Right" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=604800931]
+[node name="Right" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=604800931 node_paths=PackedStringArray("Primary", "Secondary")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Turn Right"
 vertical_alignment = 1
+script = ExtResource("3_ptynm")
+Primary = NodePath("../../HBoxContainer/Primary/D")
+Secondary = NodePath("../../HBoxContainer/Secondary/Right")
 
-[node name="Interact" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=1169297873]
+[node name="Interact" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=1169297873 node_paths=PackedStringArray("Primary", "Secondary")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Interact"
 vertical_alignment = 1
+script = ExtResource("3_ptynm")
+Primary = NodePath("../../HBoxContainer/Primary/Left Click")
+Secondary = NodePath("../../HBoxContainer/Secondary/E")
 
-[node name="Flashlight" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=1980475015]
+[node name="Flashlight" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=1980475015 node_paths=PackedStringArray("Primary", "Secondary")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Toggle FLashlight"
 vertical_alignment = 1
+script = ExtResource("3_ptynm")
+Primary = NodePath("../../HBoxContainer/Primary/Right Click")
+Secondary = NodePath("../../HBoxContainer/Secondary/F")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer" unique_id=1532733865]
 layout_mode = 2
@@ -215,26 +252,32 @@ size_flags_horizontal = 3
 [node name="W" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=1928074078]
 layout_mode = 2
 text = "W"
+script = ExtResource("3_h175o")
 
 [node name="S" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=1836107485]
 layout_mode = 2
 text = "S"
+script = ExtResource("3_h175o")
 
 [node name="A" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=1256464345]
 layout_mode = 2
 text = "A"
+script = ExtResource("3_h175o")
 
 [node name="D" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=864309540]
 layout_mode = 2
 text = "D"
+script = ExtResource("3_h175o")
 
 [node name="Left Click" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=2025102988]
 layout_mode = 2
 text = "Left Click"
+script = ExtResource("3_h175o")
 
 [node name="Right Click" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=526589140]
 layout_mode = 2
 text = "Right Click"
+script = ExtResource("3_h175o")
 
 [node name="Secondary" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer" unique_id=555828686]
 layout_mode = 2
@@ -243,27 +286,33 @@ size_flags_horizontal = 3
 [node name="Up" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=159228614]
 layout_mode = 2
 text = "UP"
+script = ExtResource("3_h175o")
 
 [node name="Down" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=1106538907]
 layout_mode = 2
 text = "Down"
+script = ExtResource("3_h175o")
 
 [node name="Left" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=710256241]
 layout_mode = 2
 text = "Left"
+script = ExtResource("3_h175o")
 
 [node name="Right" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=696617927]
 layout_mode = 2
 text = "Right"
+script = ExtResource("3_h175o")
 
 [node name="E" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=2016746476]
 layout_mode = 2
 text = "E
 "
+script = ExtResource("3_h175o")
 
 [node name="F" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=149835595]
 layout_mode = 2
 text = "F"
+script = ExtResource("3_h175o")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1756498547]
 layout_mode = 2

@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://dali084hpxbjo"
 [autoload]
 
 Mixer="*uid://cag56lg3ykb2c"
+Settings="*uid://twlclcbus4u3"
 
 [display]
 
