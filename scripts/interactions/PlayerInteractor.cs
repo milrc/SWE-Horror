@@ -88,8 +88,7 @@ public partial class PlayerInteractor : RayCast3D
 		if (Reader != null && Reader.IsOpen)
 			return;
 
-		if (@event is not InputEventMouseButton mouseClick ||
-			mouseClick.ButtonIndex != MouseButton.Left || !mouseClick.Pressed)
+		if (!Input.IsActionJustPressed("interact"))
 			return;
 
 		CheckMouse();

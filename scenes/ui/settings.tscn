@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://twlclcbus4u3"]
+
+[ext_resource type="Script" uid="uid://ct4aq6u0cn37s" path="res://scenes/ui/ControlScheme.cs" id="1_8wfqe"]
+
+[node name="Settings" type="ColorRect" unique_id=650264046]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06666667, 0.06666667, 0.06666667, 0.39215687)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2028980140]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -216.0
+offset_right = 328.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1741679698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -197.0
+offset_right = 281.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1074239361]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1441892633]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Graphics" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=375077901]
+layout_mode = 2
+title = "Graphics"
+
+[node name="Window" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics" unique_id=2119319815]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics/Window" unique_id=190000879]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Window Mode"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics/Window" unique_id=809508030]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics/Window" unique_id=868305092]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 1
+item_count = 2
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=735504897]
+layout_mode = 2
+
+[node name="Volume" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=558355429]
+layout_mode = 2
+folded = true
+title = "Volume"
+title_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume" unique_id=314672359]
+visible = false
+layout_mode = 2
+split_offsets = PackedInt32Array(-122)
+dragging_enabled = false
+dragger_visibility = 1
+split_offset = -122
+
+[node name="Names" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer" unique_id=125752466]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Names" unique_id=646424774]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MASTER"
+
+[node name="Music" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Names" unique_id=206181786]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="Ambience" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Names" unique_id=1809649605]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ambience"
+
+[node name="Effects" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Names" unique_id=1633342818]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Effects"
+
+[node name="Sliders" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer" unique_id=1999110634]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders" unique_id=1511689298]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+
+[node name="Music" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders" unique_id=1422317595]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+
+[node name="Ambience" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders" unique_id=1889721039]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+
+[node name="Effects" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/Volume/HSplitContainer/Sliders" unique_id=584558351]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1251543593]
+layout_mode = 2
+
+[node name="Controls" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=998117903]
+layout_mode = 2
+title = "Controls"
+title_alignment = 1
+script = ExtResource("1_8wfqe")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls" unique_id=1728470901]
+layout_mode = 2
+split_offsets = PackedInt32Array(-32)
+dragging_enabled = false
+dragger_visibility = 1
+split_offset = -32
+
+[node name="Names" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer" unique_id=1827546164]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Forward" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=969404412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Move forward"
+vertical_alignment = 1
+
+[node name="Backward" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=869503234]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Move backward"
+vertical_alignment = 1
+
+[node name="Left" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=864784080]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Turn Left"
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=604800931]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Turn Right"
+vertical_alignment = 1
+
+[node name="Interact" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=1169297873]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Interact"
+vertical_alignment = 1
+
+[node name="Flashlight" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/Names" unique_id=1980475015]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Toggle FLashlight"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer" unique_id=1532733865]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Primary" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer" unique_id=481523275]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="W" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=1928074078]
+layout_mode = 2
+text = "W"
+
+[node name="S" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=1836107485]
+layout_mode = 2
+text = "S"
+
+[node name="A" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=1256464345]
+layout_mode = 2
+text = "A"
+
+[node name="D" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=864309540]
+layout_mode = 2
+text = "D"
+
+[node name="Left Click" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=2025102988]
+layout_mode = 2
+text = "Left Click"
+
+[node name="Right Click" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Primary" unique_id=526589140]
+layout_mode = 2
+text = "Right Click"
+
+[node name="Secondary" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer" unique_id=555828686]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Up" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=159228614]
+layout_mode = 2
+text = "UP"
+
+[node name="Down" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=1106538907]
+layout_mode = 2
+text = "Down"
+
+[node name="Left" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=710256241]
+layout_mode = 2
+text = "Left"
+
+[node name="Right" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=696617927]
+layout_mode = 2
+text = "Right"
+
+[node name="E" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=2016746476]
+layout_mode = 2
+text = "E
+"
+
+[node name="F" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls/HSplitContainer/HBoxContainer/Secondary" unique_id=149835595]
+layout_mode = 2
+text = "F"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1756498547]
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=415116219]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=741646563]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Save" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2106708585]
+layout_mode = 2
+text = "Save"

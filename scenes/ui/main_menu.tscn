@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d20e576egnft8" path="res://art/bedroom/ruined_floor.png" id="5_wb0q5"]
 [ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/resources/value_to_thickness_curve.tres" id="5_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://dgrixqh8t01ic" path="res://art/bedroom/ruined_wall.png" id="7_q85j6"]
+[ext_resource type="PackedScene" uid="uid://twlclcbus4u3" path="res://scenes/ui/settings.tscn" id="8_wb0q5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lvxji"]
 frequency = 0.0025
@@ -125,3 +126,7 @@ theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "[center][outline_size=15][outline_color=BLACK][wave amp=100.0 freq=1 connected=0]FUNHOUSE"
 fit_content = true
+
+[node name="Settings" parent="." unique_id=650264046 instance=ExtResource("8_wb0q5")]
+layout_mode = 0
+anchors_preset = 0
