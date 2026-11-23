@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b4yqa17vbx0ko"]
+
+[ext_resource type="Script" uid="uid://3w38c24uotcm" path="res://scripts/interactions/CollectibleKey.cs" id="1_6goyy"]
+[ext_resource type="Shader" uid="uid://baq0widfnjh1j" path="res://art/shaders/materials/texel_space_double_sided.gdshader" id="2_pvpcq"]
+[ext_resource type="Texture2D" uid="uid://c1kince6m1bni" path="res://art/maintenance/fuse.png" id="3_8j6a4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iws7x"]
+size = Vector3(0.06, 0.14, 0.02)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v1yjc"]
+render_priority = 0
+shader = ExtResource("2_pvpcq")
+shader_parameter/texture_albedo = ExtResource("3_8j6a4")
+shader_parameter/roughness = 0.0
+
+[node name="fuse" type="StaticBody3D" unique_id=1354575870]
+script = ExtResource("1_6goyy")
+KeyId = "fuse_X"
+DisplayName = "fuse"
+placePosition = Vector3(0, 0, 0)
+placeRotation = Vector3(0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1598153812]
+shape = SubResource("BoxShape3D_iws7x")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1735803628]
+material_override = SubResource("ShaderMaterial_v1yjc")
+pixel_size = 0.013333
+texture_filter = 0
+texture = ExtResource("3_8j6a4")
