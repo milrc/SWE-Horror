@@ -28,6 +28,7 @@ public partial class PlayerInteractor : RayCast3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (Engine.TimeScale == 0.0) return;
 		CheckMouse();
 		ShowPrompt();
 	}
@@ -85,6 +86,7 @@ public partial class PlayerInteractor : RayCast3D
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
+        if (Engine.TimeScale == 0.0) return;
 		if (Reader != null && Reader.IsOpen)
 			return;
 

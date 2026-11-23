@@ -10,12 +10,15 @@ public partial class FlashLight : SpotLight3D
     }
     public override void _Input(InputEvent @event)
     {
+        if (Engine.TimeScale == 0.0) return;
         if (Input.IsActionJustPressed("toggle_flashlight"))
             Visible = !Visible;
     }
 
     public override void _Process(double delta)
     {
+        if (Engine.TimeScale == 0.0) return;
+
         Vector2 mouse = GetViewport().GetMousePosition();
         LookAt(camera.ProjectPosition(mouse, 1f));
     }

@@ -5,8 +5,15 @@
 [ext_resource type="StyleBox" uid="uid://blk51mvvrkjn1" path="res://art/ui/button_normal.tres" id="2_c81ik"]
 [ext_resource type="StyleBox" uid="uid://cmwxa5urfma" path="res://art/ui/h_separator.tres" id="3_g86ss"]
 [ext_resource type="FontFile" uid="uid://gedrfknpy8wb" path="res://art/ui/Comico-Regular.ttf" id="4_g86ss"]
+[ext_resource type="Texture2D" uid="uid://b8ywd60xlgkkx" path="res://art/ui/varrow.png" id="4_r8jrv"]
+[ext_resource type="Texture2D" uid="uid://b7era7ejn1ohp" path="res://art/ui/dot_32.png" id="5_7qrow"]
 [ext_resource type="Texture2D" uid="uid://b1jxrryu1ajhg" path="res://art/ui/dot_16.png" id="5_boiwv"]
 [ext_resource type="StyleBox" uid="uid://bf6dnb4sc8yoi" path="res://art/ui/v_separator.tres" id="5_dwyie"]
+[ext_resource type="Texture2D" uid="uid://dt0nusrgp3q6q" path="res://art/ui/arrow.png" id="5_r8jrv"]
+[ext_resource type="Texture2D" uid="uid://pl8xobtxy2se" path="res://art/ui/handle_dim.png" id="6_gvsa1"]
+[ext_resource type="Texture2D" uid="uid://uhaiy6vw30v6" path="res://art/ui/handle.png" id="7_7qrow"]
+[ext_resource type="Texture2D" uid="uid://b356deafipjwv" path="res://art/ui/unselected_radio.png" id="11_5ivd3"]
+[ext_resource type="Texture2D" uid="uid://bwh3rnmo6xyc7" path="res://art/ui/selected_radio.png" id="12_i14m5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwyie"]
 texture_margin_left = 20.0
@@ -23,6 +30,31 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0.1749846, 0.17498463, 0.17498457, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6ef4"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 0)
+corner_detail = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6ef4"]
+texture = ExtResource("5_7qrow")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ivd3"]
+texture = ExtResource("5_7qrow")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0, 0, 0, 0)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8jrv"]
 texture = ExtResource("5_boiwv")
 texture_margin_left = 8.0
@@ -33,7 +65,7 @@ expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
-modulate_color = Color(0.8039216, 0.76862746, 0.73333335, 1)
+modulate_color = Color(0.4509804, 0.4509804, 0.4509804, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_boiwv"]
 load_path = "res://.godot/imported/dot_16.png-c87348a2ece29b5411d641d2d0559bc3.ctex"
@@ -49,13 +81,35 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ivd3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i14m5"]
+texture = ExtResource("5_boiwv")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+modulate_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgoca"]
+texture = ExtResource("5_boiwv")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.05882353, 0.05882353, 0.05882353, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btxxm"]
 texture = ExtResource("5_boiwv")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
-modulate_color = Color(0.8039216, 0.76862746, 0.73333335, 1)
+modulate_color = Color(0.4509804, 0.4509804, 0.4509804, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r8jrv"]
 load_path = "res://.godot/imported/dot_16.png-c87348a2ece29b5411d641d2d0559bc3.ctex"
@@ -85,12 +139,28 @@ Button/styles/disabled = SubResource("StyleBoxTexture_dwyie")
 Button/styles/hover = SubResource("StyleBoxTexture_boiwv")
 Button/styles/normal = ExtResource("2_c81ik")
 Button/styles/pressed = ExtResource("2_c81ik")
+FoldableContainer/icons/expanded_arrow = ExtResource("5_r8jrv")
+FoldableContainer/icons/folded_arrow = ExtResource("4_r8jrv")
+FoldableContainer/styles/panel = SubResource("StyleBoxFlat_j6ef4")
+FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_j6ef4")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxTexture_5ivd3")
+FoldableContainer/styles/title_hover_panel = SubResource("StyleBoxTexture_j6ef4")
+FoldableContainer/styles/title_panel = SubResource("StyleBoxTexture_5ivd3")
 HSeparator/styles/separator = ExtResource("3_g86ss")
-HSlider/icons/grabber_highlight = ExtResource("5_boiwv")
+HSlider/icons/grabber = ExtResource("6_gvsa1")
+HSlider/icons/grabber_highlight = ExtResource("7_7qrow")
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_r8jrv")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_gvsa1")
+OptionButton/constants/arrow_margin = 28
+OptionButton/icons/arrow = ExtResource("5_r8jrv")
 Panel/styles/panel = ExtResource("1_1q40c")
 PanelContainer/styles/panel = ExtResource("1_1q40c")
+PopupMenu/icons/radio_checked = ExtResource("12_i14m5")
+PopupMenu/icons/radio_unchecked = ExtResource("11_5ivd3")
+PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_5ivd3")
+PopupMenu/styles/hover = SubResource("StyleBoxTexture_i14m5")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_pgoca")
+PopupMenu/styles/separator = ExtResource("3_g86ss")
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_btxxm")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_hotnn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_btxxm")
