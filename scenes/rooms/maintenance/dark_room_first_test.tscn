@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://6e7cmr1likr6"]
+
+[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://d3oev8fcc2cbu" path="res://scenes/rooms/maintenance/dark_room_first.tscn" id="2_layout"]
+
+[sub_resource type="Environment" id="Environment_dark"]
+background_mode = 1
+ambient_light_source = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_backstop"]
+albedo_color = Color(0.24, 0.25, 0.28, 1)
+
+[node name="DarkRoomFirstTest" type="Node3D" unique_id=732229651]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1185607577]
+environment = SubResource("Environment_dark")
+
+[node name="DarkRoomFirst" parent="." unique_id=202702289 instance=ExtResource("2_layout")]
+
+[node name="Player" parent="." unique_id=1369155949 instance=ExtResource("1_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 10.5)
+
+[node name="DoorwayLight" type="OmniLight3D" parent="." unique_id=830424519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.9, 10.65)
+visible = false
+light_color = Color(1, 0.82, 0.59, 1)
+light_energy = 0.7
+shadow_enabled = true
+omni_range = 2.3
+
+[node name="DoorwayBackstop" type="CSGBox3D" parent="." unique_id=255710888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, 11.04)
+use_collision = true
+size = Vector3(1, 1, 0.08)
+material = SubResource("StandardMaterial3D_backstop")
