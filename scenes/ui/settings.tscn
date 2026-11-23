@@ -62,12 +62,10 @@ size_flags_vertical = 3
 
 [node name="Graphics" type="FoldableContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=375077901]
 layout_mode = 2
-folded = true
 title = "Graphics"
 title_alignment = 1
 
 [node name="Window" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics" unique_id=2119319815]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics/Window" unique_id=190000879]
@@ -81,7 +79,7 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer/Graphics/Window" unique_id=868305092]
 layout_mode = 2
 size_flags_horizontal = 3
-selected = 1
+selected = 0
 item_count = 2
 popup/item_0/text = "Fullscreen"
 popup/item_0/id = 0

@@ -37,7 +37,6 @@ public partial class GameSettings : Control
 
         foreach (StringName action in InputMap.GetActions())
         {
-            GD.Print(action);
             // Skip built-in UI actions
             if (action.ToString().StartsWith("ui_"))
                 continue;

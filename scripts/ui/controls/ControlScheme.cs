@@ -23,13 +23,23 @@ public partial class ControlScheme : Control
             }
             Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents(inputName);
 
-            Actions[inputName].Primary.inputEvent = events[0];
-            Actions[inputName].Primary.UpdateText();
-            Actions[inputName].Primary.InputChanged += (_) => {UpdateInputMap(inputName);};
-            
-            Actions[inputName].Secondary.inputEvent = events[1];
-            Actions[inputName].Secondary.UpdateText();
-            Actions[inputName].Secondary.InputChanged += (_) => {UpdateInputMap(inputName);};
+            if (events.Count >= 1)
+            {
+                Actions[inputName].Primary.inputEvent = events[0];
+                Actions[inputName].Primary.UpdateText();
+                Actions[inputName].Primary.InputChanged += (_) => {UpdateInputMap(inputName);};
+                
+                if (events.Count >= 2)
+                {
+                    Actions[inputName].Secondary.inputEvent = events[1];
+                    Actions[inputName].Secondary.UpdateText();
+                    Actions[inputName].Secondary.InputChanged += (_) => {UpdateInputMap(inputName);};
+                } else { //check for double choice
+                    Actions[inputName].Secondary.inputEvent = events[0];
+                    Actions[inputName].Secondary.UpdateText();
+                    Actions[inputName].Secondary.InputChanged += (_) => {UpdateInputMap(inputName);};
+                }
+            }
         }
     }
 
