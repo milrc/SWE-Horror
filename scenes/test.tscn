@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="7_7yos8"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="8_5jxlq"]
 [ext_resource type="PackedScene" uid="uid://c6gwk5sjxbj0e" path="res://scenes/shader_scene/cross_hatch.tscn" id="9_ghpyy"]
+[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="11_ghpyy"]
+[ext_resource type="PackedScene" uid="uid://bwjft6c1lbyfr" path="res://scenes/rooms/maintenance/fuse_box.tscn" id="12_7mbro"]
+[ext_resource type="PackedScene" uid="uid://b4yqa17vbx0ko" path="res://scenes/rooms/maintenance/fuse.tscn" id="12_44saj"]
 
 [sub_resource type="Environment" id="Environment_44saj"]
 background_mode = 1
@@ -120,13 +123,28 @@ shader_parameter/roughness = 0.615
 [sub_resource type="BoxShape3D" id="BoxShape3D_2cnsr"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4k8fq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cnsr"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
 shader_parameter/roughness = 0.634
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75pfo"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4k8fq"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("2_uacia")
+shader_parameter/roughness = 0.634
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75pfo"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("4_ajshl")
+shader_parameter/roughness = 0.615
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5civd"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gv2t6"]
@@ -141,31 +159,16 @@ shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
 shader_parameter/roughness = 0.615
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5civd"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mi64w"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("2_uacia")
-shader_parameter/roughness = 0.634
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ds53i"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("4_ajshl")
-shader_parameter/roughness = 0.615
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8c7m"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ss0b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5civd"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
 shader_parameter/roughness = 0.634
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mftsw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mi64w"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
@@ -174,13 +177,55 @@ shader_parameter/roughness = 0.615
 [sub_resource type="BoxShape3D" id="BoxShape3D_q6ayx"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq7xp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ds53i"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
 shader_parameter/roughness = 0.634
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s6cx0"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p8c7m"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("2_uacia")
+shader_parameter/roughness = 0.634
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ss0b"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("4_ajshl")
+shader_parameter/roughness = 0.615
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_335pd"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mftsw"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("2_uacia")
+shader_parameter/roughness = 0.634
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ayx"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("4_ajshl")
+shader_parameter/roughness = 0.615
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq7xp"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("4_ajshl")
+shader_parameter/roughness = 0.615
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6cx0"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("4_ajshl")
+shader_parameter/roughness = 0.615
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n11rl"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_emonu"]
@@ -195,14 +240,20 @@ shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
 shader_parameter/roughness = 0.615
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_335pd"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_35prk"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_376r3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_335pd"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
 shader_parameter/roughness = 0.634
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_376r3"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("4_ajshl")
+shader_parameter/roughness = 0.615
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xsg57"]
 render_priority = 0
@@ -216,13 +267,22 @@ shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
 shader_parameter/roughness = 0.615
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_eixnv"]
+size = Vector3(1, 1, 0.05)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cgmg2"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("2_uacia")
+shader_parameter/roughness = 0.634
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n11rl"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
 shader_parameter/roughness = 0.615
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_n11rl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vqdru"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y8o6s"]
@@ -231,13 +291,22 @@ shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
 shader_parameter/roughness = 0.634
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tbman"]
+size = Vector3(1, 1, 0.05)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1urli"]
+render_priority = 0
+shader = ExtResource("5_7mbro")
+shader_parameter/texture_albedo = ExtResource("2_uacia")
+shader_parameter/roughness = 0.634
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35prk"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
 shader_parameter/roughness = 0.615
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_35prk"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_elqqf"]
 size = Vector3(1, 1, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eokji"]
@@ -252,82 +321,16 @@ shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
 shader_parameter/roughness = 0.615
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ixbo"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("4_ajshl")
-shader_parameter/roughness = 0.615
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uig8d"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("4_ajshl")
-shader_parameter/roughness = 0.615
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_eixnv"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_68ewr"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("2_uacia")
-shader_parameter/roughness = 0.634
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_osnag"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("4_ajshl")
-shader_parameter/roughness = 0.615
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vqdru"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnm51"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("2_uacia")
-shader_parameter/roughness = 0.634
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tbman"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwri7"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("2_uacia")
-shader_parameter/roughness = 0.634
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3t5ks"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("4_ajshl")
-shader_parameter/roughness = 0.615
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_elqqf"]
-size = Vector3(1, 1, 0.05)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdgre"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("2_uacia")
-shader_parameter/roughness = 0.634
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0b3m"]
-render_priority = 0
-shader = ExtResource("5_7mbro")
-shader_parameter/texture_albedo = ExtResource("4_ajshl")
-shader_parameter/roughness = 0.615
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_80m0l"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfy4l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ixbo"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
 shader_parameter/roughness = 0.634
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ho4wr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uig8d"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("4_ajshl")
@@ -336,7 +339,7 @@ shader_parameter/roughness = 0.615
 [sub_resource type="BoxShape3D" id="BoxShape3D_4amwq"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3w526"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eixnv"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
@@ -345,7 +348,7 @@ shader_parameter/roughness = 0.634
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpsc0"]
 size = Vector3(1, 1, 0.05)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgrws"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_68ewr"]
 render_priority = 0
 shader = ExtResource("5_7mbro")
 shader_parameter/texture_albedo = ExtResource("2_uacia")
@@ -691,7 +694,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_2cnsr")
 
 [node name="@Sprite3D@23307" type="Sprite3D" parent="Node3D/SWall" unique_id=1267336519]
-material_override = SubResource("ShaderMaterial_4k8fq")
+material_override = SubResource("ShaderMaterial_2cnsr")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -716,7 +719,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_75pfo")
 
 [node name="@Sprite3D@23311" type="Sprite3D" parent="Node3D/EWall" unique_id=336180692]
-material_override = SubResource("ShaderMaterial_gv2t6")
+material_override = SubResource("ShaderMaterial_4k8fq")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -734,7 +737,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23313" type="Sprite3D" parent="Node3D/Ceiling2" unique_id=1756069101]
-material_override = SubResource("ShaderMaterial_1xwo4")
+material_override = SubResource("ShaderMaterial_75pfo")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -759,7 +762,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_5civd")
 
 [node name="@Sprite3D@23317" type="Sprite3D" parent="Node3D/EWall2" unique_id=183350522]
-material_override = SubResource("ShaderMaterial_mi64w")
+material_override = SubResource("ShaderMaterial_gv2t6")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -777,7 +780,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23319" type="Sprite3D" parent="Node3D/Ceiling3" unique_id=1127546696]
-material_override = SubResource("ShaderMaterial_ds53i")
+material_override = SubResource("ShaderMaterial_1xwo4")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -802,7 +805,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_p8c7m")
 
 [node name="@Sprite3D@23323" type="Sprite3D" parent="Node3D/EWall3" unique_id=341969920]
-material_override = SubResource("ShaderMaterial_3ss0b")
+material_override = SubResource("ShaderMaterial_5civd")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -820,7 +823,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23325" type="Sprite3D" parent="Node3D/Ceiling4" unique_id=2044987166]
-material_override = SubResource("ShaderMaterial_mftsw")
+material_override = SubResource("ShaderMaterial_mi64w")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -845,7 +848,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_q6ayx")
 
 [node name="@Sprite3D@23329" type="Sprite3D" parent="Node3D/NWall" unique_id=1356631528]
-material_override = SubResource("ShaderMaterial_iq7xp")
+material_override = SubResource("ShaderMaterial_ds53i")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -870,7 +873,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_s6cx0")
 
 [node name="@Sprite3D@23333" type="Sprite3D" parent="Node3D/EWall4" unique_id=607932637]
-material_override = SubResource("ShaderMaterial_emonu")
+material_override = SubResource("ShaderMaterial_p8c7m")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -888,7 +891,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23335" type="Sprite3D" parent="Node3D/Ceiling5" unique_id=510606518]
-material_override = SubResource("ShaderMaterial_pdwa4")
+material_override = SubResource("ShaderMaterial_3ss0b")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -913,7 +916,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_335pd")
 
 [node name="@Sprite3D@23339" type="Sprite3D" parent="Node3D/SWall2" unique_id=1895986754]
-material_override = SubResource("ShaderMaterial_376r3")
+material_override = SubResource("ShaderMaterial_mftsw")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -931,7 +934,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23341" type="Sprite3D" parent="Node3D/Ceiling6" unique_id=745095984]
-material_override = SubResource("ShaderMaterial_xsg57")
+material_override = SubResource("ShaderMaterial_q6ayx")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -949,7 +952,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23343" type="Sprite3D" parent="Node3D/Ceiling7" unique_id=1402798141]
-material_override = SubResource("ShaderMaterial_qx18j")
+material_override = SubResource("ShaderMaterial_iq7xp")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -967,7 +970,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23345" type="Sprite3D" parent="Node3D/Ceiling8" unique_id=1226381328]
-material_override = SubResource("ShaderMaterial_cgmg2")
+material_override = SubResource("ShaderMaterial_s6cx0")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -992,7 +995,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_n11rl")
 
 [node name="@Sprite3D@23349" type="Sprite3D" parent="Node3D/NWall2" unique_id=988070351]
-material_override = SubResource("ShaderMaterial_y8o6s")
+material_override = SubResource("ShaderMaterial_emonu")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1010,7 +1013,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23351" type="Sprite3D" parent="Node3D/Ceiling9" unique_id=1517310627]
-material_override = SubResource("ShaderMaterial_1urli")
+material_override = SubResource("ShaderMaterial_pdwa4")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1035,7 +1038,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_35prk")
 
 [node name="@Sprite3D@23355" type="Sprite3D" parent="Node3D/SWall3" unique_id=1449377739]
-material_override = SubResource("ShaderMaterial_eokji")
+material_override = SubResource("ShaderMaterial_335pd")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1053,7 +1056,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23357" type="Sprite3D" parent="Node3D/Ceiling10" unique_id=2054315624]
-material_override = SubResource("ShaderMaterial_8nvs4")
+material_override = SubResource("ShaderMaterial_376r3")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1071,7 +1074,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23359" type="Sprite3D" parent="Node3D/Ceiling11" unique_id=331518308]
-material_override = SubResource("ShaderMaterial_2ixbo")
+material_override = SubResource("ShaderMaterial_xsg57")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1089,7 +1092,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23361" type="Sprite3D" parent="Node3D/Ceiling12" unique_id=2084374807]
-material_override = SubResource("ShaderMaterial_uig8d")
+material_override = SubResource("ShaderMaterial_qx18j")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1114,7 +1117,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_eixnv")
 
 [node name="@Sprite3D@23365" type="Sprite3D" parent="Node3D/NWall3" unique_id=1595594914]
-material_override = SubResource("ShaderMaterial_68ewr")
+material_override = SubResource("ShaderMaterial_cgmg2")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1132,7 +1135,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23367" type="Sprite3D" parent="Node3D/Ceiling13" unique_id=1682049346]
-material_override = SubResource("ShaderMaterial_osnag")
+material_override = SubResource("ShaderMaterial_n11rl")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1157,7 +1160,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_vqdru")
 
 [node name="@Sprite3D@23371" type="Sprite3D" parent="Node3D/SWall4" unique_id=803918191]
-material_override = SubResource("ShaderMaterial_tnm51")
+material_override = SubResource("ShaderMaterial_y8o6s")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1182,7 +1185,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_tbman")
 
 [node name="@Sprite3D@23375" type="Sprite3D" parent="Node3D/WWall" unique_id=726250633]
-material_override = SubResource("ShaderMaterial_gwri7")
+material_override = SubResource("ShaderMaterial_1urli")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1200,7 +1203,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23377" type="Sprite3D" parent="Node3D/Ceiling14" unique_id=1469601760]
-material_override = SubResource("ShaderMaterial_3t5ks")
+material_override = SubResource("ShaderMaterial_35prk")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1225,7 +1228,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_elqqf")
 
 [node name="@Sprite3D@23381" type="Sprite3D" parent="Node3D/WWall2" unique_id=2012442797]
-material_override = SubResource("ShaderMaterial_tdgre")
+material_override = SubResource("ShaderMaterial_eokji")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1243,7 +1246,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23383" type="Sprite3D" parent="Node3D/Ceiling15" unique_id=1780441883]
-material_override = SubResource("ShaderMaterial_c0b3m")
+material_override = SubResource("ShaderMaterial_8nvs4")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1268,7 +1271,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_80m0l")
 
 [node name="@Sprite3D@23387" type="Sprite3D" parent="Node3D/WWall3" unique_id=950371652]
-material_override = SubResource("ShaderMaterial_qfy4l")
+material_override = SubResource("ShaderMaterial_2ixbo")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1286,7 +1289,7 @@ shader = ExtResource("5_7mbro")
 metadata/_edit_group_ = true
 
 [node name="@Sprite3D@23389" type="Sprite3D" parent="Node3D/Ceiling16" unique_id=1862795593]
-material_override = SubResource("ShaderMaterial_ho4wr")
+material_override = SubResource("ShaderMaterial_uig8d")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1311,7 +1314,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_4amwq")
 
 [node name="@Sprite3D@23393" type="Sprite3D" parent="Node3D/NWall4" unique_id=398489439]
-material_override = SubResource("ShaderMaterial_3w526")
+material_override = SubResource("ShaderMaterial_eixnv")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1336,7 +1339,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_hpsc0")
 
 [node name="@Sprite3D@23397" type="Sprite3D" parent="Node3D/WWall4" unique_id=648529709]
-material_override = SubResource("ShaderMaterial_tgrws")
+material_override = SubResource("ShaderMaterial_68ewr")
 pixel_size = 0.013333334
 shaded = true
 double_sided = false
@@ -1351,3 +1354,12 @@ light_energy = 0.683
 omni_range = 2.021
 
 [node name="CrossHatch" parent="." unique_id=1665997343 instance=ExtResource("9_ghpyy")]
+
+[node name="fuse_box" parent="." unique_id=2133596498 instance=ExtResource("12_7mbro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5854912, 0.505296, 3.9730551)
+
+[node name="Player" parent="." unique_id=677720040 instance=ExtResource("11_ghpyy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0, 0.5)
+
+[node name="fuse" parent="." unique_id=1354575870 instance=ExtResource("12_44saj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45093822, 0.44831753, 1.818302)

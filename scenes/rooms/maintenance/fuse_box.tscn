@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bwjft6c1lbyfr"]
+
+[ext_resource type="PackedScene" uid="uid://cwc4ssksw8oml" path="res://art/maintenance/fuse_box.gltf" id="1_hpe7e"]
+[ext_resource type="Shader" uid="uid://baq0widfnjh1j" path="res://art/shaders/materials/texel_space_double_sided.gdshader" id="2_163y4"]
+[ext_resource type="Texture2D" uid="uid://dxe2xl4slcq61" path="res://art/maintenance/fuse_box_text.png" id="3_8t833"]
+[ext_resource type="Script" uid="uid://cvr1uau0r2oaq" path="res://scripts/interactions/PlaceSpot.cs" id="4_8t833"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_no47k"]
+render_priority = 0
+shader = ExtResource("2_163y4")
+shader_parameter/texture_albedo = ExtResource("3_8t833")
+shader_parameter/roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iws7x"]
+size = Vector3(0.05, 0.15, 0.05)
+
+[node name="fuse_box" type="Node3D" unique_id=2133596498]
+
+[node name="fuse_box" parent="." unique_id=109256747 instance=ExtResource("1_hpe7e")]
+
+[node name="CSGBox3D2" parent="fuse_box" index="0" unique_id=1794040292]
+material_override = SubResource("ShaderMaterial_no47k")
+
+[node name="fuse_slot_1" type="StaticBody3D" parent="." unique_id=2090582151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059961602, 0, 0.015087955)
+script = ExtResource("4_8t833")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fuse_slot_1" unique_id=485547348]
+shape = SubResource("BoxShape3D_iws7x")
+debug_color = Color(0.71541095, 0.48537362, 3.85046e-07, 1)
+
+[node name="fuse_slot_2" type="StaticBody3D" parent="." unique_id=1838810036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002347298, 0, 0.015087955)
+script = ExtResource("4_8t833")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="fuse_slot_2" unique_id=318574225]
+shape = SubResource("BoxShape3D_iws7x")
+debug_color = Color(0.71541095, 0.48537362, 3.85046e-07, 1)
+
+[node name="fuse_slot_3" type="StaticBody3D" parent="." unique_id=755239322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06562796, 0, 0.015087955)
+script = ExtResource("4_8t833")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="fuse_slot_3" unique_id=1278155698]
+shape = SubResource("BoxShape3D_iws7x")
+debug_color = Color(0.71541095, 0.48537362, 3.85046e-07, 1)
+
+[editable path="fuse_box"]
