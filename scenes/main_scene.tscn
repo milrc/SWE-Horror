@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://b1pus62u2gbg4"]
 
-[ext_resource type="PackedScene" uid="uid://6juk8eq7v7xc" path="res://scenes/rooms/bedroom/bedroom.tscn" id="2_755td"]
-[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="3_08uda"]
-[ext_resource type="Shader" uid="uid://bgbx0bdvdq54j" path="res://art/shaders/materials/post_processing.gdshader" id="3_qolh1"]
-[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/resources/value_to_thickness_curve.tres" id="4_gdjh5"]
+[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="1_pu3yx"]
+[ext_resource type="Script" uid="uid://mteb1ty2vu0g" path="res://scripts/MainScene.cs" id="1_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://6juk8eq7v7xc" path="res://scenes/rooms/bedroom/bedroom.tscn" id="2_gubc5"]
+[ext_resource type="Shader" uid="uid://bgbx0bdvdq54j" path="res://art/shaders/materials/post_processing.gdshader" id="3_rt2n2"]
+[ext_resource type="Texture2D" uid="uid://cpa43f7hsu2nm" path="res://art/shaders/resources/value_to_thickness_curve.tres" id="4_c16ls"]
+[ext_resource type="PackedScene" uid="uid://1ds3j3qhenbg" path="res://scenes/rooms/hallway/hallway.tscn" id="6_rt2n2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_al4p7"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kobp4"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qolh1"]
 noise = SubResource("FastNoiseLite_al4p7")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d5coj"]
 render_priority = 1
-shader = ExtResource("3_qolh1")
-shader_parameter/noise = SubResource("NoiseTexture2D_kobp4")
+shader = ExtResource("3_rt2n2")
+shader_parameter/noise = SubResource("NoiseTexture2D_qolh1")
 shader_parameter/hatch_1 = 0.28499999362968
 shader_parameter/hatch_2 = 0.18999999575312
 shader_parameter/hatch_3 = 0.07999999821184
@@ -22,7 +24,7 @@ shader_parameter/hatch_4 = 0.00499999988824
 shader_parameter/hatch_density = 200.74
 shader_parameter/hatch_warp = 0.25
 shader_parameter/hatch_thickness = 0.23
-shader_parameter/value_to_thickness = ExtResource("4_gdjh5")
+shader_parameter/value_to_thickness = ExtResource("4_c16ls")
 shader_parameter/preview_hatch_levels = false
 shader_parameter/color_threshold = 0.030000001425
 shader_parameter/color_boil = 0.005
@@ -37,13 +39,16 @@ background_mode = 1
 background_color = Color(1, 1, 1, 1)
 ambient_light_source = 3
 
-[node name="MovementTest" type="Node3D" unique_id=1476754260]
+[node name="main" type="Node3D" unique_id=1476754260]
+script = ExtResource("1_rt2n2")
 
-[node name="Player" parent="." unique_id=677720040 instance=ExtResource("3_08uda")]
+[node name="Player" parent="." unique_id=677720040 instance=ExtResource("1_pu3yx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 0, 0.5)
 
-[node name="bedroom" parent="." unique_id=540705334 instance=ExtResource("2_755td")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063985586, -0.015936196, 0.0013129413)
+[node name="bedroom" parent="." unique_id=540705334 instance=ExtResource("2_gubc5")]
+
+[node name="Hallway" parent="." unique_id=483328774 instance=ExtResource("6_rt2n2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 15.002)
 
 [node name="CrossHatch" type="MeshInstance3D" parent="." unique_id=1665997343]
 material_override = SubResource("ShaderMaterial_d5coj")

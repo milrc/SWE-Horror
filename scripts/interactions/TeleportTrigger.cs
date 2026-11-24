@@ -10,7 +10,6 @@ public partial class TeleportTrigger : Area3D
         {
             if (Body.Name == "PLAYER_BODY")
             {
-                GD.Print("Moved player");
                 //move player
                 GridPlayer player = Body.GetParent() as GridPlayer;
                 player.GlobalPosition = Target.GlobalPosition - (GlobalPosition - player.GlobalPosition);

@@ -6,8 +6,8 @@ public partial class PlayerInteractor : RayCast3D
 	[Export] public Label PromptLabel;
 	[Export] public Label HandLabel;
 	[Export] public Node3D HandPoint;
-	[Export] public float Reach = 2.8f;
-	[Export] public float DoorReach = 1.0f;
+	[Export] public float Reach = 1.0f;
+	// [Export] public float DoorReach = 1.0f;
 	[Export] public int PromptFontSize = 11;
 	[Export] public NoteUI Reader;
 
@@ -44,7 +44,7 @@ public partial class PlayerInteractor : RayCast3D
 
 	private void ShowPrompt()
 	{
-		Door door = GetDoor();
+		Door door = GetCollider() as Door;
 		CollectibleKey key = GetCollider() as CollectibleKey;
 		PlaceSpot spot = GetCollider() as PlaceSpot;
 		Note note = GetCollider() as Note;
@@ -59,7 +59,7 @@ public partial class PlayerInteractor : RayCast3D
 
 		if (door != null)
 		{
-			PromptLabel.Text = "Press E to " + (door.IsOpen ? "close" : "open") + " door";
+			PromptLabel.Text = "Left click to " + (door.IsOpen ? "close" : "open") + " door";
 			PromptLabel.Show();
 		}
 		else if (note != null && Reader != null && note.CanReadFrom(player))
@@ -88,24 +88,35 @@ public partial class PlayerInteractor : RayCast3D
 		if (Reader != null && Reader.IsOpen)
 			return;
 
-		if (@event is InputEventKey keyPress && keyPress.Pressed && !keyPress.Echo && keyPress.Keycode == Key.E)
-		{
-			CheckMouse();
-			Door door = GetDoor();
-			if (door != null)
-			{
-				door.ToggleDoor();
-				ShowPrompt();
-				GetViewport().SetInputAsHandled();
-			}
-			return;
-		}
-
 		if (@event is not InputEventMouseButton mouseClick ||
 			mouseClick.ButtonIndex != MouseButton.Left || !mouseClick.Pressed)
 			return;
 
 		CheckMouse();
+		GD.Print(GetCollider());
+
+		if (GetCollider() is Door door)
+		{
+			// check if the door needs a key. If it does, send the key if we have one
+			if(!door.needsKey)
+			{
+				door.ToggleDoor();
+			}
+
+			if(heldKey != null && door.useKey(heldKey))
+			{
+				heldKey.QueueFree();
+				heldKey = null;
+				UpdateHandLabel();
+
+				door.needsKey = false;
+				door.ToggleDoor();
+			}
+
+			ShowPrompt();
+			GetViewport().SetInputAsHandled();
+			return;
+		}
 
 		if (GetCollider() is Note note && Reader != null && note.CanReadFrom(player))
 		{
@@ -136,28 +147,6 @@ public partial class PlayerInteractor : RayCast3D
 		UpdateHandLabel();
 		ShowPrompt();
 		GetViewport().SetInputAsHandled();
-	}
-
-	private Door GetDoor()
-	{
-		if (!IsColliding())
-			return null;
-
-		Node hit = GetCollider() as Node;
-		while (hit != null)
-		{
-			if (hit is Door door)
-			{
-				if (GlobalPosition.DistanceTo(GetCollisionPoint()) <= DoorReach &&
-				    GlobalPosition.DistanceTo(door.GlobalPosition) <= DoorReach)
-				{
-					return door;
-				}
-				return null;
-			}
-			hit = hit.GetParent();
-		}
-		return null;
 	}
 
 	private void UpdateHandLabel()

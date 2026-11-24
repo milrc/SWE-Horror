@@ -2,13 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://r0q35ytp3h8m" path="res://art/bedroom/cabinet.gltf" id="1_tx0uy"]
 [ext_resource type="Texture2D" uid="uid://2ketugyg74tj" path="res://art/bedroom/cabinettexture.png" id="3_tx0uy"]
-[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/textured_texel_space.gdshader" id="3_ujkmu"]
+[ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/materials/textured_texel_space.gdshader" id="3_ujkmu"]
+[ext_resource type="Script" uid="uid://cvr1uau0r2oaq" path="res://scripts/interactions/PlaceSpot.cs" id="4_ujkmu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_87g0t"]
 render_priority = 0
 shader = ExtResource("3_ujkmu")
 shader_parameter/texture_albedo = ExtResource("3_tx0uy")
 shader_parameter/roughness = 0.4350000206625
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iws7x"]
+size = Vector3(0.3, 0.01, 0.3)
 
 [node name="cabinet" type="Node3D" unique_id=1275261043]
 
@@ -18,5 +22,19 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="Cube" parent="model" index="0" unique_id=324439817]
 transform = Transform3D(0.9, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.33287096, 0.6008658)
 material_override = SubResource("ShaderMaterial_87g0t")
+
+[node name="left_spot" type="StaticBody3D" parent="." unique_id=280599828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2162244, 0.3205935, 0.29438844)
+script = ExtResource("4_ujkmu")
+
+[node name="col" type="CollisionShape3D" parent="left_spot" unique_id=1318245716]
+shape = SubResource("BoxShape3D_iws7x")
+
+[node name="right_spot" type="StaticBody3D" parent="." unique_id=1365950048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22496521, 0.3205935, 0.29438844)
+script = ExtResource("4_ujkmu")
+
+[node name="col" type="CollisionShape3D" parent="right_spot" unique_id=44612225]
+shape = SubResource("BoxShape3D_iws7x")
 
 [editable path="model"]

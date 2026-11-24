@@ -1,11 +1,13 @@
 using Godot;
 
 //Put this on the door root. The door just swings around its hinge when you press E.
-public partial class Door : Node3D
+public partial class Door : StaticBody3D
 {
 	[Export] public StaticBody3D DoorBody;
 	[Export] public float OpenAngle = 90f;
 	[Export] public float SwingTime = 0.7f;
+	[Export] public bool needsKey = false;
+	[Export] public CollectibleKey requiredKey;
 
 	private bool isOpen = false;
 	public bool IsOpen => isOpen;
@@ -13,15 +15,12 @@ public partial class Door : Node3D
 
 	public override void _Ready()
 	{
-		if (DoorBody == null)
-			DoorBody = GetNode<StaticBody3D>("DoorPanel/DoorBody");
-
-		DoorBody.CollisionLayer = 1;
+		CollisionLayer = 1;
 	}
 
 	public void ToggleDoor()
 	{
-		if (isMoving) return;
+		if (isMoving || needsKey) return;
 
 		isMoving = true;
 		bool opening = !isOpen;
@@ -36,7 +35,13 @@ public partial class Door : Node3D
 			isOpen = opening;
 			isMoving = false;
 			//The separate Area3D still lets the player aim at the door to close it.
-			DoorBody.CollisionLayer = isOpen ? 2u : 1u;
+			CollisionLayer = isOpen ? 2u : 1u;
 		}));
+	}
+
+	public bool useKey(CollectibleKey key)
+	{
+		if (key == requiredKey) return true;
+		return false;
 	}
 }

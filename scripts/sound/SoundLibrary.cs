@@ -30,6 +30,7 @@ public static class SoundLibrary
         public const string BUS = "Music";
         public static readonly Sound TITLE = new("res://sound/music/3AM.mp3");
         public static readonly Sound RUN = new("res://sound/music/Scary Mansion.mp3");
+        public static readonly Sound BEDROOM = new("res://sound/music/fortuna.mp3");
     }
     public readonly struct Sound
     {

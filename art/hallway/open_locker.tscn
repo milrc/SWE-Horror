@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brly2nmejt6vb"]
+
+[ext_resource type="PackedScene" uid="uid://b3vd6cvgnfjfm" path="res://art/hallway/open_locker.glb" id="1_7nly0"]
+
+[node name="open_locker" unique_id=1791203062 instance=ExtResource("1_7nly0")]
+visible = false
