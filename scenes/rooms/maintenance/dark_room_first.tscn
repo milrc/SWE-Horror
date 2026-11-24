@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://d3oev8fcc2cbu"]
 
 [ext_resource type="Script" uid="uid://cydbpc1sm8m3l" path="res://scripts/environment/Room.cs" id="1_t8qwg"]
-[ext_resource type="Texture2D" uid="uid://b5hrabbggx5g0" path="res://art/hallway/brick_wall.png" id="2_wfqed"]
-[ext_resource type="Texture2D" uid="uid://bmtqvychecs3f" path="res://art/hallway/linolium_floor.png" id="3_y3rlb"]
-[ext_resource type="Texture2D" uid="uid://dhstri527ovwr" path="res://art/hallway/dropceiling.png" id="4_8mcd7"]
+[ext_resource type="Texture2D" uid="uid://gy4eg21oe5vn" path="res://art/maintenance/facility_wall.png" id="2_wfqed"]
+[ext_resource type="Texture2D" uid="uid://j5vw22vkqkho" path="res://art/maintenance/concrete_floor.png" id="3_y3rlb"]
+[ext_resource type="Texture2D" uid="uid://dcwoefe2ssu7q" path="res://art/maintenance/maintenance_ceiling.png" id="4_8mcd7"]
 [ext_resource type="Shader" uid="uid://d3bad5e43mkxi" path="res://art/shaders/materials/textured_texel_space.gdshader" id="5_qs73k"]
 [ext_resource type="Script" uid="uid://c7msvtgbkusrl" path="res://scripts/environment/Surface.cs" id="6_i66j6"]
 [ext_resource type="Script" uid="uid://2ogyfm77o8gl" path="res://scripts/environment/ScaledSprite.cs" id="7_oxouy"]
 [ext_resource type="Script" uid="uid://bv77fbmwpibv1" path="res://scripts/environment/Wall.cs" id="8_h08hj"]
+[ext_resource type="PackedScene" uid="uid://b4yqa17vbx0ko" path="res://scenes/rooms/maintenance/fuse.tscn" id="fuse_pickup"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6wstt"]
 render_priority = 0
@@ -821,16 +822,6 @@ render_priority = 0
 shader = ExtResource("5_qs73k")
 shader_parameter/texture_albedo = ExtResource("2_wfqed")
 shader_parameter/roughness = 0.75
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45swt"]
-albedo_color = Color(1, 0.64, 0.2, 1)
-roughness = 0.65
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_4r2or"]
-material = SubResource("StandardMaterial3D_45swt")
-top_radius = 0.06
-bottom_radius = 0.06
-height = 0.18
 
 [node name="DarkRoomFirst" type="Node3D" unique_id=167939760]
 
@@ -3180,11 +3171,11 @@ texture = ExtResource("2_wfqed")
 script = ExtResource("7_oxouy")
 roughness = 0.75
 
-[node name="Door" type="Marker3D" parent="." unique_id=231618872]
+[node name="Door" type="Node3D" parent="." unique_id=231618872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 11)
 
-[node name="FuseSpot" type="Marker3D" parent="." unique_id=394791766]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.35, 2.5)
-
-[node name="PlaceholderFuse" type="MeshInstance3D" parent="FuseSpot" unique_id=410097703]
-mesh = SubResource("CylinderMesh_4r2or")
+[node name="Fuse" parent="." unique_id=410097703 instance=ExtResource("fuse_pickup")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.5, 0.41, 2.5)
+collision_layer = 2
+collision_mask = 0
+KeyId = "fuse_1"

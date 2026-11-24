@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://2s848ivi5cqe"]
+
+[ext_resource type="PackedScene" uid="uid://c7op8yc5yokat" path="res://scenes/rooms/maintenance/maintenance_room.tscn" id="1_room"]
+[ext_resource type="PackedScene" uid="uid://d3oev8fcc2cbu" path="res://scenes/rooms/maintenance/dark_room_first.tscn" id="2_maze"]
+[ext_resource type="PackedScene" uid="uid://b0yhxdeh4wgbt" path="res://scenes/player/player.tscn" id="3_player"]
+
+[sub_resource type="Environment" id="Environment_maintenance"]
+background_mode = 1
+ambient_light_source = 3
+
+[node name="MaintenanceRoomTest" type="Node3D" unique_id=1963942220]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=411626262]
+environment = SubResource("Environment_maintenance")
+
+[node name="MaintenanceRoom" parent="." unique_id=1339551038 instance=ExtResource("1_room")]
+
+[node name="DarkRoomFirst" parent="." unique_id=371531572 instance=ExtResource("2_maze")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 14, 0, -4)
+
+[node name="Player" parent="." unique_id=1227811640 instance=ExtResource("3_player")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0.5, 0, 2.5)
