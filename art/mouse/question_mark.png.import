@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8berxp42sfvl"
-path="res://.godot/imported/Large_mouse.png-39ef8b3e7e017f25314ff3f91564d392.ctex"
+uid="uid://b01n4pxrsmdq0"
+path="res://.godot/imported/question_mark.png-bf4f3451a7758deb98ab97ce463de37d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/mouse/Large_mouse.png"
-dest_files=["res://.godot/imported/Large_mouse.png-39ef8b3e7e017f25314ff3f91564d392.ctex"]
+source_file="res://art/mouse/question_mark.png"
+dest_files=["res://.godot/imported/question_mark.png-bf4f3451a7758deb98ab97ce463de37d.ctex"]
 
 [params]
 

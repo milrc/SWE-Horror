@@ -16,6 +16,9 @@ public partial class PlayerInteractor : RayCast3D
 	private CollectibleKey heldKey;
 	private PlaceSpot lastSpot;
 
+	// mouse cursor
+	Mouse cursor;
+
 	public override void _Ready()
 	{
 		camera = GetParent() as Camera3D;
@@ -24,6 +27,8 @@ public partial class PlayerInteractor : RayCast3D
 		PromptLabel.AddThemeFontSizeOverride("font_size", PromptFontSize);
 		PromptLabel.Hide();
 		UpdateHandLabel();
+
+		cursor = new();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -53,6 +58,7 @@ public partial class PlayerInteractor : RayCast3D
 			lastSpot.ShowHighlight(false);
 		lastSpot = null;
 		PromptLabel.Hide();
+		cursor.SetMouse(Mouse.MouseMode.ARROW);
 
 		if (Reader != null && Reader.IsOpen)
 			return;
@@ -61,16 +67,19 @@ public partial class PlayerInteractor : RayCast3D
 		{
 			PromptLabel.Text = "Left click to " + (door.IsOpen ? "close" : "open") + " door";
 			PromptLabel.Show();
+			cursor.SetMouse(Mouse.MouseMode.HAND);
 		}
 		else if (note != null && Reader != null && note.CanReadFrom(player))
 		{
 			PromptLabel.Text = "Left click to read note";
 			PromptLabel.Show();
+			cursor.SetMouse(Mouse.MouseMode.QUESTION);
 		}
 		else if (heldKey == null && key != null)
 		{
 			PromptLabel.Text = "Left click to pick up " + key.DisplayName;
 			PromptLabel.Show();
+			cursor.SetMouse(Mouse.MouseMode.HAND);
 		}
 		else if (heldKey != null && spot != null && spot.IsEmpty())
 		{
@@ -78,6 +87,7 @@ public partial class PlayerInteractor : RayCast3D
 			lastSpot = spot;
 			PromptLabel.Text = "Left click to place " + heldKey.DisplayName;
 			PromptLabel.Show();
+			cursor.SetMouse(Mouse.MouseMode.HAND);
 		}
 
 		PromptLabel.Position = GetViewport().GetMousePosition() + new Vector2(14, 18);

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0sg4qp5s5fxk"
-path="res://.godot/imported/Large_mouse_key.png-e5cd383c17e3f0f3643db4c053ca1198.ctex"
+uid="uid://cw6tqmf5754gk"
+path="res://.godot/imported/mouse_hand.png-2a2a690e7d9e2a1e3819dff69d482612.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/mouse/Large_mouse_key.png"
-dest_files=["res://.godot/imported/Large_mouse_key.png-e5cd383c17e3f0f3643db4c053ca1198.ctex"]
+source_file="res://art/mouse/mouse_hand.png"
+dest_files=["res://.godot/imported/mouse_hand.png-2a2a690e7d9e2a1e3819dff69d482612.ctex"]
 
 [params]
 
