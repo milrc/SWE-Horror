@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bwcof0es20rxu" path="res://art/hallway/locker.tscn" id="13_krl5w"]
 [ext_resource type="PackedScene" uid="uid://b0u1bt4s16nda" path="res://scenes/rooms/hallway/lockers.tscn" id="14_av5sq"]
 [ext_resource type="PackedScene" uid="uid://d08emnjwpfvhb" path="res://scenes/interactions/note.tscn" id="15_b1bbl"]
+[ext_resource type="Texture2D" uid="uid://d22fk3odt6omr" path="res://art/hallway/hall_note_ui.png" id="16_70yjj"]
 [ext_resource type="Texture2D" uid="uid://bq5fvtfx8qdcf" path="res://art/hallway/glass_door.png" id="19_a4k46"]
 [ext_resource type="Texture2D" uid="uid://bbr0m6nvamf2v" path="res://art/hallway/brick_door.png" id="19_g84on"]
 [ext_resource type="Texture2D" uid="uid://ccuvm46wivjup" path="res://art/hallway/drop_light.png" id="20_70yjj"]
@@ -841,7 +842,8 @@ visible = true
 [node name="Note" parent="HallwaySegment/open_locker" unique_id=1049265717 instance=ExtResource("15_b1bbl")]
 transform = Transform3D(0.023461148, 0, 0.5194704, 0, 0.5199999, 0, -0.51947045, 0, 0.023461051, 0.11753458, 0.5, -0.04550477)
 Title = ""
-Text = "<VV>>V^^<<VV<<"
+Text = ""
+BackgroundTexture = ExtResource("16_70yjj")
 
 [node name="HallwaySegment2" parent="." unique_id=1520411023 instance=ExtResource("1_wrxb8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
